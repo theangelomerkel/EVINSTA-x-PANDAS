@@ -3,17 +3,19 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'answers_model.dart';
 export 'answers_model.dart';
 
 class AnswersWidget extends StatefulWidget {
   const AnswersWidget({
-    super.key,
+    Key? key,
     this.parameter5,
     required this.property,
-  });
+  }) : super(key: key);
 
   final AnswersRecord? parameter5;
   final PropertiesRecord? property;
@@ -53,7 +55,7 @@ class _AnswersWidgetState extends State<AnswersWidget> {
     return Visibility(
       visible: widget.parameter5 != null,
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 8.0, 16.0),
+        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 8.0, 16.0),
         child: FutureBuilder<UsersRecord>(
           future: UsersRecord.getDocumentOnce(widget.parameter5!.createUser!),
           builder: (context, snapshot) {
@@ -91,12 +93,13 @@ class _AnswersWidgetState extends State<AnswersWidget> {
                     shape: BoxShape.circle,
                   ),
                   child: Visibility(
-                    visible: rowUsersRecord.photoUrl != '',
+                    visible: rowUsersRecord.photoUrl != null &&
+                        rowUsersRecord.photoUrl != '',
                     child: Container(
                       width: 36.0,
                       height: 36.0,
                       clipBehavior: Clip.antiAlias,
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         shape: BoxShape.circle,
                       ),
                       child: Image.network(
@@ -108,7 +111,7 @@ class _AnswersWidgetState extends State<AnswersWidget> {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                     child: StreamBuilder<AnswersRecord>(
                       stream: AnswersRecord.getDocument(
                           widget.parameter5!.reference),
@@ -138,7 +141,8 @@ class _AnswersWidgetState extends State<AnswersWidget> {
                                 Expanded(
                                   child: Text(
                                     valueOrDefault<String>(
-                                      rowUsersRecord.displayName != ''
+                                      rowUsersRecord.displayName != null &&
+                                              rowUsersRecord.displayName != ''
                                           ? rowUsersRecord.displayName
                                           : rowUsersRecord.email,
                                       'user123',
@@ -154,7 +158,7 @@ class _AnswersWidgetState extends State<AnswersWidget> {
                                 if (widget.property?.userRef ==
                                     currentUserReference)
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -176,7 +180,7 @@ class _AnswersWidgetState extends State<AnswersWidget> {
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 2.0, 0.0, 2.0),
                               child: Text(
                                 columnAnswersRecord.message,
@@ -199,7 +203,7 @@ class _AnswersWidgetState extends State<AnswersWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Urbanist',
-                                          color: const Color(0xFFB3B3B3),
+                                          color: Color(0xFFB3B3B3),
                                           fontSize: 13.0,
                                           fontWeight: FontWeight.normal,
                                         ),
@@ -212,7 +216,7 @@ class _AnswersWidgetState extends State<AnswersWidget> {
                                     Text(
                                       valueOrDefault<String>(
                                         formatNumber(
-                                          widget.parameter5?.likedUsers.length,
+                                          widget.parameter5?.likedUsers?.length,
                                           formatType: FormatType.custom,
                                           format: '',
                                           locale: '',

@@ -7,15 +7,18 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 's8_n_r2_edit_profile_model.dart';
 export 's8_n_r2_edit_profile_model.dart';
 
 class S8NR2EditProfileWidget extends StatefulWidget {
-  const S8NR2EditProfileWidget({super.key});
+  const S8NR2EditProfileWidget({Key? key}) : super(key: key);
 
   @override
   _S8NR2EditProfileWidgetState createState() => _S8NR2EditProfileWidgetState();
@@ -97,30 +100,31 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                 fontWeight: FontWeight.w500,
               ),
         ),
-        actions: const [],
+        actions: [],
         centerTitle: false,
         elevation: 0.0,
       ),
       body: SafeArea(
         top: true,
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               Container(
                 width: 100.0,
                 height: 100.0,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Color(0xFFDBE2E7),
                   shape: BoxShape.circle,
                 ),
                 child: Visibility(
                   visible:
-                      (currentUserPhoto != '') ||
-                          (_model.uploadedFileUrl != ''),
+                      (currentUserPhoto != null && currentUserPhoto != '') ||
+                          (_model.uploadedFileUrl != null &&
+                              _model.uploadedFileUrl != ''),
                   child: Padding(
-                    padding: const EdgeInsets.all(2.0),
+                    padding: EdgeInsets.all(2.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => InkWell(
                         splashColor: Colors.transparent,
@@ -134,13 +138,15 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                               type: PageTransitionType.fade,
                               child: FlutterFlowExpandedImageView(
                                 image: Image.network(
-                                  _model.uploadedFileUrl != ''
+                                  _model.uploadedFileUrl != null &&
+                                          _model.uploadedFileUrl != ''
                                       ? _model.uploadedFileUrl
                                       : currentUserPhoto,
                                   fit: BoxFit.contain,
                                 ),
                                 allowRotation: false,
-                                tag: _model.uploadedFileUrl != ''
+                                tag: _model.uploadedFileUrl != null &&
+                                        _model.uploadedFileUrl != ''
                                     ? _model.uploadedFileUrl
                                     : currentUserPhoto,
                                 useHeroAnimation: true,
@@ -149,7 +155,8 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                           );
                         },
                         child: Hero(
-                          tag: _model.uploadedFileUrl != ''
+                          tag: _model.uploadedFileUrl != null &&
+                                  _model.uploadedFileUrl != ''
                               ? _model.uploadedFileUrl
                               : currentUserPhoto,
                           transitionOnUserGestures: true,
@@ -157,11 +164,12 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                             width: 90.0,
                             height: 90.0,
                             clipBehavior: Clip.antiAlias,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
                             child: Image.network(
-                              _model.uploadedFileUrl != ''
+                              _model.uploadedFileUrl != null &&
+                                      _model.uploadedFileUrl != ''
                                   ? _model.uploadedFileUrl
                                   : currentUserPhoto,
                               fit: BoxFit.fitWidth,
@@ -227,10 +235,10 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                 options: FFButtonOptions(
                   width: 130.0,
                   height: 40.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: const Color(0xFFF35C29),
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  color: Color(0xFFF35C29),
                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Lexend Deca',
                         color: FlutterFlowTheme.of(context).cultured,
@@ -238,7 +246,7 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                         fontWeight: FontWeight.normal,
                       ),
                   elevation: 2.0,
-                  borderSide: const BorderSide(
+                  borderSide: BorderSide(
                     color: Colors.transparent,
                     width: 1.0,
                   ),
@@ -246,7 +254,7 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 12.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 12.0),
                 child: AuthUserStreamWidget(
                   builder: (context) => TextFormField(
                     controller: _model.nameController,
@@ -265,21 +273,21 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Color(0x00000000),
                           width: 2.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       errorBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Color(0x00000000),
                           width: 2.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       focusedErrorBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Color(0x00000000),
                           width: 2.0,
                         ),
@@ -289,7 +297,7 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                       fillColor:
                           FlutterFlowTheme.of(context).secondaryBackground,
                       contentPadding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                     ),
                     style: FlutterFlowTheme.of(context).titleSmall,
                     validator:
@@ -298,7 +306,7 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                 child: TextFormField(
                   controller: _model.emailAddressController,
                   focusNode: _model.emailAddressFocusNode,
@@ -316,21 +324,21 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Color(0x00000000),
                         width: 2.0,
                       ),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     errorBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Color(0x00000000),
                         width: 2.0,
                       ),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     focusedErrorBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Color(0x00000000),
                         width: 2.0,
                       ),
@@ -339,7 +347,7 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                     filled: true,
                     fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                     contentPadding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
+                        EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                   ),
                   style: FlutterFlowTheme.of(context).titleSmall,
                   validator: _model.emailAddressControllerValidator
@@ -347,7 +355,7 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                 child: AuthUserStreamWidget(
                   builder: (context) => TextFormField(
                     controller: _model.phoneController,
@@ -366,21 +374,21 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Color(0x00000000),
                           width: 2.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       errorBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Color(0x00000000),
                           width: 2.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       focusedErrorBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Color(0x00000000),
                           width: 2.0,
                         ),
@@ -390,7 +398,7 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                       fillColor:
                           FlutterFlowTheme.of(context).secondaryBackground,
                       contentPadding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                     ),
                     style: FlutterFlowTheme.of(context).titleSmall,
                     validator:
@@ -416,21 +424,21 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Color(0x00000000),
                         width: 2.0,
                       ),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     errorBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Color(0x00000000),
                         width: 2.0,
                       ),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     focusedErrorBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Color(0x00000000),
                         width: 2.0,
                       ),
@@ -439,7 +447,7 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                     filled: true,
                     fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                     contentPadding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
+                        EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                   ),
                   style: FlutterFlowTheme.of(context).titleSmall,
                   textAlign: TextAlign.start,
@@ -449,16 +457,17 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(0.0, 0.05),
+                alignment: AlignmentDirectional(0.0, 0.05),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       await currentUserReference!.update(createUsersRecordData(
                         displayName: _model.nameController.text,
                         email: _model.emailAddressController.text,
                         bio: _model.myBioController.text,
-                        photoUrl: _model.uploadedFileUrl != ''
+                        photoUrl: _model.uploadedFileUrl != null &&
+                                _model.uploadedFileUrl != ''
                             ? _model.uploadedFileUrl
                             : currentUserPhoto,
                         phoneNumber: _model.phoneController.text,
@@ -470,10 +479,10 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                       width: 340.0,
                       height: 60.0,
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: const Color(0xFFF35C29),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: Color(0xFFF35C29),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Lexend Deca',
@@ -482,7 +491,7 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                                 fontWeight: FontWeight.normal,
                               ),
                       elevation: 2.0,
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Colors.transparent,
                         width: 1.0,
                       ),

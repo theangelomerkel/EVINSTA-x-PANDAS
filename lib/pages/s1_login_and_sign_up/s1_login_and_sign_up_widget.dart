@@ -6,12 +6,13 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 's1_login_and_sign_up_model.dart';
 export 's1_login_and_sign_up_model.dart';
 
 class S1LoginAndSignUpWidget extends StatefulWidget {
-  const S1LoginAndSignUpWidget({super.key});
+  const S1LoginAndSignUpWidget({Key? key}) : super(key: key);
 
   @override
   _S1LoginAndSignUpWidgetState createState() => _S1LoginAndSignUpWidgetState();
@@ -79,12 +80,12 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 0.0),
+          padding: EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 0.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 20.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 20.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -111,14 +112,14 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                 child: Column(
                   children: [
                     Align(
-                      alignment: const Alignment(0.0, 0),
+                      alignment: Alignment(0.0, 0),
                       child: TabBar(
                         labelColor: FlutterFlowTheme.of(context).primaryText,
                         labelStyle: FlutterFlowTheme.of(context).titleMedium,
-                        unselectedLabelStyle: const TextStyle(),
+                        unselectedLabelStyle: TextStyle(),
                         indicatorColor:
                             FlutterFlowTheme.of(context).primaryText,
-                        tabs: const [
+                        tabs: [
                           Tab(
                             text: 'Sign In',
                           ),
@@ -137,7 +138,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                         controller: _model.tabBarController,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 44.0, 0.0, 44.0, 0.0),
                             child: SingleChildScrollView(
                               child: Column(
@@ -145,7 +146,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),
                                     child: TextFormField(
                                       controller:
@@ -176,7 +177,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                               fontWeight: FontWeight.normal,
                                             ),
                                         enabledBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Color(0x00000000),
                                             width: 1.0,
                                           ),
@@ -214,14 +215,14 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                         fillColor: FlutterFlowTheme.of(context)
                                             .alternate,
                                         contentPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 20.0, 24.0, 20.0, 24.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
                                             fontFamily: 'Urbanist',
-                                            color: const Color(0xFF0F1113),
+                                            color: Color(0xFF0F1113),
                                           ),
                                       maxLines: null,
                                       keyboardType: TextInputType.emailAddress,
@@ -231,7 +232,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 0.0),
                                     child: TextFormField(
                                       controller:
@@ -262,7 +263,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                               fontWeight: FontWeight.normal,
                                             ),
                                         enabledBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Color(0x00000000),
                                             width: 1.0,
                                           ),
@@ -300,7 +301,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                         fillColor: FlutterFlowTheme.of(context)
                                             .alternate,
                                         contentPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 20.0, 24.0, 20.0, 24.0),
                                         suffixIcon: InkWell(
                                           onTap: () => setState(
@@ -314,7 +315,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                             _model.passwordLoginVisibility
                                                 ? Icons.visibility_outlined
                                                 : Icons.visibility_off_outlined,
-                                            color: const Color(0xFF95A1AC),
+                                            color: Color(0xFF95A1AC),
                                             size: 20.0,
                                           ),
                                         ),
@@ -323,7 +324,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                           .titleSmall
                                           .override(
                                             fontFamily: 'Urbanist',
-                                            color: const Color(0xFF0F1113),
+                                            color: Color(0xFF0F1113),
                                           ),
                                       keyboardType:
                                           TextInputType.visiblePassword,
@@ -333,11 +334,11 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 24.0, 0.0, 0.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
-                                        Function() navigate = () {};
+                                        Function() _navigate = () {};
                                         HapticFeedback.selectionClick();
                                         if (_model.terms) {
                                           GoRouter.of(context)
@@ -354,7 +355,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                             return;
                                           }
 
-                                          navigate = () => context.goNamedAuth(
+                                          _navigate = () => context.goNamedAuth(
                                               'S2_HomePage', context.mounted);
                                         } else {
                                           HapticFeedback.vibrate();
@@ -362,14 +363,14 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                             context: context,
                                             builder: (alertDialogContext) {
                                               return AlertDialog(
-                                                title: const Text(
+                                                title: Text(
                                                     'You need to accept the terms of use to continue'),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext),
-                                                    child: const Text('Ok'),
+                                                    child: Text('Ok'),
                                                   ),
                                                 ],
                                               );
@@ -377,16 +378,16 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                           );
                                         }
 
-                                        navigate();
+                                        _navigate();
                                       },
                                       text: 'Login',
                                       options: FFButtonOptions(
                                         width: 230.0,
                                         height: 42.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .secondary,
@@ -401,7 +402,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                               fontWeight: FontWeight.normal,
                                             ),
                                         elevation: 1.0,
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -411,7 +412,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 16.0, 0.0, 0.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
@@ -420,7 +421,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                         context.pushNamed(
                                           'forgotpassword',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .bottomToTop,
@@ -434,10 +435,10 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                       options: FFButtonOptions(
                                         width: 170.0,
                                         height: 40.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
@@ -450,7 +451,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                                       .primaryText,
                                             ),
                                         elevation: 0.0,
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -462,14 +463,14 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 44.0, 0.0, 44.0, 0.0),
                             child: SingleChildScrollView(
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.emailAddressController,
@@ -496,7 +497,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                               fontWeight: FontWeight.normal,
                                             ),
                                         enabledBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Color(0x00000000),
                                             width: 1.0,
                                           ),
@@ -534,14 +535,14 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                         fillColor: FlutterFlowTheme.of(context)
                                             .alternate,
                                         contentPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 20.0, 24.0, 20.0, 24.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Lexend Deca',
-                                            color: const Color(0xFF14181B),
+                                            color: Color(0xFF14181B),
                                             fontSize: 14.0,
                                             fontWeight: FontWeight.normal,
                                           ),
@@ -553,7 +554,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.passwordController,
@@ -580,7 +581,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                               fontWeight: FontWeight.normal,
                                             ),
                                         enabledBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Color(0x00000000),
                                             width: 1.0,
                                           ),
@@ -618,7 +619,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                         fillColor: FlutterFlowTheme.of(context)
                                             .alternate,
                                         contentPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 20.0, 24.0, 20.0, 24.0),
                                         suffixIcon: InkWell(
                                           onTap: () => setState(
@@ -631,7 +632,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                             _model.passwordVisibility
                                                 ? Icons.visibility_outlined
                                                 : Icons.visibility_off_outlined,
-                                            color: const Color(0xFF95A1AC),
+                                            color: Color(0xFF95A1AC),
                                             size: 20.0,
                                           ),
                                         ),
@@ -640,7 +641,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Lexend Deca',
-                                            color: const Color(0xFF14181B),
+                                            color: Color(0xFF14181B),
                                             fontSize: 14.0,
                                             fontWeight: FontWeight.normal,
                                           ),
@@ -652,7 +653,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 0.0),
                                     child: TextFormField(
                                       controller:
@@ -682,7 +683,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                               fontWeight: FontWeight.normal,
                                             ),
                                         enabledBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Color(0x00000000),
                                             width: 1.0,
                                           ),
@@ -720,7 +721,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                         fillColor: FlutterFlowTheme.of(context)
                                             .alternate,
                                         contentPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 20.0, 24.0, 20.0, 24.0),
                                         suffixIcon: InkWell(
                                           onTap: () => setState(
@@ -735,7 +736,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                             _model.passwordConfirmVisibility
                                                 ? Icons.visibility_outlined
                                                 : Icons.visibility_off_outlined,
-                                            color: const Color(0xFF95A1AC),
+                                            color: Color(0xFF95A1AC),
                                             size: 20.0,
                                           ),
                                         ),
@@ -744,7 +745,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Lexend Deca',
-                                            color: const Color(0xFF14181B),
+                                            color: Color(0xFF14181B),
                                             fontSize: 14.0,
                                             fontWeight: FontWeight.normal,
                                           ),
@@ -756,11 +757,11 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 24.0, 0.0, 0.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
-                                        Function() navigate = () {};
+                                        Function() _navigate = () {};
                                         HapticFeedback.selectionClick();
                                         if (_model.terms) {
                                           GoRouter.of(context)
@@ -770,7 +771,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                                   .text) {
                                             ScaffoldMessenger.of(context)
                                                 .showSnackBar(
-                                              const SnackBar(
+                                              SnackBar(
                                                 content: Text(
                                                   'Passwords don\'t match!',
                                                 ),
@@ -797,7 +798,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                                     getCurrentTimestamp,
                                               ));
 
-                                          navigate = () => context.goNamedAuth(
+                                          _navigate = () => context.goNamedAuth(
                                               'S2_HomePage', context.mounted);
                                         } else {
                                           HapticFeedback.vibrate();
@@ -805,14 +806,14 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                             context: context,
                                             builder: (alertDialogContext) {
                                               return AlertDialog(
-                                                title: const Text(
+                                                title: Text(
                                                     'You need to accept the terms of use to continue'),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext),
-                                                    child: const Text('Ok'),
+                                                    child: Text('Ok'),
                                                   ),
                                                 ],
                                               );
@@ -820,16 +821,16 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                           );
                                         }
 
-                                        navigate();
+                                        _navigate();
                                       },
                                       text: 'Create Account',
                                       options: FFButtonOptions(
                                         width: 230.0,
                                         height: 42.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .secondary,
@@ -844,7 +845,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                               fontWeight: FontWeight.normal,
                                             ),
                                         elevation: 1.0,
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Colors.transparent,
                                           width: 1.0,
                                         ),
@@ -864,7 +865,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -872,7 +873,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                     Expanded(
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                         child: Text(
                           'Or use a social account to login',
                           textAlign: TextAlign.center,
@@ -884,14 +885,14 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 8.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 8.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     FFButtonWidget(
                       onPressed: () async {
-                        Function() navigate = () {};
+                        Function() _navigate = () {};
                         HapticFeedback.selectionClick();
                         if (_model.terms) {
                           GoRouter.of(context).prepareAuthEvent();
@@ -900,7 +901,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                           if (user == null) {
                             return;
                           }
-                          navigate = () => context.goNamedAuth(
+                          _navigate = () => context.goNamedAuth(
                               'S2_HomePage', context.mounted);
                         } else {
                           HapticFeedback.vibrate();
@@ -908,13 +909,13 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                             context: context,
                             builder: (alertDialogContext) {
                               return AlertDialog(
-                                title: const Text(
+                                title: Text(
                                     'You need to accept the terms of use to continue'),
                                 actions: [
                                   TextButton(
                                     onPressed: () =>
                                         Navigator.pop(alertDialogContext),
-                                    child: const Text('Ok'),
+                                    child: Text('Ok'),
                                   ),
                                 ],
                               );
@@ -922,7 +923,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                           );
                         }
 
-                        navigate();
+                        _navigate();
                       },
                       text: '',
                       icon: FaIcon(
@@ -932,9 +933,9 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                       options: FFButtonOptions(
                         height: 50.0,
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         textStyle: FlutterFlowTheme.of(context)
                             .titleSmall
@@ -942,7 +943,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                               fontFamily: 'Urbanist',
                               color: FlutterFlowTheme.of(context).primaryText,
                             ),
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),
@@ -953,7 +954,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                         ? Container()
                         : FFButtonWidget(
                             onPressed: () async {
-                              Function() navigate = () {};
+                              Function() _navigate = () {};
                               HapticFeedback.selectionClick();
                               if (_model.terms) {
                                 GoRouter.of(context).prepareAuthEvent();
@@ -962,7 +963,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                 if (user == null) {
                                   return;
                                 }
-                                navigate = () => context.goNamedAuth(
+                                _navigate = () => context.goNamedAuth(
                                     'S2_HomePage', context.mounted);
                               } else {
                                 HapticFeedback.vibrate();
@@ -970,13 +971,13 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                   context: context,
                                   builder: (alertDialogContext) {
                                     return AlertDialog(
-                                      title: const Text(
+                                      title: Text(
                                           'You need to accept the terms of use to continue'),
                                       actions: [
                                         TextButton(
                                           onPressed: () =>
                                               Navigator.pop(alertDialogContext),
-                                          child: const Text('Ok'),
+                                          child: Text('Ok'),
                                         ),
                                       ],
                                     );
@@ -984,7 +985,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                 );
                               }
 
-                              navigate();
+                              _navigate();
                             },
                             text: '',
                             icon: FaIcon(
@@ -993,9 +994,9 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                             ),
                             options: FFButtonOptions(
                               height: 50.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 0.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
@@ -1006,7 +1007,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                   ),
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
@@ -1015,7 +1016,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                           ),
                     FFButtonWidget(
                       onPressed: () async {
-                        Function() navigate = () {};
+                        Function() _navigate = () {};
                         HapticFeedback.selectionClick();
                         if (_model.terms) {
                           GoRouter.of(context).prepareAuthEvent();
@@ -1024,7 +1025,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                           if (user == null) {
                             return;
                           }
-                          navigate = () => context.goNamedAuth(
+                          _navigate = () => context.goNamedAuth(
                               'S2_HomePage', context.mounted);
                         } else {
                           HapticFeedback.vibrate();
@@ -1032,13 +1033,13 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                             context: context,
                             builder: (alertDialogContext) {
                               return AlertDialog(
-                                title: const Text(
+                                title: Text(
                                     'You need to accept the terms of use to continue'),
                                 actions: [
                                   TextButton(
                                     onPressed: () =>
                                         Navigator.pop(alertDialogContext),
-                                    child: const Text('Ok'),
+                                    child: Text('Ok'),
                                   ),
                                 ],
                               );
@@ -1046,7 +1047,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                           );
                         }
 
-                        navigate();
+                        _navigate();
                       },
                       text: '',
                       icon: FaIcon(
@@ -1056,9 +1057,9 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                       options: FFButtonOptions(
                         height: 50.0,
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         textStyle: FlutterFlowTheme.of(context)
                             .titleSmall
@@ -1066,7 +1067,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                               fontFamily: 'Urbanist',
                               color: FlutterFlowTheme.of(context).primaryText,
                             ),
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),
@@ -1128,7 +1129,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'I agree with ',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1139,7 +1140,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         context.pushNamed('event_images');
@@ -1147,9 +1148,9 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                       text: 'terms of use',
                       options: FFButtonOptions(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(2.0, 4.0, 4.0, 4.0),
+                            EdgeInsetsDirectional.fromSTEB(2.0, 4.0, 4.0, 4.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         textStyle: FlutterFlowTheme.of(context)
                             .titleSmall
@@ -1160,7 +1161,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                               fontWeight: FontWeight.w600,
                             ),
                         elevation: 0.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),

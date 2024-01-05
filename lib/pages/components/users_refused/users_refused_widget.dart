@@ -4,17 +4,21 @@ import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'users_refused_model.dart';
 export 'users_refused_model.dart';
 
 class UsersRefusedWidget extends StatefulWidget {
   const UsersRefusedWidget({
-    super.key,
+    Key? key,
     this.user,
     required this.event,
-  });
+  }) : super(key: key);
 
   final UsersRecord? user;
   final PropertiesRecord? event;
@@ -111,7 +115,7 @@ class _UsersRefusedWidgetState extends State<UsersRefusedWidget> {
                               width: 30.0,
                               height: 30.0,
                               clipBehavior: Clip.antiAlias,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                               ),
                               child: Image.network(
@@ -126,7 +130,7 @@ class _UsersRefusedWidgetState extends State<UsersRefusedWidget> {
                     Expanded(
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                         child: Text(
                           valueOrDefault<String>(
                             widget.user?.displayName != null &&

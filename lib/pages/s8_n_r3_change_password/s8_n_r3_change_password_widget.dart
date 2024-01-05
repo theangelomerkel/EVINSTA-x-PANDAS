@@ -7,15 +7,16 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 's8_n_r3_change_password_model.dart';
 export 's8_n_r3_change_password_model.dart';
 
 class S8NR3ChangePasswordWidget extends StatefulWidget {
   const S8NR3ChangePasswordWidget({
-    super.key,
+    Key? key,
     this.email,
-  });
+  }) : super(key: key);
 
   final String? email;
 
@@ -105,7 +106,7 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
               'Change Password',
               style: FlutterFlowTheme.of(context).headlineMedium,
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 0.0,
           ),
@@ -116,7 +117,7 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
               children: [
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 20.0, 12.0),
+                      EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 20.0, 12.0),
                   child: TextFormField(
                     controller: _model.emailAddressController,
                     focusNode: _model.emailAddressFocusNode,
@@ -134,21 +135,21 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Color(0x00000000),
                           width: 2.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       errorBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Color(0x00000000),
                           width: 2.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       focusedErrorBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Color(0x00000000),
                           width: 2.0,
                         ),
@@ -158,7 +159,7 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
                       fillColor:
                           FlutterFlowTheme.of(context).secondaryBackground,
                       contentPadding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                     ),
                     style: FlutterFlowTheme.of(context).titleSmall,
                     validator: _model.emailAddressControllerValidator
@@ -166,7 +167,7 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -180,15 +181,15 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.05),
+                  alignment: AlignmentDirectional(0.0, 0.05),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         if (_model.emailAddressController.text.isEmpty) {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
+                            SnackBar(
                               content: Text(
                                 'Email required!',
                               ),
@@ -212,10 +213,10 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
                         width: 340.0,
                         height: 60.0,
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: const Color(0xFFF35C29),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: Color(0xFFF35C29),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Lexend Deca',
@@ -224,7 +225,7 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
                                   fontWeight: FontWeight.normal,
                                 ),
                         elevation: 2.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),
@@ -233,7 +234,7 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
                     ),
                   ),
                 ),
-              ].divide(const SizedBox(height: 16.0)),
+              ].divide(SizedBox(height: 16.0)),
             ),
           ),
         );

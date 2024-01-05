@@ -1,16 +1,19 @@
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'amenitity_indicator_model.dart';
 export 'amenitity_indicator_model.dart';
 
 class AmenitityIndicatorWidget extends StatefulWidget {
   const AmenitityIndicatorWidget({
-    super.key,
+    Key? key,
     this.icon,
     this.background,
     this.borderColor,
-  });
+  }) : super(key: key);
 
   final Widget? icon;
   final Color? background;
@@ -50,7 +53,7 @@ class _AmenitityIndicatorWidgetState extends State<AmenitityIndicatorWidget> {
     context.watch<FFAppState>();
 
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Container(
         width: 44.0,
         height: 44.0,
@@ -62,7 +65,7 @@ class _AmenitityIndicatorWidgetState extends State<AmenitityIndicatorWidget> {
             width: 2.0,
           ),
         ),
-        alignment: const AlignmentDirectional(0.0, 0.0),
+        alignment: AlignmentDirectional(0.0, 0.0),
         child: widget.icon!,
       ),
     );

@@ -3,21 +3,24 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'user_list_model.dart';
 export 'user_list_model.dart';
 
 class UserListWidget extends StatefulWidget {
   const UserListWidget({
-    super.key,
+    Key? key,
     this.parameter6,
     this.parameter1,
     this.parameter2,
     this.parameter3,
     this.parameter4,
     this.parameter5,
-  });
+  }) : super(key: key);
 
   final DocumentReference? parameter6;
   final String? parameter1;
@@ -59,7 +62,7 @@ class _UserListWidgetState extends State<UserListWidget> {
     context.watch<FFAppState>();
 
     return Align(
-      alignment: const AlignmentDirectional(-1.0, 0.0),
+      alignment: AlignmentDirectional(-1.0, 0.0),
       child: FutureBuilder<UsersRecord>(
         future: UsersRecord.getDocumentOnce(widget.parameter6!),
         builder: (context, snapshot) {
@@ -78,14 +81,14 @@ class _UserListWidgetState extends State<UserListWidget> {
             );
           }
           final stackUsersRecord = snapshot.data!;
-          return SizedBox(
+          return Container(
             width: 45.0,
             height: 45.0,
             child: Stack(
-              alignment: const AlignmentDirectional(1.0, -1.0),
+              alignment: AlignmentDirectional(1.0, -1.0),
               children: [
                 Align(
-                  alignment: const AlignmentDirectional(-1.0, 1.0),
+                  alignment: AlignmentDirectional(-1.0, 1.0),
                   child: Container(
                     width: 32.0,
                     height: 32.0,
@@ -100,12 +103,13 @@ class _UserListWidgetState extends State<UserListWidget> {
                       shape: BoxShape.circle,
                     ),
                     child: Visibility(
-                      visible: stackUsersRecord.displayName != '',
+                      visible: stackUsersRecord.displayName != null &&
+                          stackUsersRecord.displayName != '',
                       child: Container(
                         width: 32.0,
                         height: 32.0,
                         clipBehavior: Clip.antiAlias,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           shape: BoxShape.circle,
                         ),
                         child: Image.network(
@@ -123,7 +127,7 @@ class _UserListWidgetState extends State<UserListWidget> {
                 ),
                 if (widget.parameter3 == currentUserReference)
                   Align(
-                    alignment: const AlignmentDirectional(1.0, -1.0),
+                    alignment: AlignmentDirectional(1.0, -1.0),
                     child: FlutterFlowIconButton(
                       borderColor: Colors.transparent,
                       borderRadius: 20.0,

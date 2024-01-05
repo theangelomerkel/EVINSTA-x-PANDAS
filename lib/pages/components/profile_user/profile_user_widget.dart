@@ -1,11 +1,16 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'profile_user_model.dart';
@@ -13,9 +18,9 @@ export 'profile_user_model.dart';
 
 class ProfileUserWidget extends StatefulWidget {
   const ProfileUserWidget({
-    super.key,
+    Key? key,
     required this.user,
-  });
+  }) : super(key: key);
 
   final DocumentReference? user;
 
@@ -53,7 +58,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
     context.watch<FFAppState>();
 
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: InkWell(
         splashColor: Colors.transparent,
         focusColor: Colors.transparent,
@@ -84,7 +89,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(16.0),
               child: StreamBuilder<UsersRecord>(
                 stream: UsersRecord.getDocument(widget.user!),
                 builder: (context, snapshot) {
@@ -110,7 +115,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(15.0),
+                      padding: EdgeInsets.all(15.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -135,9 +140,10 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                 ),
                                 child: Visibility(
                                   visible:
-                                      containerUsersRecord.photoUrl != '',
+                                      containerUsersRecord.photoUrl != null &&
+                                          containerUsersRecord.photoUrl != '',
                                   child: Padding(
-                                    padding: const EdgeInsets.all(2.0),
+                                    padding: EdgeInsets.all(2.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(60.0),
                                       child: Image.network(
@@ -152,7 +158,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -174,10 +180,11 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                               fontWeight: FontWeight.w600,
                                             ),
                                       ),
-                                      if (containerUsersRecord.email != '')
+                                      if (containerUsersRecord.email != null &&
+                                          containerUsersRecord.email != '')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -197,6 +204,8 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                           ),
                                         ),
                                       if (containerUsersRecord.phoneNumber !=
+                                              null &&
+                                          containerUsersRecord.phoneNumber !=
                                               '')
                                         FFButtonWidget(
                                           onPressed: () async {
@@ -206,7 +215,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                       builder:
                                                           (alertDialogContext) {
                                                         return AlertDialog(
-                                                          title: const Text(
+                                                          title: Text(
                                                               'Choose an action'),
                                                           actions: [
                                                             TextButton(
@@ -215,7 +224,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                                       alertDialogContext,
                                                                       false),
                                                               child:
-                                                                  const Text('Copy'),
+                                                                  Text('Copy'),
                                                             ),
                                                             TextButton(
                                                               onPressed: () =>
@@ -223,7 +232,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                                       alertDialogContext,
                                                                       true),
                                                               child:
-                                                                  const Text('Phone'),
+                                                                  Text('Phone'),
                                                             ),
                                                           ],
                                                         );
@@ -253,7 +262,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                               .primaryText,
                                                     ),
                                                   ),
-                                                  duration: const Duration(
+                                                  duration: Duration(
                                                       milliseconds: 4000),
                                                   backgroundColor:
                                                       FlutterFlowTheme.of(
@@ -274,10 +283,10 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
@@ -293,7 +302,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                             elevation: 0.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -310,14 +319,14 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                           if (currentUserReference !=
                               containerUsersRecord.reference)
                             Align(
-                              alignment: const AlignmentDirectional(1.0, 1.0),
+                              alignment: AlignmentDirectional(1.0, 1.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => FFButtonWidget(
                                   onPressed: () {
                                     print('Button pressed ...');
                                   },
                                   text: (currentUserDocument?.friends
-                                                  .toList() ??
+                                                  ?.toList() ??
                                               [])
                                           .contains(
                                               containerUsersRecord.reference)
@@ -325,12 +334,12 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                       : 'Add to friends',
                                   options: FFButtonOptions(
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: valueOrDefault<Color>(
-                                      (currentUserDocument?.friends.toList() ??
+                                      (currentUserDocument?.friends?.toList() ??
                                                   [])
                                               .contains(containerUsersRecord
                                                   .reference)
@@ -349,7 +358,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                           fontWeight: FontWeight.w500,
                                         ),
                                     elevation: 1.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -359,7 +368,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                               ),
                             ),
                           Align(
-                            alignment: const AlignmentDirectional(-1.0, 0.0),
+                            alignment: AlignmentDirectional(-1.0, 0.0),
                             child: FutureBuilder<List<PropertiesRecord>>(
                               future: queryPropertiesRecordOnce(
                                 queryBuilder: (propertiesRecord) =>
@@ -398,7 +407,8 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                   ),
                                   child: Visibility(
                                     visible:
-                                        containerPropertiesRecordList.isNotEmpty,
+                                        containerPropertiesRecordList.length >
+                                            0,
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       crossAxisAlignment:
@@ -406,7 +416,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 12.0, 0.0, 8.0),
                                           child: Text(
                                             'Events',
@@ -478,7 +488,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .secondaryBackground,
-                                                            boxShadow: const [
+                                                            boxShadow: [
                                                               BoxShadow(
                                                                 blurRadius: 8.0,
                                                                 color: Color(
@@ -529,11 +539,11 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 -1.0, -1.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       2.0,
                                                                       4.0,
@@ -557,7 +567,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                     ],
                                                   );
                                                 }).divide(
-                                                        const SizedBox(width: 12.0)),
+                                                        SizedBox(width: 12.0)),
                                               ),
                                             );
                                           },

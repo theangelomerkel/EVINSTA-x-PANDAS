@@ -2,15 +2,17 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'eventlist_model.dart';
 export 'eventlist_model.dart';
 
 class EventlistWidget extends StatefulWidget {
   const EventlistWidget({
-    super.key,
+    Key? key,
     this.parameter1,
-  });
+  }) : super(key: key);
 
   final bool? parameter1;
 
@@ -71,13 +73,13 @@ class _EventlistWidgetState extends State<EventlistWidget> {
             ) as List)
                 .map<String>((s) => s.toString())
                 .toList()
-                .contains((ResidentCall.eventname(
+                ?.contains((ResidentCall.eventname(
                   textResidentResponse.jsonBody,
                 ) as List)
                     .map<String>((s) => s.toString())
                     .toList()
-                    .first)
-                .toString(),
+                    ?.first)
+                ?.toString(),
             'test event',
           ),
           style: FlutterFlowTheme.of(context).bodyMedium,

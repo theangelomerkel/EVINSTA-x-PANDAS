@@ -1,6 +1,14 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'answer_widget.dart' show AnswerWidget;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class AnswerModel extends FlutterFlowModel<AnswerWidget> {
   ///  State fields for stateful widgets in this component.
@@ -15,7 +23,7 @@ class AnswerModel extends FlutterFlowModel<AnswerWidget> {
       return 'Field is required';
     }
 
-    if (val.isEmpty) {
+    if (val.length < 1) {
       return 'Minumum 1 symbols';
     }
 
@@ -24,12 +32,10 @@ class AnswerModel extends FlutterFlowModel<AnswerWidget> {
 
   /// Initialization and disposal methods.
 
-  @override
   void initState(BuildContext context) {
     textControllerValidator = _textControllerValidator;
   }
 
-  @override
   void dispose() {
     textFieldFocusNode?.dispose();
     textController?.dispose();

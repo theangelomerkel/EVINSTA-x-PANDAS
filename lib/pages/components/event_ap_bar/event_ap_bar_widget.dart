@@ -8,18 +8,23 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/components/review/review_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'event_ap_bar_model.dart';
 export 'event_ap_bar_model.dart';
 
 class EventApBarWidget extends StatefulWidget {
   const EventApBarWidget({
-    super.key,
+    Key? key,
     required this.event,
-  });
+  }) : super(key: key);
 
   final PropertiesRecord? event;
 
@@ -46,8 +51,8 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: const Offset(0.0, 50.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 50.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -111,13 +116,13 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                 width: MediaQuery.sizeOf(context).width * 0.9,
                 height: 320.0,
                 decoration: BoxDecoration(
-                  color: const Color(0xFFDBE2E7),
+                  color: Color(0xFFDBE2E7),
                   borderRadius: BorderRadius.circular(16.0),
                 ),
                 child: Stack(
                   children: [
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -130,8 +135,8 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                               type: PageTransitionType.fade,
                               child: FlutterFlowExpandedImageView(
                                 image: CachedNetworkImage(
-                                  fadeInDuration: const Duration(milliseconds: 500),
-                                  fadeOutDuration: const Duration(milliseconds: 500),
+                                  fadeInDuration: Duration(milliseconds: 500),
+                                  fadeOutDuration: Duration(milliseconds: 500),
                                   imageUrl: '',
                                   fit: BoxFit.contain,
                                 ),
@@ -148,8 +153,8 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(16.0),
                             child: CachedNetworkImage(
-                              fadeInDuration: const Duration(milliseconds: 500),
-                              fadeOutDuration: const Duration(milliseconds: 500),
+                              fadeInDuration: Duration(milliseconds: 500),
+                              fadeOutDuration: Duration(milliseconds: 500),
                               imageUrl: '',
                               width: double.infinity,
                               height: double.infinity,
@@ -160,7 +165,7 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(16.0),
+                      padding: EdgeInsets.all(16.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -210,9 +215,9 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(1.0, 0.0),
+                alignment: AlignmentDirectional(1.0, 0.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -225,7 +230,8 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                         icon: Icon(
                           Icons.paypal,
                           color: valueOrDefault<Color>(
-                            columnPropertiesRecord.paypalURL != ''
+                            columnPropertiesRecord.paypalURL != null &&
+                                    columnPropertiesRecord.paypalURL != ''
                                 ? FlutterFlowTheme.of(context).primary
                                 : FlutterFlowTheme.of(context).secondaryText,
                             FlutterFlowTheme.of(context).secondaryText,
@@ -233,7 +239,8 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                           size: 24.0,
                         ),
                         onPressed: () async {
-                          if (columnPropertiesRecord.paypalURL != '') {
+                          if (columnPropertiesRecord.paypalURL != null &&
+                              columnPropertiesRecord.paypalURL != '') {
                             await launchURL(columnPropertiesRecord.paypalURL);
                           }
                         },
@@ -260,7 +267,8 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                         icon: FaIcon(
                           FontAwesomeIcons.spotify,
                           color: valueOrDefault<Color>(
-                            columnPropertiesRecord.spotifyURL != ''
+                            columnPropertiesRecord.spotifyURL != null &&
+                                    columnPropertiesRecord.spotifyURL != ''
                                 ? FlutterFlowTheme.of(context).primary
                                 : FlutterFlowTheme.of(context).secondaryText,
                             FlutterFlowTheme.of(context).primary,
@@ -268,24 +276,25 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                           size: 24.0,
                         ),
                         onPressed: () async {
-                          if (columnPropertiesRecord.spotifyURL != '') {
+                          if (columnPropertiesRecord.spotifyURL != null &&
+                              columnPropertiesRecord.spotifyURL != '') {
                             await launchURL(columnPropertiesRecord.spotifyURL);
                           }
                         },
                       ),
-                    ].divide(const SizedBox(width: 50.0)),
+                    ].divide(SizedBox(width: 50.0)),
                   ),
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Text(
                   columnPropertiesRecord.propertyName,
                   style: FlutterFlowTheme.of(context).displaySmall,
                 ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation']!),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                 child: Text(
                   columnPropertiesRecord.propertyDescription,
                   style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -297,7 +306,7 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 8.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 8.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -327,7 +336,7 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                         List<ReviewsRecord> containerReviewsRecordList =
                             snapshot.data!;
                         return Container(
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                         );
                       },
                     ),
@@ -346,9 +355,9 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                     options: FFButtonOptions(
                       height: 40.0,
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -356,7 +365,7 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                                 color: Colors.white,
                               ),
                       elevation: 3.0,
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Colors.transparent,
                         width: 1.0,
                       ),
@@ -371,9 +380,9 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                     options: FFButtonOptions(
                       height: 40.0,
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).secondary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -381,7 +390,7 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                                 color: Colors.white,
                               ),
                       elevation: 3.0,
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Colors.transparent,
                         width: 1.0,
                       ),
@@ -391,7 +400,7 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                 ],
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                 child: FutureBuilder<List<ReviewsRecord>>(
                   future: queryReviewsRecordOnce(
                     queryBuilder: (reviewsRecord) => reviewsRecord
@@ -441,13 +450,13 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                   !columnPropertiesRecord.guestRef
                       .contains(currentUserReference))
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(-0.95, 0.9),
+                        alignment: AlignmentDirectional(-0.95, 0.9),
                         child: FFButtonWidget(
                           onPressed: () {
                             print('Button pressed ...');
@@ -455,9 +464,9 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                           text: 'Decline',
                           options: FFButtonOptions(
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).secondary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -467,7 +476,7 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                                   color: Colors.white,
                                 ),
                             elevation: 3.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -479,7 +488,7 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.85, 0.77),
+                            alignment: AlignmentDirectional(0.85, 0.77),
                             child: FFButtonWidget(
                               onPressed: () async {
                                 await columnPropertiesRecord.reference.update({
@@ -494,9 +503,9 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                               text: 'Accept',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -506,7 +515,7 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                                       color: Colors.white,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),

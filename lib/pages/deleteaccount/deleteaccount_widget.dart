@@ -2,16 +2,18 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'deleteaccount_model.dart';
 export 'deleteaccount_model.dart';
 
 class DeleteaccountWidget extends StatefulWidget {
-  const DeleteaccountWidget({super.key});
+  const DeleteaccountWidget({Key? key}) : super(key: key);
 
   @override
   _DeleteaccountWidgetState createState() => _DeleteaccountWidgetState();
@@ -70,7 +72,7 @@ class _DeleteaccountWidgetState extends State<DeleteaccountWidget> {
             context.safePop();
           },
         ),
-        actions: const [],
+        actions: [],
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -81,11 +83,11 @@ class _DeleteaccountWidgetState extends State<DeleteaccountWidget> {
             children: [
               Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Color(0xFFF35C29),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: EdgeInsets.all(20.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -99,7 +101,7 @@ class _DeleteaccountWidgetState extends State<DeleteaccountWidget> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(2.0),
+                          padding: EdgeInsets.all(2.0),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.asset(
@@ -116,7 +118,7 @@ class _DeleteaccountWidgetState extends State<DeleteaccountWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -139,14 +141,14 @@ class _DeleteaccountWidgetState extends State<DeleteaccountWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(12.0),
+                          padding: EdgeInsets.all(12.0),
                           child: AutoSizeText(
                             '\nAccount Deletion\n\nPlease note, deleting your account is irreversible:\nDeletion will permanently remove all data and may take up to 30 days. For queries, contact evinsta@gmail.com.',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Lexend Deca',
-                                  color: const Color(0xFF090F13),
+                                  color: Color(0xFF090F13),
                                   fontSize: 14.0,
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -158,7 +160,7 @@ class _DeleteaccountWidgetState extends State<DeleteaccountWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -197,7 +199,7 @@ class _DeleteaccountWidgetState extends State<DeleteaccountWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(12.0),
+                            padding: EdgeInsets.all(12.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -223,7 +225,7 @@ class _DeleteaccountWidgetState extends State<DeleteaccountWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Lexend Deca',
-                                          color: const Color(0xFF090F13),
+                                          color: Color(0xFF090F13),
                                           fontSize: 14.0,
                                           fontWeight: FontWeight.normal,
                                         ),

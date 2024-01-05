@@ -1,20 +1,24 @@
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 's3_event_data_intro_page_model.dart';
 export 's3_event_data_intro_page_model.dart';
 
 class S3EventDataIntroPageWidget extends StatefulWidget {
   const S3EventDataIntroPageWidget({
-    super.key,
+    Key? key,
     required this.doc,
-  });
+  }) : super(key: key);
 
   final PropertiesRecord? doc;
 
@@ -48,7 +52,7 @@ class _S3EventDataIntroPageWidgetState extends State<S3EventDataIntroPageWidget>
         }.withoutNulls,
         extra: <String, dynamic>{
           'pr': widget.doc,
-          kTransitionInfoKey: const TransitionInfo(
+          kTransitionInfoKey: TransitionInfo(
             hasTransition: true,
             transitionType: PageTransitionType.rightToLeft,
             duration: Duration(milliseconds: 500),
@@ -103,20 +107,20 @@ class _S3EventDataIntroPageWidgetState extends State<S3EventDataIntroPageWidget>
             ),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 48.0, 16.0, 34.0),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 48.0, 16.0, 34.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Align(
-                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                  alignment: AlignmentDirectional(-1.0, 0.0),
                   child: FlutterFlowIconButton(
                     borderColor: Colors.transparent,
                     borderRadius: 30.0,
                     borderWidth: 1.0,
                     buttonSize: 40.0,
-                    fillColor: const Color(0x33090F13),
+                    fillColor: Color(0x33090F13),
                     icon: Icon(
                       Icons.arrow_back_rounded,
                       color: FlutterFlowTheme.of(context).primaryBtnText,
@@ -148,7 +152,7 @@ class _S3EventDataIntroPageWidgetState extends State<S3EventDataIntroPageWidget>
                         }.withoutNulls,
                         extra: <String, dynamic>{
                           'pr': widget.doc,
-                          kTransitionInfoKey: const TransitionInfo(
+                          kTransitionInfoKey: TransitionInfo(
                             hasTransition: true,
                             transitionType: PageTransitionType.fade,
                             duration: Duration(milliseconds: 1000),
@@ -178,7 +182,7 @@ class _S3EventDataIntroPageWidgetState extends State<S3EventDataIntroPageWidget>
                         if (widget.doc?.propertyDescription != null &&
                             widget.doc?.propertyDescription != '')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 4.0),
                             child: Text(
                               widget.doc!.propertyDescription,
@@ -191,7 +195,7 @@ class _S3EventDataIntroPageWidgetState extends State<S3EventDataIntroPageWidget>
                             ),
                           ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -201,13 +205,13 @@ class _S3EventDataIntroPageWidgetState extends State<S3EventDataIntroPageWidget>
                                   widget.doc?.propertyDescription != '')
                                 Expanded(
                                   child: Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 6.0, 0.0),
                                           child: Icon(
                                             Icons.location_on,
@@ -236,7 +240,7 @@ class _S3EventDataIntroPageWidgetState extends State<S3EventDataIntroPageWidget>
                                   ),
                                 ),
                               Align(
-                                alignment: const AlignmentDirectional(1.0, 0.0),
+                                alignment: AlignmentDirectional(1.0, 0.0),
                                 child: Text(
                                   dateTimeFormat(
                                       'MMMMEEEEd', widget.doc!.date!),

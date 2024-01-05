@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -5,16 +6,18 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 's9_n_r3_create_article_model.dart';
 export 's9_n_r3_create_article_model.dart';
 
 class S9NR3CreateArticleWidget extends StatefulWidget {
-  const S9NR3CreateArticleWidget({super.key});
+  const S9NR3CreateArticleWidget({Key? key}) : super(key: key);
 
   @override
   _S9NR3CreateArticleWidgetState createState() =>
@@ -94,14 +97,14 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                 fontWeight: FontWeight.w600,
               ),
         ),
-        actions: const [],
+        actions: [],
         centerTitle: false,
         elevation: 0.0,
       ),
       body: SafeArea(
         top: true,
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 34.0),
+          padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 34.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -114,9 +117,9 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          alignment: AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 12.0),
                             child: Text(
                               'Main image*',
@@ -136,7 +139,7 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              if (_model.imgsCreate.isNotEmpty)
+                              if (_model.imgsCreate.length > 0)
                                 Builder(
                                   builder: (context) {
                                     final imgs = _model.imgsCreate
@@ -154,7 +157,7 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                                                   0.7,
                                           height: 160.0,
                                           decoration: BoxDecoration(
-                                            color: const Color(0x66450B0B),
+                                            color: Color(0x66450B0B),
                                             image: DecorationImage(
                                               fit: BoxFit.cover,
                                               image: Image.asset(
@@ -166,7 +169,7 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                                           ),
                                           child: Stack(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             children: [
                                               ClipRRect(
                                                 borderRadius:
@@ -185,7 +188,7 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     1.0, -1.0),
                                                 child: FlutterFlowIconButton(
                                                   borderColor:
@@ -218,7 +221,7 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                                             ],
                                           ),
                                         );
-                                      }).divide(const SizedBox(width: 12.0)),
+                                      }).divide(SizedBox(width: 12.0)),
                                     );
                                   },
                                 ),
@@ -298,13 +301,13 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                                   });
                                 },
                               ),
-                            ].divide(const SizedBox(width: 12.0)),
+                            ].divide(SizedBox(width: 12.0)),
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          alignment: AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 0.0),
                             child: Text(
                               'Article title *',
@@ -320,7 +323,7 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 0.0, 0.0),
                           child: TextFormField(
                             controller: _model.propertyNameController,
@@ -365,7 +368,7 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                                 ),
                                 borderRadius: BorderRadius.circular(12.0),
                               ),
-                              contentPadding: const EdgeInsets.all(12.0),
+                              contentPadding: EdgeInsets.all(12.0),
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .headlineSmall
@@ -380,9 +383,9 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          alignment: AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 0.0),
                             child: Text(
                               'Description*',
@@ -398,7 +401,7 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 0.0, 0.0),
                           child: TextFormField(
                             controller: _model.descController,
@@ -443,7 +446,7 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                                 ),
                                 borderRadius: BorderRadius.circular(12.0),
                               ),
-                              contentPadding: const EdgeInsets.all(12.0),
+                              contentPadding: EdgeInsets.all(12.0),
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .headlineSmall
@@ -470,7 +473,8 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                         !_model.formKey.currentState!.validate()) {
                       return;
                     }
-                    if (_model.uploadedFileUrl.isEmpty) {
+                    if (_model.uploadedFileUrl == null ||
+                        _model.uploadedFileUrl.isEmpty) {
                       return;
                     }
 
@@ -495,9 +499,9 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                 options: FFButtonOptions(
                   width: double.infinity,
                   height: 42.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: valueOrDefault<Color>(
                     _model.isDataUploading
                         ? FlutterFlowTheme.of(context).accent3
@@ -509,7 +513,7 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                         color: Colors.white,
                       ),
                   elevation: 3.0,
-                  borderSide: const BorderSide(
+                  borderSide: BorderSide(
                     color: Colors.transparent,
                     width: 1.0,
                   ),

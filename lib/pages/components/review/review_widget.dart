@@ -3,15 +3,17 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'review_model.dart';
 export 'review_model.dart';
 
 class ReviewWidget extends StatefulWidget {
   const ReviewWidget({
-    super.key,
+    Key? key,
     required this.review,
-  });
+  }) : super(key: key);
 
   final ReviewsRecord? review;
 
@@ -57,7 +59,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
         width: double.infinity,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
               blurRadius: 5.0,
               color: Color(0x24090F13),
@@ -67,9 +69,9 @@ class _ReviewWidgetState extends State<ReviewWidget> {
           borderRadius: BorderRadius.circular(16.0),
         ),
         child: Align(
-          alignment: const AlignmentDirectional(0.0, 0.0),
+          alignment: AlignmentDirectional(0.0, 0.0),
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -103,7 +105,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                           width: 50.0,
                           height: 50.0,
                           clipBehavior: Clip.antiAlias,
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             shape: BoxShape.circle,
                           ),
                           child: Image.network(
@@ -118,10 +120,10 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                   },
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                  alignment: AlignmentDirectional(-1.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                     child: AutoSizeText(
                       widget.review!.ratingDescription.maybeHandleOverflow(
                         maxChars: 130,
@@ -129,7 +131,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                       ),
                       style: FlutterFlowTheme.of(context).bodySmall.override(
                             fontFamily: 'Lexend Deca',
-                            color: const Color(0xFF8B97A2),
+                            color: Color(0xFF8B97A2),
                             fontSize: 14.0,
                             fontWeight: FontWeight.normal,
                           ),
@@ -137,7 +139,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 8.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 8.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -146,7 +148,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 0.0, 0.0),
                             child: Text(
                               widget.review!.rating.toString(),

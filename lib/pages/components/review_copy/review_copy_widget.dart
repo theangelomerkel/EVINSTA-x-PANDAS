@@ -6,17 +6,21 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/components/emptyreview/emptyreview_widget.dart';
 import '/pages/components/profile_user/profile_user_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'review_copy_model.dart';
 export 'review_copy_model.dart';
 
 class ReviewCopyWidget extends StatefulWidget {
   const ReviewCopyWidget({
-    super.key,
+    Key? key,
     required this.property,
-  });
+  }) : super(key: key);
 
   final PropertiesRecord? property;
 
@@ -70,9 +74,9 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Align(
-                alignment: const AlignmentDirectional(-1.0, 0.0),
+                alignment: AlignmentDirectional(-1.0, 0.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                   child: StreamBuilder<List<ReviewsRecord>>(
                     stream: queryReviewsRecord(
                       queryBuilder: (reviewsRecord) => reviewsRecord.where(
@@ -98,7 +102,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                       List<ReviewsRecord> textReviewsRecordList =
                           snapshot.data!;
                       return Text(
-                        'Reviews${textReviewsRecordList.isNotEmpty ? ' (${valueOrDefault<String>(
+                        'Reviews${textReviewsRecordList.length > 0 ? ' (${valueOrDefault<String>(
                             textReviewsRecordList.length.toString(),
                             '0',
                           )})' : ' '}',
@@ -140,7 +144,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                   }
                   List<ReviewsRecord> reviewsReviewsRecordList = snapshot.data!;
                   if (reviewsReviewsRecordList.isEmpty) {
-                    return const EmptyreviewWidget();
+                    return EmptyreviewWidget();
                   }
                   return ListView.builder(
                     padding: EdgeInsets.zero,
@@ -178,7 +182,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(1.0, -1.0),
+                                    alignment: AlignmentDirectional(1.0, -1.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -195,21 +199,21 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                     builder:
                                                         (alertDialogContext) {
                                                       return AlertDialog(
-                                                        title: const Text('Delete?'),
+                                                        title: Text('Delete?'),
                                                         actions: [
                                                           TextButton(
                                                             onPressed: () =>
                                                                 Navigator.pop(
                                                                     alertDialogContext,
                                                                     false),
-                                                            child: const Text('No'),
+                                                            child: Text('No'),
                                                           ),
                                                           TextButton(
                                                             onPressed: () =>
                                                                 Navigator.pop(
                                                                     alertDialogContext,
                                                                     true),
-                                                            child: const Text('Yes'),
+                                                            child: Text('Yes'),
                                                           ),
                                                         ],
                                                       );
@@ -227,7 +231,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                     builder:
                                                         (alertDialogContext) {
                                                       return AlertDialog(
-                                                        title: const Text(
+                                                        title: Text(
                                                             'Choose an action'),
                                                         actions: [
                                                           TextButton(
@@ -236,7 +240,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                                     alertDialogContext,
                                                                     false),
                                                             child:
-                                                                const Text('Profile'),
+                                                                Text('Profile'),
                                                           ),
                                                           TextButton(
                                                             onPressed: () =>
@@ -244,7 +248,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                                     alertDialogContext,
                                                                     true),
                                                             child:
-                                                                const Text('Answer'),
+                                                                Text('Answer'),
                                                           ),
                                                         ],
                                                       );
@@ -262,7 +266,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                               _model.write!.position
                                                   .maxScrollExtent,
                                               duration:
-                                                  const Duration(milliseconds: 200),
+                                                  Duration(milliseconds: 200),
                                               curve: Curves.ease,
                                             );
                                           } else {
@@ -296,7 +300,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                         ),
                                         child: Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Text(
                                             '...',
                                             style: FlutterFlowTheme.of(context)
@@ -327,7 +331,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                 context: context,
                                                 builder: (alertDialogContext) {
                                                   return AlertDialog(
-                                                    title: const Text(
+                                                    title: Text(
                                                         'Choose an action'),
                                                     actions: [
                                                       TextButton(
@@ -335,14 +339,14 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                             Navigator.pop(
                                                                 alertDialogContext,
                                                                 false),
-                                                        child: const Text('Profile'),
+                                                        child: Text('Profile'),
                                                       ),
                                                       TextButton(
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext,
                                                                 true),
-                                                        child: const Text('Answer'),
+                                                        child: Text('Answer'),
                                                       ),
                                                     ],
                                                   );
@@ -358,7 +362,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                         await _model.write?.animateTo(
                                           _model
                                               .write!.position.maxScrollExtent,
-                                          duration: const Duration(milliseconds: 200),
+                                          duration: Duration(milliseconds: 200),
                                           curve: Curves.ease,
                                         );
                                       } else {
@@ -402,7 +406,10 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                             shape: BoxShape.circle,
                                           ),
                                           child: Visibility(
-                                            visible: columnUsersRecord.photoUrl !=
+                                            visible: columnUsersRecord
+                                                        .photoUrl !=
+                                                    null &&
+                                                columnUsersRecord.photoUrl !=
                                                     '',
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -445,7 +452,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                   width: 32.0,
                                                   height: 32.0,
                                                   clipBehavior: Clip.antiAlias,
-                                                  decoration: const BoxDecoration(
+                                                  decoration: BoxDecoration(
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Image.network(
@@ -471,12 +478,15 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 4.0),
                                                 child: Text(
                                                   valueOrDefault<String>(
                                                     columnUsersRecord
+                                                                    .displayName !=
+                                                                null &&
+                                                            columnUsersRecord
                                                                     .displayName !=
                                                                 ''
                                                         ? columnUsersRecord
@@ -522,7 +532,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                             ],
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 12.0)),
+                                      ].divide(SizedBox(width: 12.0)),
                                     ),
                                   ),
                                 ],
@@ -560,9 +570,9 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                 ),
                                 child: Visibility(
                                   visible:
-                                      containerAnswersRecordList.isNotEmpty,
+                                      containerAnswersRecordList.length > 0,
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 0.0),
                                     child: Builder(
                                       builder: (context) {
@@ -574,7 +584,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                           scrollDirection: Axis.vertical,
                                           itemCount: answers.length,
                                           separatorBuilder: (_, __) =>
-                                              const SizedBox(height: 8.0),
+                                              SizedBox(height: 8.0),
                                           itemBuilder: (context, answersIndex) {
                                             final answersItem =
                                                 answers[answersIndex];
@@ -628,21 +638,21 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                                 builder:
                                                                     (alertDialogContext) {
                                                                   return AlertDialog(
-                                                                    title: const Text(
+                                                                    title: Text(
                                                                         'Delete?'),
                                                                     actions: [
                                                                       TextButton(
                                                                         onPressed: () => Navigator.pop(
                                                                             alertDialogContext,
                                                                             false),
-                                                                        child: const Text(
+                                                                        child: Text(
                                                                             'No'),
                                                                       ),
                                                                       TextButton(
                                                                         onPressed: () => Navigator.pop(
                                                                             alertDialogContext,
                                                                             true),
-                                                                        child: const Text(
+                                                                        child: Text(
                                                                             'Yes'),
                                                                       ),
                                                                     ],
@@ -664,21 +674,21 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                                 builder:
                                                                     (alertDialogContext) {
                                                                   return AlertDialog(
-                                                                    title: const Text(
+                                                                    title: Text(
                                                                         'Choose an action'),
                                                                     actions: [
                                                                       TextButton(
                                                                         onPressed: () => Navigator.pop(
                                                                             alertDialogContext,
                                                                             false),
-                                                                        child: const Text(
+                                                                        child: Text(
                                                                             'Profile'),
                                                                       ),
                                                                       TextButton(
                                                                         onPressed: () => Navigator.pop(
                                                                             alertDialogContext,
                                                                             true),
-                                                                        child: const Text(
+                                                                        child: Text(
                                                                             'Answer'),
                                                                       ),
                                                                     ],
@@ -697,7 +707,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                             ?.animateTo(
                                                           _model.write!.position
                                                               .maxScrollExtent,
-                                                          duration: const Duration(
+                                                          duration: Duration(
                                                               milliseconds:
                                                                   200),
                                                           curve: Curves.ease,
@@ -747,7 +757,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -757,6 +767,8 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                                 valueOrDefault<
                                                                     String>(
                                                                   rowUsersRecord.displayName !=
+                                                                              null &&
+                                                                          rowUsersRecord.displayName !=
                                                                               ''
                                                                       ? rowUsersRecord
                                                                           .displayName
@@ -827,6 +839,9 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                         child: Visibility(
                                                           visible: rowUsersRecord
                                                                       .photoUrl !=
+                                                                  null &&
+                                                              rowUsersRecord
+                                                                      .photoUrl !=
                                                                   '',
                                                           child: InkWell(
                                                             splashColor: Colors
@@ -886,7 +901,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                                 clipBehavior: Clip
                                                                     .antiAlias,
                                                                 decoration:
-                                                                    const BoxDecoration(
+                                                                    BoxDecoration(
                                                                   shape: BoxShape
                                                                       .circle,
                                                                 ),
@@ -912,7 +927,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        const SizedBox(width: 12.0)),
+                                                        SizedBox(width: 12.0)),
                                                   ),
                                                 );
                                               },
@@ -927,7 +942,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                               );
                             },
                           ),
-                        ].divide(const SizedBox(height: 8.0)),
+                        ].divide(SizedBox(height: 8.0)),
                       );
                     },
                     controller: _model.reviews,
@@ -935,7 +950,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                 },
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 24.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 24.0),
                 child: Material(
                   color: Colors.transparent,
                   elevation: 0.0,
@@ -967,7 +982,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                   focusNode: _model.textFieldFocusNode,
                                   onChanged: (_) => EasyDebounce.debounce(
                                     '_model.textController',
-                                    const Duration(milliseconds: 200),
+                                    Duration(milliseconds: 200),
                                     () => setState(() {}),
                                   ),
                                   obscureText: false,
@@ -981,7 +996,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                               .secondaryText,
                                           fontWeight: FontWeight.normal,
                                         ),
-                                    enabledBorder: const OutlineInputBorder(
+                                    enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
                                         width: 1.0,
@@ -993,7 +1008,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                         topRight: Radius.circular(0.0),
                                       ),
                                     ),
-                                    focusedBorder: const OutlineInputBorder(
+                                    focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
                                         width: 1.0,
@@ -1005,7 +1020,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                         topRight: Radius.circular(0.0),
                                       ),
                                     ),
-                                    errorBorder: const OutlineInputBorder(
+                                    errorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
                                         width: 1.0,
@@ -1017,7 +1032,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                         topRight: Radius.circular(0.0),
                                       ),
                                     ),
-                                    focusedErrorBorder: const OutlineInputBorder(
+                                    focusedErrorBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
                                         width: 1.0,
@@ -1074,7 +1089,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                     });
                                     await _model.answerss?.animateTo(
                                       _model.answerss!.position.maxScrollExtent,
-                                      duration: const Duration(milliseconds: 100),
+                                      duration: Duration(milliseconds: 100),
                                       curve: Curves.ease,
                                     );
                                   } else {
@@ -1096,7 +1111,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                     });
                                     await _model.reviews?.animateTo(
                                       0,
-                                      duration: const Duration(milliseconds: 100),
+                                      duration: Duration(milliseconds: 100),
                                       curve: Curves.ease,
                                     );
                                   }

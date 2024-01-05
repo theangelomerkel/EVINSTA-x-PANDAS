@@ -2,15 +2,21 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:go_router/go_router.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
 import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/lat_lng.dart';
+import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -79,20 +85,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       errorBuilder: (context, state) => _RouteErrorBuilder(
         state: state,
         child:
-            appStateNotifier.loggedIn ? const NavBarPage() : const S1LoginAndSignUpWidget(),
+            appStateNotifier.loggedIn ? NavBarPage() : S1LoginAndSignUpWidget(),
       ),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? const NavBarPage()
-              : const S1LoginAndSignUpWidget(),
+              ? NavBarPage()
+              : S1LoginAndSignUpWidget(),
           routes: [
             FFRoute(
               name: 'S1_Login_andSignUp',
               path: 's1LoginAndSignUp',
-              builder: (context, params) => const S1LoginAndSignUpWidget(),
+              builder: (context, params) => S1LoginAndSignUpWidget(),
             ),
             FFRoute(
               name: 'S3EventDataPublic',
@@ -108,8 +114,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'S4UserInterface',
               path: 's4UserInterface',
               builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'S4UserInterface')
-                  : const S4UserInterfaceWidget(),
+                  ? NavBarPage(initialPage: 'S4UserInterface')
+                  : S4UserInterfaceWidget(),
             ),
             FFRoute(
               name: 'S3EventData_IntroPage',
@@ -125,18 +131,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'S2_HomePage',
               path: 's2HomePage',
               builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'S2_HomePage')
-                  : const S2HomePageWidget(),
+                  ? NavBarPage(initialPage: 'S2_HomePage')
+                  : S2HomePageWidget(),
             ),
             FFRoute(
               name: 'S6chatMain',
               path: 's6chatMain',
-              builder: (context, params) => const S6chatMainWidget(),
+              builder: (context, params) => S6chatMainWidget(),
             ),
             FFRoute(
               name: 'S5searchEvents',
               path: 's5searchEvents',
-              builder: (context, params) => const S5searchEventsWidget(),
+              builder: (context, params) => S5searchEventsWidget(),
             ),
             FFRoute(
               name: 'propertyReview',
@@ -165,43 +171,43 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'S8ProfilePage',
               path: 's8ProfilePage',
               builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'S8ProfilePage')
-                  : const S8ProfilePageWidget(),
+                  ? NavBarPage(initialPage: 'S8ProfilePage')
+                  : S8ProfilePageWidget(),
             ),
             FFRoute(
               name: 'S8_NR1_paymentInfo',
               path: 's8NR1PaymentInfo',
-              builder: (context, params) => const S8NR1PaymentInfoWidget(),
+              builder: (context, params) => S8NR1PaymentInfoWidget(),
             ),
             FFRoute(
               name: 'S8_NR2_editProfile',
               path: 's8NR2EditProfile',
-              builder: (context, params) => const S8NR2EditProfileWidget(),
+              builder: (context, params) => S8NR2EditProfileWidget(),
             ),
             FFRoute(
               name: 'S9_NR1_createEvent',
               path: 's9NR1CreateEvent',
-              builder: (context, params) => const S9NR1CreateEventWidget(),
+              builder: (context, params) => S9NR1CreateEventWidget(),
             ),
             FFRoute(
               name: 'S9_NR3_createArticle',
               path: 's9NR3CreateArticle',
-              builder: (context, params) => const S9NR3CreateArticleWidget(),
+              builder: (context, params) => S9NR3CreateArticleWidget(),
             ),
             FFRoute(
               name: 'TemplateOptioCalendar',
               path: 'templateOptioCalendar',
-              builder: (context, params) => const TemplateOptioCalendarWidget(),
+              builder: (context, params) => TemplateOptioCalendarWidget(),
             ),
             FFRoute(
               name: 'TermsofService',
               path: 'termsofService',
-              builder: (context, params) => const TermsofServiceWidget(),
+              builder: (context, params) => TermsofServiceWidget(),
             ),
             FFRoute(
               name: 'Deleteaccount',
               path: 'deleteaccount',
-              builder: (context, params) => const DeleteaccountWidget(),
+              builder: (context, params) => DeleteaccountWidget(),
             ),
             FFRoute(
               name: 'S8NR3_change_password',
@@ -223,17 +229,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'forgotpassword',
               path: 'forgotpassword',
-              builder: (context, params) => const ForgotpasswordWidget(),
+              builder: (context, params) => ForgotpasswordWidget(),
             ),
             FFRoute(
               name: 'event_images',
               path: 'eventImages',
-              builder: (context, params) => const EventImagesWidget(),
+              builder: (context, params) => EventImagesWidget(),
             ),
             FFRoute(
               name: 'raguide',
               path: 'raguide',
-              builder: (context, params) => const RaguideWidget(),
+              builder: (context, params) => RaguideWidget(),
             ),
             FFRoute(
               name: 'articlePage',
@@ -487,14 +493,15 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }
 
 class _RouteErrorBuilder extends StatefulWidget {
   const _RouteErrorBuilder({
+    Key? key,
     required this.state,
     required this.child,
-  });
+  }) : super(key: key);
 
   final GoRouterState state;
   final Widget child;

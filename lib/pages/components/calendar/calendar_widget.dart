@@ -6,18 +6,20 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/components/empty_events/empty_events_widget.dart';
 import '/pages/components/event_c/event_c_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'calendar_model.dart';
 export 'calendar_model.dart';
 
 class CalendarWidget extends StatefulWidget {
   const CalendarWidget({
-    super.key,
+    Key? key,
     this.date,
     this.flag,
-  });
+  }) : super(key: key);
 
   final DateTime? date;
   final String? flag;
@@ -89,7 +91,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -104,7 +106,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                           ),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(1.0, -1.0),
+                      alignment: AlignmentDirectional(1.0, -1.0),
                       child: FlutterFlowIconButton(
                         borderRadius: 20.0,
                         borderWidth: 1.0,
@@ -129,7 +131,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                 weekFormat: true,
                 weekStartsMonday: true,
                 initialDate:
-                    widget.date ?? getCurrentTimestamp,
+                    widget.date != null ? widget.date : getCurrentTimestamp,
                 onChange: (DateTimeRange? newSelectedDate) {
                   setState(() => _model.calendarSelectedDay = newSelectedDate);
                 },
@@ -144,11 +146,11 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                 inactiveDateStyle:
                     FlutterFlowTheme.of(context).bodySmall.override(
                           fontFamily: 'Urbanist',
-                          color: const Color(0x6B57636C),
+                          color: Color(0x6B57636C),
                         ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: Text(
                   'Events',
                   style: FlutterFlowTheme.of(context).titleMedium,
@@ -159,7 +161,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                   builder: (context) {
                     if (widget.flag == 'My events') {
                       return Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: Builder(
                           builder: (context) {
@@ -172,7 +174,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                                     (e.userRef == currentUserReference))
                                 .toList();
                             if (myevents.isEmpty) {
-                              return const Center(
+                              return Center(
                                 child: EmptyEventsWidget(),
                               );
                             }
@@ -184,7 +186,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                               itemBuilder: (context, myeventsIndex) {
                                 final myeventsItem = myevents[myeventsIndex];
                                 return Container(
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: EventCWidget(
                                     key: Key(
                                         'Keym9n_${myeventsIndex}_of_${myevents.length}'),
@@ -198,7 +200,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                       );
                     } else if (widget.flag == 'Invited events') {
                       return Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: Builder(
                           builder: (context) {
@@ -211,7 +213,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                                     e.guestRef.contains(currentUserReference))
                                 .toList();
                             if (invitedevents.isEmpty) {
-                              return const Center(
+                              return Center(
                                 child: EmptyEventsWidget(),
                               );
                             }
@@ -224,7 +226,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                                 final invitedeventsItem =
                                     invitedevents[invitedeventsIndex];
                                 return Container(
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: EventCWidget(
                                     key: Key(
                                         'Keyk9u_${invitedeventsIndex}_of_${invitedevents.length}'),
@@ -238,13 +240,13 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                       );
                     } else if (widget.flag == 'Wishlist') {
                       return Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: Builder(
                           builder: (context) {
                             final wish = FFAppState().listEvents.toList();
                             if (wish.isEmpty) {
-                              return const Center(
+                              return Center(
                                 child: EmptyEventsWidget(),
                               );
                             }
@@ -278,7 +280,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                                     final containerPropertiesRecord =
                                         snapshot.data!;
                                     return Container(
-                                      decoration: const BoxDecoration(),
+                                      decoration: BoxDecoration(),
                                       child: EventCWidget(
                                         key: Key(
                                             'Keyapx_${wishIndex}_of_${wish.length}'),
@@ -294,7 +296,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                       );
                     } else {
                       return Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: Builder(
                           builder: (context) {
@@ -306,7 +308,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                                         _model.calendarSelectedDay!.end))
                                 .toList();
                             if (allevents.isEmpty) {
-                              return const Center(
+                              return Center(
                                 child: EmptyEventsWidget(),
                               );
                             }
@@ -318,7 +320,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                               itemBuilder: (context, alleventsIndex) {
                                 final alleventsItem = allevents[alleventsIndex];
                                 return Container(
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: EventCWidget(
                                     key: Key(
                                         'Keysz5_${alleventsIndex}_of_${allevents.length}'),

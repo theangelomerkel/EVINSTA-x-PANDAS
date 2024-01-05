@@ -1,6 +1,19 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/backend/firebase_storage/storage.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/upload_data.dart';
 import 's9_n_r3_edit_article_widget.dart' show S9NR3EditArticleWidget;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class S9NR3EditArticleModel extends FlutterFlowModel<S9NR3EditArticleWidget> {
   ///  Local state fields for this page.
@@ -48,13 +61,11 @@ class S9NR3EditArticleModel extends FlutterFlowModel<S9NR3EditArticleWidget> {
 
   /// Initialization and disposal methods.
 
-  @override
   void initState(BuildContext context) {
     propertyNameControllerValidator = _propertyNameControllerValidator;
     descControllerValidator = _descControllerValidator;
   }
 
-  @override
   void dispose() {
     propertyNameFocusNode?.dispose();
     propertyNameController?.dispose();

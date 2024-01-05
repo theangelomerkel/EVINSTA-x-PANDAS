@@ -2,14 +2,16 @@ import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'template_optio_calendar_model.dart';
 export 'template_optio_calendar_model.dart';
 
 class TemplateOptioCalendarWidget extends StatefulWidget {
-  const TemplateOptioCalendarWidget({super.key});
+  const TemplateOptioCalendarWidget({Key? key}) : super(key: key);
 
   @override
   _TemplateOptioCalendarWidgetState createState() =>
@@ -109,11 +111,11 @@ class _TemplateOptioCalendarWidgetState
                 inactiveDateStyle:
                     FlutterFlowTheme.of(context).bodySmall.override(
                           fontFamily: 'Urbanist',
-                          color: const Color(0x6B57636C),
+                          color: Color(0x6B57636C),
                         ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: Text(
                   'Events',
                   style: FlutterFlowTheme.of(context).titleMedium,
@@ -124,7 +126,7 @@ class _TemplateOptioCalendarWidgetState
                 primary: false,
                 shrinkWrap: true,
                 scrollDirection: Axis.vertical,
-                children: const [],
+                children: [],
               ),
             ],
           ),

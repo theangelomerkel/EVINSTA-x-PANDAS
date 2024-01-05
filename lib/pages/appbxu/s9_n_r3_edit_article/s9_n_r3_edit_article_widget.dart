@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -5,19 +6,21 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 's9_n_r3_edit_article_model.dart';
 export 's9_n_r3_edit_article_model.dart';
 
 class S9NR3EditArticleWidget extends StatefulWidget {
   const S9NR3EditArticleWidget({
-    super.key,
+    Key? key,
     required this.article,
-  });
+  }) : super(key: key);
 
   final ArticlesRecord? article;
 
@@ -96,14 +99,14 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                 fontWeight: FontWeight.w600,
               ),
         ),
-        actions: const [],
+        actions: [],
         centerTitle: false,
         elevation: 0.0,
       ),
       body: SafeArea(
         top: true,
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 34.0),
+          padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 34.0),
           child: StreamBuilder<ArticlesRecord>(
             stream: ArticlesRecord.getDocument(widget.article!.reference),
             builder: (context, snapshot) {
@@ -134,9 +137,9 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 12.0),
                                 child: Text(
                                   'Main image*',
@@ -156,7 +159,7 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  if (_model.imgsEdit.isNotEmpty)
+                                  if (_model.imgsEdit.length > 0)
                                     Builder(
                                       builder: (context) {
                                         final imgs = _model.imgsEdit
@@ -174,7 +177,7 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                                   0.7,
                                               height: 160.0,
                                               decoration: BoxDecoration(
-                                                color: const Color(0x66450B0B),
+                                                color: Color(0x66450B0B),
                                                 image: DecorationImage(
                                                   fit: BoxFit.cover,
                                                   image: Image.asset(
@@ -185,7 +188,7 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                                     BorderRadius.circular(16.0),
                                               ),
                                               child: Stack(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 children: [
                                                   ClipRRect(
@@ -208,7 +211,7 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                                   ),
                                                   Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             1.0, -1.0),
                                                     child:
                                                         FlutterFlowIconButton(
@@ -244,7 +247,7 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                                 ],
                                               ),
                                             );
-                                          }).divide(const SizedBox(width: 12.0)),
+                                          }).divide(SizedBox(width: 12.0)),
                                         );
                                       },
                                     ),
@@ -325,13 +328,13 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                       });
                                     },
                                   ),
-                                ].divide(const SizedBox(width: 12.0)),
+                                ].divide(SizedBox(width: 12.0)),
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 0.0),
                                 child: Text(
                                   'Article title *',
@@ -347,7 +350,7 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 0.0, 0.0),
                               child: TextFormField(
                                 controller: _model.propertyNameController ??=
@@ -397,7 +400,7 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                     ),
                                     borderRadius: BorderRadius.circular(12.0),
                                   ),
-                                  contentPadding: const EdgeInsets.all(12.0),
+                                  contentPadding: EdgeInsets.all(12.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
@@ -413,9 +416,9 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 0.0),
                                 child: Text(
                                   'Description*',
@@ -431,7 +434,7 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 0.0, 0.0),
                               child: TextFormField(
                                 controller: _model.descController ??=
@@ -483,7 +486,7 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                     ),
                                     borderRadius: BorderRadius.circular(12.0),
                                   ),
-                                  contentPadding: const EdgeInsets.all(12.0),
+                                  contentPadding: EdgeInsets.all(12.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
@@ -532,9 +535,9 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                       width: double.infinity,
                       height: 42.0,
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: valueOrDefault<Color>(
                         _model.isDataUploading
                             ? FlutterFlowTheme.of(context).accent2
@@ -547,7 +550,7 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                 color: Colors.white,
                               ),
                       elevation: 3.0,
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Colors.transparent,
                         width: 1.0,
                       ),
@@ -556,25 +559,25 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         var confirmDialogResponse = await showDialog<bool>(
                               context: context,
                               builder: (alertDialogContext) {
                                 return AlertDialog(
-                                  title: const Text(
+                                  title: Text(
                                       'Do you want to delete the article?'),
                                   actions: [
                                     TextButton(
                                       onPressed: () => Navigator.pop(
                                           alertDialogContext, false),
-                                      child: const Text('Cancel'),
+                                      child: Text('Cancel'),
                                     ),
                                     TextButton(
                                       onPressed: () => Navigator.pop(
                                           alertDialogContext, true),
-                                      child: const Text('Confirm'),
+                                      child: Text('Confirm'),
                                     ),
                                   ],
                                 );
@@ -593,10 +596,10 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 42.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).secondary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -604,7 +607,7 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                   color: Colors.white,
                                 ),
                         elevation: 3.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),

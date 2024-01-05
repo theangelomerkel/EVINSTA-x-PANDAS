@@ -1,13 +1,15 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'event_images_model.dart';
 export 'event_images_model.dart';
 
 class EventImagesWidget extends StatefulWidget {
-  const EventImagesWidget({super.key});
+  const EventImagesWidget({Key? key}) : super(key: key);
 
   @override
   _EventImagesWidgetState createState() => _EventImagesWidgetState();

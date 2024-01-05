@@ -1,8 +1,30 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/firebase_storage/storage.dart';
+import '/flutter_flow/flutter_flow_expanded_image_view.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_place_picker.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/place.dart';
+import '/flutter_flow/upload_data.dart';
+import '/pages/components/users/users_widget.dart';
+import 'dart:io';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart'
+    as smooth_page_indicator;
 import 's9_n_r1_create_event_widget.dart' show S9NR1CreateEventWidget;
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:expandable/expandable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:provider/provider.dart';
+import 'package:text_search/text_search.dart';
 
 class S9NR1CreateEventModel extends FlutterFlowModel<S9NR1CreateEventWidget> {
   ///  State fields for stateful widgets in this page.
@@ -53,7 +75,7 @@ class S9NR1CreateEventModel extends FlutterFlowModel<S9NR1CreateEventWidget> {
   }
 
   // State field(s) for PlacePicker widget.
-  var placePickerValue = const FFPlace();
+  var placePickerValue = FFPlace();
   // State field(s) for desc widget.
   FocusNode? descFocusNode;
   TextEditingController? descController;
@@ -111,14 +133,12 @@ class S9NR1CreateEventModel extends FlutterFlowModel<S9NR1CreateEventWidget> {
 
   /// Initialization and disposal methods.
 
-  @override
   void initState(BuildContext context) {
     propertyNameControllerValidator = _propertyNameControllerValidator;
     propertyAddressControllerValidator = _propertyAddressControllerValidator;
     descControllerValidator = _descControllerValidator;
   }
 
-  @override
   void dispose() {
     propertyNameFocusNode?.dispose();
     propertyNameController?.dispose();

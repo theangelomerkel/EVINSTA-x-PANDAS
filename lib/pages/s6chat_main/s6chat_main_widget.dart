@@ -1,5 +1,9 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/chat/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,7 +12,7 @@ import 's6chat_main_model.dart';
 export 's6chat_main_model.dart';
 
 class S6chatMainWidget extends StatefulWidget {
-  const S6chatMainWidget({super.key});
+  const S6chatMainWidget({Key? key}) : super(key: key);
 
   @override
   _S6chatMainWidgetState createState() => _S6chatMainWidgetState();
@@ -61,14 +65,14 @@ class _S6chatMainWidgetState extends State<S6chatMainWidget> {
                 fontWeight: FontWeight.bold,
               ),
         ),
-        actions: const [],
+        actions: [],
         centerTitle: false,
         elevation: 2.0,
       ),
       body: SafeArea(
         top: true,
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
+          padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
           child: StreamBuilder<List<ChatsRecord>>(
             stream: queryChatsRecord(
               queryBuilder: (chatsRecord) => chatsRecord
@@ -138,7 +142,8 @@ class _S6chatMainWidgetState extends State<S6chatMainWidget> {
                         ),
                         lastChatText: chatInfo.chatPreviewMessage(),
                         lastChatTime: listViewChatsRecord.lastMessageTime,
-                        seen: listViewChatsRecord.lastMessageSeenBy.contains(currentUserReference),
+                        seen: listViewChatsRecord.lastMessageSeenBy!
+                            .contains(currentUserReference),
                         title: chatInfo.chatPreviewTitle(),
                         userProfilePic: chatInfo.chatPreviewPic(),
                         color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -162,7 +167,7 @@ class _S6chatMainWidgetState extends State<S6chatMainWidget> {
                           fontSize: 14.0,
                         ),
                         contentPadding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 3.0, 8.0, 3.0),
+                            EdgeInsetsDirectional.fromSTEB(8.0, 3.0, 8.0, 3.0),
                         borderRadius: BorderRadius.circular(0.0),
                       );
                     },

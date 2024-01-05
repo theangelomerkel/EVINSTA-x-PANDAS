@@ -5,15 +5,18 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/components/profile_user/profile_user_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'users_model.dart';
 export 'users_model.dart';
 
 class UsersWidget extends StatefulWidget {
   const UsersWidget({
-    super.key,
+    Key? key,
     this.user,
-  });
+  }) : super(key: key);
 
   final UsersRecord? user;
 
@@ -63,7 +66,7 @@ class _UsersWidgetState extends State<UsersWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                   child: Builder(
                     builder: (context) {
                       if (!FFAppState()
@@ -181,7 +184,7 @@ class _UsersWidgetState extends State<UsersWidget> {
                             width: 30.0,
                             height: 30.0,
                             clipBehavior: Clip.antiAlias,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
                             child: Image.network(
@@ -195,7 +198,7 @@ class _UsersWidgetState extends State<UsersWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                   child: Text(
                     valueOrDefault<String>(
                       widget.user?.displayName != null &&

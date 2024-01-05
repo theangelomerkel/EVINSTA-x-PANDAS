@@ -3,17 +3,20 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/components/users_refused/users_refused_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'refusedlist_model.dart';
 export 'refusedlist_model.dart';
 
 class RefusedlistWidget extends StatefulWidget {
   const RefusedlistWidget({
-    super.key,
+    Key? key,
     this.parameter2,
-  });
+  }) : super(key: key);
 
   final PropertiesRecord? parameter2;
 
@@ -66,7 +69,7 @@ class _RefusedlistWidgetState extends State<RefusedlistWidget> {
             child: ExpandablePanel(
               header: Text(
                 'Refusedlist (${valueOrDefault<String>(
-                  widget.parameter2?.refusedList.length.toString(),
+                  widget.parameter2?.refusedList?.length?.toString(),
                   '0',
                 )})',
                 style: FlutterFlowTheme.of(context).displaySmall.override(
@@ -85,12 +88,12 @@ class _RefusedlistWidgetState extends State<RefusedlistWidget> {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    if (widget.parameter2!.refusedList.isNotEmpty)
+                    if (widget.parameter2!.refusedList.length > 0)
                       Expanded(
                         child: Builder(
                           builder: (context) {
                             final refused =
-                                widget.parameter2?.refusedList.toList() ?? [];
+                                widget.parameter2?.refusedList?.toList() ?? [];
                             return ListView.builder(
                               padding: EdgeInsets.zero,
                               primary: false,

@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
 class FFChatPage extends StatefulWidget {
-  const FFChatPage({
-    super.key,
+  FFChatPage({
+    Key? key,
     required this.chatInfo,
     this.allowImages = false,
     // Theme settings
@@ -21,7 +21,7 @@ class FFChatPage extends StatefulWidget {
     this.inputTextStyle,
     this.emptyChatWidget,
     this.maxLoadedMessages,
-  });
+  }) : super(key: key);
 
   final FFChatInfo chatInfo;
   final bool allowImages;
@@ -71,7 +71,7 @@ class _FFChatPageState extends State<FFChatPage> {
       return;
     }
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      Future.delayed(const Duration(milliseconds: 100))
+      Future.delayed(Duration(milliseconds: 100))
           .then((_) => scrollController.jumpTo(0));
       updateSeenBy();
     });
@@ -79,9 +79,7 @@ class _FFChatPageState extends State<FFChatPage> {
 
   void updateMessages(List<ChatMessagesRecord> chatMessages) {
     final oldLatestTime = latestMessageTime();
-    for (var m in chatMessages) {
-      allMessages[m.reference.id] = m;
-    }
+    chatMessages.forEach((m) => allMessages[m.reference.id] = m);
     messages = allMessages.values.toList();
     messages.sort((a, b) => a.timestamp!.compareTo(b.timestamp!));
     onNewMessage(oldLatestTime, latestMessageTime());
@@ -206,7 +204,7 @@ extension _ChatUserExtensions on UsersRecord {
       ? ChatUser(uid: reference.id)
       : ChatUser(
           uid: reference.id,
-          name: displayName.isNotEmpty ? displayName : 'Friend',
+          name: displayName!.isNotEmpty ? displayName : 'Friend',
           avatar: photoUrl,
         );
 }

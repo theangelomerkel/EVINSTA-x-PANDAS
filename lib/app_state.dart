@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
+import 'backend/api_requests/api_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
@@ -47,121 +50,121 @@ class FFAppState extends ChangeNotifier {
 
   String _cardNumber = '';
   String get cardNumber => _cardNumber;
-  set cardNumber(String value) {
-    _cardNumber = value;
-    prefs.setString('ff_cardNumber', value);
+  set cardNumber(String _value) {
+    _cardNumber = _value;
+    prefs.setString('ff_cardNumber', _value);
   }
 
   String _cardHolderName = '';
   String get cardHolderName => _cardHolderName;
-  set cardHolderName(String value) {
-    _cardHolderName = value;
-    prefs.setString('ff_cardHolderName', value);
+  set cardHolderName(String _value) {
+    _cardHolderName = _value;
+    prefs.setString('ff_cardHolderName', _value);
   }
 
   String _cardName = '';
   String get cardName => _cardName;
-  set cardName(String value) {
-    _cardName = value;
-    prefs.setString('ff_cardName', value);
+  set cardName(String _value) {
+    _cardName = _value;
+    prefs.setString('ff_cardName', _value);
   }
 
   String _zipCode = '';
   String get zipCode => _zipCode;
-  set zipCode(String value) {
-    _zipCode = value;
-    prefs.setString('ff_zipCode', value);
+  set zipCode(String _value) {
+    _zipCode = _value;
+    prefs.setString('ff_zipCode', _value);
   }
 
   List<DocumentReference> _guestList = [];
   List<DocumentReference> get guestList => _guestList;
-  set guestList(List<DocumentReference> value) {
-    _guestList = value;
+  set guestList(List<DocumentReference> _value) {
+    _guestList = _value;
   }
 
-  void addToGuestList(DocumentReference value) {
-    _guestList.add(value);
+  void addToGuestList(DocumentReference _value) {
+    _guestList.add(_value);
   }
 
-  void removeFromGuestList(DocumentReference value) {
-    _guestList.remove(value);
+  void removeFromGuestList(DocumentReference _value) {
+    _guestList.remove(_value);
   }
 
-  void removeAtIndexFromGuestList(int index) {
-    _guestList.removeAt(index);
+  void removeAtIndexFromGuestList(int _index) {
+    _guestList.removeAt(_index);
   }
 
   void updateGuestListAtIndex(
-    int index,
+    int _index,
     DocumentReference Function(DocumentReference) updateFn,
   ) {
-    _guestList[index] = updateFn(_guestList[index]);
+    _guestList[_index] = updateFn(_guestList[_index]);
   }
 
-  void insertAtIndexInGuestList(int index, DocumentReference value) {
-    _guestList.insert(index, value);
+  void insertAtIndexInGuestList(int _index, DocumentReference _value) {
+    _guestList.insert(_index, _value);
   }
 
   bool _showAnswers = false;
   bool get showAnswers => _showAnswers;
-  set showAnswers(bool value) {
-    _showAnswers = value;
+  set showAnswers(bool _value) {
+    _showAnswers = _value;
   }
 
   bool _writeAnswer = false;
   bool get writeAnswer => _writeAnswer;
-  set writeAnswer(bool value) {
-    _writeAnswer = value;
+  set writeAnswer(bool _value) {
+    _writeAnswer = _value;
   }
 
   String _video = '';
   String get video => _video;
-  set video(String value) {
-    _video = value;
+  set video(String _value) {
+    _video = _value;
   }
 
   String _email = '';
   String get email => _email;
-  set email(String value) {
-    _email = value;
+  set email(String _value) {
+    _email = _value;
   }
 
   List<DocumentReference> _listEvents = [];
   List<DocumentReference> get listEvents => _listEvents;
-  set listEvents(List<DocumentReference> value) {
-    _listEvents = value;
-    prefs.setStringList('ff_listEvents', value.map((x) => x.path).toList());
+  set listEvents(List<DocumentReference> _value) {
+    _listEvents = _value;
+    prefs.setStringList('ff_listEvents', _value.map((x) => x.path).toList());
   }
 
-  void addToListEvents(DocumentReference value) {
-    _listEvents.add(value);
+  void addToListEvents(DocumentReference _value) {
+    _listEvents.add(_value);
     prefs.setStringList(
         'ff_listEvents', _listEvents.map((x) => x.path).toList());
   }
 
-  void removeFromListEvents(DocumentReference value) {
-    _listEvents.remove(value);
+  void removeFromListEvents(DocumentReference _value) {
+    _listEvents.remove(_value);
     prefs.setStringList(
         'ff_listEvents', _listEvents.map((x) => x.path).toList());
   }
 
-  void removeAtIndexFromListEvents(int index) {
-    _listEvents.removeAt(index);
+  void removeAtIndexFromListEvents(int _index) {
+    _listEvents.removeAt(_index);
     prefs.setStringList(
         'ff_listEvents', _listEvents.map((x) => x.path).toList());
   }
 
   void updateListEventsAtIndex(
-    int index,
+    int _index,
     DocumentReference Function(DocumentReference) updateFn,
   ) {
-    _listEvents[index] = updateFn(_listEvents[index]);
+    _listEvents[_index] = updateFn(_listEvents[_index]);
     prefs.setStringList(
         'ff_listEvents', _listEvents.map((x) => x.path).toList());
   }
 
-  void insertAtIndexInListEvents(int index, DocumentReference value) {
-    _listEvents.insert(index, value);
+  void insertAtIndexInListEvents(int _index, DocumentReference _value) {
+    _listEvents.insert(_index, _value);
     prefs.setStringList(
         'ff_listEvents', _listEvents.map((x) => x.path).toList());
   }

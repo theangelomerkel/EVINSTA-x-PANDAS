@@ -164,27 +164,27 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFE21C3D);
   late Color info = const Color(0xFF1C4494);
 
-  late Color cultured = const Color(0xFFF1F4F8);
-  late Color redApple = const Color(0xFFFC4253);
-  late Color celadon = const Color(0xFF96E6B3);
-  late Color turquoise = const Color(0xFF39D2C0);
-  late Color gunmetal = const Color(0xFF262D34);
-  late Color grayIcon = const Color(0xFF95A1AC);
-  late Color darkText = const Color(0xFF1E2429);
-  late Color dark600 = const Color(0xFF14181B);
-  late Color gray600 = const Color(0xFF57636C);
-  late Color lineGray = const Color(0xFFE1EDF9);
-  late Color gray200 = const Color(0xFFDBE2E7);
-  late Color black600 = const Color(0xFF090F13);
-  late Color tertiary400 = const Color(0xFF39D2C0);
-  late Color textColor = const Color(0xFF1E2429);
-  late Color maximumBlueGreen = const Color(0xFF59C3C3);
-  late Color plumpPurple = const Color(0xFF52489C);
-  late Color platinum = const Color(0xFFEBEBEB);
-  late Color ashGray = const Color(0xFFCAD2C5);
-  late Color darkSeaGreen = const Color(0xFF84A98C);
-  late Color primaryBtnText = const Color(0xFFFFFFFF);
-  late Color lineColor = const Color(0xFFE0E3E7);
+  late Color cultured = Color(0xFFF1F4F8);
+  late Color redApple = Color(0xFFFC4253);
+  late Color celadon = Color(0xFF96E6B3);
+  late Color turquoise = Color(0xFF39D2C0);
+  late Color gunmetal = Color(0xFF262D34);
+  late Color grayIcon = Color(0xFF95A1AC);
+  late Color darkText = Color(0xFF1E2429);
+  late Color dark600 = Color(0xFF14181B);
+  late Color gray600 = Color(0xFF57636C);
+  late Color lineGray = Color(0xFFE1EDF9);
+  late Color gray200 = Color(0xFFDBE2E7);
+  late Color black600 = Color(0xFF090F13);
+  late Color tertiary400 = Color(0xFF39D2C0);
+  late Color textColor = Color(0xFF1E2429);
+  late Color maximumBlueGreen = Color(0xFF59C3C3);
+  late Color plumpPurple = Color(0xFF52489C);
+  late Color platinum = Color(0xFFEBEBEB);
+  late Color ashGray = Color(0xFFCAD2C5);
+  late Color darkSeaGreen = Color(0xFF84A98C);
+  late Color primaryBtnText = Color(0xFFFFFFFF);
+  late Color lineColor = Color(0xFFE0E3E7);
 }
 
 abstract class Typography {
@@ -357,27 +357,27 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFE21C3D);
   late Color info = const Color(0xFF1C4494);
 
-  late Color cultured = const Color(0xFFF1F4F8);
-  late Color redApple = const Color(0xFFFC4253);
-  late Color celadon = const Color(0xFF96E6B3);
-  late Color turquoise = const Color(0xFF39D2C0);
-  late Color gunmetal = const Color(0xFF262D34);
-  late Color grayIcon = const Color(0xFF95A1AC);
-  late Color darkText = const Color(0xFFFFFFFF);
-  late Color dark600 = const Color(0xFF14181B);
-  late Color gray600 = const Color(0xFF57636C);
-  late Color lineGray = const Color(0xFF262D34);
-  late Color gray200 = const Color(0xFFDBE2E7);
-  late Color black600 = const Color(0xFF090F13);
-  late Color tertiary400 = const Color(0xFF39D2C0);
-  late Color textColor = const Color(0xFF1E2429);
-  late Color maximumBlueGreen = const Color(0xFF59C3C3);
-  late Color plumpPurple = const Color(0xFF52489C);
-  late Color platinum = const Color(0xFFEBEBEB);
-  late Color ashGray = const Color(0xFFCAD2C5);
-  late Color darkSeaGreen = const Color(0xFF84A98C);
-  late Color primaryBtnText = const Color(0xFFFFFFFF);
-  late Color lineColor = const Color(0xFF22282F);
+  late Color cultured = Color(0xFFF1F4F8);
+  late Color redApple = Color(0xFFFC4253);
+  late Color celadon = Color(0xFF96E6B3);
+  late Color turquoise = Color(0xFF39D2C0);
+  late Color gunmetal = Color(0xFF262D34);
+  late Color grayIcon = Color(0xFF95A1AC);
+  late Color darkText = Color(0xFFFFFFFF);
+  late Color dark600 = Color(0xFF14181B);
+  late Color gray600 = Color(0xFF57636C);
+  late Color lineGray = Color(0xFF262D34);
+  late Color gray200 = Color(0xFFDBE2E7);
+  late Color black600 = Color(0xFF090F13);
+  late Color tertiary400 = Color(0xFF39D2C0);
+  late Color textColor = Color(0xFF1E2429);
+  late Color maximumBlueGreen = Color(0xFF59C3C3);
+  late Color plumpPurple = Color(0xFF52489C);
+  late Color platinum = Color(0xFFEBEBEB);
+  late Color ashGray = Color(0xFFCAD2C5);
+  late Color darkSeaGreen = Color(0xFF84A98C);
+  late Color primaryBtnText = Color(0xFFFFFFFF);
+  late Color lineColor = Color(0xFF22282F);
 }
 
 extension TextStyleHelper on TextStyle {

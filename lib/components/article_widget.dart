@@ -3,15 +3,16 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'article_model.dart';
 export 'article_model.dart';
 
 class ArticleWidget extends StatefulWidget {
   const ArticleWidget({
-    super.key,
+    Key? key,
     required this.article,
-  });
+  }) : super(key: key);
 
   final ArticlesRecord? article;
 
@@ -83,7 +84,7 @@ class _ArticleWidgetState extends State<ArticleWidget> {
               BoxShadow(
                 blurRadius: 4.0,
                 color: FlutterFlowTheme.of(context).secondary,
-                offset: const Offset(0.0, 0.0),
+                offset: Offset(0.0, 0.0),
                 spreadRadius: 0.0,
               )
             ],
@@ -94,7 +95,7 @@ class _ArticleWidgetState extends State<ArticleWidget> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: EdgeInsets.all(12.0),
             child: Text(
               valueOrDefault<String>(
                 widget.article?.title,

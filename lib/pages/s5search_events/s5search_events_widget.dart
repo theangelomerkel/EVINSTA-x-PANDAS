@@ -2,18 +2,20 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/components/property/property_widget.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
 import 's5search_events_model.dart';
 export 's5search_events_model.dart';
 
 class S5searchEventsWidget extends StatefulWidget {
-  const S5searchEventsWidget({super.key});
+  const S5searchEventsWidget({Key? key}) : super(key: key);
 
   @override
   _S5searchEventsWidgetState createState() => _S5searchEventsWidgetState();
@@ -84,7 +86,7 @@ class _S5searchEventsWidgetState extends State<S5searchEventsWidget> {
                 fontWeight: FontWeight.w500,
               ),
         ),
-        actions: const [],
+        actions: [],
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -98,7 +100,7 @@ class _S5searchEventsWidgetState extends State<S5searchEventsWidget> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).dark600,
-                  boxShadow: const [
+                  boxShadow: [
                     BoxShadow(
                       blurRadius: 3.0,
                       color: Color(0x39000000),
@@ -107,13 +109,13 @@ class _S5searchEventsWidgetState extends State<S5searchEventsWidget> {
                   ],
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: TextFormField(
                     controller: _model.textController,
                     focusNode: _model.textFieldFocusNode,
                     onChanged: (_) => EasyDebounce.debounce(
                       '_model.textController',
-                      const Duration(milliseconds: 2000),
+                      Duration(milliseconds: 2000),
                       () async {
                         await queryPropertiesRecordOnce()
                             .then(
@@ -123,11 +125,12 @@ class _S5searchEventsWidgetState extends State<S5searchEventsWidget> {
                                     .map(
                                       (record) =>
                                           TextSearchItem.fromTerms(record, [
-                                        record.propertyName,
-                                        record.propertyDescription,
-                                        record.propertyAddress,
-                                        record.propertyNeighborhood,
-                                        record.notes]),
+                                        record.propertyName!,
+                                        record.propertyDescription!,
+                                        record.propertyAddress!,
+                                        record.propertyNeighborhood!,
+                                        record.notes!
+                                      ]),
                                     )
                                     .toList(),
                               )
@@ -191,10 +194,11 @@ class _S5searchEventsWidgetState extends State<S5searchEventsWidget> {
               ),
               Builder(
                 builder: (context) {
-                  if (_model.textController.text == '') {
+                  if (_model.textController.text == null ||
+                      _model.textController.text == '') {
                     return Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                       child: StreamBuilder<List<PropertiesRecord>>(
                         stream: queryPropertiesRecord(),
                         builder: (context, snapshot) {
@@ -235,7 +239,7 @@ class _S5searchEventsWidgetState extends State<S5searchEventsWidget> {
                   } else {
                     return Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                       child: Builder(
                         builder: (context) {
                           final search = _model.simpleSearchResults.toList();

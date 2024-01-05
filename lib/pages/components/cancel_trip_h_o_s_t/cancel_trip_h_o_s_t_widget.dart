@@ -1,17 +1,21 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'cancel_trip_h_o_s_t_model.dart';
 export 'cancel_trip_h_o_s_t_model.dart';
 
 class CancelTripHOSTWidget extends StatefulWidget {
   const CancelTripHOSTWidget({
-    super.key,
+    Key? key,
     this.tripDetails,
-  });
+  }) : super(key: key);
 
   final TripsRecord? tripDetails;
 
@@ -51,13 +55,13 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
     context.watch<FFAppState>();
 
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 36.0),
+      padding: EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 36.0),
       child: Container(
         width: double.infinity,
         height: 380.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
               blurRadius: 7.0,
               color: Color(0x4D000000),
@@ -67,7 +71,7 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
           borderRadius: BorderRadius.circular(16.0),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 16.0),
+          padding: EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 16.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -81,21 +85,21 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
                 color: FlutterFlowTheme.of(context).lineGray,
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: Text(
                   'Cancel Trip',
                   style: FlutterFlowTheme.of(context).headlineMedium,
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                 child: Text(
                   'If you want to cancel your tripl please leave a note below to send to the host.',
                   style: FlutterFlowTheme.of(context).bodyMedium,
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: TextFormField(
                   controller: _model.emailAddressController,
                   focusNode: _model.emailAddressFocusNode,
@@ -112,21 +116,21 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Color(0x00000000),
                         width: 2.0,
                       ),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     errorBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Color(0x00000000),
                         width: 2.0,
                       ),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     focusedErrorBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Color(0x00000000),
                         width: 2.0,
                       ),
@@ -135,7 +139,7 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
                     filled: true,
                     fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                     contentPadding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 0.0, 24.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 0.0, 24.0),
                   ),
                   style: FlutterFlowTheme.of(context).titleSmall,
                   maxLines: 4,
@@ -144,7 +148,7 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     await widget.tripDetails!.reference
@@ -163,7 +167,7 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
                                 color: FlutterFlowTheme.of(context).tertiary,
                               ),
                         ),
-                        duration: const Duration(milliseconds: 4000),
+                        duration: Duration(milliseconds: 4000),
                         backgroundColor: FlutterFlowTheme.of(context).redApple,
                       ),
                     );
@@ -172,16 +176,16 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 50.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: const Color(0xFFFC4253),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: Color(0xFFFC4253),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Urbanist',
                           color: FlutterFlowTheme.of(context).tertiary,
                         ),
                     elevation: 2.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),
@@ -196,7 +200,7 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         context.pop();
@@ -206,9 +210,9 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
                         width: 170.0,
                         height: 50.0,
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).cultured,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -216,7 +220,7 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
                                   color: FlutterFlowTheme.of(context).dark600,
                                 ),
                         elevation: 0.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),

@@ -6,12 +6,13 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 's8_n_r1_payment_info_model.dart';
 export 's8_n_r1_payment_info_model.dart';
 
 class S8NR1PaymentInfoWidget extends StatefulWidget {
-  const S8NR1PaymentInfoWidget({super.key});
+  const S8NR1PaymentInfoWidget({Key? key}) : super(key: key);
 
   @override
   _S8NR1PaymentInfoWidgetState createState() => _S8NR1PaymentInfoWidgetState();
@@ -74,7 +75,7 @@ class _S8NR1PaymentInfoWidgetState extends State<S8NR1PaymentInfoWidget> {
           'Payment Information',
           style: FlutterFlowTheme.of(context).headlineMedium,
         ),
-        actions: const [],
+        actions: [],
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -88,7 +89,7 @@ class _S8NR1PaymentInfoWidgetState extends State<S8NR1PaymentInfoWidget> {
               height: 250.0,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                boxShadow: const [
+                boxShadow: [
                   BoxShadow(
                     blurRadius: 5.0,
                     color: Color(0x411D2429),
@@ -97,13 +98,13 @@ class _S8NR1PaymentInfoWidgetState extends State<S8NR1PaymentInfoWidget> {
                 ],
               ),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                       child: FlutterFlowCreditCardForm(
                         formKey: _model.creditCardFormKey,
                         creditCardModel: _model.creditCardInfo,
@@ -135,7 +136,7 @@ class _S8NR1PaymentInfoWidgetState extends State<S8NR1PaymentInfoWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 24.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 24.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           context.pop();
@@ -144,9 +145,9 @@ class _S8NR1PaymentInfoWidgetState extends State<S8NR1PaymentInfoWidget> {
                         options: FFButtonOptions(
                           width: 200.0,
                           height: 50.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).turquoise,
                           textStyle:
@@ -157,7 +158,7 @@ class _S8NR1PaymentInfoWidgetState extends State<S8NR1PaymentInfoWidget> {
                                     fontWeight: FontWeight.w500,
                                   ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),

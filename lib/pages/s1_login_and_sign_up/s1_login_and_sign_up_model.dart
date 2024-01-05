@@ -1,6 +1,14 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 's1_login_and_sign_up_widget.dart' show S1LoginAndSignUpWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class S1LoginAndSignUpModel extends FlutterFlowModel<S1LoginAndSignUpWidget> {
   ///  Local state fields for this page.
@@ -41,14 +49,12 @@ class S1LoginAndSignUpModel extends FlutterFlowModel<S1LoginAndSignUpWidget> {
 
   /// Initialization and disposal methods.
 
-  @override
   void initState(BuildContext context) {
     passwordLoginVisibility = false;
     passwordVisibility = false;
     passwordConfirmVisibility = false;
   }
 
-  @override
   void dispose() {
     unfocusNode.dispose();
     tabBarController?.dispose();

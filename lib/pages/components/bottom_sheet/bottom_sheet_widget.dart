@@ -1,12 +1,14 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'bottom_sheet_model.dart';
 export 'bottom_sheet_model.dart';
 
 class BottomSheetWidget extends StatefulWidget {
-  const BottomSheetWidget({super.key});
+  const BottomSheetWidget({Key? key}) : super(key: key);
 
   @override
   _BottomSheetWidgetState createState() => _BottomSheetWidgetState();
@@ -41,16 +43,16 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
     context.watch<FFAppState>();
 
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 36.0),
+      padding: EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 36.0),
       child: Container(
         width: double.infinity,
         height: 200.0,
-        constraints: const BoxConstraints(
+        constraints: BoxConstraints(
           maxHeight: 200.0,
         ),
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).tertiary,
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
               blurRadius: 7.0,
               color: Color(0x4D000000),
@@ -60,13 +62,13 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
           borderRadius: BorderRadius.circular(16.0),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 16.0),
+          padding: EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 16.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Divider(
+              Divider(
                 height: 16.0,
                 thickness: 3.0,
                 indent: 120.0,
@@ -74,7 +76,7 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
                 color: Color(0xFFD7DADD),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: Text(
                   'Session Booked!',
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -84,14 +86,14 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                 child: Text(
                   'You have successfully booked a session on:',
                   style: FlutterFlowTheme.of(context).bodyMedium,
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                 child: Text(
                   'Mon, Dec 11 - 2021',
                   style: FlutterFlowTheme.of(context).displaySmall.override(

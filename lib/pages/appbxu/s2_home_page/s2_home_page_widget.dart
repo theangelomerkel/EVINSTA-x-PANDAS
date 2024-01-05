@@ -1,19 +1,25 @@
+import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/article_widget.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/components/event_c/event_c_widget.dart';
 import '/pages/components/my_event/my_event_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 's2_home_page_model.dart';
 export 's2_home_page_model.dart';
 
 class S2HomePageWidget extends StatefulWidget {
-  const S2HomePageWidget({super.key});
+  const S2HomePageWidget({Key? key}) : super(key: key);
 
   @override
   _S2HomePageWidgetState createState() => _S2HomePageWidgetState();
@@ -61,10 +67,10 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: Stack(
-          alignment: const AlignmentDirectional(0.0, 1.0),
+          alignment: AlignmentDirectional(0.0, 1.0),
           children: [
             Align(
-              alignment: const AlignmentDirectional(0.0, -1.0),
+              alignment: AlignmentDirectional(0.0, -1.0),
               child: Container(
                 width: double.infinity,
                 height: MediaQuery.sizeOf(context).height * 0.4,
@@ -78,10 +84,10 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                   ),
                 ),
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 48.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 48.0),
                     child: Hero(
                       tag: 'italyImage',
                       transitionOnUserGestures: true,
@@ -96,7 +102,7 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
               ),
             ),
             Align(
-              alignment: const AlignmentDirectional(0.0, 1.0),
+              alignment: AlignmentDirectional(0.0, 1.0),
               child: StreamBuilder<List<PropertiesRecord>>(
                 stream: queryPropertiesRecord(
                   queryBuilder: (propertiesRecord) => propertiesRecord
@@ -132,17 +138,17 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                     height: MediaQuery.sizeOf(context).height * 0.65,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                      borderRadius: const BorderRadius.only(
+                      borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(0.0),
                         bottomRight: Radius.circular(0.0),
                         topLeft: Radius.circular(16.0),
                         topRight: Radius.circular(16.0),
                       ),
                     ),
-                    alignment: const AlignmentDirectional(0.0, 1.0),
+                    alignment: AlignmentDirectional(0.0, 1.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 16.0),
+                          EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 16.0),
                       child: SingleChildScrollView(
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -155,7 +161,7 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                   FlutterFlowTheme.of(context).headlineMedium,
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 0.0, 12.0),
                               child: FutureBuilder<int>(
                                 future: queryPropertiesRecordCount(
@@ -220,7 +226,7 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                     scrollDirection: Axis.horizontal,
                                     itemCount: userEvents.length,
                                     separatorBuilder: (_, __) =>
-                                        const SizedBox(width: 12.0),
+                                        SizedBox(width: 12.0),
                                     itemBuilder: (context, userEventsIndex) {
                                       final userEventsItem =
                                           userEvents[userEventsIndex];
@@ -247,8 +253,10 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                     onTap: () async {
                                       HapticFeedback.mediumImpact();
                                       if (loggedIn) {
-                                        if ((currentUserDisplayName != '') &&
-                                            (currentUserEmail != '')) {
+                                        if ((currentUserDisplayName != null &&
+                                                currentUserDisplayName != '') &&
+                                            (currentUserEmail != null &&
+                                                currentUserEmail != '')) {
                                           context
                                               .pushNamed('S9_NR1_createEvent');
                                         } else {
@@ -278,7 +286,7 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondary,
-                                              offset: const Offset(0.0, 0.0),
+                                              offset: Offset(0.0, 0.0),
                                               spreadRadius: 0.0,
                                             )
                                           ],
@@ -291,7 +299,7 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(12.0),
+                                          padding: EdgeInsets.all(12.0),
                                           child: Text(
                                             'Create new event in your city',
                                             style: FlutterFlowTheme.of(context)
@@ -343,7 +351,7 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondary,
-                                                  offset: const Offset(0.0, 0.0),
+                                                  offset: Offset(0.0, 0.0),
                                                   spreadRadius: 0.0,
                                                 )
                                               ],
@@ -357,7 +365,7 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(12.0),
+                                              padding: EdgeInsets.all(12.0),
                                               child: Text(
                                                 'Create Article',
                                                 style: FlutterFlowTheme.of(
@@ -415,15 +423,15 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                                 'Keyzu2_${rowIndex}_of_${rowArticlesRecordList.length}'),
                                             article: rowArticlesRecord,
                                           );
-                                        }).divide(const SizedBox(width: 12.0)),
+                                        }).divide(SizedBox(width: 12.0)),
                                       );
                                     },
                                   ),
-                                ].divide(const SizedBox(width: 12.0)),
+                                ].divide(SizedBox(width: 12.0)),
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 12.0),
                               child: Text(
                                 'Invited Events',
@@ -432,7 +440,7 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 16.0, 24.0),
                               child: Builder(
                                 builder: (context) {
@@ -447,11 +455,11 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                     scrollDirection: Axis.vertical,
                                     itemCount: events.length,
                                     separatorBuilder: (_, __) =>
-                                        const SizedBox(height: 16.0),
+                                        SizedBox(height: 16.0),
                                     itemBuilder: (context, eventsIndex) {
                                       final eventsItem = events[eventsIndex];
                                       return Container(
-                                        decoration: const BoxDecoration(),
+                                        decoration: BoxDecoration(),
                                         child: EventCWidget(
                                           key: Key(
                                               'Keydkq_${eventsIndex}_of_${events.length}'),

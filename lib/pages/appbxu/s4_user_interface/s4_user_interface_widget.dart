@@ -3,17 +3,19 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/components/apbar/apbar_widget.dart';
 import '/pages/components/empty_events/empty_events_widget.dart';
 import '/pages/components/event_c/event_c_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 's4_user_interface_model.dart';
 export 's4_user_interface_model.dart';
 
 class S4UserInterfaceWidget extends StatefulWidget {
-  const S4UserInterfaceWidget({super.key});
+  const S4UserInterfaceWidget({Key? key}) : super(key: key);
 
   @override
   _S4UserInterfaceWidgetState createState() => _S4UserInterfaceWidgetState();
@@ -63,9 +65,9 @@ class _S4UserInterfaceWidgetState extends State<S4UserInterfaceWidget> {
           title: wrapWithModel(
             model: _model.apbarModel,
             updateCallback: () => setState(() {}),
-            child: const ApbarWidget(),
+            child: ApbarWidget(),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           toolbarHeight: MediaQuery.sizeOf(context).height * 0.1,
           elevation: 0.0,
@@ -138,14 +140,14 @@ class _S4UserInterfaceWidgetState extends State<S4UserInterfaceWidget> {
                     inactiveDateStyle:
                         FlutterFlowTheme.of(context).bodySmall.override(
                               fontFamily: 'Urbanist',
-                              color: const Color(0x6B57636C),
+                              color: Color(0x6B57636C),
                               fontSize: 12.0,
                             ),
                   ),
                   Expanded(
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                       child: Builder(
                         builder: (context) {
                           final events = (_model.calendarSelectedDay != null
@@ -170,7 +172,7 @@ class _S4UserInterfaceWidgetState extends State<S4UserInterfaceWidget> {
                                       .toList())
                               .toList();
                           if (events.isEmpty) {
-                            return const Center(
+                            return Center(
                               child: EmptyEventsWidget(),
                             );
                           }
@@ -182,7 +184,7 @@ class _S4UserInterfaceWidgetState extends State<S4UserInterfaceWidget> {
                             itemBuilder: (context, eventsIndex) {
                               final eventsItem = events[eventsIndex];
                               return Container(
-                                decoration: const BoxDecoration(),
+                                decoration: BoxDecoration(),
                                 child: EventCWidget(
                                   key: Key(
                                       'Key3ya_${eventsIndex}_of_${events.length}'),
@@ -195,7 +197,7 @@ class _S4UserInterfaceWidgetState extends State<S4UserInterfaceWidget> {
                       ),
                     ),
                   ),
-                ].divide(const SizedBox(height: 12.0)),
+                ].divide(SizedBox(height: 12.0)),
               ),
             );
           },

@@ -1,12 +1,14 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'emptyreview_model.dart';
 export 'emptyreview_model.dart';
 
 class EmptyreviewWidget extends StatefulWidget {
-  const EmptyreviewWidget({super.key});
+  const EmptyreviewWidget({Key? key}) : super(key: key);
 
   @override
   _EmptyreviewWidgetState createState() => _EmptyreviewWidgetState();
@@ -41,7 +43,7 @@ class _EmptyreviewWidgetState extends State<EmptyreviewWidget> {
     context.watch<FFAppState>();
 
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Text(
         'No reviews',
         style: FlutterFlowTheme.of(context).bodyMedium.override(

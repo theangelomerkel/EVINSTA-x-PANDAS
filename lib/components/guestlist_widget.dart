@@ -4,18 +4,20 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/components/profile_user/profile_user_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'guestlist_model.dart';
 export 'guestlist_model.dart';
 
 class GuestlistWidget extends StatefulWidget {
   const GuestlistWidget({
-    super.key,
+    Key? key,
     this.parameter2,
-  });
+  }) : super(key: key);
 
   final PropertiesRecord? parameter2;
 
@@ -58,7 +60,7 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
         color: FlutterFlowTheme.of(context).secondaryBackground,
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 34.0),
+        padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 34.0),
         child: StreamBuilder<PropertiesRecord>(
           stream: PropertiesRecord.getDocument(widget.parameter2!.reference),
           builder: (context, snapshot) {
@@ -101,7 +103,7 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                       child: Text(
                         'Guest List',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -114,7 +116,7 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                   child: Text(
                     'Here you can see a list of people who plan to visit',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -127,10 +129,10 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
+                      alignment: AlignmentDirectional(-1.0, 0.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 8.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 8.0),
                         child: Text(
                           'Confirmed',
                           style: FlutterFlowTheme.of(context)
@@ -144,7 +146,7 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                         ),
                       ),
                     ),
-                    if (columnPropertiesRecord.guestRef.isNotEmpty)
+                    if (columnPropertiesRecord.guestRef.length > 0)
                       Builder(
                         builder: (context) {
                           final guest =
@@ -155,7 +157,7 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                             shrinkWrap: true,
                             scrollDirection: Axis.vertical,
                             itemCount: guest.length,
-                            separatorBuilder: (_, __) => const SizedBox(height: 8.0),
+                            separatorBuilder: (_, __) => SizedBox(height: 8.0),
                             itemBuilder: (context, guestIndex) {
                               final guestItem = guest[guestIndex];
                               return FutureBuilder<UsersRecord>(
@@ -183,7 +185,7 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
+                                            AlignmentDirectional(-1.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -210,16 +212,16 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                                             ).then(
                                                 (value) => safeSetState(() {}));
                                           },
-                                          child: SizedBox(
+                                          child: Container(
                                             width: 50.0,
                                             height: 50.0,
                                             child: Stack(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   1.0, -1.0),
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           -1.0, 1.0),
                                                   child: Container(
                                                     width: 40.0,
@@ -240,6 +242,9 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                                                     child: Visibility(
                                                       visible: rowUsersRecord
                                                                   .photoUrl !=
+                                                              null &&
+                                                          rowUsersRecord
+                                                                  .photoUrl !=
                                                               '',
                                                       child: Container(
                                                         width: 40.0,
@@ -247,7 +252,7 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                                                         clipBehavior:
                                                             Clip.antiAlias,
                                                         decoration:
-                                                            const BoxDecoration(
+                                                            BoxDecoration(
                                                           shape:
                                                               BoxShape.circle,
                                                         ),
@@ -272,7 +277,7 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                                                     currentUserReference)
                                                   Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             1.0, -1.0),
                                                     child:
                                                         FlutterFlowIconButton(
@@ -313,7 +318,8 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                                       ),
                                       Text(
                                         valueOrDefault<String>(
-                                          rowUsersRecord.displayName !=
+                                          rowUsersRecord.displayName != null &&
+                                                  rowUsersRecord.displayName !=
                                                       ''
                                               ? rowUsersRecord.displayName
                                               : rowUsersRecord.phoneNumber,
@@ -330,7 +336,7 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                                               fontWeight: FontWeight.w600,
                                             ),
                                       ),
-                                    ].divide(const SizedBox(width: 8.0)),
+                                    ].divide(SizedBox(width: 8.0)),
                                   );
                                 },
                               );
@@ -339,10 +345,10 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                         },
                       ),
                     Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
+                      alignment: AlignmentDirectional(-1.0, 0.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 8.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 8.0),
                         child: Text(
                           'Rejected',
                           style: FlutterFlowTheme.of(context)
@@ -356,7 +362,7 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                         ),
                       ),
                     ),
-                    if (columnPropertiesRecord.refusedList.isNotEmpty)
+                    if (columnPropertiesRecord.refusedList.length > 0)
                       Builder(
                         builder: (context) {
                           final refused =
@@ -367,7 +373,7 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                             shrinkWrap: true,
                             scrollDirection: Axis.vertical,
                             itemCount: refused.length,
-                            separatorBuilder: (_, __) => const SizedBox(height: 8.0),
+                            separatorBuilder: (_, __) => SizedBox(height: 8.0),
                             itemBuilder: (context, refusedIndex) {
                               final refusedItem = refused[refusedIndex];
                               return FutureBuilder<UsersRecord>(
@@ -396,7 +402,7 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
+                                            AlignmentDirectional(-1.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -423,16 +429,16 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                                             ).then(
                                                 (value) => safeSetState(() {}));
                                           },
-                                          child: SizedBox(
+                                          child: Container(
                                             width: 50.0,
                                             height: 50.0,
                                             child: Stack(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   1.0, -1.0),
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           -1.0, 1.0),
                                                   child: Container(
                                                     width: 40.0,
@@ -453,6 +459,9 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                                                     child: Visibility(
                                                       visible: rowUsersRecord
                                                                   .photoUrl !=
+                                                              null &&
+                                                          rowUsersRecord
+                                                                  .photoUrl !=
                                                               '',
                                                       child: Container(
                                                         width: 40.0,
@@ -460,7 +469,7 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                                                         clipBehavior:
                                                             Clip.antiAlias,
                                                         decoration:
-                                                            const BoxDecoration(
+                                                            BoxDecoration(
                                                           shape:
                                                               BoxShape.circle,
                                                         ),
@@ -485,7 +494,7 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                                                     currentUserReference)
                                                   Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             1.0, -1.0),
                                                     child:
                                                         FlutterFlowIconButton(
@@ -527,7 +536,8 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                                       ),
                                       Text(
                                         valueOrDefault<String>(
-                                          rowUsersRecord.displayName !=
+                                          rowUsersRecord.displayName != null &&
+                                                  rowUsersRecord.displayName !=
                                                       ''
                                               ? rowUsersRecord.displayName
                                               : rowUsersRecord.phoneNumber,
@@ -544,7 +554,7 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                                               fontWeight: FontWeight.w600,
                                             ),
                                       ),
-                                    ].divide(const SizedBox(width: 8.0)),
+                                    ].divide(SizedBox(width: 8.0)),
                                   );
                                 },
                               );

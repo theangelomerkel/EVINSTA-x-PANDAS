@@ -1,6 +1,14 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'registration_widget.dart' show RegistrationWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class RegistrationModel extends FlutterFlowModel<RegistrationWidget> {
   ///  Local state fields for this component.
@@ -40,14 +48,12 @@ class RegistrationModel extends FlutterFlowModel<RegistrationWidget> {
 
   /// Initialization and disposal methods.
 
-  @override
   void initState(BuildContext context) {
     passwordLoginVisibility = false;
     passwordVisibility = false;
     passwordConfirmVisibility = false;
   }
 
-  @override
   void dispose() {
     tabBarController?.dispose();
     emailAddressLoginFocusNode?.dispose();

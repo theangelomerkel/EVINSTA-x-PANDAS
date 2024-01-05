@@ -8,15 +8,16 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'article_page_model.dart';
 export 'article_page_model.dart';
 
 class ArticlePageWidget extends StatefulWidget {
   const ArticlePageWidget({
-    super.key,
+    Key? key,
     required this.article,
-  });
+  }) : super(key: key);
 
   final ArticlesRecord? article;
 
@@ -88,21 +89,21 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
             ),
             style: FlutterFlowTheme.of(context).headlineMedium,
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 34.0),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 34.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
                 Builder(
                   builder: (context) {
-                    final imgs = widget.article?.imgs.toList() ?? [];
-                    return SizedBox(
+                    final imgs = widget.article?.imgs?.toList() ?? [];
+                    return Container(
                       width: double.infinity,
                       height: 180.0,
                       child: CarouselSlider.builder(
@@ -113,7 +114,7 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 160.0,
                             decoration: BoxDecoration(
-                              color: const Color(0x66450B0B),
+                              color: Color(0x66450B0B),
                               image: DecorationImage(
                                 fit: BoxFit.cover,
                                 image: Image.asset(
@@ -123,9 +124,9 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
                               borderRadius: BorderRadius.circular(16.0),
                             ),
                             child: Stack(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               children: [
-                                if (widget.article!.imgs.isNotEmpty)
+                                if (widget.article!.imgs.length > 0)
                                   ClipRRect(
                                     borderRadius: BorderRadius.circular(16.0),
                                     child: Image.network(
@@ -147,7 +148,7 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
                                       ),
                                     ),
                                   ),
-                                if (widget.article?.imgs.isEmpty)
+                                if (widget.article?.imgs?.length == 0)
                                   ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
                                     child: Image.asset(
@@ -173,9 +174,9 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
                           scrollDirection: Axis.horizontal,
                           autoPlay: true,
                           autoPlayAnimationDuration:
-                              const Duration(milliseconds: 1000),
+                              Duration(milliseconds: 1000),
                           autoPlayInterval:
-                              const Duration(milliseconds: (1000 + 4000)),
+                              Duration(milliseconds: (1000 + 4000)),
                           autoPlayCurve: Curves.linear,
                           pauseAutoPlayInFiniteScroll: true,
                           onPageChanged: (index, _) =>
@@ -189,7 +190,7 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                       child: ListView(
                         padding: EdgeInsets.zero,
                         shrinkWrap: true,
@@ -223,16 +224,16 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
                     width: double.infinity,
                     height: 42.0,
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Urbanist',
                           color: Colors.white,
                         ),
                     elevation: 3.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),
@@ -242,7 +243,7 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
                 if (valueOrDefault(currentUserDocument?.role, '') == 'Admin')
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => FFButtonWidget(
                         onPressed: () async {
@@ -265,9 +266,9 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
                         options: FFButtonOptions(
                           width: double.infinity,
                           height: 42.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).secondary,
                           textStyle:
@@ -276,7 +277,7 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
                                     color: Colors.white,
                                   ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),

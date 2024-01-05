@@ -1,3 +1,4 @@
+import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/guestlist_widget.dart';
@@ -11,11 +12,14 @@ import '/pages/components/registration/registration_widget.dart';
 import '/pages/components/review_copy/review_copy_widget.dart';
 import '/pages/components/wishlist/wishlist_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -24,9 +28,9 @@ export 's3_event_data_public_model.dart';
 
 class S3EventDataPublicWidget extends StatefulWidget {
   const S3EventDataPublicWidget({
-    super.key,
+    Key? key,
     this.pr,
-  });
+  }) : super(key: key);
 
   final PropertiesRecord? pr;
 
@@ -56,8 +60,8 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: const Offset(0.0, 50.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 50.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -75,8 +79,8 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: const Offset(0.0, 50.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 50.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -94,8 +98,8 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: const Offset(0.0, 50.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 50.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -154,7 +158,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(16.0),
                 child: StreamBuilder<PropertiesRecord>(
                   stream: PropertiesRecord.getDocument(widget.pr!.reference),
                   builder: (context, snapshot) {
@@ -180,7 +184,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: MediaQuery.sizeOf(context).height * 0.4,
                           decoration: BoxDecoration(
-                            color: const Color(0x29450B0B),
+                            color: Color(0x29450B0B),
                             image: DecorationImage(
                               fit: BoxFit.cover,
                               image: Image.asset(
@@ -194,9 +198,9 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(16.0),
+                                  padding: EdgeInsets.all(16.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -216,7 +220,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                             'S2_HomePage',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -289,7 +293,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  boxShadow: const [
+                                  boxShadow: [
                                     BoxShadow(
                                       blurRadius: 8.0,
                                       color: Color(0x230F1113),
@@ -362,9 +366,9 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                               if (columnPropertiesRecord.userRef ==
                                   currentUserReference)
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 1.0),
+                                  alignment: AlignmentDirectional(0.0, 1.0),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(16.0),
+                                    padding: EdgeInsets.all(16.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment: MainAxisAlignment.end,
@@ -373,9 +377,9 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                             currentUserReference)
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(1.0, 1.0),
+                                                AlignmentDirectional(1.0, 1.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 4.0, 0.0),
                                               child: FlutterFlowIconButton(
                                                 borderColor: Colors.transparent,
@@ -429,9 +433,9 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(1.0, 0.0),
+                          alignment: AlignmentDirectional(1.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 0.0, 8.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -445,19 +449,23 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                   icon: FaIcon(
                                     FontAwesomeIcons.paypal,
                                     color: valueOrDefault<Color>(
-                                      columnPropertiesRecord
+                                      columnPropertiesRecord.paypalURL !=
+                                                  null &&
+                                              columnPropertiesRecord
                                                       .paypalURL !=
                                                   ''
-                                          ? const Color(0xFF2790C3)
+                                          ? Color(0xFF2790C3)
                                           : FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                      const Color(0xFF2790C3),
+                                      Color(0xFF2790C3),
                                     ),
                                     size: 24.0,
                                   ),
                                   onPressed: () async {
                                     HapticFeedback.selectionClick();
                                     if (columnPropertiesRecord.paypalURL !=
+                                            null &&
+                                        columnPropertiesRecord.paypalURL !=
                                             '') {
                                       await launchURL(
                                           columnPropertiesRecord.paypalURL);
@@ -481,7 +489,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                               context: context,
                                               builder: (alertDialogContext) {
                                                 return AlertDialog(
-                                                  title: const Text(
+                                                  title: Text(
                                                       'Do you want to add this event to your calendar?'),
                                                   actions: [
                                                     TextButton(
@@ -489,14 +497,14 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                                           Navigator.pop(
                                                               alertDialogContext,
                                                               false),
-                                                      child: const Text('Cancel'),
+                                                      child: Text('Cancel'),
                                                     ),
                                                     TextButton(
                                                       onPressed: () =>
                                                           Navigator.pop(
                                                               alertDialogContext,
                                                               true),
-                                                      child: const Text('Confirm'),
+                                                      child: Text('Confirm'),
                                                     ),
                                                   ],
                                                 );
@@ -528,31 +536,35 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                   icon: FaIcon(
                                     FontAwesomeIcons.spotify,
                                     color: valueOrDefault<Color>(
-                                      columnPropertiesRecord
+                                      columnPropertiesRecord.spotifyURL !=
+                                                  null &&
+                                              columnPropertiesRecord
                                                       .spotifyURL !=
                                                   ''
-                                          ? const Color(0xFF1ED760)
+                                          ? Color(0xFF1ED760)
                                           : FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                      const Color(0xFF1ED760),
+                                      Color(0xFF1ED760),
                                     ),
                                     size: 24.0,
                                   ),
                                   onPressed: () async {
                                     HapticFeedback.selectionClick();
                                     if (columnPropertiesRecord.spotifyURL !=
+                                            null &&
+                                        columnPropertiesRecord.spotifyURL !=
                                             '') {
                                       await launchURL(
                                           columnPropertiesRecord.spotifyURL);
                                     }
                                   },
                                 ),
-                              ].divide(const SizedBox(width: 50.0)),
+                              ].divide(SizedBox(width: 50.0)),
                             ),
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Text(
                             columnPropertiesRecord.propertyName,
                             style: FlutterFlowTheme.of(context).displaySmall,
@@ -561,7 +573,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                         ),
                         if (columnPropertiesRecord.date != null)
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 4.0, 0.0, 0.0),
                             child: Text(
                               valueOrDefault<String>(
@@ -580,18 +592,20 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                   ),
                             ),
                           ),
-                        if (columnPropertiesRecord.propertyDescription != '')
+                        if (columnPropertiesRecord.propertyDescription !=
+                                null &&
+                            columnPropertiesRecord.propertyDescription != '')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 8.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 4.0),
                                     child: Text(
                                       'About',
@@ -602,7 +616,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                   ),
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Text(
                                     columnPropertiesRecord.propertyDescription,
                                     style: FlutterFlowTheme.of(context)
@@ -618,9 +632,10 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                               ],
                             ),
                           ),
-                        if (columnPropertiesRecord.propertyAddress != '')
+                        if (columnPropertiesRecord.propertyAddress != null &&
+                            columnPropertiesRecord.propertyAddress != '')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 4.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -632,7 +647,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                   size: 18.0,
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     columnPropertiesRecord.propertyAddress,
@@ -648,9 +663,10 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                               ],
                             ),
                           ),
-                        if (columnPropertiesRecord.phone != '')
+                        if (columnPropertiesRecord.phone != null &&
+                            columnPropertiesRecord.phone != '')
                           Align(
-                            alignment: const AlignmentDirectional(-1.0, 0.0),
+                            alignment: AlignmentDirectional(-1.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
                                 var confirmDialogResponse =
@@ -658,21 +674,21 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                           context: context,
                                           builder: (alertDialogContext) {
                                             return AlertDialog(
-                                              title: const Text('Choose an action'),
+                                              title: Text('Choose an action'),
                                               actions: [
                                                 TextButton(
                                                   onPressed: () =>
                                                       Navigator.pop(
                                                           alertDialogContext,
                                                           false),
-                                                  child: const Text('Copy'),
+                                                  child: Text('Copy'),
                                                 ),
                                                 TextButton(
                                                   onPressed: () =>
                                                       Navigator.pop(
                                                           alertDialogContext,
                                                           true),
-                                                  child: const Text('Phone'),
+                                                  child: Text('Phone'),
                                                 ),
                                               ],
                                             );
@@ -696,7 +712,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                               .primaryText,
                                         ),
                                       ),
-                                      duration: const Duration(milliseconds: 4000),
+                                      duration: Duration(milliseconds: 4000),
                                       backgroundColor:
                                           FlutterFlowTheme.of(context).primary,
                                     ),
@@ -711,9 +727,9 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                               ),
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
@@ -727,7 +743,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 0.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -736,7 +752,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                             ),
                           ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 0.0, 12.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -766,7 +782,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                borderRadius: const BorderRadius.only(
+                                borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(10.0),
                                   bottomRight: Radius.circular(10.0),
                                   topLeft: Radius.circular(12.0),
@@ -774,7 +790,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 16.0, 12.0, 16.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -833,7 +849,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              borderRadius: const BorderRadius.only(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(10.0),
                                 bottomRight: Radius.circular(10.0),
                                 topLeft: Radius.circular(12.0),
@@ -841,7 +857,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 16.0, 12.0, 16.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -876,7 +892,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                             !columnPropertiesRecord.guestRef
                                 .contains(currentUserReference))
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -911,7 +927,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                       return Padding(
                                         padding:
                                             MediaQuery.viewInsetsOf(context),
-                                        child: const RegistrationWidget(),
+                                        child: RegistrationWidget(),
                                       );
                                     },
                                   ).then((value) => safeSetState(() {}));
@@ -921,9 +937,9 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                               options: FFButtonOptions(
                                 width: double.infinity,
                                 height: 42.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -933,7 +949,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                       color: Colors.white,
                                     ),
                                 elevation: 1.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -946,7 +962,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                             !columnPropertiesRecord.refusedList
                                 .contains(currentUserReference))
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -981,7 +997,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                       return Padding(
                                         padding:
                                             MediaQuery.viewInsetsOf(context),
-                                        child: const RegistrationWidget(),
+                                        child: RegistrationWidget(),
                                       );
                                     },
                                   ).then((value) => safeSetState(() {}));
@@ -991,9 +1007,9 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                               options: FFButtonOptions(
                                 width: double.infinity,
                                 height: 42.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).secondary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -1003,7 +1019,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                       color: Colors.white,
                                     ),
                                 elevation: 1.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -1012,7 +1028,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                             ),
                           ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: wrapWithModel(
                             model: _model.reviewCopyModel,

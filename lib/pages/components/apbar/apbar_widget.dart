@@ -2,12 +2,14 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'apbar_model.dart';
 export 'apbar_model.dart';
 
 class ApbarWidget extends StatefulWidget {
-  const ApbarWidget({super.key});
+  const ApbarWidget({Key? key}) : super(key: key);
 
   @override
   _ApbarWidgetState createState() => _ApbarWidgetState();
@@ -59,13 +61,13 @@ class _ApbarWidgetState extends State<ApbarWidget> {
                     ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                 child: AuthUserStreamWidget(
                   builder: (context) => Text(
                     currentUserDisplayName,
                     style: FlutterFlowTheme.of(context).displaySmall.override(
                           fontFamily: 'Urbanist',
-                          color: const Color(0xFFF35C29),
+                          color: Color(0xFFF35C29),
                           fontWeight: FontWeight.w500,
                         ),
                   ),
@@ -74,14 +76,14 @@ class _ApbarWidgetState extends State<ApbarWidget> {
             ],
           ),
           Align(
-            alignment: const AlignmentDirectional(-1.0, 0.0),
+            alignment: AlignmentDirectional(-1.0, 0.0),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
               child: Text(
                 'Checkout news and highlights below.',
                 style: FlutterFlowTheme.of(context).bodySmall.override(
                       fontFamily: 'Urbanist',
-                      color: const Color(0xFF8B97A2),
+                      color: Color(0xFF8B97A2),
                       fontWeight: FontWeight.w500,
                     ),
               ),

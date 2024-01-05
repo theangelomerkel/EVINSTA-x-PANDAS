@@ -5,18 +5,20 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/components/profile_user/profile_user_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'wishlist_model.dart';
 export 'wishlist_model.dart';
 
 class WishlistWidget extends StatefulWidget {
   const WishlistWidget({
-    super.key,
+    Key? key,
     this.parameter4,
-  });
+  }) : super(key: key);
 
   final PropertiesRecord? parameter4;
 
@@ -60,7 +62,7 @@ class _WishlistWidgetState extends State<WishlistWidget> {
         borderRadius: BorderRadius.circular(0.0),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 34.0),
+        padding: EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 34.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
@@ -83,7 +85,7 @@ class _WishlistWidgetState extends State<WishlistWidget> {
                   },
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                   child: Text(
                     ' Wishlist',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -96,7 +98,7 @@ class _WishlistWidgetState extends State<WishlistWidget> {
               ],
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 12.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 12.0),
               child: Text(
                 'Check the boxes for the items you intend to bring in',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -136,7 +138,7 @@ class _WishlistWidgetState extends State<WishlistWidget> {
                     shrinkWrap: true,
                     scrollDirection: Axis.vertical,
                     itemCount: listViewWishlistRecordList.length,
-                    separatorBuilder: (_, __) => const SizedBox(height: 8.0),
+                    separatorBuilder: (_, __) => SizedBox(height: 8.0),
                     itemBuilder: (context, listViewIndex) {
                       final listViewWishlistRecord =
                           listViewWishlistRecordList[listViewIndex];
@@ -170,7 +172,7 @@ class _WishlistWidgetState extends State<WishlistWidget> {
                         child: Container(
                           width: double.infinity,
                           height: 50.0,
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -268,7 +270,7 @@ class _WishlistWidgetState extends State<WishlistWidget> {
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           listViewWishlistRecord.title,
@@ -286,10 +288,10 @@ class _WishlistWidgetState extends State<WishlistWidget> {
                                   ],
                                 ),
                               ),
-                              if (listViewWishlistRecord.users.isNotEmpty)
+                              if (listViewWishlistRecord.users.length > 0)
                                 Expanded(
                                   child: Align(
-                                    alignment: const AlignmentDirectional(1.0, 0.0),
+                                    alignment: AlignmentDirectional(1.0, 0.0),
                                     child: Builder(
                                       builder: (context) {
                                         final users = listViewWishlistRecord
@@ -308,7 +310,7 @@ class _WishlistWidgetState extends State<WishlistWidget> {
                                               final usersItem =
                                                   users[usersIndex];
                                               return Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child:
                                                     FutureBuilder<UsersRecord>(
@@ -371,17 +373,17 @@ class _WishlistWidgetState extends State<WishlistWidget> {
                                                             safeSetState(
                                                                 () {}));
                                                       },
-                                                      child: SizedBox(
+                                                      child: Container(
                                                         width: 45.0,
                                                         height: 45.0,
                                                         child: Stack(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   1.0, -1.0),
                                                           children: [
                                                             Align(
                                                               alignment:
-                                                                  const AlignmentDirectional(
+                                                                  AlignmentDirectional(
                                                                       -1.0,
                                                                       1.0),
                                                               child: Container(
@@ -408,6 +410,9 @@ class _WishlistWidgetState extends State<WishlistWidget> {
                                                                     Visibility(
                                                                   visible: stackUsersRecord
                                                                               .displayName !=
+                                                                          null &&
+                                                                      stackUsersRecord
+                                                                              .displayName !=
                                                                           '',
                                                                   child:
                                                                       Container(
@@ -417,7 +422,7 @@ class _WishlistWidgetState extends State<WishlistWidget> {
                                                                     clipBehavior:
                                                                         Clip.antiAlias,
                                                                     decoration:
-                                                                        const BoxDecoration(
+                                                                        BoxDecoration(
                                                                       shape: BoxShape
                                                                           .circle,
                                                                     ),
@@ -447,7 +452,7 @@ class _WishlistWidgetState extends State<WishlistWidget> {
                                                                 currentUserReference)
                                                               Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         1.0,
                                                                         -1.0),
                                                                 child:
@@ -493,7 +498,7 @@ class _WishlistWidgetState extends State<WishlistWidget> {
                                                   },
                                                 ),
                                               );
-                                            }).divide(const SizedBox(width: 8.0)),
+                                            }).divide(SizedBox(width: 8.0)),
                                           ),
                                         );
                                       },
@@ -510,7 +515,7 @@ class _WishlistWidgetState extends State<WishlistWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 12.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 12.0),
               child: Text(
                 'You can untick the checkboxes at any time',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -528,15 +533,15 @@ class _WishlistWidgetState extends State<WishlistWidget> {
               options: FFButtonOptions(
                 width: double.infinity,
                 height: 42.0,
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'Urbanist',
                       color: Colors.white,
                     ),
                 elevation: 3.0,
-                borderSide: const BorderSide(
+                borderSide: BorderSide(
                   color: Colors.transparent,
                   width: 1.0,
                 ),

@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'dart:typed_data';
+import '../schema/structs/index.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
 import 'api_manager.dart';
@@ -9,7 +11,7 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
 class ResidentCall {
   static Future<ApiCallResponse> call() async {
-    const ffApiRequestBody = '''
+    final ffApiRequestBody = '''
 {
   "query": "query GET_POPULAR_EVENTS(\$filters: FilterInputDtoInput, \$pageSize: Int) {\\r\\n  eventListings(filters: \$filters, pageSize: \$pageSize, page: 1, sort: { attending: { priority: 1, order: DESCENDING } }) {\\r\\n    data {\\r\\n      id\\r\\n      listingDate\\r\\n      event {\\r\\n        ...eventFields\\r\\n        __typename\\r\\n      }\\r\\n      __typename\\r\\n    }\\r\\n    __typename\\r\\n  }\\r\\n}\\r\\n\\r\\nfragment eventFields on Event {\\r\\n  id\\r\\n  title\\r\\n  attending\\r\\n  date\\r\\n  contentUrl\\r\\n  flyerFront\\r\\n  queueItEnabled\\r\\n  newEventForm\\r\\n  images {\\r\\n    id\\r\\n    filename\\r\\n    alt\\r\\n    type\\r\\n    crop\\r\\n    __typename\\r\\n  }\\r\\n  venue {\\r\\n    id\\r\\n    name\\r\\n    contentUrl\\r\\n    live\\r\\n    __typename\\r\\n  }\\r\\n  __typename\\r\\n}",
   "variables": {

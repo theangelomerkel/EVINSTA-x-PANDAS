@@ -1,17 +1,21 @@
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'my_event_model.dart';
 export 'my_event_model.dart';
 
 class MyEventWidget extends StatefulWidget {
   const MyEventWidget({
-    super.key,
+    Key? key,
     required this.event,
-  });
+  }) : super(key: key);
 
   final PropertiesRecord? event;
 
@@ -78,7 +82,7 @@ class _MyEventWidgetState extends State<MyEventWidget>
             height: 140.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
-              boxShadow: const [
+              boxShadow: [
                 BoxShadow(
                   blurRadius: 8.0,
                   color: Color(0x230F1113),
@@ -108,9 +112,9 @@ class _MyEventWidgetState extends State<MyEventWidget>
           ),
         ),
         Align(
-          alignment: const AlignmentDirectional(-1.0, -1.0),
+          alignment: AlignmentDirectional(-1.0, -1.0),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(2.0, 12.0, 8.0, 8.0),
+            padding: EdgeInsetsDirectional.fromSTEB(2.0, 12.0, 8.0, 8.0),
             child: Text(
               widget.event!.propertyName,
               style: FlutterFlowTheme.of(context).titleMedium,

@@ -1,6 +1,10 @@
+import '/backend/backend.dart';
 import '/flutter_flow/chat/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -11,10 +15,10 @@ export 's7chat_details_model.dart';
 
 class S7chatDetailsWidget extends StatefulWidget {
   const S7chatDetailsWidget({
-    super.key,
+    Key? key,
     this.chatUser,
     this.chatRef,
-  });
+  }) : super(key: key);
 
   final UsersRecord? chatUser;
   final DocumentReference? chatRef;
@@ -104,7 +108,7 @@ class _S7chatDetailsWidgetState extends State<S7chatDetailsWidget> {
                 color: FlutterFlowTheme.of(context).tertiary,
               ),
         ),
-        actions: const [],
+        actions: [],
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -130,7 +134,7 @@ class _S7chatDetailsWidgetState extends State<S7chatDetailsWidget> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   otherUsersBoxDecoration: BoxDecoration(
-                    color: const Color(0xFF4B39EF),
+                    color: Color(0xFF4B39EF),
                     border: Border.all(
                       color: Colors.transparent,
                     ),
@@ -138,7 +142,7 @@ class _S7chatDetailsWidgetState extends State<S7chatDetailsWidget> {
                   ),
                   currentUserTextStyle: GoogleFonts.getFont(
                     'Lexend Deca',
-                    color: const Color(0xFF1E2429),
+                    color: Color(0xFF1E2429),
                     fontWeight: FontWeight.w500,
                     fontSize: 14.0,
                     fontStyle: FontStyle.normal,
@@ -151,7 +155,7 @@ class _S7chatDetailsWidgetState extends State<S7chatDetailsWidget> {
                   ),
                   inputHintTextStyle: GoogleFonts.getFont(
                     'Lexend Deca',
-                    color: const Color(0xFF95A1AC),
+                    color: Color(0xFF95A1AC),
                     fontWeight: FontWeight.normal,
                     fontSize: 14.0,
                   ),

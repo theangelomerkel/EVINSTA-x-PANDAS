@@ -3,22 +3,25 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'property_review_model.dart';
 export 'property_review_model.dart';
 
 class PropertyReviewWidget extends StatefulWidget {
   const PropertyReviewWidget({
-    super.key,
+    Key? key,
     this.propertyRef,
-  });
+  }) : super(key: key);
 
   final PropertiesRecord? propertyRef;
 
@@ -47,15 +50,15 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 450.ms,
-          begin: const Offset(0.0, 76.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 76.0),
+          end: Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 450.ms,
-          begin: const Offset(1.0, 1.0),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(1.0, 1.0),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -146,7 +149,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
               'Reviews',
               style: FlutterFlowTheme.of(context).headlineSmall,
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 0.0,
           ),
@@ -160,7 +163,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                      boxShadow: const [
+                      boxShadow: [
                         BoxShadow(
                           blurRadius: 3.0,
                           color: Color(0x39000000),
@@ -169,7 +172,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                       ],
                     ),
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
+                      padding: EdgeInsetsDirectional.fromSTEB(
                           12.0, 16.0, 12.0, 24.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
@@ -180,7 +183,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 12.0),
                                 child: Text(
                                   valueOrDefault<String>(
@@ -205,7 +208,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Lexend Deca',
-                                      color: const Color(0xFF95A1AC),
+                                      color: Color(0xFF95A1AC),
                                       fontSize: 12.0,
                                       fontWeight: FontWeight.normal,
                                     ),
@@ -220,7 +223,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 12.0),
                                     child: Text(
                                       functions.ratingSummaryList(
@@ -237,7 +240,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                           ),
                                     ),
                                   ),
-                                  const Padding(
+                                  Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         4.0, 0.0, 0.0, 12.0),
                                     child: Icon(
@@ -254,7 +257,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                     .bodySmall
                                     .override(
                                       fontFamily: 'Lexend Deca',
-                                      color: const Color(0xFF8B97A2),
+                                      color: Color(0xFF8B97A2),
                                       fontSize: 12.0,
                                       fontWeight: FontWeight.normal,
                                     ),
@@ -301,14 +304,14 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                           final listViewReviewsRecord =
                               listViewReviewsRecordList[listViewIndex];
                           return Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 8.0, 16.0, 4.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 0.96,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 4.0,
                                     color: Color(0x33000000),
@@ -318,7 +321,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                 borderRadius: BorderRadius.circular(16.0),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(2.0),
+                                padding: EdgeInsets.all(2.0),
                                 child: StreamBuilder<UsersRecord>(
                                   stream: UsersRecord.getDocument(
                                       listViewReviewsRecord.userRef!),
@@ -346,7 +349,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 12.0, 16.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -372,7 +375,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     4.0,
@@ -382,7 +385,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                                             RatingBarIndicator(
                                                           itemBuilder: (context,
                                                                   index) =>
-                                                              const Icon(
+                                                              Icon(
                                                             Icons.star_rounded,
                                                             color: Color(
                                                                 0xFFFFA130),
@@ -393,7 +396,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                                               listViewReviewsRecord
                                                                   .rating,
                                                           unratedColor:
-                                                              const Color(0xFF95A1AC),
+                                                              Color(0xFF95A1AC),
                                                           itemCount: 5,
                                                           itemSize: 24.0,
                                                         ),
@@ -404,7 +407,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                                 Card(
                                                   clipBehavior: Clip
                                                       .antiAliasWithSaveLayer,
-                                                  color: const Color(0xFFDBE2E7),
+                                                  color: Color(0xFFDBE2E7),
                                                   shape: RoundedRectangleBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -412,22 +415,22 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsets.all(2.0),
+                                                        EdgeInsets.all(2.0),
                                                     child: Container(
                                                       width: 50.0,
                                                       height: 50.0,
                                                       clipBehavior:
                                                           Clip.antiAlias,
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         shape: BoxShape.circle,
                                                       ),
                                                       child: CachedNetworkImage(
                                                         fadeInDuration:
-                                                            const Duration(
+                                                            Duration(
                                                                 milliseconds:
                                                                     500),
                                                         fadeOutDuration:
-                                                            const Duration(
+                                                            Duration(
                                                                 milliseconds:
                                                                     500),
                                                         imageUrl:
@@ -446,7 +449,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 4.0, 16.0, 12.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,

@@ -7,22 +7,28 @@ import '/flutter_flow/flutter_flow_place_picker.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/place.dart';
 import '/flutter_flow/upload_data.dart';
 import '/pages/components/users/users_widget.dart';
+import 'dart:io';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:expandable/expandable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
 import 's9_n_r1_create_event_model.dart';
 export 's9_n_r1_create_event_model.dart';
 
 class S9NR1CreateEventWidget extends StatefulWidget {
-  const S9NR1CreateEventWidget({super.key});
+  const S9NR1CreateEventWidget({Key? key}) : super(key: key);
 
   @override
   _S9NR1CreateEventWidgetState createState() => _S9NR1CreateEventWidgetState();
@@ -125,7 +131,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
           'Create Event',
           style: FlutterFlowTheme.of(context).headlineMedium,
         ),
-        actions: const [],
+        actions: [],
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -134,12 +140,12 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
         child: Form(
           key: _model.formKey,
           autovalidateMode: AutovalidateMode.disabled,
-          child: SizedBox(
+          child: Container(
             width: double.infinity,
             child: Stack(
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
                   child: PageView(
                     controller: _model.pageViewController ??=
                         PageController(initialPage: 0),
@@ -150,16 +156,16 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsets.all(16.0),
+                              padding: EdgeInsets.all(16.0),
                               child: SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 12.0),
                                         child: Text(
                                           'Main image*',
@@ -175,7 +181,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(
+                                    Container(
                                       width: 220.0,
                                       height: 160.0,
                                       child: Stack(
@@ -199,9 +205,12 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                               ),
                                             ),
                                             child: Visibility(
-                                              visible: _model.uploadedFileUrl1 != '',
+                                              visible: _model
+                                                          .uploadedFileUrl1 !=
+                                                      null &&
+                                                  _model.uploadedFileUrl1 != '',
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: InkWell(
                                                   splashColor:
@@ -257,7 +266,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(1.0, 1.0),
+                                                AlignmentDirectional(1.0, 1.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
                                                 final selectedMedia =
@@ -341,14 +350,14 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                               text: 'upload',
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 12.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFFF35C29),
+                                                color: Color(0xFFF35C29),
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
@@ -358,7 +367,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                           color: Colors.white,
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -372,9 +381,9 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                     ),
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 12.0),
                                         child: Text(
                                           'Background image*',
@@ -390,7 +399,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(
+                                    Container(
                                       width: 280.0,
                                       height: 210.0,
                                       child: Stack(
@@ -414,9 +423,12 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                               ),
                                             ),
                                             child: Visibility(
-                                              visible: _model.uploadedFileUrl2 != '',
+                                              visible: _model
+                                                          .uploadedFileUrl2 !=
+                                                      null &&
+                                                  _model.uploadedFileUrl2 != '',
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: InkWell(
                                                   splashColor:
@@ -472,7 +484,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(1.0, 1.0),
+                                                AlignmentDirectional(1.0, 1.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
                                                 final selectedMedia =
@@ -557,14 +569,14 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                               text: 'upload',
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 12.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFFF35C29),
+                                                color: Color(0xFFF35C29),
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
@@ -574,7 +586,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                           color: Colors.white,
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -588,9 +600,9 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                     ),
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
                                           'Event NAME*',
@@ -607,7 +619,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: TextFormField(
                                         controller:
@@ -668,7 +680,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                             borderRadius:
                                                 BorderRadius.circular(12.0),
                                           ),
-                                          contentPadding: const EdgeInsets.all(12.0),
+                                          contentPadding: EdgeInsets.all(12.0),
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
@@ -684,9 +696,9 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                     ),
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
                                           'Event DATE*',
@@ -708,7 +720,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        final datePickedDate =
+                                        final _datePickedDate =
                                             await showDatePicker(
                                           context: context,
                                           initialDate: getCurrentTimestamp,
@@ -716,9 +728,9 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           lastDate: DateTime(2050),
                                         );
 
-                                        TimeOfDay? datePickedTime;
-                                        if (datePickedDate != null) {
-                                          datePickedTime =
+                                        TimeOfDay? _datePickedTime;
+                                        if (_datePickedDate != null) {
+                                          _datePickedTime =
                                               await showTimePicker(
                                             context: context,
                                             initialTime: TimeOfDay.fromDateTime(
@@ -726,15 +738,15 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           );
                                         }
 
-                                        if (datePickedDate != null &&
-                                            datePickedTime != null) {
+                                        if (_datePickedDate != null &&
+                                            _datePickedTime != null) {
                                           safeSetState(() {
                                             _model.datePicked = DateTime(
-                                              datePickedDate.year,
-                                              datePickedDate.month,
-                                              datePickedDate.day,
-                                              datePickedTime!.hour,
-                                              datePickedTime.minute,
+                                              _datePickedDate.year,
+                                              _datePickedDate.month,
+                                              _datePickedDate.day,
+                                              _datePickedTime!.hour,
+                                              _datePickedTime.minute,
                                             );
                                           });
                                         }
@@ -754,12 +766,12 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(12.0),
+                                          padding: EdgeInsets.all(12.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Text(
                                                   valueOrDefault<String>(
@@ -787,10 +799,10 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           4.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -827,9 +839,9 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                     ),
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
                                           'PROPERTY ADDRESS*',
@@ -846,7 +858,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: TextFormField(
                                         controller:
@@ -908,7 +920,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                             borderRadius:
                                                 BorderRadius.circular(12.0),
                                           ),
-                                          contentPadding: const EdgeInsets.all(12.0),
+                                          contentPadding: EdgeInsets.all(12.0),
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
@@ -955,7 +967,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                               fontSize: 14.0,
                                             ),
                                         elevation: 0.0,
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           width: 0.0,
                                         ),
                                         borderRadius:
@@ -964,9 +976,9 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                     ),
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
                                           'Description*',
@@ -983,7 +995,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: TextFormField(
                                         controller: _model.descController,
@@ -1043,7 +1055,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                             borderRadius:
                                                 BorderRadius.circular(12.0),
                                           ),
-                                          contentPadding: const EdgeInsets.all(12.0),
+                                          contentPadding: EdgeInsets.all(12.0),
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
@@ -1058,7 +1070,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -1079,7 +1091,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: TextFormField(
                                         controller: _model.neighbController,
@@ -1136,7 +1148,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                             borderRadius:
                                                 BorderRadius.circular(12.0),
                                           ),
-                                          contentPadding: const EdgeInsets.all(12.0),
+                                          contentPadding: EdgeInsets.all(12.0),
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
@@ -1153,9 +1165,9 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                     ),
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 16.0, 0.0, 0.0),
                                         child: Text(
                                           'Phone Number',
@@ -1223,7 +1235,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           borderRadius:
                                               BorderRadius.circular(12.0),
                                         ),
-                                        contentPadding: const EdgeInsets.all(12.0),
+                                        contentPadding: EdgeInsets.all(12.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .headlineMedium
@@ -1240,9 +1252,9 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                     ),
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 16.0, 0.0, 0.0),
                                         child: Text(
                                           'Amount persons',
@@ -1310,7 +1322,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           borderRadius:
                                               BorderRadius.circular(12.0),
                                         ),
-                                        contentPadding: const EdgeInsets.all(12.0),
+                                        contentPadding: EdgeInsets.all(12.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .headlineMedium
@@ -1330,7 +1342,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(16.0),
+                            padding: EdgeInsets.all(16.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1354,7 +1366,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                 FFButtonWidget(
                                   onPressed: () async {
                                     await _model.pageViewController?.nextPage(
-                                      duration: const Duration(milliseconds: 300),
+                                      duration: Duration(milliseconds: 300),
                                       curve: Curves.ease,
                                     );
                                   },
@@ -1362,11 +1374,11 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                   options: FFButtonOptions(
                                     width: 120.0,
                                     height: 50.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: const Color(0xFFF35C29),
+                                    color: Color(0xFFF35C29),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -1374,7 +1386,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           color: Colors.white,
                                         ),
                                     elevation: 2.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -1391,14 +1403,14 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsets.all(16.0),
+                              padding: EdgeInsets.all(16.0),
                               child: SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Text(
                                         'Spotify URL',
                                         style: FlutterFlowTheme.of(context)
@@ -1413,7 +1425,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: TextFormField(
                                         controller: _model.spotifyController,
@@ -1473,7 +1485,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                             borderRadius:
                                                 BorderRadius.circular(12.0),
                                           ),
-                                          contentPadding: const EdgeInsets.all(12.0),
+                                          contentPadding: EdgeInsets.all(12.0),
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
@@ -1488,14 +1500,14 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
+                                                AlignmentDirectional(-1.0, 0.0),
                                             child: Text(
                                               'Public event',
                                               style: FlutterFlowTheme.of(
@@ -1512,14 +1524,14 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 0.0, 0.0),
                                             child: Switch.adaptive(
                                               value: _model.publicValue ??=
                                                   true,
                                               onChanged: (newValue) async {
                                                 setState(() => _model
-                                                    .publicValue = newValue);
+                                                    .publicValue = newValue!);
                                               },
                                               activeColor:
                                                   FlutterFlowTheme.of(context)
@@ -1539,14 +1551,14 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
+                                                AlignmentDirectional(-1.0, 0.0),
                                             child: Text(
                                               'Free event',
                                               style: FlutterFlowTheme.of(
@@ -1563,13 +1575,13 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 0.0, 0.0),
                                             child: Switch.adaptive(
                                               value: _model.freeValue ??= true,
                                               onChanged: (newValue) async {
                                                 setState(() => _model
-                                                    .freeValue = newValue);
+                                                    .freeValue = newValue!);
                                               },
                                               activeColor:
                                                   FlutterFlowTheme.of(context)
@@ -1594,9 +1606,9 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
+                                                AlignmentDirectional(-1.0, 0.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 16.0, 0.0, 0.0),
                                               child: Text(
@@ -1677,7 +1689,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                     BorderRadius.circular(12.0),
                                               ),
                                               contentPadding:
-                                                  const EdgeInsets.all(12.0),
+                                                  EdgeInsets.all(12.0),
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineMedium
@@ -1695,9 +1707,9 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(-1.0, 0.0),
+                                                AlignmentDirectional(-1.0, 0.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 16.0, 0.0, 0.0),
                                               child: Text(
@@ -1719,7 +1731,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 4.0, 0.0, 0.0),
                                             child: TextFormField(
                                               controller:
@@ -1789,7 +1801,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                           12.0),
                                                 ),
                                                 contentPadding:
-                                                    const EdgeInsets.all(12.0),
+                                                    EdgeInsets.all(12.0),
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -1808,9 +1820,9 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       ),
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
                                           'Add friends',
@@ -1870,7 +1882,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 12.0),
                                                     child: TextFormField(
@@ -1881,7 +1893,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                       onChanged: (_) =>
                                                           EasyDebounce.debounce(
                                                         '_model.searchController',
-                                                        const Duration(
+                                                        Duration(
                                                             milliseconds: 200),
                                                         () async {
                                                           await queryUsersRecordOnce()
@@ -1894,8 +1906,9 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                                         (record) => TextSearchItem.fromTerms(
                                                                             record,
                                                                             [
-                                                                              record.email,
-                                                                              record.displayName]),
+                                                                              record.email!,
+                                                                              record.displayName!
+                                                                            ]),
                                                                       )
                                                                       .toList(),
                                                                 )
@@ -1992,7 +2005,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                                       12.0),
                                                         ),
                                                         contentPadding:
-                                                            const EdgeInsets.all(
+                                                            EdgeInsets.all(
                                                                 12.0),
                                                       ),
                                                       style: FlutterFlowTheme
@@ -2014,6 +2027,9 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                     child: Builder(
                                                       builder: (context) {
                                                         if (_model.searchController
+                                                                    .text ==
+                                                                null ||
+                                                            _model.searchController
                                                                     .text ==
                                                                 '') {
                                                           return FutureBuilder<
@@ -2120,7 +2136,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                 ],
                                               ),
                                             ),
-                                            theme: const ExpandableThemeData(
+                                            theme: ExpandableThemeData(
                                               tapHeaderToExpand: true,
                                               tapBodyToExpand: false,
                                               tapBodyToCollapse: false,
@@ -2139,7 +2155,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(16.0),
+                            padding: EdgeInsets.all(16.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -2264,7 +2280,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       ),
                                     }, propertiesRecordReference);
                                     await _model.pageViewController?.nextPage(
-                                      duration: const Duration(milliseconds: 300),
+                                      duration: Duration(milliseconds: 300),
                                       curve: Curves.ease,
                                     );
 
@@ -2274,11 +2290,11 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                   options: FFButtonOptions(
                                     width: 120.0,
                                     height: 50.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: const Color(0xFFF35C29),
+                                    color: Color(0xFFF35C29),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -2286,7 +2302,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           color: Colors.white,
                                         ),
                                     elevation: 2.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -2303,14 +2319,14 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsets.all(16.0),
+                              padding: EdgeInsets.all(16.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 12.0),
                                       child: Text(
                                         'CREATE YOUR WISHLIST',
@@ -2332,9 +2348,9 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
-                                          child: SizedBox(
+                                          child: Container(
                                             width: 200.0,
                                             child: TextFormField(
                                               controller:
@@ -2405,7 +2421,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                           12.0),
                                                 ),
                                                 contentPadding:
-                                                    const EdgeInsets.all(12.0),
+                                                    EdgeInsets.all(12.0),
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -2423,7 +2439,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 0.0, 0.0),
                                         child: FlutterFlowIconButton(
                                           borderColor:
@@ -2460,7 +2476,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                     ],
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 0.0),
                                     child: StreamBuilder<List<WishlistRecord>>(
                                       stream: queryWishlistRecord(
@@ -2562,7 +2578,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(16.0),
+                            padding: EdgeInsets.all(16.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -2595,7 +2611,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       }.withoutNulls,
                                       extra: <String, dynamic>{
                                         'doc': _model.newProperty,
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.rightToLeft,
@@ -2612,11 +2628,11 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                   options: FFButtonOptions(
                                     width: 120.0,
                                     height: 50.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: const Color(0xFFF35C29),
+                                    color: Color(0xFFF35C29),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -2624,7 +2640,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           color: Colors.white,
                                         ),
                                     elevation: 2.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -2640,10 +2656,10 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(-1.0, 1.0),
+                  alignment: AlignmentDirectional(-1.0, 1.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 16.0),
                     child: smooth_page_indicator.SmoothPageIndicator(
                       controller: _model.pageViewController ??=
                           PageController(initialPage: 0),
@@ -2652,7 +2668,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                       onDotClicked: (i) async {
                         await _model.pageViewController!.animateToPage(
                           i,
-                          duration: const Duration(milliseconds: 500),
+                          duration: Duration(milliseconds: 500),
                           curve: Curves.ease,
                         );
                       },

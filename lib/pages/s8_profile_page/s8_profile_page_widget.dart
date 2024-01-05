@@ -8,12 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 's8_profile_page_model.dart';
 export 's8_profile_page_model.dart';
 
 class S8ProfilePageWidget extends StatefulWidget {
-  const S8ProfilePageWidget({super.key});
+  const S8ProfilePageWidget({Key? key}) : super(key: key);
 
   @override
   _S8ProfilePageWidgetState createState() => _S8ProfilePageWidgetState();
@@ -35,8 +36,8 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 350.ms,
-          begin: const Offset(40.0, 0.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(40.0, 0.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -48,8 +49,8 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 350.ms,
-          begin: const Offset(-40.0, 0.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(-40.0, 0.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -103,7 +104,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
               color: FlutterFlowTheme.of(context).dark600,
             ),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 40.0, 20.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(20.0, 40.0, 20.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -124,9 +125,9 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                     ),
                     child: Visibility(
                       visible:
-                          currentUserPhoto != '',
+                          currentUserPhoto != null && currentUserPhoto != '',
                       child: Padding(
-                        padding: const EdgeInsets.all(2.0),
+                        padding: EdgeInsets.all(2.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => ClipRRect(
                             borderRadius: BorderRadius.circular(60.0),
@@ -144,7 +145,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                   Expanded(
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -167,7 +168,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 4.0, 0.0, 0.0),
                             child: Text(
                               currentUserEmail,
@@ -175,7 +176,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Lexend Deca',
-                                    color: const Color(0xFFF35C29),
+                                    color: Color(0xFFF35C29),
                                     fontSize: 14.0,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -214,7 +215,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                     width: MediaQuery.sizeOf(context).width * 1.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).dark600,
-                      boxShadow: const [
+                      boxShadow: [
                         BoxShadow(
                           blurRadius: 1.0,
                           color: Color(0xFF1A1F24),
@@ -223,7 +224,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                       ],
                     ),
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
+                      padding: EdgeInsetsDirectional.fromSTEB(
                           24.0, 12.0, 24.0, 12.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
@@ -244,13 +245,13 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                             width: 80.0,
                             height: 40.0,
                             decoration: BoxDecoration(
-                              color: const Color(0xFF1D2429),
+                              color: Color(0xFF1D2429),
                               borderRadius: BorderRadius.circular(20.0),
                             ),
                             child: Stack(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               children: [
-                                const Align(
+                                Align(
                                   alignment: AlignmentDirectional(0.95, 0.0),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
@@ -263,13 +264,13 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                                   ),
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(-0.85, 0.0),
+                                  alignment: AlignmentDirectional(-0.85, 0.0),
                                   child: Container(
                                     width: 36.0,
                                     height: 36.0,
                                     decoration: BoxDecoration(
-                                      color: const Color(0xFF14181B),
-                                      boxShadow: const [
+                                      color: Color(0xFF14181B),
+                                      boxShadow: [
                                         BoxShadow(
                                           blurRadius: 4.0,
                                           color: Color(0x430B0D0F),
@@ -314,7 +315,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                     width: MediaQuery.sizeOf(context).width * 1.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).dark600,
-                      boxShadow: const [
+                      boxShadow: [
                         BoxShadow(
                           blurRadius: 1.0,
                           color: Color(0xFF1A1F24),
@@ -323,7 +324,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                       ],
                     ),
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
+                      padding: EdgeInsetsDirectional.fromSTEB(
                           24.0, 12.0, 24.0, 12.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
@@ -349,12 +350,12 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                               borderRadius: BorderRadius.circular(20.0),
                             ),
                             child: Stack(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(-0.9, 0.0),
+                                  alignment: AlignmentDirectional(-0.9, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 2.0, 0.0, 0.0),
                                     child: Icon(
                                       Icons.wb_sunny_rounded,
@@ -365,14 +366,14 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                                   ),
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(0.9, 0.0),
+                                  alignment: AlignmentDirectional(0.9, 0.0),
                                   child: Container(
                                     width: 36.0,
                                     height: 36.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      boxShadow: const [
+                                      boxShadow: [
                                         BoxShadow(
                                           blurRadius: 4.0,
                                           color: Color(0x430B0D0F),
@@ -412,7 +413,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                   height: 50.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).primaryBackground,
-                    boxShadow: const [
+                    boxShadow: [
                       BoxShadow(
                         blurRadius: 0.0,
                         color: Color(0xFFE3E5E7),
@@ -427,7 +428,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                   ),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 4.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 4.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -470,7 +471,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                         BoxShadow(
                           blurRadius: 0.0,
                           color: FlutterFlowTheme.of(context).lineGray,
-                          offset: const Offset(0.0, 2.0),
+                          offset: Offset(0.0, 2.0),
                         )
                       ],
                       borderRadius: BorderRadius.circular(0.0),
@@ -481,7 +482,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                     ),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 4.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 4.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -494,7 +495,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                             borderColor: Colors.transparent,
                             borderRadius: 30.0,
                             buttonSize: 46.0,
-                            icon: const Icon(
+                            icon: Icon(
                               Icons.chevron_right_rounded,
                               color: Color(0xFF95A1AC),
                               size: 20.0,
@@ -517,7 +518,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
             children: [
               if (false)
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -542,7 +543,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                             BoxShadow(
                               blurRadius: 0.0,
                               color: FlutterFlowTheme.of(context).lineGray,
-                              offset: const Offset(0.0, 2.0),
+                              offset: Offset(0.0, 2.0),
                             )
                           ],
                           borderRadius: BorderRadius.circular(0.0),
@@ -553,7 +554,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 4.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -567,7 +568,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                                 borderColor: Colors.transparent,
                                 borderRadius: 30.0,
                                 buttonSize: 46.0,
-                                icon: const Icon(
+                                icon: Icon(
                                   Icons.chevron_right_rounded,
                                   color: Color(0xFF95A1AC),
                                   size: 20.0,
@@ -590,7 +591,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
@@ -622,7 +623,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                           BoxShadow(
                             blurRadius: 0.0,
                             color: FlutterFlowTheme.of(context).lineGray,
-                            offset: const Offset(0.0, 2.0),
+                            offset: Offset(0.0, 2.0),
                           )
                         ],
                         borderRadius: BorderRadius.circular(0.0),
@@ -634,7 +635,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 4.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 4.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -647,7 +648,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                               borderColor: Colors.transparent,
                               borderRadius: 30.0,
                               buttonSize: 46.0,
-                              icon: const Icon(
+                              icon: Icon(
                                 Icons.chevron_right_rounded,
                                 color: Color(0xFF95A1AC),
                                 size: 20.0,
@@ -670,7 +671,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
@@ -694,7 +695,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                           BoxShadow(
                             blurRadius: 0.0,
                             color: FlutterFlowTheme.of(context).lineGray,
-                            offset: const Offset(0.0, 2.0),
+                            offset: Offset(0.0, 2.0),
                           )
                         ],
                         borderRadius: BorderRadius.circular(0.0),
@@ -706,7 +707,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 4.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 4.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -721,7 +722,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                               borderColor: Colors.transparent,
                               borderRadius: 30.0,
                               buttonSize: 46.0,
-                              icon: const Icon(
+                              icon: Icon(
                                 Icons.chevron_right_rounded,
                                 color: Color(0xFF95A1AC),
                                 size: 20.0,
@@ -744,7 +745,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
@@ -768,7 +769,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                           BoxShadow(
                             blurRadius: 0.0,
                             color: FlutterFlowTheme.of(context).lineGray,
-                            offset: const Offset(0.0, 2.0),
+                            offset: Offset(0.0, 2.0),
                           )
                         ],
                         borderRadius: BorderRadius.circular(0.0),
@@ -780,7 +781,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 4.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 4.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -804,7 +805,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                                 borderColor: Colors.transparent,
                                 borderRadius: 30.0,
                                 buttonSize: 46.0,
-                                icon: const Icon(
+                                icon: Icon(
                                   Icons.chevron_right_rounded,
                                   color: Color(0xFF95A1AC),
                                   size: 20.0,
@@ -824,7 +825,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
             ],
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 20.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 20.0),
             child: FFButtonWidget(
               onPressed: () async {
                 GoRouter.of(context).prepareAuthEvent();
@@ -837,8 +838,8 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
               options: FFButtonOptions(
                 width: 110.0,
                 height: 50.0,
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'Lexend Deca',

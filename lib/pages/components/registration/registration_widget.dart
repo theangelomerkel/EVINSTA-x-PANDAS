@@ -6,12 +6,13 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'registration_model.dart';
 export 'registration_model.dart';
 
 class RegistrationWidget extends StatefulWidget {
-  const RegistrationWidget({super.key});
+  const RegistrationWidget({Key? key}) : super(key: key);
 
   @override
   _RegistrationWidgetState createState() => _RegistrationWidgetState();
@@ -67,7 +68,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
     context.watch<FFAppState>();
 
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -90,7 +91,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(16.0),
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
@@ -98,7 +99,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                 borderRadius: BorderRadius.circular(16.0),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: EdgeInsets.all(12.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -110,20 +111,20 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                         borderRadius: BorderRadius.circular(16.0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(12.0),
+                        padding: EdgeInsets.all(12.0),
                         child: Column(
                           children: [
                             Align(
-                              alignment: const Alignment(0.0, 0),
+                              alignment: Alignment(0.0, 0),
                               child: TabBar(
                                 labelColor:
                                     FlutterFlowTheme.of(context).primaryText,
                                 labelStyle:
                                     FlutterFlowTheme.of(context).titleMedium,
-                                unselectedLabelStyle: const TextStyle(),
+                                unselectedLabelStyle: TextStyle(),
                                 indicatorColor:
                                     FlutterFlowTheme.of(context).primaryText,
-                                tabs: const [
+                                tabs: [
                                   Tab(
                                     text: 'Sign In',
                                   ),
@@ -149,7 +150,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 20.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller: _model
@@ -184,7 +185,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                         FontWeight.normal,
                                                   ),
                                               enabledBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -227,7 +228,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .alternate,
                                               contentPadding:
-                                                  const EdgeInsetsDirectional
+                                                  EdgeInsetsDirectional
                                                       .fromSTEB(20.0, 24.0,
                                                           20.0, 24.0),
                                             ),
@@ -235,7 +236,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                 .titleSmall
                                                 .override(
                                                   fontFamily: 'Urbanist',
-                                                  color: const Color(0xFF0F1113),
+                                                  color: Color(0xFF0F1113),
                                                 ),
                                             maxLines: null,
                                             keyboardType:
@@ -247,7 +248,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 12.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller:
@@ -283,7 +284,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                         FontWeight.normal,
                                                   ),
                                               enabledBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -326,7 +327,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .alternate,
                                               contentPadding:
-                                                  const EdgeInsetsDirectional
+                                                  EdgeInsetsDirectional
                                                       .fromSTEB(20.0, 24.0,
                                                           20.0, 24.0),
                                               suffixIcon: InkWell(
@@ -344,7 +345,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                           .visibility_outlined
                                                       : Icons
                                                           .visibility_off_outlined,
-                                                  color: const Color(0xFF95A1AC),
+                                                  color: Color(0xFF95A1AC),
                                                   size: 20.0,
                                                 ),
                                               ),
@@ -353,7 +354,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                 .titleSmall
                                                 .override(
                                                   fontFamily: 'Urbanist',
-                                                  color: const Color(0xFF0F1113),
+                                                  color: Color(0xFF0F1113),
                                                 ),
                                             keyboardType:
                                                 TextInputType.visiblePassword,
@@ -364,11 +365,11 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 24.0, 0.0, 0.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
-                                              Function() navigate = () {};
+                                              Function() _navigate = () {};
                                               HapticFeedback.selectionClick();
                                               if (_model.terms) {
                                                 GoRouter.of(context)
@@ -387,7 +388,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   return;
                                                 }
 
-                                                navigate = () =>
+                                                _navigate = () =>
                                                     context.goNamedAuth(
                                                         'S2_HomePage',
                                                         context.mounted);
@@ -398,14 +399,14 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   builder:
                                                       (alertDialogContext) {
                                                     return AlertDialog(
-                                                      title: const Text(
+                                                      title: Text(
                                                           'You need to accept the terms of use to continue'),
                                                       actions: [
                                                         TextButton(
                                                           onPressed: () =>
                                                               Navigator.pop(
                                                                   alertDialogContext),
-                                                          child: const Text('Ok'),
+                                                          child: Text('Ok'),
                                                         ),
                                                       ],
                                                     );
@@ -413,15 +414,15 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                 );
                                               }
 
-                                              navigate();
+                                              _navigate();
                                             },
                                             text: 'Login',
                                             options: FFButtonOptions(
                                               width: double.infinity,
                                               height: 42.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -439,7 +440,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                         FontWeight.normal,
                                                   ),
                                               elevation: 1.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -450,7 +451,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
@@ -460,7 +461,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                 'forgotpassword',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      const TransitionInfo(
+                                                      TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType
@@ -475,9 +476,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                             options: FFButtonOptions(
                                               width: 170.0,
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -493,7 +494,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                                 .primaryText,
                                                       ),
                                               elevation: 0.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -509,7 +510,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 20.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller:
@@ -542,7 +543,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                         FontWeight.normal,
                                                   ),
                                               enabledBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -585,7 +586,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .alternate,
                                               contentPadding:
-                                                  const EdgeInsetsDirectional
+                                                  EdgeInsetsDirectional
                                                       .fromSTEB(20.0, 24.0,
                                                           20.0, 24.0),
                                             ),
@@ -593,7 +594,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Lexend Deca',
-                                                  color: const Color(0xFF14181B),
+                                                  color: Color(0xFF14181B),
                                                   fontSize: 14.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
@@ -607,7 +608,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 12.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller:
@@ -640,7 +641,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                         FontWeight.normal,
                                                   ),
                                               enabledBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -683,7 +684,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .alternate,
                                               contentPadding:
-                                                  const EdgeInsetsDirectional
+                                                  EdgeInsetsDirectional
                                                       .fromSTEB(20.0, 24.0,
                                                           20.0, 24.0),
                                               suffixIcon: InkWell(
@@ -701,7 +702,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                           .visibility_outlined
                                                       : Icons
                                                           .visibility_off_outlined,
-                                                  color: const Color(0xFF95A1AC),
+                                                  color: Color(0xFF95A1AC),
                                                   size: 20.0,
                                                 ),
                                               ),
@@ -710,7 +711,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Lexend Deca',
-                                                  color: const Color(0xFF14181B),
+                                                  color: Color(0xFF14181B),
                                                   fontSize: 14.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
@@ -723,7 +724,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 12.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller: _model
@@ -757,7 +758,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                         FontWeight.normal,
                                                   ),
                                               enabledBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
@@ -800,7 +801,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .alternate,
                                               contentPadding:
-                                                  const EdgeInsetsDirectional
+                                                  EdgeInsetsDirectional
                                                       .fromSTEB(20.0, 24.0,
                                                           20.0, 24.0),
                                               suffixIcon: InkWell(
@@ -818,7 +819,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                           .visibility_outlined
                                                       : Icons
                                                           .visibility_off_outlined,
-                                                  color: const Color(0xFF95A1AC),
+                                                  color: Color(0xFF95A1AC),
                                                   size: 20.0,
                                                 ),
                                               ),
@@ -827,7 +828,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Lexend Deca',
-                                                  color: const Color(0xFF14181B),
+                                                  color: Color(0xFF14181B),
                                                   fontSize: 14.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
@@ -840,11 +841,11 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 24.0, 0.0, 0.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
-                                              Function() navigate = () {};
+                                              Function() _navigate = () {};
                                               HapticFeedback.selectionClick();
                                               if (_model.terms) {
                                                 GoRouter.of(context)
@@ -856,7 +857,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                         .text) {
                                                   ScaffoldMessenger.of(context)
                                                       .showSnackBar(
-                                                    const SnackBar(
+                                                    SnackBar(
                                                       content: Text(
                                                         'Passwords don\'t match!',
                                                       ),
@@ -886,7 +887,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                           getCurrentTimestamp,
                                                     ));
 
-                                                navigate = () =>
+                                                _navigate = () =>
                                                     context.goNamedAuth(
                                                         'S2_HomePage',
                                                         context.mounted);
@@ -897,14 +898,14 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   builder:
                                                       (alertDialogContext) {
                                                     return AlertDialog(
-                                                      title: const Text(
+                                                      title: Text(
                                                           'You need to accept the terms of use to continue'),
                                                       actions: [
                                                         TextButton(
                                                           onPressed: () =>
                                                               Navigator.pop(
                                                                   alertDialogContext),
-                                                          child: const Text('Ok'),
+                                                          child: Text('Ok'),
                                                         ),
                                                       ],
                                                     );
@@ -912,15 +913,15 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                 );
                                               }
 
-                                              navigate();
+                                              _navigate();
                                             },
                                             text: 'Create Account',
                                             options: FFButtonOptions(
                                               width: double.infinity,
                                               height: 42.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -938,7 +939,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                         FontWeight.normal,
                                                   ),
                                               elevation: 1.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -959,14 +960,14 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
                               child: Text(
                                 'Or use a social account to login',
@@ -980,14 +981,14 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 8.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 8.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           FFButtonWidget(
                             onPressed: () async {
-                              Function() navigate = () {};
+                              Function() _navigate = () {};
                               HapticFeedback.selectionClick();
                               if (_model.terms) {
                                 GoRouter.of(context).prepareAuthEvent();
@@ -996,7 +997,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                 if (user == null) {
                                   return;
                                 }
-                                navigate = () => context.goNamedAuth(
+                                _navigate = () => context.goNamedAuth(
                                     'S2_HomePage', context.mounted);
                               } else {
                                 HapticFeedback.vibrate();
@@ -1004,13 +1005,13 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                   context: context,
                                   builder: (alertDialogContext) {
                                     return AlertDialog(
-                                      title: const Text(
+                                      title: Text(
                                           'You need to accept the terms of use to continue'),
                                       actions: [
                                         TextButton(
                                           onPressed: () =>
                                               Navigator.pop(alertDialogContext),
-                                          child: const Text('Ok'),
+                                          child: Text('Ok'),
                                         ),
                                       ],
                                     );
@@ -1018,7 +1019,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                 );
                               }
 
-                              navigate();
+                              _navigate();
                             },
                             text: '',
                             icon: FaIcon(
@@ -1027,9 +1028,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                             ),
                             options: FFButtonOptions(
                               height: 50.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 0.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
@@ -1040,7 +1041,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                   ),
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
@@ -1051,7 +1052,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                               ? Container()
                               : FFButtonWidget(
                                   onPressed: () async {
-                                    Function() navigate = () {};
+                                    Function() _navigate = () {};
                                     HapticFeedback.selectionClick();
                                     if (_model.terms) {
                                       GoRouter.of(context).prepareAuthEvent();
@@ -1060,7 +1061,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                       if (user == null) {
                                         return;
                                       }
-                                      navigate = () => context.goNamedAuth(
+                                      _navigate = () => context.goNamedAuth(
                                           'S2_HomePage', context.mounted);
                                     } else {
                                       HapticFeedback.vibrate();
@@ -1068,13 +1069,13 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                         context: context,
                                         builder: (alertDialogContext) {
                                           return AlertDialog(
-                                            title: const Text(
+                                            title: Text(
                                                 'You need to accept the terms of use to continue'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext),
-                                                child: const Text('Ok'),
+                                                child: Text('Ok'),
                                               ),
                                             ],
                                           );
@@ -1082,7 +1083,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                       );
                                     }
 
-                                    navigate();
+                                    _navigate();
                                   },
                                   text: '',
                                   icon: FaIcon(
@@ -1092,9 +1093,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                   ),
                                   options: FFButtonOptions(
                                     height: 50.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
@@ -1105,7 +1106,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
                                         ),
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -1114,7 +1115,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                 ),
                           FFButtonWidget(
                             onPressed: () async {
-                              Function() navigate = () {};
+                              Function() _navigate = () {};
                               HapticFeedback.selectionClick();
                               if (_model.terms) {
                                 GoRouter.of(context).prepareAuthEvent();
@@ -1123,7 +1124,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                 if (user == null) {
                                   return;
                                 }
-                                navigate = () => context.goNamedAuth(
+                                _navigate = () => context.goNamedAuth(
                                     'S2_HomePage', context.mounted);
                               } else {
                                 HapticFeedback.vibrate();
@@ -1131,13 +1132,13 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                   context: context,
                                   builder: (alertDialogContext) {
                                     return AlertDialog(
-                                      title: const Text(
+                                      title: Text(
                                           'You need to accept the terms of use to continue'),
                                       actions: [
                                         TextButton(
                                           onPressed: () =>
                                               Navigator.pop(alertDialogContext),
-                                          child: const Text('Ok'),
+                                          child: Text('Ok'),
                                         ),
                                       ],
                                     );
@@ -1145,7 +1146,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                 );
                               }
 
-                              navigate();
+                              _navigate();
                             },
                             text: '',
                             icon: FaIcon(
@@ -1154,9 +1155,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                             ),
                             options: FFButtonOptions(
                               height: 50.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 0.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
@@ -1167,7 +1168,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                   ),
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
@@ -1230,7 +1231,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'I agree with ',
@@ -1244,7 +1245,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               2.0, 0.0, 0.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
@@ -1252,9 +1253,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                             },
                             text: 'terms of use',
                             options: FFButtonOptions(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   2.0, 4.0, 4.0, 4.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
@@ -1268,7 +1269,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                     fontWeight: FontWeight.w600,
                                   ),
                               elevation: 0.0,
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
