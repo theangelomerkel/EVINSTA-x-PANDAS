@@ -1,0 +1,134 @@
+{
+  "project_info": {
+    "project_number": "432591949554",
+    "project_id": "evinsta-dd82f",
+    "storage_bucket": "evinsta-dd82f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432591949554:android:629569b27d42f3c5528a6b",
+        "android_client_info": {
+          "package_name": "com.Alexhohnhorst.evinstatesting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432591949554-en9v7thhlva5elm483psiraartnf080n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Alexhohnhorst.evinstatesting",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "432591949554-ivb0tdpn4cs9ug1emehvolflq7s5or1a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBF7fvEIJ5Z9w58upnNgagbXBICUTzFeJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432591949554-ivb0tdpn4cs9ug1emehvolflq7s5or1a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "432591949554-9u6282dkcsn553lln25u5g9q580s8ttd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.Alexhohnhorst.evinstatesting2"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432591949554:android:83aa9f9d8af2a301528a6b",
+        "android_client_info": {
+          "package_name": "com.Alexhohnhorst.evinstatesting2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432591949554-7ni78gdh0am8s5msflvmjalrmavlvmit.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Alexhohnhorst.evinstatesting2",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "432591949554-ivb0tdpn4cs9ug1emehvolflq7s5or1a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBF7fvEIJ5Z9w58upnNgagbXBICUTzFeJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432591949554-ivb0tdpn4cs9ug1emehvolflq7s5or1a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "432591949554-9u6282dkcsn553lln25u5g9q580s8ttd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.Alexhohnhorst.evinstatesting2"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432591949554:android:ab749978f1342b18528a6b",
+        "android_client_info": {
+          "package_name": "com.flutterflow.homeU"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432591949554-ivb0tdpn4cs9ug1emehvolflq7s5or1a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBF7fvEIJ5Z9w58upnNgagbXBICUTzFeJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432591949554-ivb0tdpn4cs9ug1emehvolflq7s5or1a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "432591949554-9u6282dkcsn553lln25u5g9q580s8ttd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.Alexhohnhorst.evinstatesting2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
