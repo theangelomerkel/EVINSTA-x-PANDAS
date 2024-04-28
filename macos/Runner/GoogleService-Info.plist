@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>432591949554-9u6282dkcsn553lln25u5g9q580s8ttd.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.432591949554-9u6282dkcsn553lln25u5g9q580s8ttd</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>432591949554-7ni78gdh0am8s5msflvmjalrmavlvmit.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCPCJCZksI2EZWEwfuago0EWJal9OHpQF0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>432591949554</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.Alexhohnhorst.evinstatesting2</string>
+	<key>PROJECT_ID</key>
+	<string>evinsta-dd82f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>evinsta-dd82f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:432591949554:ios:43b8710563ccecf2528a6b</string>
+</dict>
+</plist>
