@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'property_model.dart';
@@ -11,14 +10,14 @@ export 'property_model.dart';
 
 class PropertyWidget extends StatefulWidget {
   const PropertyWidget({
-    Key? key,
+    super.key,
     this.property,
-  }) : super(key: key);
+  });
 
   final PropertiesRecord? property;
 
   @override
-  _PropertyWidgetState createState() => _PropertyWidgetState();
+  State<PropertyWidget> createState() => _PropertyWidgetState();
 }
 
 class _PropertyWidgetState extends State<PropertyWidget> {
@@ -47,8 +46,6 @@ class _PropertyWidgetState extends State<PropertyWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
       child: Container(
@@ -59,7 +56,10 @@ class _PropertyWidgetState extends State<PropertyWidget> {
             BoxShadow(
               blurRadius: 4.0,
               color: Color(0x32000000),
-              offset: Offset(0.0, 2.0),
+              offset: Offset(
+                0.0,
+                2.0,
+              ),
             )
           ],
           borderRadius: BorderRadius.circular(8.0),
@@ -97,7 +97,8 @@ class _PropertyWidgetState extends State<PropertyWidget> {
                 ),
                 style: FlutterFlowTheme.of(context).headlineSmall.override(
                       fontFamily: 'Urbanist',
-                      color: FlutterFlowTheme.of(context).darkText,
+                      color: Color(0xFF1E2429),
+                      letterSpacing: 0.0,
                       fontWeight: FontWeight.bold,
                     ),
               ),
@@ -112,6 +113,7 @@ class _PropertyWidgetState extends State<PropertyWidget> {
                 style: FlutterFlowTheme.of(context).bodySmall.override(
                       fontFamily: 'Lexend Deca',
                       color: FlutterFlowTheme.of(context).grayIcon,
+                      letterSpacing: 0.0,
                     ),
               ),
             ),

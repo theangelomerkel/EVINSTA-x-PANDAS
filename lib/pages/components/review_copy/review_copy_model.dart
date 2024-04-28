@@ -10,7 +10,6 @@ import 'review_copy_widget.dart' show ReviewCopyWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
@@ -37,8 +36,7 @@ class ReviewCopyModel extends FlutterFlowModel<ReviewCopyWidget> {
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
 
-  /// Initialization and disposal methods.
-
+  @override
   void initState(BuildContext context) {
     columnController = ScrollController();
     reviews = ScrollController();
@@ -46,6 +44,7 @@ class ReviewCopyModel extends FlutterFlowModel<ReviewCopyWidget> {
     write = ScrollController();
   }
 
+  @override
   void dispose() {
     columnController?.dispose();
     reviews?.dispose();
@@ -54,8 +53,4 @@ class ReviewCopyModel extends FlutterFlowModel<ReviewCopyWidget> {
     textFieldFocusNode?.dispose();
     textController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

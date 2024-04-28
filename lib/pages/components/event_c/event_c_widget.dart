@@ -13,14 +13,14 @@ export 'event_c_model.dart';
 
 class EventCWidget extends StatefulWidget {
   const EventCWidget({
-    Key? key,
+    super.key,
     required this.event,
-  }) : super(key: key);
+  });
 
   final PropertiesRecord? event;
 
   @override
-  _EventCWidgetState createState() => _EventCWidgetState();
+  State<EventCWidget> createState() => _EventCWidgetState();
 }
 
 class _EventCWidgetState extends State<EventCWidget>
@@ -50,8 +50,6 @@ class _EventCWidgetState extends State<EventCWidget>
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,14 +77,17 @@ class _EventCWidgetState extends State<EventCWidget>
           },
           child: Container(
             width: double.infinity,
-            height: 160.0,
+            height: 362.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
               boxShadow: [
                 BoxShadow(
                   blurRadius: 8.0,
                   color: Color(0x230F1113),
-                  offset: Offset(0.0, 4.0),
+                  offset: Offset(
+                    0.0,
+                    4.0,
+                  ),
                 )
               ],
               borderRadius: BorderRadius.circular(16.0),
@@ -100,12 +101,12 @@ class _EventCWidgetState extends State<EventCWidget>
                 ),
                 width: double.infinity,
                 height: double.infinity,
-                fit: BoxFit.cover,
+                fit: BoxFit.none,
                 errorBuilder: (context, error, stackTrace) => Image.asset(
                   'assets/images/error_image.png',
                   width: double.infinity,
                   height: double.infinity,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.none,
                 ),
               ),
             ),
@@ -117,7 +118,10 @@ class _EventCWidgetState extends State<EventCWidget>
             padding: EdgeInsetsDirectional.fromSTEB(2.0, 12.0, 8.0, 8.0),
             child: Text(
               widget.event!.propertyName,
-              style: FlutterFlowTheme.of(context).titleMedium,
+              style: FlutterFlowTheme.of(context).titleMedium.override(
+                    fontFamily: 'Urbanist',
+                    letterSpacing: 0.0,
+                  ),
             ),
           ),
         ),

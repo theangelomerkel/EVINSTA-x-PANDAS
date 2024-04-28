@@ -1,23 +1,17 @@
-import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'eventlist_model.dart';
 export 'eventlist_model.dart';
 
 class EventlistWidget extends StatefulWidget {
-  const EventlistWidget({
-    Key? key,
-    this.parameter1,
-  }) : super(key: key);
-
-  final bool? parameter1;
+  const EventlistWidget({super.key});
 
   @override
-  _EventlistWidgetState createState() => _EventlistWidgetState();
+  State<EventlistWidget> createState() => _EventlistWidgetState();
 }
 
 class _EventlistWidgetState extends State<EventlistWidget> {
@@ -46,45 +40,16 @@ class _EventlistWidgetState extends State<EventlistWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
-    return FutureBuilder<ApiCallResponse>(
-      future: ResidentCall.call(),
-      builder: (context, snapshot) {
-        // Customize what your widget looks like when it's loading.
-        if (!snapshot.hasData) {
-          return Center(
-            child: SizedBox(
-              width: 50.0,
-              height: 50.0,
-              child: CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(
-                  FlutterFlowTheme.of(context).primary,
-                ),
-              ),
-            ),
-          );
-        }
-        final textResidentResponse = snapshot.data!;
-        return Text(
-          valueOrDefault<String>(
-            (ResidentCall.eventname(
-              textResidentResponse.jsonBody,
-            ) as List)
-                .map<String>((s) => s.toString())
-                .toList()
-                ?.contains((ResidentCall.eventname(
-                  textResidentResponse.jsonBody,
-                ) as List)
-                    .map<String>((s) => s.toString())
-                    .toList()
-                    ?.first)
-                ?.toString(),
-            'test event',
-          ),
-          style: FlutterFlowTheme.of(context).bodyMedium,
-        );
-      },
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(8.0),
+      child: CachedNetworkImage(
+        fadeInDuration: Duration(milliseconds: 500),
+        fadeOutDuration: Duration(milliseconds: 500),
+        imageUrl: '',
+        width: 300.0,
+        height: 200.0,
+        fit: BoxFit.cover,
+      ),
     );
   }
 }

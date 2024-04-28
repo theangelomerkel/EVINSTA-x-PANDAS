@@ -1,17 +1,16 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'bottom_sheet_model.dart';
 export 'bottom_sheet_model.dart';
 
 class BottomSheetWidget extends StatefulWidget {
-  const BottomSheetWidget({Key? key}) : super(key: key);
+  const BottomSheetWidget({super.key});
 
   @override
-  _BottomSheetWidgetState createState() => _BottomSheetWidgetState();
+  State<BottomSheetWidget> createState() => _BottomSheetWidgetState();
 }
 
 class _BottomSheetWidgetState extends State<BottomSheetWidget> {
@@ -40,8 +39,6 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 36.0),
       child: Container(
@@ -56,7 +53,10 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
             BoxShadow(
               blurRadius: 7.0,
               color: Color(0x4D000000),
-              offset: Offset(0.0, 3.0),
+              offset: Offset(
+                0.0,
+                3.0,
+              ),
             )
           ],
           borderRadius: BorderRadius.circular(16.0),
@@ -78,28 +78,39 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: Text(
-                  'Session Booked!',
+                  FFLocalizations.of(context).getText(
+                    'hnnykqmw' /* Session Booked! */,
+                  ),
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
                         fontFamily: 'Urbanist',
-                        color: FlutterFlowTheme.of(context).dark600,
+                        color: Color(0xFF14181B),
+                        letterSpacing: 0.0,
                       ),
                 ),
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                 child: Text(
-                  'You have successfully booked a session on:',
-                  style: FlutterFlowTheme.of(context).bodyMedium,
+                  FFLocalizations.of(context).getText(
+                    '4w8l2tvj' /* You have successfully booked a... */,
+                  ),
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Urbanist',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                 child: Text(
-                  'Mon, Dec 11 - 2021',
+                  FFLocalizations.of(context).getText(
+                    'ux2zgkgl' /* Mon, Dec 11 - 2021 */,
+                  ),
                   style: FlutterFlowTheme.of(context).displaySmall.override(
                         fontFamily: 'Urbanist',
                         color: FlutterFlowTheme.of(context).secondary,
                         fontSize: 32.0,
+                        letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
                       ),
                 ),

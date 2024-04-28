@@ -4,17 +4,16 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'template_optio_calendar_model.dart';
 export 'template_optio_calendar_model.dart';
 
 class TemplateOptioCalendarWidget extends StatefulWidget {
-  const TemplateOptioCalendarWidget({Key? key}) : super(key: key);
+  const TemplateOptioCalendarWidget({super.key});
 
   @override
-  _TemplateOptioCalendarWidgetState createState() =>
+  State<TemplateOptioCalendarWidget> createState() =>
       _TemplateOptioCalendarWidgetState();
 }
 
@@ -41,17 +40,6 @@ class _TemplateOptioCalendarWidgetState
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -63,8 +51,13 @@ class _TemplateOptioCalendarWidgetState
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Text(
-            'Daily',
-            style: FlutterFlowTheme.of(context).displaySmall,
+            FFLocalizations.of(context).getText(
+              'i920tls2' /* Daily */,
+            ),
+            style: FlutterFlowTheme.of(context).displaySmall.override(
+                  fontFamily: 'Urbanist',
+                  letterSpacing: 0.0,
+                ),
           ),
           actions: [
             FlutterFlowIconButton(
@@ -100,25 +93,42 @@ class _TemplateOptioCalendarWidgetState
                 onChange: (DateTimeRange? newSelectedDate) {
                   setState(() => _model.calendarSelectedDay = newSelectedDate);
                 },
-                titleStyle: FlutterFlowTheme.of(context).titleMedium,
-                dayOfWeekStyle: FlutterFlowTheme.of(context).bodySmall,
-                dateStyle: FlutterFlowTheme.of(context).bodyMedium,
+                titleStyle: FlutterFlowTheme.of(context).titleMedium.override(
+                      fontFamily: 'Urbanist',
+                      letterSpacing: 0.0,
+                    ),
+                dayOfWeekStyle: FlutterFlowTheme.of(context).bodySmall.override(
+                      fontFamily: 'Urbanist',
+                      letterSpacing: 0.0,
+                    ),
+                dateStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Urbanist',
+                      letterSpacing: 0.0,
+                    ),
                 selectedDateStyle:
                     FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Urbanist',
                           color: Colors.white,
+                          letterSpacing: 0.0,
                         ),
                 inactiveDateStyle:
                     FlutterFlowTheme.of(context).bodySmall.override(
                           fontFamily: 'Urbanist',
                           color: Color(0x6B57636C),
+                          letterSpacing: 0.0,
                         ),
+                locale: FFLocalizations.of(context).languageCode,
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: Text(
-                  'Events',
-                  style: FlutterFlowTheme.of(context).titleMedium,
+                  FFLocalizations.of(context).getText(
+                    't4l940h0' /* Events */,
+                  ),
+                  style: FlutterFlowTheme.of(context).titleMedium.override(
+                        fontFamily: 'Urbanist',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
               ListView(

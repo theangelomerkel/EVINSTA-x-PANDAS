@@ -5,17 +5,16 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 's6chat_main_model.dart';
 export 's6chat_main_model.dart';
 
 class S6chatMainWidget extends StatefulWidget {
-  const S6chatMainWidget({Key? key}) : super(key: key);
+  const S6chatMainWidget({super.key});
 
   @override
-  _S6chatMainWidgetState createState() => _S6chatMainWidgetState();
+  State<S6chatMainWidget> createState() => _S6chatMainWidgetState();
 }
 
 class _S6chatMainWidgetState extends State<S6chatMainWidget> {
@@ -40,28 +39,20 @@ class _S6chatMainWidgetState extends State<S6chatMainWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).dark600,
+        backgroundColor: Color(0xFF14181B),
         automaticallyImplyLeading: false,
         title: Text(
-          'All Chats',
+          FFLocalizations.of(context).getText(
+            'jlpk1vzn' /* All Chats */,
+          ),
           style: FlutterFlowTheme.of(context).headlineMedium.override(
                 fontFamily: 'Urbanist',
                 color: FlutterFlowTheme.of(context).tertiary,
+                letterSpacing: 0.0,
                 fontWeight: FontWeight.bold,
               ),
         ),

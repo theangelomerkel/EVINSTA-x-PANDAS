@@ -10,7 +10,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/components/registration/registration_widget.dart';
 import '/pages/components/review_copy/review_copy_widget.dart';
-import '/pages/components/wishlist/wishlist_widget.dart';
+import '/pages/wishlist/wishlist_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -28,14 +28,14 @@ export 's3_event_data_public_model.dart';
 
 class S3EventDataPublicWidget extends StatefulWidget {
   const S3EventDataPublicWidget({
-    Key? key,
+    super.key,
     this.pr,
-  }) : super(key: key);
+  });
 
   final PropertiesRecord? pr;
 
   @override
-  _S3EventDataPublicWidgetState createState() =>
+  State<S3EventDataPublicWidget> createState() =>
       _S3EventDataPublicWidgetState();
 }
 
@@ -45,65 +45,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
-  final animationsMap = {
-    'textOnPageLoadAnimation1': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: Offset(0.0, 50.0),
-          end: Offset(0.0, 0.0),
-        ),
-      ],
-    ),
-    'textOnPageLoadAnimation2': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: Offset(0.0, 50.0),
-          end: Offset(0.0, 0.0),
-        ),
-      ],
-    ),
-    'textOnPageLoadAnimation3': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: Offset(0.0, 50.0),
-          end: Offset(0.0, 0.0),
-        ),
-      ],
-    ),
-  };
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
@@ -118,6 +60,65 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
       });
     });
 
+    animationsMap.addAll({
+      'textOnPageLoadAnimation1': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.0, 50.0),
+            end: Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+      'textOnPageLoadAnimation2': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.0, 50.0),
+            end: Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+      'textOnPageLoadAnimation3': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.0, 50.0),
+            end: Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+    });
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -137,15 +138,6 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     context.watch<FFAppState>();
 
     return Scaffold(
@@ -213,7 +205,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                           Icons.arrow_back_rounded,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          size: 30.0,
+                                          size: 25.0,
                                         ),
                                         onPressed: () async {
                                           context.goNamed(
@@ -297,7 +289,10 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                     BoxShadow(
                                       blurRadius: 8.0,
                                       color: Color(0x230F1113),
-                                      offset: Offset(0.0, 4.0),
+                                      offset: Offset(
+                                        0.0,
+                                        4.0,
+                                      ),
                                     )
                                   ],
                                   borderRadius: BorderRadius.circular(16.0),
@@ -567,7 +562,13 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                           alignment: AlignmentDirectional(0.0, 0.0),
                           child: Text(
                             columnPropertiesRecord.propertyName,
-                            style: FlutterFlowTheme.of(context).displaySmall,
+                            style: FlutterFlowTheme.of(context)
+                                .displaySmall
+                                .override(
+                                  fontFamily: 'Urbanist',
+                                  color: FlutterFlowTheme.of(context).grayIcon,
+                                  letterSpacing: 0.0,
+                                ),
                           ).animateOnPageLoad(
                               animationsMap['textOnPageLoadAnimation1']!),
                         ),
@@ -578,16 +579,21 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                             child: Text(
                               valueOrDefault<String>(
                                 dateTimeFormat(
-                                    'yMMMd', columnPropertiesRecord.date),
+                                  'yMMMd',
+                                  columnPropertiesRecord.date,
+                                  locale:
+                                      FFLocalizations.of(context).languageCode,
+                                ),
                                 'January 29th, 2024',
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
                                     fontFamily: 'Lexend Deca',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
+                                    color:
+                                        FlutterFlowTheme.of(context).grayIcon,
                                     fontSize: 12.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                             ),
@@ -608,9 +614,17 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 4.0),
                                     child: Text(
-                                      'About',
+                                      FFLocalizations.of(context).getText(
+                                        'xk0u5q5q' /* About */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
-                                          .displaySmall,
+                                          .displaySmall
+                                          .override(
+                                            fontFamily: 'Urbanist',
+                                            color: FlutterFlowTheme.of(context)
+                                                .grayIcon,
+                                            letterSpacing: 0.0,
+                                          ),
                                     ).animateOnPageLoad(animationsMap[
                                         'textOnPageLoadAnimation2']!),
                                   ),
@@ -623,7 +637,10 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                         .displaySmall
                                         .override(
                                           fontFamily: 'Urbanist',
+                                          color: FlutterFlowTheme.of(context)
+                                              .grayIcon,
                                           fontSize: 14.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
                                         ),
                                   ).animateOnPageLoad(animationsMap[
@@ -642,8 +659,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                               children: [
                                 Icon(
                                   Icons.location_on,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
+                                  color: FlutterFlowTheme.of(context).primary,
                                   size: 18.0,
                                 ),
                                 Padding(
@@ -656,7 +672,8 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                         .override(
                                           fontFamily: 'Urbanist',
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryText,
+                                              .grayIcon,
+                                          letterSpacing: 0.0,
                                         ),
                                   ),
                                 ),
@@ -722,7 +739,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                               text: columnPropertiesRecord.phone,
                               icon: FaIcon(
                                 FontAwesomeIcons.phone,
-                                color: FlutterFlowTheme.of(context).primaryText,
+                                color: FlutterFlowTheme.of(context).primary,
                                 size: 14.0,
                               ),
                               options: FFButtonOptions(
@@ -738,8 +755,9 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                     .override(
                                       fontFamily: 'Urbanist',
                                       color:
-                                          FlutterFlowTheme.of(context).primary,
+                                          FlutterFlowTheme.of(context).grayIcon,
                                       fontSize: 14.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 0.0,
@@ -798,7 +816,9 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      'Wishlist',
+                                      FFLocalizations.of(context).getText(
+                                        'zjbbn0ok' /* Wishlist */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -806,6 +826,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             fontSize: 16.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
                                     ),
@@ -873,6 +894,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
                                           fontSize: 16.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                         ),
                                   ),
@@ -933,7 +955,9 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                   ).then((value) => safeSetState(() {}));
                                 }
                               },
-                              text: 'Accept',
+                              text: FFLocalizations.of(context).getText(
+                                'ln9cd88q' /* Accept */,
+                              ),
                               options: FFButtonOptions(
                                 width: double.infinity,
                                 height: 42.0,
@@ -947,6 +971,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                     .override(
                                       fontFamily: 'Urbanist',
                                       color: Colors.white,
+                                      letterSpacing: 0.0,
                                     ),
                                 elevation: 1.0,
                                 borderSide: BorderSide(
@@ -1003,7 +1028,9 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                   ).then((value) => safeSetState(() {}));
                                 }
                               },
-                              text: 'Decline',
+                              text: FFLocalizations.of(context).getText(
+                                'sgtrykvn' /* Decline */,
+                              ),
                               options: FFButtonOptions(
                                 width: double.infinity,
                                 height: 42.0,
@@ -1017,6 +1044,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                     .override(
                                       fontFamily: 'Urbanist',
                                       color: Colors.white,
+                                      letterSpacing: 0.0,
                                     ),
                                 elevation: 1.0,
                                 borderSide: BorderSide(

@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
@@ -15,16 +14,16 @@ export 'guests_model.dart';
 
 class GuestsWidget extends StatefulWidget {
   const GuestsWidget({
-    Key? key,
+    super.key,
     this.user,
     required this.property,
-  }) : super(key: key);
+  });
 
   final UsersRecord? user;
   final PropertiesRecord? property;
 
   @override
-  _GuestsWidgetState createState() => _GuestsWidgetState();
+  State<GuestsWidget> createState() => _GuestsWidgetState();
 }
 
 class _GuestsWidgetState extends State<GuestsWidget> {
@@ -53,8 +52,6 @@ class _GuestsWidgetState extends State<GuestsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -150,6 +147,7 @@ class _GuestsWidgetState extends State<GuestsWidget> {
                               .override(
                                 fontFamily: 'Urbanist',
                                 color: FlutterFlowTheme.of(context).primaryText,
+                                letterSpacing: 0.0,
                                 fontWeight: FontWeight.normal,
                               ),
                         ),

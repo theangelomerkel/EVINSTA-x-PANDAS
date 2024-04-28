@@ -15,14 +15,14 @@ export 'guestlist_model.dart';
 
 class GuestlistWidget extends StatefulWidget {
   const GuestlistWidget({
-    Key? key,
+    super.key,
     this.parameter2,
-  }) : super(key: key);
+  });
 
   final PropertiesRecord? parameter2;
 
   @override
-  _GuestlistWidgetState createState() => _GuestlistWidgetState();
+  State<GuestlistWidget> createState() => _GuestlistWidgetState();
 }
 
 class _GuestlistWidgetState extends State<GuestlistWidget> {
@@ -51,8 +51,6 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Container(
       width: double.infinity,
       height: MediaQuery.sizeOf(context).height * 1.0,
@@ -105,11 +103,14 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                       child: Text(
-                        'Guest List',
+                        FFLocalizations.of(context).getText(
+                          '0tqp3odg' /* Guest List */,
+                        ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Urbanist',
                               color: FlutterFlowTheme.of(context).primaryText,
                               fontSize: 22.0,
+                              letterSpacing: 0.0,
                             ),
                       ),
                     ),
@@ -118,10 +119,13 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                   child: Text(
-                    'Here you can see a list of people who plan to visit',
+                    FFLocalizations.of(context).getText(
+                      '58omfz6l' /* Here you can see a list of peo... */,
+                    ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Urbanist',
                           color: FlutterFlowTheme.of(context).primaryText,
+                          letterSpacing: 0.0,
                         ),
                   ),
                 ),
@@ -134,13 +138,16 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 8.0),
                         child: Text(
-                          'Confirmed',
+                          FFLocalizations.of(context).getText(
+                            '5p79b9kh' /* Confirmed */,
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
                                 fontFamily: 'Urbanist',
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 fontSize: 16.0,
+                                letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
                               ),
                         ),
@@ -333,6 +340,7 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               fontSize: 12.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                             ),
                                       ),
@@ -350,13 +358,16 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 8.0),
                         child: Text(
-                          'Rejected',
+                          FFLocalizations.of(context).getText(
+                            '4dundfju' /* Rejected */,
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
                                 fontFamily: 'Urbanist',
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 fontSize: 16.0,
+                                letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
                               ),
                         ),
@@ -551,6 +562,7 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               fontSize: 12.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                             ),
                                       ),

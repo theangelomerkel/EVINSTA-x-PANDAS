@@ -8,7 +8,6 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -19,14 +18,14 @@ export 'property_review_model.dart';
 
 class PropertyReviewWidget extends StatefulWidget {
   const PropertyReviewWidget({
-    Key? key,
+    super.key,
     this.propertyRef,
-  }) : super(key: key);
+  });
 
   final PropertiesRecord? propertyRef;
 
   @override
-  _PropertyReviewWidgetState createState() => _PropertyReviewWidgetState();
+  State<PropertyReviewWidget> createState() => _PropertyReviewWidgetState();
 }
 
 class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
@@ -35,40 +34,41 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
-  final animationsMap = {
-    'containerOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 450.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 450.ms,
-          begin: Offset(0.0, 76.0),
-          end: Offset(0.0, 0.0),
-        ),
-        ScaleEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 450.ms,
-          begin: Offset(1.0, 1.0),
-          end: Offset(1.0, 1.0),
-        ),
-      ],
-    ),
-  };
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => PropertyReviewModel());
 
+    animationsMap.addAll({
+      'containerOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 450.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 450.0.ms,
+            begin: Offset(0.0, 76.0),
+            end: Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 450.0.ms,
+            begin: Offset(1.0, 1.0),
+            end: Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+    });
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -88,17 +88,6 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return StreamBuilder<List<ReviewsRecord>>(
       stream: queryReviewsRecord(
         queryBuilder: (reviewsRecord) => reviewsRecord.where(
@@ -146,8 +135,13 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
               },
             ),
             title: Text(
-              'Reviews',
-              style: FlutterFlowTheme.of(context).headlineSmall,
+              FFLocalizations.of(context).getText(
+                'bzvuksri' /* Reviews */,
+              ),
+              style: FlutterFlowTheme.of(context).headlineSmall.override(
+                    fontFamily: 'Urbanist',
+                    letterSpacing: 0.0,
+                  ),
             ),
             actions: [],
             centerTitle: false,
@@ -167,7 +161,10 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                         BoxShadow(
                           blurRadius: 3.0,
                           color: Color(0x39000000),
-                          offset: Offset(0.0, 1.0),
+                          offset: Offset(
+                            0.0,
+                            1.0,
+                          ),
                         )
                       ],
                     ),
@@ -198,18 +195,22 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         fontSize: 28.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.bold,
                                       ),
                                 ),
                               ),
                               Text(
-                                '# of Ratings',
+                                FFLocalizations.of(context).getText(
+                                  'cb1t68a1' /* # of Ratings */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Lexend Deca',
                                       color: Color(0xFF95A1AC),
                                       fontSize: 12.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
                                     ),
                               ),
@@ -236,6 +237,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             fontSize: 28.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
                                           ),
                                     ),
@@ -252,13 +254,16 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                 ],
                               ),
                               Text(
-                                'Avg. Rating',
+                                FFLocalizations.of(context).getText(
+                                  'mk9yg1rf' /* Avg. Rating */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodySmall
                                     .override(
                                       fontFamily: 'Lexend Deca',
                                       color: Color(0xFF8B97A2),
                                       fontSize: 12.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
                                     ),
                               ),
@@ -315,7 +320,10 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                   BoxShadow(
                                     blurRadius: 4.0,
                                     color: Color(0x33000000),
-                                    offset: Offset(0.0, 2.0),
+                                    offset: Offset(
+                                      0.0,
+                                      2.0,
+                                    ),
                                   )
                                 ],
                                 borderRadius: BorderRadius.circular(16.0),
@@ -371,7 +379,13 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmall,
+                                                                .headlineSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Urbanist',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                       Padding(
                                                         padding:
@@ -460,7 +474,12 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                                         .ratingDescription,
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Urbanist',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                   ),
                                                 ),
                                               ],

@@ -17,6 +17,8 @@ class EventStruct extends FFFirebaseStruct {
     String? contentUrl,
     String? flyerFront,
     bool? newEventform,
+    List<EventStruct>? eventlist,
+    List<EventlistStruct>? eventlist2,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _id = id,
         _title = title,
@@ -25,6 +27,8 @@ class EventStruct extends FFFirebaseStruct {
         _contentUrl = contentUrl,
         _flyerFront = flyerFront,
         _newEventform = newEventform,
+        _eventlist = eventlist,
+        _eventlist2 = eventlist2,
         super(firestoreUtilData);
 
   // "ID" field.
@@ -71,6 +75,22 @@ class EventStruct extends FFFirebaseStruct {
   set newEventform(bool? val) => _newEventform = val;
   bool hasNewEventform() => _newEventform != null;
 
+  // "eventlist" field.
+  List<EventStruct>? _eventlist;
+  List<EventStruct> get eventlist => _eventlist ?? const [];
+  set eventlist(List<EventStruct>? val) => _eventlist = val;
+  void updateEventlist(Function(List<EventStruct>) updateFn) =>
+      updateFn(_eventlist ??= []);
+  bool hasEventlist() => _eventlist != null;
+
+  // "eventlist2" field.
+  List<EventlistStruct>? _eventlist2;
+  List<EventlistStruct> get eventlist2 => _eventlist2 ?? const [];
+  set eventlist2(List<EventlistStruct>? val) => _eventlist2 = val;
+  void updateEventlist2(Function(List<EventlistStruct>) updateFn) =>
+      updateFn(_eventlist2 ??= []);
+  bool hasEventlist2() => _eventlist2 != null;
+
   static EventStruct fromMap(Map<String, dynamic> data) => EventStruct(
         id: castToType<int>(data['ID']),
         title: data['title'] as String?,
@@ -79,6 +99,14 @@ class EventStruct extends FFFirebaseStruct {
         contentUrl: data['contentUrl'] as String?,
         flyerFront: data['flyerFront'] as String?,
         newEventform: data['newEventform'] as bool?,
+        eventlist: getStructList(
+          data['eventlist'],
+          EventStruct.fromMap,
+        ),
+        eventlist2: getStructList(
+          data['eventlist2'],
+          EventlistStruct.fromMap,
+        ),
       );
 
   static EventStruct? maybeFromMap(dynamic data) =>
@@ -92,6 +120,8 @@ class EventStruct extends FFFirebaseStruct {
         'contentUrl': _contentUrl,
         'flyerFront': _flyerFront,
         'newEventform': _newEventform,
+        'eventlist': _eventlist?.map((e) => e.toMap()).toList(),
+        'eventlist2': _eventlist2?.map((e) => e.toMap()).toList(),
       }.withoutNulls;
 
   @override
@@ -123,6 +153,16 @@ class EventStruct extends FFFirebaseStruct {
         'newEventform': serializeParam(
           _newEventform,
           ParamType.bool,
+        ),
+        'eventlist': serializeParam(
+          _eventlist,
+          ParamType.DataStruct,
+          true,
+        ),
+        'eventlist2': serializeParam(
+          _eventlist2,
+          ParamType.DataStruct,
+          true,
         ),
       }.withoutNulls;
 
@@ -163,6 +203,18 @@ class EventStruct extends FFFirebaseStruct {
           ParamType.bool,
           false,
         ),
+        eventlist: deserializeStructParam<EventStruct>(
+          data['eventlist'],
+          ParamType.DataStruct,
+          true,
+          structBuilder: EventStruct.fromSerializableMap,
+        ),
+        eventlist2: deserializeStructParam<EventlistStruct>(
+          data['eventlist2'],
+          ParamType.DataStruct,
+          true,
+          structBuilder: EventlistStruct.fromSerializableMap,
+        ),
       );
 
   @override
@@ -170,6 +222,7 @@ class EventStruct extends FFFirebaseStruct {
 
   @override
   bool operator ==(Object other) {
+    const listEquality = ListEquality();
     return other is EventStruct &&
         id == other.id &&
         title == other.title &&
@@ -177,12 +230,23 @@ class EventStruct extends FFFirebaseStruct {
         date == other.date &&
         contentUrl == other.contentUrl &&
         flyerFront == other.flyerFront &&
-        newEventform == other.newEventform;
+        newEventform == other.newEventform &&
+        listEquality.equals(eventlist, other.eventlist) &&
+        listEquality.equals(eventlist2, other.eventlist2);
   }
 
   @override
-  int get hashCode => const ListEquality()
-      .hash([id, title, attending, date, contentUrl, flyerFront, newEventform]);
+  int get hashCode => const ListEquality().hash([
+        id,
+        title,
+        attending,
+        date,
+        contentUrl,
+        flyerFront,
+        newEventform,
+        eventlist,
+        eventlist2
+      ]);
 }
 
 EventStruct createEventStruct({

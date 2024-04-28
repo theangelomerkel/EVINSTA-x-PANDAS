@@ -12,10 +12,10 @@ import 's1_login_and_sign_up_model.dart';
 export 's1_login_and_sign_up_model.dart';
 
 class S1LoginAndSignUpWidget extends StatefulWidget {
-  const S1LoginAndSignUpWidget({Key? key}) : super(key: key);
+  const S1LoginAndSignUpWidget({super.key});
 
   @override
-  _S1LoginAndSignUpWidgetState createState() => _S1LoginAndSignUpWidgetState();
+  State<S1LoginAndSignUpWidget> createState() => _S1LoginAndSignUpWidgetState();
 }
 
 class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
@@ -34,19 +34,19 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
       length: 2,
       initialIndex: 0,
     )..addListener(() => setState(() {}));
-    _model.emailAddressLoginController ??= TextEditingController();
+    _model.emailAddressLoginTextController ??= TextEditingController();
     _model.emailAddressLoginFocusNode ??= FocusNode();
 
-    _model.passwordLoginController ??= TextEditingController();
+    _model.passwordLoginTextController ??= TextEditingController();
     _model.passwordLoginFocusNode ??= FocusNode();
 
-    _model.emailAddressController ??= TextEditingController();
+    _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
 
-    _model.passwordController ??= TextEditingController();
+    _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
 
-    _model.passwordConfirmController ??= TextEditingController();
+    _model.passwordConfirmTextController ??= TextEditingController();
     _model.passwordConfirmFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -61,17 +61,6 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -115,16 +104,24 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                       alignment: Alignment(0.0, 0),
                       child: TabBar(
                         labelColor: FlutterFlowTheme.of(context).primaryText,
-                        labelStyle: FlutterFlowTheme.of(context).titleMedium,
+                        labelStyle:
+                            FlutterFlowTheme.of(context).titleMedium.override(
+                                  fontFamily: 'Urbanist',
+                                  letterSpacing: 0.0,
+                                ),
                         unselectedLabelStyle: TextStyle(),
                         indicatorColor:
                             FlutterFlowTheme.of(context).primaryText,
                         tabs: [
                           Tab(
-                            text: 'Sign In',
+                            text: FFLocalizations.of(context).getText(
+                              'gg53n7vj' /* Sign In */,
+                            ),
                           ),
                           Tab(
-                            text: 'Sign Up',
+                            text: FFLocalizations.of(context).getText(
+                              'yo8z7hh6' /* Sign Up */,
+                            ),
                           ),
                         ],
                         controller: _model.tabBarController,
@@ -149,21 +146,25 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),
                                     child: TextFormField(
-                                      controller:
-                                          _model.emailAddressLoginController,
+                                      controller: _model
+                                          .emailAddressLoginTextController,
                                       focusNode:
                                           _model.emailAddressLoginFocusNode,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText: 'Email Address',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          'byybrou7' /* Email Address */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Lexend Deca',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryText,
+                                                      .grayIcon,
                                               fontSize: 14.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
@@ -174,6 +175,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
                                               fontSize: 14.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
                                         enabledBorder: OutlineInputBorder(
@@ -223,11 +225,12 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                           .override(
                                             fontFamily: 'Urbanist',
                                             color: Color(0xFF0F1113),
+                                            letterSpacing: 0.0,
                                           ),
                                       maxLines: null,
                                       keyboardType: TextInputType.emailAddress,
                                       validator: _model
-                                          .emailAddressLoginControllerValidator
+                                          .emailAddressLoginTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -236,20 +239,24 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                         0.0, 12.0, 0.0, 0.0),
                                     child: TextFormField(
                                       controller:
-                                          _model.passwordLoginController,
+                                          _model.passwordLoginTextController,
                                       focusNode: _model.passwordLoginFocusNode,
                                       obscureText:
                                           !_model.passwordLoginVisibility,
                                       decoration: InputDecoration(
-                                        labelText: 'Password',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          'dec221bu' /* Password */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Lexend Deca',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryText,
+                                                      .grayIcon,
                                               fontSize: 14.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
@@ -260,6 +267,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
                                               fontSize: 14.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
                                         enabledBorder: OutlineInputBorder(
@@ -325,11 +333,12 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                           .override(
                                             fontFamily: 'Urbanist',
                                             color: Color(0xFF0F1113),
+                                            letterSpacing: 0.0,
                                           ),
                                       keyboardType:
                                           TextInputType.visiblePassword,
                                       validator: _model
-                                          .passwordLoginControllerValidator
+                                          .passwordLoginTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -347,9 +356,11 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                           final user =
                                               await authManager.signInWithEmail(
                                             context,
-                                            _model.emailAddressLoginController
+                                            _model
+                                                .emailAddressLoginTextController
                                                 .text,
-                                            _model.passwordLoginController.text,
+                                            _model.passwordLoginTextController
+                                                .text,
                                           );
                                           if (user == null) {
                                             return;
@@ -380,7 +391,9 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
 
                                         _navigate();
                                       },
-                                      text: 'Login',
+                                      text: FFLocalizations.of(context).getText(
+                                        '3act9iiy' /* Login */,
+                                      ),
                                       options: FFButtonOptions(
                                         width: 230.0,
                                         height: 42.0,
@@ -399,6 +412,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBtnText,
                                               fontSize: 16.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
                                         elevation: 1.0,
@@ -431,7 +445,9 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                           },
                                         );
                                       },
-                                      text: 'Forgot Password?',
+                                      text: FFLocalizations.of(context).getText(
+                                        '8e4959t8' /* Forgot Password? */,
+                                      ),
                                       options: FFButtonOptions(
                                         width: 170.0,
                                         height: 40.0,
@@ -449,6 +465,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
+                                              letterSpacing: 0.0,
                                             ),
                                         elevation: 0.0,
                                         borderSide: BorderSide(
@@ -473,18 +490,23 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),
                                     child: TextFormField(
-                                      controller: _model.emailAddressController,
+                                      controller:
+                                          _model.emailAddressTextController,
                                       focusNode: _model.emailAddressFocusNode,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText: 'Email Address',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          '031fz47i' /* Email Address */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
                                               fontFamily: 'Urbanist',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryText,
+                                                      .grayIcon,
+                                              letterSpacing: 0.0,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -494,6 +516,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
                                               fontSize: 14.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
                                         enabledBorder: OutlineInputBorder(
@@ -544,12 +567,13 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                             fontFamily: 'Lexend Deca',
                                             color: Color(0xFF14181B),
                                             fontSize: 14.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.normal,
                                           ),
                                       maxLines: null,
                                       keyboardType: TextInputType.emailAddress,
                                       validator: _model
-                                          .emailAddressControllerValidator
+                                          .emailAddressTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -557,18 +581,22 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 0.0),
                                     child: TextFormField(
-                                      controller: _model.passwordController,
+                                      controller: _model.passwordTextController,
                                       focusNode: _model.passwordFocusNode,
                                       obscureText: !_model.passwordVisibility,
                                       decoration: InputDecoration(
-                                        labelText: 'Password',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          'kciizean' /* Password */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
                                               fontFamily: 'Urbanist',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryText,
+                                                      .grayIcon,
+                                              letterSpacing: 0.0,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -578,6 +606,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
                                               fontSize: 14.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
                                         enabledBorder: OutlineInputBorder(
@@ -643,12 +672,13 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                             fontFamily: 'Lexend Deca',
                                             color: Color(0xFF14181B),
                                             fontSize: 14.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.normal,
                                           ),
                                       keyboardType:
                                           TextInputType.visiblePassword,
                                       validator: _model
-                                          .passwordControllerValidator
+                                          .passwordTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -657,20 +687,24 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                         0.0, 12.0, 0.0, 0.0),
                                     child: TextFormField(
                                       controller:
-                                          _model.passwordConfirmController,
+                                          _model.passwordConfirmTextController,
                                       focusNode:
                                           _model.passwordConfirmFocusNode,
                                       obscureText:
                                           !_model.passwordConfirmVisibility,
                                       decoration: InputDecoration(
-                                        labelText: 'Confirm Password',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          'oh6o7md4' /* Confirm Password */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
                                               fontFamily: 'Urbanist',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryText,
+                                                      .grayIcon,
+                                              letterSpacing: 0.0,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -680,6 +714,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
                                               fontSize: 14.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
                                         enabledBorder: OutlineInputBorder(
@@ -747,12 +782,13 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                             fontFamily: 'Lexend Deca',
                                             color: Color(0xFF14181B),
                                             fontSize: 14.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.normal,
                                           ),
                                       keyboardType:
                                           TextInputType.visiblePassword,
                                       validator: _model
-                                          .passwordConfirmControllerValidator
+                                          .passwordConfirmTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -766,8 +802,10 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                         if (_model.terms) {
                                           GoRouter.of(context)
                                               .prepareAuthEvent();
-                                          if (_model.passwordController.text !=
-                                              _model.passwordConfirmController
+                                          if (_model.passwordTextController
+                                                  .text !=
+                                              _model
+                                                  .passwordConfirmTextController
                                                   .text) {
                                             ScaffoldMessenger.of(context)
                                                 .showSnackBar(
@@ -783,8 +821,9 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                           final user = await authManager
                                               .createAccountWithEmail(
                                             context,
-                                            _model.emailAddressController.text,
-                                            _model.passwordController.text,
+                                            _model.emailAddressTextController
+                                                .text,
+                                            _model.passwordTextController.text,
                                           );
                                           if (user == null) {
                                             return;
@@ -823,7 +862,9 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
 
                                         _navigate();
                                       },
-                                      text: 'Create Account',
+                                      text: FFLocalizations.of(context).getText(
+                                        'hjjyohu6' /* Create Account */,
+                                      ),
                                       options: FFButtonOptions(
                                         width: 230.0,
                                         height: 42.0,
@@ -842,6 +883,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBtnText,
                                               fontSize: 16.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
                                         elevation: 1.0,
@@ -875,9 +917,15 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                         child: Text(
-                          'Or use a social account to login',
+                          FFLocalizations.of(context).getText(
+                            '6pcbm2s8' /* Or use a social account to log... */,
+                          ),
                           textAlign: TextAlign.center,
-                          style: FlutterFlowTheme.of(context).titleSmall,
+                          style:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Urbanist',
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ),
                     ),
@@ -942,6 +990,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                             .override(
                               fontFamily: 'Urbanist',
                               color: FlutterFlowTheme.of(context).primaryText,
+                              letterSpacing: 0.0,
                             ),
                         borderSide: BorderSide(
                           color: Colors.transparent,
@@ -1006,6 +1055,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                     fontFamily: 'Urbanist',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
+                                    letterSpacing: 0.0,
                                   ),
                               borderSide: BorderSide(
                                 color: Colors.transparent,
@@ -1066,6 +1116,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                             .override(
                               fontFamily: 'Urbanist',
                               color: FlutterFlowTheme.of(context).primaryText,
+                              letterSpacing: 0.0,
                             ),
                         borderSide: BorderSide(
                           color: Colors.transparent,
@@ -1131,10 +1182,14 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                     child: Text(
-                      'I agree with ',
+                      FFLocalizations.of(context).getText(
+                        'j0h1yw8t' /* I agree with  */,
+                      ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Urbanist',
+                            color: FlutterFlowTheme.of(context).primaryText,
                             fontSize: 12.0,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
                           ),
                     ),
@@ -1142,10 +1197,12 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
                     child: FFButtonWidget(
-                      onPressed: () async {
-                        context.pushNamed('event_images');
+                      onPressed: () {
+                        print('Button pressed ...');
                       },
-                      text: 'terms of use',
+                      text: FFLocalizations.of(context).getText(
+                        'ocutpyvm' /* terms of use */,
+                      ),
                       options: FFButtonOptions(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(2.0, 4.0, 4.0, 4.0),
@@ -1158,6 +1215,7 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                               fontFamily: 'Urbanist',
                               color: FlutterFlowTheme.of(context).primaryText,
                               fontSize: 12.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
                             ),
                         elevation: 0.0,

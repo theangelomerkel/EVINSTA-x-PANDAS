@@ -10,7 +10,6 @@ import 's9_n_r3_edit_article_widget.dart' show S9NR3EditArticleWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -37,11 +36,14 @@ class S9NR3EditArticleModel extends FlutterFlowModel<S9NR3EditArticleWidget> {
 
   // State field(s) for propertyName widget.
   FocusNode? propertyNameFocusNode;
-  TextEditingController? propertyNameController;
-  String? Function(BuildContext, String?)? propertyNameControllerValidator;
-  String? _propertyNameControllerValidator(BuildContext context, String? val) {
+  TextEditingController? propertyNameTextController;
+  String? Function(BuildContext, String?)? propertyNameTextControllerValidator;
+  String? _propertyNameTextControllerValidator(
+      BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        '5jgs457n' /* Field is required */,
+      );
     }
 
     return null;
@@ -49,32 +51,30 @@ class S9NR3EditArticleModel extends FlutterFlowModel<S9NR3EditArticleWidget> {
 
   // State field(s) for desc widget.
   FocusNode? descFocusNode;
-  TextEditingController? descController;
-  String? Function(BuildContext, String?)? descControllerValidator;
-  String? _descControllerValidator(BuildContext context, String? val) {
+  TextEditingController? descTextController;
+  String? Function(BuildContext, String?)? descTextControllerValidator;
+  String? _descTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        '38kyo240' /* Field is required */,
+      );
     }
 
     return null;
   }
 
-  /// Initialization and disposal methods.
-
+  @override
   void initState(BuildContext context) {
-    propertyNameControllerValidator = _propertyNameControllerValidator;
-    descControllerValidator = _descControllerValidator;
+    propertyNameTextControllerValidator = _propertyNameTextControllerValidator;
+    descTextControllerValidator = _descTextControllerValidator;
   }
 
+  @override
   void dispose() {
     propertyNameFocusNode?.dispose();
-    propertyNameController?.dispose();
+    propertyNameTextController?.dispose();
 
     descFocusNode?.dispose();
-    descController?.dispose();
+    descTextController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

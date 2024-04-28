@@ -10,7 +10,6 @@ import '/flutter_flow/upload_data.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -18,70 +17,17 @@ import 'change_photo_model.dart';
 export 'change_photo_model.dart';
 
 class ChangePhotoWidget extends StatefulWidget {
-  const ChangePhotoWidget({Key? key}) : super(key: key);
+  const ChangePhotoWidget({super.key});
 
   @override
-  _ChangePhotoWidgetState createState() => _ChangePhotoWidgetState();
+  State<ChangePhotoWidget> createState() => _ChangePhotoWidgetState();
 }
 
 class _ChangePhotoWidgetState extends State<ChangePhotoWidget>
     with TickerProviderStateMixin {
   late ChangePhotoModel _model;
 
-  final animationsMap = {
-    'buttonOnPageLoadAnimation1': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 350.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 350.ms,
-          duration: 600.ms,
-          begin: Offset(0.0, 50.0),
-          end: Offset(0.0, 0.0),
-        ),
-        ScaleEffect(
-          curve: Curves.easeInOut,
-          delay: 350.ms,
-          duration: 600.ms,
-          begin: Offset(0.6, 0.6),
-          end: Offset(1.0, 1.0),
-        ),
-      ],
-    ),
-    'buttonOnPageLoadAnimation2': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 350.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 350.ms,
-          duration: 600.ms,
-          begin: Offset(0.0, 50.0),
-          end: Offset(0.0, 0.0),
-        ),
-        ScaleEffect(
-          curve: Curves.easeInOut,
-          delay: 350.ms,
-          duration: 600.ms,
-          begin: Offset(0.6, 0.6),
-          end: Offset(1.0, 1.0),
-        ),
-      ],
-    ),
-  };
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void setState(VoidCallback callback) {
@@ -94,6 +40,60 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget>
     super.initState();
     _model = createModel(context, () => ChangePhotoModel());
 
+    animationsMap.addAll({
+      'buttonOnPageLoadAnimation1': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 350.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 350.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.0, 50.0),
+            end: Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 350.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.6, 0.6),
+            end: Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+      'buttonOnPageLoadAnimation2': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 350.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 350.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.0, 50.0),
+            end: Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 350.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.6, 0.6),
+            end: Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+    });
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -113,8 +113,6 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget>
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
       child: Container(
@@ -126,7 +124,10 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget>
             BoxShadow(
               blurRadius: 6.0,
               color: Color(0x35000000),
-              offset: Offset(0.0, -2.0),
+              offset: Offset(
+                0.0,
+                -2.0,
+              ),
             )
           ],
           borderRadius: BorderRadius.only(
@@ -163,9 +164,15 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget>
                       padding:
                           EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                       child: Text(
-                        'Change Profile Photo',
+                        FFLocalizations.of(context).getText(
+                          '2mh9mx58' /* Change Profile Photo */,
+                        ),
                         textAlign: TextAlign.start,
-                        style: FlutterFlowTheme.of(context).headlineSmall,
+                        style:
+                            FlutterFlowTheme.of(context).headlineSmall.override(
+                                  fontFamily: 'Urbanist',
+                                  letterSpacing: 0.0,
+                                ),
                       ),
                     ),
                   ),
@@ -195,7 +202,7 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget>
                       context: context,
                       allowPhoto: true,
                       backgroundColor: FlutterFlowTheme.of(context).tertiary,
-                      textColor: FlutterFlowTheme.of(context).darkText,
+                      textColor: Color(0xFF1E2429),
                       pickerFontFamily: 'Lexend Deca',
                     );
                     if (selectedMedia != null &&
@@ -250,7 +257,9 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget>
                       }
                     }
                   },
-                  text: 'Upload Photo',
+                  text: FFLocalizations.of(context).getText(
+                    'x0oytae3' /* Upload Photo */,
+                  ),
                   options: FFButtonOptions(
                     width: 150.0,
                     height: 50.0,
@@ -261,6 +270,7 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget>
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Urbanist',
                           color: FlutterFlowTheme.of(context).primaryText,
+                          letterSpacing: 0.0,
                         ),
                     elevation: 3.0,
                     borderSide: BorderSide(
@@ -280,7 +290,9 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget>
                       photoUrl: _model.uploadedFileUrl,
                     ));
                   },
-                  text: 'Save Photo',
+                  text: FFLocalizations.of(context).getText(
+                    '6v4ann7y' /* Save Photo */,
+                  ),
                   options: FFButtonOptions(
                     width: 290.0,
                     height: 50.0,
@@ -292,6 +304,7 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget>
                         FlutterFlowTheme.of(context).headlineSmall.override(
                               fontFamily: 'Urbanist',
                               color: FlutterFlowTheme.of(context).tertiary,
+                              letterSpacing: 0.0,
                             ),
                     elevation: 3.0,
                     borderSide: BorderSide(

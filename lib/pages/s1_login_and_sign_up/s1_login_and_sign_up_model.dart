@@ -25,56 +25,54 @@ class S1LoginAndSignUpModel extends FlutterFlowModel<S1LoginAndSignUpWidget> {
 
   // State field(s) for emailAddress_Login widget.
   FocusNode? emailAddressLoginFocusNode;
-  TextEditingController? emailAddressLoginController;
-  String? Function(BuildContext, String?)? emailAddressLoginControllerValidator;
+  TextEditingController? emailAddressLoginTextController;
+  String? Function(BuildContext, String?)?
+      emailAddressLoginTextControllerValidator;
   // State field(s) for password_Login widget.
   FocusNode? passwordLoginFocusNode;
-  TextEditingController? passwordLoginController;
+  TextEditingController? passwordLoginTextController;
   late bool passwordLoginVisibility;
-  String? Function(BuildContext, String?)? passwordLoginControllerValidator;
+  String? Function(BuildContext, String?)? passwordLoginTextControllerValidator;
   // State field(s) for emailAddress widget.
   FocusNode? emailAddressFocusNode;
-  TextEditingController? emailAddressController;
-  String? Function(BuildContext, String?)? emailAddressControllerValidator;
+  TextEditingController? emailAddressTextController;
+  String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
   // State field(s) for password widget.
   FocusNode? passwordFocusNode;
-  TextEditingController? passwordController;
+  TextEditingController? passwordTextController;
   late bool passwordVisibility;
-  String? Function(BuildContext, String?)? passwordControllerValidator;
+  String? Function(BuildContext, String?)? passwordTextControllerValidator;
   // State field(s) for passwordConfirm widget.
   FocusNode? passwordConfirmFocusNode;
-  TextEditingController? passwordConfirmController;
+  TextEditingController? passwordConfirmTextController;
   late bool passwordConfirmVisibility;
-  String? Function(BuildContext, String?)? passwordConfirmControllerValidator;
+  String? Function(BuildContext, String?)?
+      passwordConfirmTextControllerValidator;
 
-  /// Initialization and disposal methods.
-
+  @override
   void initState(BuildContext context) {
     passwordLoginVisibility = false;
     passwordVisibility = false;
     passwordConfirmVisibility = false;
   }
 
+  @override
   void dispose() {
     unfocusNode.dispose();
     tabBarController?.dispose();
     emailAddressLoginFocusNode?.dispose();
-    emailAddressLoginController?.dispose();
+    emailAddressLoginTextController?.dispose();
 
     passwordLoginFocusNode?.dispose();
-    passwordLoginController?.dispose();
+    passwordLoginTextController?.dispose();
 
     emailAddressFocusNode?.dispose();
-    emailAddressController?.dispose();
+    emailAddressTextController?.dispose();
 
     passwordFocusNode?.dispose();
-    passwordController?.dispose();
+    passwordTextController?.dispose();
 
     passwordConfirmFocusNode?.dispose();
-    passwordConfirmController?.dispose();
+    passwordConfirmTextController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

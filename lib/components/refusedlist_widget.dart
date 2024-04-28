@@ -6,7 +6,6 @@ import '/pages/components/users_refused/users_refused_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'refusedlist_model.dart';
@@ -14,14 +13,14 @@ export 'refusedlist_model.dart';
 
 class RefusedlistWidget extends StatefulWidget {
   const RefusedlistWidget({
-    Key? key,
+    super.key,
     this.parameter2,
-  }) : super(key: key);
+  });
 
   final PropertiesRecord? parameter2;
 
   @override
-  _RefusedlistWidgetState createState() => _RefusedlistWidgetState();
+  State<RefusedlistWidget> createState() => _RefusedlistWidgetState();
 }
 
 class _RefusedlistWidgetState extends State<RefusedlistWidget> {
@@ -38,7 +37,8 @@ class _RefusedlistWidgetState extends State<RefusedlistWidget> {
     super.initState();
     _model = createModel(context, () => RefusedlistModel());
 
-    _model.expandableController = ExpandableController(initialExpanded: false);
+    _model.expandableExpandableController =
+        ExpandableController(initialExpanded: false);
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -51,8 +51,6 @@ class _RefusedlistWidgetState extends State<RefusedlistWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Visibility(
       visible: widget.parameter2?.userRef == currentUserReference,
       child: Container(
@@ -65,7 +63,7 @@ class _RefusedlistWidgetState extends State<RefusedlistWidget> {
           width: double.infinity,
           color: FlutterFlowTheme.of(context).secondaryBackground,
           child: ExpandableNotifier(
-            controller: _model.expandableController,
+            controller: _model.expandableExpandableController,
             child: ExpandablePanel(
               header: Text(
                 'Refusedlist (${valueOrDefault<String>(
@@ -76,6 +74,7 @@ class _RefusedlistWidgetState extends State<RefusedlistWidget> {
                       fontFamily: 'Urbanist',
                       color: FlutterFlowTheme.of(context).primaryText,
                       fontSize: 16.0,
+                      letterSpacing: 0.0,
                     ),
               ),
               collapsed: Container(),

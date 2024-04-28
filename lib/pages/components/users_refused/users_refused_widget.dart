@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
@@ -15,16 +14,16 @@ export 'users_refused_model.dart';
 
 class UsersRefusedWidget extends StatefulWidget {
   const UsersRefusedWidget({
-    Key? key,
+    super.key,
     this.user,
     required this.event,
-  }) : super(key: key);
+  });
 
   final UsersRecord? user;
   final PropertiesRecord? event;
 
   @override
-  _UsersRefusedWidgetState createState() => _UsersRefusedWidgetState();
+  State<UsersRefusedWidget> createState() => _UsersRefusedWidgetState();
 }
 
 class _UsersRefusedWidgetState extends State<UsersRefusedWidget> {
@@ -53,8 +52,6 @@ class _UsersRefusedWidgetState extends State<UsersRefusedWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -150,6 +147,7 @@ class _UsersRefusedWidgetState extends State<UsersRefusedWidget> {
                               .override(
                                 fontFamily: 'Urbanist',
                                 color: FlutterFlowTheme.of(context).primaryText,
+                                letterSpacing: 0.0,
                                 fontWeight: FontWeight.normal,
                               ),
                         ),

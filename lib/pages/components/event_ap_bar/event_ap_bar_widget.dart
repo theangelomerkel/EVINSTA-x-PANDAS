@@ -11,7 +11,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,41 +21,21 @@ export 'event_ap_bar_model.dart';
 
 class EventApBarWidget extends StatefulWidget {
   const EventApBarWidget({
-    Key? key,
+    super.key,
     required this.event,
-  }) : super(key: key);
+  });
 
   final PropertiesRecord? event;
 
   @override
-  _EventApBarWidgetState createState() => _EventApBarWidgetState();
+  State<EventApBarWidget> createState() => _EventApBarWidgetState();
 }
 
 class _EventApBarWidgetState extends State<EventApBarWidget>
     with TickerProviderStateMixin {
   late EventApBarModel _model;
 
-  final animationsMap = {
-    'textOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: Offset(0.0, 50.0),
-          end: Offset(0.0, 0.0),
-        ),
-      ],
-    ),
-  };
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void setState(VoidCallback callback) {
@@ -69,6 +48,27 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
     super.initState();
     _model = createModel(context, () => EventApBarModel());
 
+    animationsMap.addAll({
+      'textOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.0, 50.0),
+            end: Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+    });
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -88,8 +88,6 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return FutureBuilder<PropertiesRecord>(
       future: PropertiesRecord.getDocumentOnce(widget.event!.reference),
       builder: (context, snapshot) {
@@ -183,7 +181,7 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                                   Icons.arrow_back_rounded,
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
-                                  size: 24.0,
+                                  size: 25.0,
                                 ),
                                 onPressed: () async {
                                   context.pop();
@@ -290,7 +288,10 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                 alignment: AlignmentDirectional(0.0, 0.0),
                 child: Text(
                   columnPropertiesRecord.propertyName,
-                  style: FlutterFlowTheme.of(context).displaySmall,
+                  style: FlutterFlowTheme.of(context).displaySmall.override(
+                        fontFamily: 'Urbanist',
+                        letterSpacing: 0.0,
+                      ),
                 ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation']!),
               ),
               Padding(
@@ -301,6 +302,7 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                         fontFamily: 'Lexend Deca',
                         color: FlutterFlowTheme.of(context).primaryText,
                         fontSize: 12.0,
+                        letterSpacing: 0.0,
                         fontWeight: FontWeight.bold,
                       ),
                 ),
@@ -351,7 +353,9 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                     onPressed: () {
                       print('Button pressed ...');
                     },
-                    text: 'Whishlist',
+                    text: FFLocalizations.of(context).getText(
+                      'mgzk0s9i' /* Whishlist */,
+                    ),
                     options: FFButtonOptions(
                       height: 40.0,
                       padding:
@@ -363,6 +367,7 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Urbanist',
                                 color: Colors.white,
+                                letterSpacing: 0.0,
                               ),
                       elevation: 3.0,
                       borderSide: BorderSide(
@@ -376,7 +381,9 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                     onPressed: () {
                       print('Button pressed ...');
                     },
-                    text: 'Guestlist',
+                    text: FFLocalizations.of(context).getText(
+                      '4ci9sr12' /* Guestlist */,
+                    ),
                     options: FFButtonOptions(
                       height: 40.0,
                       padding:
@@ -388,6 +395,7 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Urbanist',
                                 color: Colors.white,
+                                letterSpacing: 0.0,
                               ),
                       elevation: 3.0,
                       borderSide: BorderSide(
@@ -461,7 +469,9 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                           onPressed: () {
                             print('Button pressed ...');
                           },
-                          text: 'Decline',
+                          text: FFLocalizations.of(context).getText(
+                            '3btiga8b' /* Decline */,
+                          ),
                           options: FFButtonOptions(
                             height: 40.0,
                             padding: EdgeInsetsDirectional.fromSTEB(
@@ -474,6 +484,7 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                                 .override(
                                   fontFamily: 'Urbanist',
                                   color: Colors.white,
+                                  letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
                             borderSide: BorderSide(
@@ -500,7 +511,9 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                                   ),
                                 });
                               },
-                              text: 'Accept',
+                              text: FFLocalizations.of(context).getText(
+                                'il5volap' /* Accept */,
+                              ),
                               options: FFButtonOptions(
                                 height: 40.0,
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -513,6 +526,7 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                                     .override(
                                       fontFamily: 'Urbanist',
                                       color: Colors.white,
+                                      letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
                                 borderSide: BorderSide(

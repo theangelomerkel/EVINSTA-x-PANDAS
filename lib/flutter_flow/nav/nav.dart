@@ -107,7 +107,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 'pr': getDoc(['properties'], PropertiesRecord.fromSnapshot),
               },
               builder: (context, params) => S3EventDataPublicWidget(
-                pr: params.getParam('pr', ParamType.Document),
+                pr: params.getParam(
+                  'pr',
+                  ParamType.Document,
+                ),
               ),
             ),
             FFRoute(
@@ -124,7 +127,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 'doc': getDoc(['properties'], PropertiesRecord.fromSnapshot),
               },
               builder: (context, params) => S3EventDataIntroPageWidget(
-                doc: params.getParam('doc', ParamType.Document),
+                doc: params.getParam(
+                  'doc',
+                  ParamType.Document,
+                ),
               ),
             ),
             FFRoute(
@@ -132,7 +138,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               path: 's2HomePage',
               builder: (context, params) => params.isEmpty
                   ? NavBarPage(initialPage: 'S2_HomePage')
-                  : S2HomePageWidget(),
+                  : S2HomePageWidget(
+                      parameter1: params.getParam<dynamic>(
+                        'parameter1',
+                        ParamType.JSON,
+                        isList: true,
+                      ),
+                      parameter2: params.getParam(
+                        'parameter2',
+                        ParamType.JSON,
+                      ),
+                    ),
             ),
             FFRoute(
               name: 'S6chatMain',
@@ -152,7 +168,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     getDoc(['properties'], PropertiesRecord.fromSnapshot),
               },
               builder: (context, params) => PropertyReviewWidget(
-                propertyRef: params.getParam('propertyRef', ParamType.Document),
+                propertyRef: params.getParam(
+                  'propertyRef',
+                  ParamType.Document,
+                ),
               ),
             ),
             FFRoute(
@@ -162,9 +181,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 'chatUser': getDoc(['users'], UsersRecord.fromSnapshot),
               },
               builder: (context, params) => S7chatDetailsWidget(
-                chatUser: params.getParam('chatUser', ParamType.Document),
+                chatUser: params.getParam(
+                  'chatUser',
+                  ParamType.Document,
+                ),
                 chatRef: params.getParam(
-                    'chatRef', ParamType.DocumentReference, false, ['chats']),
+                  'chatRef',
+                  ParamType.DocumentReference,
+                  isList: false,
+                  collectionNamePath: ['chats'],
+                ),
               ),
             ),
             FFRoute(
@@ -213,7 +239,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'S8NR3_change_password',
               path: 's8NR3ChangePassword',
               builder: (context, params) => S8NR3ChangePasswordWidget(
-                email: params.getParam('email', ParamType.String),
+                email: params.getParam(
+                  'email',
+                  ParamType.String,
+                ),
               ),
             ),
             FFRoute(
@@ -223,18 +252,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 'event': getDoc(['properties'], PropertiesRecord.fromSnapshot),
               },
               builder: (context, params) => S9NR1EditEventWidget(
-                event: params.getParam('event', ParamType.Document),
+                event: params.getParam(
+                  'event',
+                  ParamType.Document,
+                ),
               ),
             ),
             FFRoute(
               name: 'forgotpassword',
               path: 'forgotpassword',
               builder: (context, params) => ForgotpasswordWidget(),
-            ),
-            FFRoute(
-              name: 'event_images',
-              path: 'eventImages',
-              builder: (context, params) => EventImagesWidget(),
             ),
             FFRoute(
               name: 'raguide',
@@ -248,7 +275,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 'article': getDoc(['articles'], ArticlesRecord.fromSnapshot),
               },
               builder: (context, params) => ArticlePageWidget(
-                article: params.getParam('article', ParamType.Document),
+                article: params.getParam(
+                  'article',
+                  ParamType.Document,
+                ),
               ),
             ),
             FFRoute(
@@ -258,8 +288,51 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 'article': getDoc(['articles'], ArticlesRecord.fromSnapshot),
               },
               builder: (context, params) => S9NR3EditArticleWidget(
-                article: params.getParam('article', ParamType.Document),
+                article: params.getParam(
+                  'article',
+                  ParamType.Document,
+                ),
               ),
+            ),
+            FFRoute(
+              name: 'eventpage',
+              path: 'eventpage',
+              builder: (context, params) => EventpageWidget(),
+            ),
+            FFRoute(
+              name: 'locationselect',
+              path: 'locationselect',
+              builder: (context, params) => LocationselectWidget(),
+            ),
+            FFRoute(
+              name: 'adminpanel',
+              path: 'adminpanel',
+              builder: (context, params) => AdminpanelWidget(),
+            ),
+            FFRoute(
+              name: 'raguideCopy',
+              path: 'raguideCopy',
+              builder: (context, params) => RaguideCopyWidget(),
+            ),
+            FFRoute(
+              name: 'raguideCopy2',
+              path: 'raguideMunich',
+              builder: (context, params) => RaguideCopy2Widget(),
+            ),
+            FFRoute(
+              name: 'raguideCopy3',
+              path: 'raguideCopy3',
+              builder: (context, params) => RaguideCopy3Widget(),
+            ),
+            FFRoute(
+              name: 'raguideFrankfurt',
+              path: 'raguideFrankfurt',
+              builder: (context, params) => RaguideFrankfurtWidget(),
+            ),
+            FFRoute(
+              name: 'raguideCopy4',
+              path: 'raguideCopy4',
+              builder: (context, params) => RaguideCopy4Widget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
@@ -338,7 +411,7 @@ extension _GoRouterStateExtensions on GoRouterState {
       extra != null ? extra as Map<String, dynamic> : {};
   Map<String, dynamic> get allParams => <String, dynamic>{}
     ..addAll(pathParameters)
-    ..addAll(queryParameters)
+    ..addAll(uri.queryParameters)
     ..addAll(extraMap);
   TransitionInfo get transitionInfo => extraMap.containsKey(kTransitionInfoKey)
       ? extraMap[kTransitionInfoKey] as TransitionInfo
@@ -357,7 +430,7 @@ class FFParameters {
   // present is the special extra parameter reserved for the transition info.
   bool get isEmpty =>
       state.allParams.isEmpty ||
-      (state.extraMap.length == 1 &&
+      (state.allParams.length == 1 &&
           state.extraMap.containsKey(kTransitionInfoKey));
   bool isAsyncParam(MapEntry<String, dynamic> param) =>
       asyncParams.containsKey(param.key) && param.value is String;
@@ -378,10 +451,11 @@ class FFParameters {
 
   dynamic getParam<T>(
     String paramName,
-    ParamType type, [
+    ParamType type, {
     bool isList = false,
     List<String>? collectionNamePath,
-  ]) {
+    StructBuilder<T>? structBuilder,
+  }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
     }
@@ -394,8 +468,13 @@ class FFParameters {
       return param;
     }
     // Return serialized value.
-    return deserializeParam<T>(param, type, isList,
-        collectionNamePath: collectionNamePath);
+    return deserializeParam<T>(
+      param,
+      type,
+      isList,
+      collectionNamePath: collectionNamePath,
+      structBuilder: structBuilder,
+    );
   }
 }
 
@@ -427,12 +506,13 @@ class FFRoute {
           }
 
           if (requireAuth && !appStateNotifier.loggedIn) {
-            appStateNotifier.setRedirectLocationIfUnset(state.location);
+            appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
             return '/s1LoginAndSignUp';
           }
           return null;
         },
         pageBuilder: (context, state) {
+          fixStatusBarOniOS16AndBelow(context);
           final ffParams = FFParameters(state, asyncParams);
           final page = ffParams.hasFutures
               ? FutureBuilder(
@@ -515,8 +595,8 @@ class _RouteErrorBuilderState extends State<_RouteErrorBuilder> {
   void initState() {
     super.initState();
     // Handle erroneous links from Firebase Dynamic Links.
-    if (widget.state.location.startsWith('/link') &&
-        widget.state.location.contains('request_ip_version')) {
+    if (widget.state.uri.toString().startsWith('/link') &&
+        widget.state.uri.toString().contains('request_ip_version')) {
       SchedulerBinding.instance.addPostFrameCallback((_) => context.go('/'));
     }
   }
@@ -533,7 +613,7 @@ class RootPageContext {
   static bool isInactiveRootPage(BuildContext context) {
     final rootPageContext = context.read<RootPageContext?>();
     final isRootPage = rootPageContext?.isRootPage ?? false;
-    final location = GoRouter.of(context).location;
+    final location = GoRouterState.of(context).uri.toString();
     return isRootPage &&
         location != '/' &&
         location != rootPageContext?.errorRoute;

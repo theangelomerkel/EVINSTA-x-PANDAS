@@ -10,14 +10,14 @@ export 'article_model.dart';
 
 class ArticleWidget extends StatefulWidget {
   const ArticleWidget({
-    Key? key,
+    super.key,
     required this.article,
-  }) : super(key: key);
+  });
 
   final ArticlesRecord? article;
 
   @override
-  _ArticleWidgetState createState() => _ArticleWidgetState();
+  State<ArticleWidget> createState() => _ArticleWidgetState();
 }
 
 class _ArticleWidgetState extends State<ArticleWidget> {
@@ -46,8 +46,6 @@ class _ArticleWidgetState extends State<ArticleWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return InkWell(
       splashColor: Colors.transparent,
       focusColor: Colors.transparent,
@@ -84,7 +82,10 @@ class _ArticleWidgetState extends State<ArticleWidget> {
               BoxShadow(
                 blurRadius: 4.0,
                 color: FlutterFlowTheme.of(context).secondary,
-                offset: Offset(0.0, 0.0),
+                offset: Offset(
+                  0.0,
+                  0.0,
+                ),
                 spreadRadius: 0.0,
               )
             ],
@@ -105,6 +106,7 @@ class _ArticleWidgetState extends State<ArticleWidget> {
                     fontFamily: 'Urbanist',
                     color: FlutterFlowTheme.of(context).primaryText,
                     fontSize: 18.0,
+                    letterSpacing: 0.0,
                   ),
             ),
           ),

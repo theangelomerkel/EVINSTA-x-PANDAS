@@ -3,17 +3,16 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'forgotpassword_model.dart';
 export 'forgotpassword_model.dart';
 
 class ForgotpasswordWidget extends StatefulWidget {
-  const ForgotpasswordWidget({Key? key}) : super(key: key);
+  const ForgotpasswordWidget({super.key});
 
   @override
-  _ForgotpasswordWidgetState createState() => _ForgotpasswordWidgetState();
+  State<ForgotpasswordWidget> createState() => _ForgotpasswordWidgetState();
 }
 
 class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget> {
@@ -41,17 +40,6 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -68,19 +56,33 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Forgot Password',
-                  style: FlutterFlowTheme.of(context).headlineMedium,
+                  FFLocalizations.of(context).getText(
+                    'peseuhg5' /* Forgot Password */,
+                  ),
+                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+                        fontFamily: 'Urbanist',
+                        letterSpacing: 0.0,
+                      ),
                 ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   child: TextFormField(
                     controller: _model.emailTextController,
                     focusNode: _model.textFieldFocusNode,
+                    autofocus: false,
                     obscureText: false,
                     decoration: InputDecoration(
-                      labelText: 'Email',
-                      hintText: 'Enter your email',
-                      hintStyle: FlutterFlowTheme.of(context).bodyLarge,
+                      labelText: FFLocalizations.of(context).getText(
+                        'wbflei35' /* Email */,
+                      ),
+                      hintText: FFLocalizations.of(context).getText(
+                        'yw8asg8v' /* Enter your email */,
+                      ),
+                      hintStyle:
+                          FlutterFlowTheme.of(context).bodyLarge.override(
+                                fontFamily: 'Poppins',
+                                letterSpacing: 0.0,
+                              ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           color: FlutterFlowTheme.of(context).primaryText,
@@ -112,7 +114,10 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget> {
                       contentPadding: EdgeInsetsDirectional.fromSTEB(
                           20.0, 32.0, 20.0, 12.0),
                     ),
-                    style: FlutterFlowTheme.of(context).bodyMedium,
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Urbanist',
+                          letterSpacing: 0.0,
+                        ),
                     validator: _model.emailTextControllerValidator
                         .asValidator(context),
                   ),
@@ -138,7 +143,9 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget> {
                       );
                       context.safePop();
                     },
-                    text: 'Send Reset Link',
+                    text: FFLocalizations.of(context).getText(
+                      '7j7h4lbw' /* Send Reset Link */,
+                    ),
                     options: FFButtonOptions(
                       width: double.infinity,
                       height: 55.0,
@@ -152,6 +159,7 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget> {
                                 fontFamily: 'Urbanist',
                                 color: Colors.white,
                                 fontSize: 20.0,
+                                letterSpacing: 0.0,
                                 fontWeight: FontWeight.w500,
                               ),
                       elevation: 2.0,

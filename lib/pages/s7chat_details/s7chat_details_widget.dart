@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -15,16 +14,16 @@ export 's7chat_details_model.dart';
 
 class S7chatDetailsWidget extends StatefulWidget {
   const S7chatDetailsWidget({
-    Key? key,
+    super.key,
     this.chatUser,
     this.chatRef,
-  }) : super(key: key);
+  });
 
   final UsersRecord? chatUser;
   final DocumentReference? chatRef;
 
   @override
-  _S7chatDetailsWidgetState createState() => _S7chatDetailsWidgetState();
+  State<S7chatDetailsWidget> createState() => _S7chatDetailsWidgetState();
 }
 
 class _S7chatDetailsWidgetState extends State<S7chatDetailsWidget> {
@@ -70,17 +69,6 @@ class _S7chatDetailsWidgetState extends State<S7chatDetailsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -106,6 +94,7 @@ class _S7chatDetailsWidgetState extends State<S7chatDetailsWidget> {
           style: FlutterFlowTheme.of(context).titleMedium.override(
                 fontFamily: 'Urbanist',
                 color: FlutterFlowTheme.of(context).tertiary,
+                letterSpacing: 0.0,
               ),
         ),
         actions: [],

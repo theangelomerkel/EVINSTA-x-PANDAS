@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/components/profile_user/profile_user_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
@@ -14,14 +13,14 @@ export 'users_model.dart';
 
 class UsersWidget extends StatefulWidget {
   const UsersWidget({
-    Key? key,
+    super.key,
     this.user,
-  }) : super(key: key);
+  });
 
   final UsersRecord? user;
 
   @override
-  _UsersWidgetState createState() => _UsersWidgetState();
+  State<UsersWidget> createState() => _UsersWidgetState();
 }
 
 class _UsersWidgetState extends State<UsersWidget> {
@@ -216,6 +215,7 @@ class _UsersWidgetState extends State<UsersWidget> {
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Urbanist',
                           color: FlutterFlowTheme.of(context).primaryText,
+                          letterSpacing: 0.0,
                           fontWeight: FontWeight.normal,
                         ),
                   ),

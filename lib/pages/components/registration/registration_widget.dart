@@ -12,10 +12,10 @@ import 'registration_model.dart';
 export 'registration_model.dart';
 
 class RegistrationWidget extends StatefulWidget {
-  const RegistrationWidget({Key? key}) : super(key: key);
+  const RegistrationWidget({super.key});
 
   @override
-  _RegistrationWidgetState createState() => _RegistrationWidgetState();
+  State<RegistrationWidget> createState() => _RegistrationWidgetState();
 }
 
 class _RegistrationWidgetState extends State<RegistrationWidget>
@@ -38,19 +38,19 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
       length: 2,
       initialIndex: 0,
     )..addListener(() => setState(() {}));
-    _model.emailAddressLoginController ??= TextEditingController();
+    _model.emailAddressLoginTextController ??= TextEditingController();
     _model.emailAddressLoginFocusNode ??= FocusNode();
 
-    _model.passwordLoginController ??= TextEditingController();
+    _model.passwordLoginTextController ??= TextEditingController();
     _model.passwordLoginFocusNode ??= FocusNode();
 
-    _model.emailAddressController ??= TextEditingController();
+    _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
 
-    _model.passwordController ??= TextEditingController();
+    _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
 
-    _model.passwordConfirmController ??= TextEditingController();
+    _model.passwordConfirmTextController ??= TextEditingController();
     _model.passwordConfirmFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -65,8 +65,6 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Align(
       alignment: AlignmentDirectional(0.0, 0.0),
       child: Column(
@@ -119,17 +117,25 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                               child: TabBar(
                                 labelColor:
                                     FlutterFlowTheme.of(context).primaryText,
-                                labelStyle:
-                                    FlutterFlowTheme.of(context).titleMedium,
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .titleMedium
+                                    .override(
+                                      fontFamily: 'Urbanist',
+                                      letterSpacing: 0.0,
+                                    ),
                                 unselectedLabelStyle: TextStyle(),
                                 indicatorColor:
                                     FlutterFlowTheme.of(context).primaryText,
                                 tabs: [
                                   Tab(
-                                    text: 'Sign In',
+                                    text: FFLocalizations.of(context).getText(
+                                      'vx8fwepk' /* Sign In */,
+                                    ),
                                   ),
                                   Tab(
-                                    text: 'Sign Up',
+                                    text: FFLocalizations.of(context).getText(
+                                      'tourdfba' /* Sign Up */,
+                                    ),
                                   ),
                                 ],
                                 controller: _model.tabBarController,
@@ -154,12 +160,16 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   0.0, 20.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller: _model
-                                                .emailAddressLoginController,
+                                                .emailAddressLoginTextController,
                                             focusNode: _model
                                                 .emailAddressLoginFocusNode,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              labelText: 'Email Address',
+                                              labelText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'i40apl8p' /* Email Address */,
+                                              ),
                                               labelStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -169,6 +179,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                             context)
                                                         .secondaryText,
                                                     fontSize: 14.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
@@ -181,6 +192,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                             context)
                                                         .secondaryText,
                                                     fontSize: 14.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
@@ -237,12 +249,13 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                 .override(
                                                   fontFamily: 'Urbanist',
                                                   color: Color(0xFF0F1113),
+                                                  letterSpacing: 0.0,
                                                 ),
                                             maxLines: null,
                                             keyboardType:
                                                 TextInputType.emailAddress,
                                             validator: _model
-                                                .emailAddressLoginControllerValidator
+                                                .emailAddressLoginTextControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -251,14 +264,18 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 12.0, 0.0, 0.0),
                                           child: TextFormField(
-                                            controller:
-                                                _model.passwordLoginController,
+                                            controller: _model
+                                                .passwordLoginTextController,
                                             focusNode:
                                                 _model.passwordLoginFocusNode,
                                             obscureText:
                                                 !_model.passwordLoginVisibility,
                                             decoration: InputDecoration(
-                                              labelText: 'Password',
+                                              labelText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'dax38yrn' /* Password */,
+                                              ),
                                               labelStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -268,6 +285,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                             context)
                                                         .secondaryText,
                                                     fontSize: 14.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
@@ -280,6 +298,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                             context)
                                                         .secondaryText,
                                                     fontSize: 14.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
@@ -355,11 +374,12 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                 .override(
                                                   fontFamily: 'Urbanist',
                                                   color: Color(0xFF0F1113),
+                                                  letterSpacing: 0.0,
                                                 ),
                                             keyboardType:
                                                 TextInputType.visiblePassword,
                                             validator: _model
-                                                .passwordLoginControllerValidator
+                                                .passwordLoginTextControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -379,9 +399,10 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                     .signInWithEmail(
                                                   context,
                                                   _model
-                                                      .emailAddressLoginController
+                                                      .emailAddressLoginTextController
                                                       .text,
-                                                  _model.passwordLoginController
+                                                  _model
+                                                      .passwordLoginTextController
                                                       .text,
                                                 );
                                                 if (user == null) {
@@ -416,7 +437,10 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
 
                                               _navigate();
                                             },
-                                            text: 'Login',
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'f7gid8uq' /* Login */,
+                                            ),
                                             options: FFButtonOptions(
                                               width: double.infinity,
                                               height: 42.0,
@@ -436,6 +460,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                             context)
                                                         .primaryBtnText,
                                                     fontSize: 16.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
@@ -472,7 +497,10 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                 },
                                               );
                                             },
-                                            text: 'Forgot Password?',
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'y5h7ur06' /* Forgot Password? */,
+                                            ),
                                             options: FFButtonOptions(
                                               width: 170.0,
                                               height: 40.0,
@@ -492,6 +520,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
+                                                        letterSpacing: 0.0,
                                                       ),
                                               elevation: 0.0,
                                               borderSide: BorderSide(
@@ -513,13 +542,17 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 20.0, 0.0, 0.0),
                                           child: TextFormField(
-                                            controller:
-                                                _model.emailAddressController,
+                                            controller: _model
+                                                .emailAddressTextController,
                                             focusNode:
                                                 _model.emailAddressFocusNode,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              labelText: 'Email Address',
+                                              labelText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'od0dy8qo' /* Email Address */,
+                                              ),
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
@@ -529,6 +562,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .secondaryText,
+                                                        letterSpacing: 0.0,
                                                       ),
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
@@ -539,6 +573,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                             context)
                                                         .secondaryText,
                                                     fontSize: 14.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
@@ -596,13 +631,14 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   fontFamily: 'Lexend Deca',
                                                   color: Color(0xFF14181B),
                                                   fontSize: 14.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
                                             maxLines: null,
                                             keyboardType:
                                                 TextInputType.emailAddress,
                                             validator: _model
-                                                .emailAddressControllerValidator
+                                                .emailAddressTextControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -612,12 +648,16 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   0.0, 12.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller:
-                                                _model.passwordController,
+                                                _model.passwordTextController,
                                             focusNode: _model.passwordFocusNode,
                                             obscureText:
                                                 !_model.passwordVisibility,
                                             decoration: InputDecoration(
-                                              labelText: 'Password',
+                                              labelText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'd2y38vmr' /* Password */,
+                                              ),
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
@@ -627,6 +667,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .secondaryText,
+                                                        letterSpacing: 0.0,
                                                       ),
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
@@ -637,6 +678,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                             context)
                                                         .secondaryText,
                                                     fontSize: 14.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
@@ -713,12 +755,13 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   fontFamily: 'Lexend Deca',
                                                   color: Color(0xFF14181B),
                                                   fontSize: 14.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
                                             keyboardType:
                                                 TextInputType.visiblePassword,
                                             validator: _model
-                                                .passwordControllerValidator
+                                                .passwordTextControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -728,13 +771,17 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   0.0, 12.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller: _model
-                                                .passwordConfirmController,
+                                                .passwordConfirmTextController,
                                             focusNode:
                                                 _model.passwordConfirmFocusNode,
                                             obscureText: !_model
                                                 .passwordConfirmVisibility,
                                             decoration: InputDecoration(
-                                              labelText: 'Confirm Password',
+                                              labelText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'kryd8j7n' /* Confirm Password */,
+                                              ),
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
@@ -744,6 +791,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .secondaryText,
+                                                        letterSpacing: 0.0,
                                                       ),
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
@@ -754,6 +802,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                             context)
                                                         .secondaryText,
                                                     fontSize: 14.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
@@ -830,12 +879,13 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   fontFamily: 'Lexend Deca',
                                                   color: Color(0xFF14181B),
                                                   fontSize: 14.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
                                             keyboardType:
                                                 TextInputType.visiblePassword,
                                             validator: _model
-                                                .passwordConfirmControllerValidator
+                                                .passwordConfirmTextControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -850,10 +900,11 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                               if (_model.terms) {
                                                 GoRouter.of(context)
                                                     .prepareAuthEvent();
-                                                if (_model.passwordController
+                                                if (_model
+                                                        .passwordTextController
                                                         .text !=
                                                     _model
-                                                        .passwordConfirmController
+                                                        .passwordConfirmTextController
                                                         .text) {
                                                   ScaffoldMessenger.of(context)
                                                       .showSnackBar(
@@ -869,10 +920,11 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                 final user = await authManager
                                                     .createAccountWithEmail(
                                                   context,
-                                                  _model.emailAddressController
-                                                      .text,
                                                   _model
-                                                      .passwordController.text,
+                                                      .emailAddressTextController
+                                                      .text,
+                                                  _model.passwordTextController
+                                                      .text,
                                                 );
                                                 if (user == null) {
                                                   return;
@@ -915,7 +967,10 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
 
                                               _navigate();
                                             },
-                                            text: 'Create Account',
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'usajujqg' /* Create Account */,
+                                            ),
                                             options: FFButtonOptions(
                                               width: double.infinity,
                                               height: 42.0,
@@ -935,6 +990,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                             context)
                                                         .primaryBtnText,
                                                     fontSize: 16.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
@@ -970,9 +1026,16 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
                               child: Text(
-                                'Or use a social account to login',
+                                FFLocalizations.of(context).getText(
+                                  'cumfm8ps' /* Or use a social account to log... */,
+                                ),
                                 textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).titleSmall,
+                                style: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Urbanist',
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
                             ),
                           ),
@@ -1040,6 +1103,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                     fontFamily: 'Urbanist',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
+                                    letterSpacing: 0.0,
                                   ),
                               borderSide: BorderSide(
                                 color: Colors.transparent,
@@ -1105,6 +1169,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                           fontFamily: 'Urbanist',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
+                                          letterSpacing: 0.0,
                                         ),
                                     borderSide: BorderSide(
                                       color: Colors.transparent,
@@ -1167,6 +1232,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                     fontFamily: 'Urbanist',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
+                                    letterSpacing: 0.0,
                                   ),
                               borderSide: BorderSide(
                                 color: Colors.transparent,
@@ -1234,12 +1300,15 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                           padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            'I agree with ',
+                            FFLocalizations.of(context).getText(
+                              'sv3m7ocz' /* I agree with  */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Urbanist',
                                   fontSize: 12.0,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                 ),
                           ),
@@ -1251,7 +1320,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                             onPressed: () async {
                               context.pushNamed('TermsofService');
                             },
-                            text: 'terms of use',
+                            text: FFLocalizations.of(context).getText(
+                              '1uw8usr3' /* terms of use */,
+                            ),
                             options: FFButtonOptions(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   2.0, 4.0, 4.0, 4.0),
@@ -1266,6 +1337,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     fontSize: 12.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
                               elevation: 0.0,

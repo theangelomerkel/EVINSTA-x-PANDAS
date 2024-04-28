@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/components/property/property_widget.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -15,10 +14,10 @@ import 's5search_events_model.dart';
 export 's5search_events_model.dart';
 
 class S5searchEventsWidget extends StatefulWidget {
-  const S5searchEventsWidget({Key? key}) : super(key: key);
+  const S5searchEventsWidget({super.key});
 
   @override
-  _S5searchEventsWidgetState createState() => _S5searchEventsWidgetState();
+  State<S5searchEventsWidget> createState() => _S5searchEventsWidgetState();
 }
 
 class _S5searchEventsWidgetState extends State<S5searchEventsWidget> {
@@ -46,17 +45,6 @@ class _S5searchEventsWidgetState extends State<S5searchEventsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -78,11 +66,14 @@ class _S5searchEventsWidgetState extends State<S5searchEventsWidget> {
           },
         ),
         title: Text(
-          'Search',
+          FFLocalizations.of(context).getText(
+            '7w4dk0co' /* Search */,
+          ),
           style: FlutterFlowTheme.of(context).titleMedium.override(
                 fontFamily: 'Lexend Deca',
                 color: FlutterFlowTheme.of(context).tertiary,
                 fontSize: 18.0,
+                letterSpacing: 0.0,
                 fontWeight: FontWeight.w500,
               ),
         ),
@@ -99,12 +90,15 @@ class _S5searchEventsWidgetState extends State<S5searchEventsWidget> {
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).dark600,
+                  color: Color(0xFF14181B),
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 3.0,
                       color: Color(0x39000000),
-                      offset: Offset(0.0, 1.0),
+                      offset: Offset(
+                        0.0,
+                        1.0,
+                      ),
                     )
                   ],
                 ),
@@ -144,11 +138,14 @@ class _S5searchEventsWidgetState extends State<S5searchEventsWidget> {
                     ),
                     obscureText: false,
                     decoration: InputDecoration(
-                      labelText: 'Search',
+                      labelText: FFLocalizations.of(context).getText(
+                        'zw30dijp' /* Search */,
+                      ),
                       labelStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
                                 fontFamily: 'Urbanist',
                                 color: FlutterFlowTheme.of(context).grayIcon,
+                                letterSpacing: 0.0,
                               ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
@@ -180,12 +177,13 @@ class _S5searchEventsWidgetState extends State<S5searchEventsWidget> {
                       ),
                       prefixIcon: Icon(
                         Icons.search_sharp,
-                        color: FlutterFlowTheme.of(context).grayIcon,
+                        color: FlutterFlowTheme.of(context).primary,
                       ),
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Urbanist',
                           color: FlutterFlowTheme.of(context).tertiary,
+                          letterSpacing: 0.0,
                         ),
                     validator:
                         _model.textControllerValidator.asValidator(context),

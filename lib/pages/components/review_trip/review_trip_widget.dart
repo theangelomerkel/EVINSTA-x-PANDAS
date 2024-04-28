@@ -7,7 +7,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,50 +16,23 @@ export 'review_trip_model.dart';
 
 class ReviewTripWidget extends StatefulWidget {
   const ReviewTripWidget({
-    Key? key,
+    super.key,
     this.propertyReference,
     this.tripDetails,
-  }) : super(key: key);
+  });
 
   final PropertiesRecord? propertyReference;
   final TripsRecord? tripDetails;
 
   @override
-  _ReviewTripWidgetState createState() => _ReviewTripWidgetState();
+  State<ReviewTripWidget> createState() => _ReviewTripWidgetState();
 }
 
 class _ReviewTripWidgetState extends State<ReviewTripWidget>
     with TickerProviderStateMixin {
   late ReviewTripModel _model;
 
-  final animationsMap = {
-    'buttonOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 350.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 350.ms,
-          duration: 600.ms,
-          begin: Offset(0.0, 50.0),
-          end: Offset(0.0, 0.0),
-        ),
-        ScaleEffect(
-          curve: Curves.easeInOut,
-          delay: 350.ms,
-          duration: 600.ms,
-          begin: Offset(0.6, 0.6),
-          end: Offset(1.0, 1.0),
-        ),
-      ],
-    ),
-  };
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void setState(VoidCallback callback) {
@@ -76,6 +48,34 @@ class _ReviewTripWidgetState extends State<ReviewTripWidget>
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
+    animationsMap.addAll({
+      'buttonOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 350.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 350.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.0, 50.0),
+            end: Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 350.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.6, 0.6),
+            end: Offset(1.0, 1.0),
+          ),
+        ],
+      ),
+    });
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -95,8 +95,6 @@ class _ReviewTripWidgetState extends State<ReviewTripWidget>
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
       child: Container(
@@ -108,7 +106,10 @@ class _ReviewTripWidgetState extends State<ReviewTripWidget>
             BoxShadow(
               blurRadius: 6.0,
               color: Color(0x35000000),
-              offset: Offset(0.0, -2.0),
+              offset: Offset(
+                0.0,
+                -2.0,
+              ),
             )
           ],
           borderRadius: BorderRadius.only(
@@ -140,9 +141,15 @@ class _ReviewTripWidgetState extends State<ReviewTripWidget>
                   children: [
                     Expanded(
                       child: Text(
-                        'Rate Your Trip',
+                        FFLocalizations.of(context).getText(
+                          'v3enwgia' /* Rate Your Trip */,
+                        ),
                         textAlign: TextAlign.start,
-                        style: FlutterFlowTheme.of(context).headlineSmall,
+                        style:
+                            FlutterFlowTheme.of(context).headlineSmall.override(
+                                  fontFamily: 'Urbanist',
+                                  letterSpacing: 0.0,
+                                ),
                       ),
                     ),
                   ],
@@ -155,9 +162,15 @@ class _ReviewTripWidgetState extends State<ReviewTripWidget>
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                         child: Text(
-                          'Let us know what you thought of the place below!',
+                          FFLocalizations.of(context).getText(
+                            '5w2ij7po' /* Let us know what you thought o... */,
+                          ),
                           textAlign: TextAlign.start,
-                          style: FlutterFlowTheme.of(context).bodyMedium,
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Urbanist',
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ),
                     ),
@@ -173,9 +186,15 @@ class _ReviewTripWidgetState extends State<ReviewTripWidget>
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 0.0, 0.0),
                           child: Text(
-                            'How would you rate it?',
+                            FFLocalizations.of(context).getText(
+                              'gny537e5' /* How would you rate it? */,
+                            ),
                             textAlign: TextAlign.start,
-                            style: FlutterFlowTheme.of(context).bodySmall,
+                            style:
+                                FlutterFlowTheme.of(context).bodySmall.override(
+                                      fontFamily: 'Urbanist',
+                                      letterSpacing: 0.0,
+                                    ),
                           ),
                         ),
                       ),
@@ -206,8 +225,14 @@ class _ReviewTripWidgetState extends State<ReviewTripWidget>
                     focusNode: _model.textFieldFocusNode,
                     obscureText: false,
                     decoration: InputDecoration(
-                      hintText: 'Please leave a description of the place...',
-                      hintStyle: FlutterFlowTheme.of(context).bodyMedium,
+                      hintText: FFLocalizations.of(context).getText(
+                        'pzj8ef6w' /* Please leave a description of ... */,
+                      ),
+                      hintStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.override(
+                                fontFamily: 'Urbanist',
+                                letterSpacing: 0.0,
+                              ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           color: FlutterFlowTheme.of(context).lineGray,
@@ -237,7 +262,10 @@ class _ReviewTripWidgetState extends State<ReviewTripWidget>
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
-                    style: FlutterFlowTheme.of(context).bodySmall,
+                    style: FlutterFlowTheme.of(context).bodySmall.override(
+                          fontFamily: 'Urbanist',
+                          letterSpacing: 0.0,
+                        ),
                     maxLines: 4,
                     validator:
                         _model.textControllerValidator.asValidator(context),
@@ -278,15 +306,17 @@ class _ReviewTripWidgetState extends State<ReviewTripWidget>
                                 .override(
                                   fontFamily: 'Urbanist',
                                   color: FlutterFlowTheme.of(context).tertiary,
+                                  letterSpacing: 0.0,
                                 ),
                           ),
                           duration: Duration(milliseconds: 4000),
-                          backgroundColor:
-                              FlutterFlowTheme.of(context).turquoise,
+                          backgroundColor: Color(0xFF39D2C0),
                         ),
                       );
                     },
-                    text: 'Submit Review',
+                    text: FFLocalizations.of(context).getText(
+                      '29j1e1oe' /* Submit Review */,
+                    ),
                     options: FFButtonOptions(
                       width: 300.0,
                       height: 60.0,
@@ -299,6 +329,7 @@ class _ReviewTripWidgetState extends State<ReviewTripWidget>
                           FlutterFlowTheme.of(context).headlineSmall.override(
                                 fontFamily: 'Urbanist',
                                 color: FlutterFlowTheme.of(context).tertiary,
+                                letterSpacing: 0.0,
                               ),
                       elevation: 3.0,
                       borderSide: BorderSide(

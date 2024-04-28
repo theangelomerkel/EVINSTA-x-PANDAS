@@ -9,7 +9,6 @@ import '/flutter_flow/upload_data.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -18,14 +17,14 @@ export 's9_n_r3_edit_article_model.dart';
 
 class S9NR3EditArticleWidget extends StatefulWidget {
   const S9NR3EditArticleWidget({
-    Key? key,
+    super.key,
     required this.article,
-  }) : super(key: key);
+  });
 
   final ArticlesRecord? article;
 
   @override
-  _S9NR3EditArticleWidgetState createState() => _S9NR3EditArticleWidgetState();
+  State<S9NR3EditArticleWidget> createState() => _S9NR3EditArticleWidgetState();
 }
 
 class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
@@ -61,17 +60,6 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -93,9 +81,12 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
           },
         ),
         title: Text(
-          'Edit Article',
+          FFLocalizations.of(context).getText(
+            'ryrpfl1a' /* Edit Article */,
+          ),
           style: FlutterFlowTheme.of(context).headlineSmall.override(
                 fontFamily: 'Urbanist',
+                letterSpacing: 0.0,
                 fontWeight: FontWeight.w600,
               ),
         ),
@@ -142,13 +133,16 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 12.0),
                                 child: Text(
-                                  'Main image*',
+                                  FFLocalizations.of(context).getText(
+                                    'p8n25y1u' /* Main image* */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
                                         fontFamily: 'Urbanist',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
@@ -337,13 +331,16 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 0.0),
                                 child: Text(
-                                  'Article title *',
+                                  FFLocalizations.of(context).getText(
+                                    '5i1aiatu' /* Article title * */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
                                         fontFamily: 'Urbanist',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
@@ -353,14 +350,17 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 0.0, 0.0),
                               child: TextFormField(
-                                controller: _model.propertyNameController ??=
-                                    TextEditingController(
+                                controller:
+                                    _model.propertyNameTextController ??=
+                                        TextEditingController(
                                   text: columnArticlesRecord.title,
                                 ),
                                 focusNode: _model.propertyNameFocusNode,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  hintText: 'title',
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'n2w85lpe' /* title */,
+                                  ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -368,6 +368,7 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                         color: FlutterFlowTheme.of(context)
                                             .grayIcon,
                                         fontSize: 16.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w300,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -407,11 +408,12 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                     .override(
                                       fontFamily: 'Urbanist',
                                       fontSize: 16.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
                                     ),
                                 maxLines: 2,
                                 validator: _model
-                                    .propertyNameControllerValidator
+                                    .propertyNameTextControllerValidator
                                     .asValidator(context),
                               ),
                             ),
@@ -421,13 +423,16 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 0.0),
                                 child: Text(
-                                  'Description*',
+                                  FFLocalizations.of(context).getText(
+                                    'huckkfol' /* Description* */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
                                         fontFamily: 'Urbanist',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
@@ -437,14 +442,16 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 0.0, 0.0),
                               child: TextFormField(
-                                controller: _model.descController ??=
+                                controller: _model.descTextController ??=
                                     TextEditingController(
                                   text: columnArticlesRecord.text,
                                 ),
                                 focusNode: _model.descFocusNode,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  hintText: 'BSP: Extra Description',
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'mmnged3r' /* BSP: Extra Description */,
+                                  ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -452,6 +459,7 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                         color: FlutterFlowTheme.of(context)
                                             .grayIcon,
                                         fontSize: 16.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w300,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -472,16 +480,14 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color:
-                                          FlutterFlowTheme.of(context).redApple,
+                                      color: Color(0xFFFC4253),
                                       width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(12.0),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color:
-                                          FlutterFlowTheme.of(context).redApple,
+                                      color: Color(0xFFFC4253),
                                       width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(12.0),
@@ -493,11 +499,12 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                     .override(
                                       fontFamily: 'Urbanist',
                                       fontSize: 16.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
                                     ),
                                 maxLines: null,
                                 minLines: 15,
-                                validator: _model.descControllerValidator
+                                validator: _model.descTextControllerValidator
                                     .asValidator(context),
                               ),
                             ),
@@ -516,8 +523,8 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
 
                         await columnArticlesRecord.reference.update({
                           ...createArticlesRecordData(
-                            title: _model.propertyNameController.text,
-                            text: _model.descController.text,
+                            title: _model.propertyNameTextController.text,
+                            text: _model.descTextController.text,
                             dateUpdated: getCurrentTimestamp,
                           ),
                           ...mapToFirestore(
@@ -530,7 +537,9 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                         context.pushNamed('S2_HomePage');
                       }
                     },
-                    text: 'Edit',
+                    text: FFLocalizations.of(context).getText(
+                      'my0llguf' /* Edit */,
+                    ),
                     options: FFButtonOptions(
                       width: double.infinity,
                       height: 42.0,
@@ -548,6 +557,7 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Urbanist',
                                 color: Colors.white,
+                                letterSpacing: 0.0,
                               ),
                       elevation: 3.0,
                       borderSide: BorderSide(
@@ -592,7 +602,9 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                           Navigator.pop(context);
                         }
                       },
-                      text: 'Delete',
+                      text: FFLocalizations.of(context).getText(
+                        'b658guga' /* Delete */,
+                      ),
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 42.0,
@@ -605,6 +617,7 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Urbanist',
                                   color: Colors.white,
+                                  letterSpacing: 0.0,
                                 ),
                         elevation: 3.0,
                         borderSide: BorderSide(

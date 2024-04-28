@@ -3,7 +3,6 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -12,16 +11,16 @@ export 'answers_model.dart';
 
 class AnswersWidget extends StatefulWidget {
   const AnswersWidget({
-    Key? key,
+    super.key,
     this.parameter5,
     required this.property,
-  }) : super(key: key);
+  });
 
   final AnswersRecord? parameter5;
   final PropertiesRecord? property;
 
   @override
-  _AnswersWidgetState createState() => _AnswersWidgetState();
+  State<AnswersWidget> createState() => _AnswersWidgetState();
 }
 
 class _AnswersWidgetState extends State<AnswersWidget> {
@@ -50,8 +49,6 @@ class _AnswersWidgetState extends State<AnswersWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Visibility(
       visible: widget.parameter5 != null,
       child: Padding(
@@ -152,6 +149,7 @@ class _AnswersWidgetState extends State<AnswersWidget> {
                                         .override(
                                           fontFamily: 'Urbanist',
                                           fontSize: 16.0,
+                                          letterSpacing: 0.0,
                                         ),
                                   ),
                                 ),
@@ -189,6 +187,7 @@ class _AnswersWidgetState extends State<AnswersWidget> {
                                     .override(
                                       fontFamily: 'Urbanist',
                                       fontSize: 16.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
                                     ),
                               ),
@@ -198,13 +197,24 @@ class _AnswersWidgetState extends State<AnswersWidget> {
                               children: [
                                 Expanded(
                                   child: Text(
-                                    '${dateTimeFormat('MMMMEEEEd', widget.parameter5?.createdTime)}, ${dateTimeFormat('jm', widget.parameter5?.createdTime)}',
+                                    '${dateTimeFormat(
+                                      'MMMMEEEEd',
+                                      widget.parameter5?.createdTime,
+                                      locale: FFLocalizations.of(context)
+                                          .languageCode,
+                                    )}, ${dateTimeFormat(
+                                      'jm',
+                                      widget.parameter5?.createdTime,
+                                      locale: FFLocalizations.of(context)
+                                          .languageCode,
+                                    )}',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Urbanist',
                                           color: Color(0xFFB3B3B3),
                                           fontSize: 13.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
                                         ),
                                   ),
@@ -228,6 +238,7 @@ class _AnswersWidgetState extends State<AnswersWidget> {
                                           .override(
                                             fontFamily: 'Urbanist',
                                             fontSize: 13.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.normal,
                                           ),
                                     ),

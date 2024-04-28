@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'review_model.dart';
@@ -11,14 +10,14 @@ export 'review_model.dart';
 
 class ReviewWidget extends StatefulWidget {
   const ReviewWidget({
-    Key? key,
+    super.key,
     required this.review,
-  }) : super(key: key);
+  });
 
   final ReviewsRecord? review;
 
   @override
-  _ReviewWidgetState createState() => _ReviewWidgetState();
+  State<ReviewWidget> createState() => _ReviewWidgetState();
 }
 
 class _ReviewWidgetState extends State<ReviewWidget> {
@@ -47,8 +46,6 @@ class _ReviewWidgetState extends State<ReviewWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Material(
       color: Colors.transparent,
       elevation: 1.0,
@@ -63,7 +60,10 @@ class _ReviewWidgetState extends State<ReviewWidget> {
             BoxShadow(
               blurRadius: 5.0,
               color: Color(0x24090F13),
-              offset: Offset(0.0, 2.0),
+              offset: Offset(
+                0.0,
+                2.0,
+              ),
             )
           ],
           borderRadius: BorderRadius.circular(16.0),
@@ -99,7 +99,12 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                       children: [
                         Text(
                           rowUsersRecord.displayName,
-                          style: FlutterFlowTheme.of(context).headlineSmall,
+                          style: FlutterFlowTheme.of(context)
+                              .headlineSmall
+                              .override(
+                                fontFamily: 'Urbanist',
+                                letterSpacing: 0.0,
+                              ),
                         ),
                         Container(
                           width: 50.0,
@@ -133,6 +138,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                             fontFamily: 'Lexend Deca',
                             color: Color(0xFF8B97A2),
                             fontSize: 14.0,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.normal,
                           ),
                     ),
@@ -152,14 +158,30 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                                 8.0, 0.0, 0.0, 0.0),
                             child: Text(
                               widget.review!.rating.toString(),
-                              style: FlutterFlowTheme.of(context).bodySmall,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodySmall
+                                  .override(
+                                    fontFamily: 'Urbanist',
+                                    letterSpacing: 0.0,
+                                  ),
                             ),
                           ),
                         ],
                       ),
                       Text(
-                        '${dateTimeFormat('MMMMEEEEd', widget.review?.ratingCreated)}, ${dateTimeFormat('jm', widget.review?.ratingCreated)}',
-                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        '${dateTimeFormat(
+                          'MMMMEEEEd',
+                          widget.review?.ratingCreated,
+                          locale: FFLocalizations.of(context).languageCode,
+                        )}, ${dateTimeFormat(
+                          'jm',
+                          widget.review?.ratingCreated,
+                          locale: FFLocalizations.of(context).languageCode,
+                        )}',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Urbanist',
+                              letterSpacing: 0.0,
+                            ),
                       ),
                     ],
                   ),

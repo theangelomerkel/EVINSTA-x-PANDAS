@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'answer_model.dart';
@@ -13,14 +12,14 @@ export 'answer_model.dart';
 
 class AnswerWidget extends StatefulWidget {
   const AnswerWidget({
-    Key? key,
+    super.key,
     required this.review,
-  }) : super(key: key);
+  });
 
   final ReviewsRecord? review;
 
   @override
-  _AnswerWidgetState createState() => _AnswerWidgetState();
+  State<AnswerWidget> createState() => _AnswerWidgetState();
 }
 
 class _AnswerWidgetState extends State<AnswerWidget> {
@@ -37,14 +36,6 @@ class _AnswerWidgetState extends State<AnswerWidget> {
     super.initState();
     _model = createModel(context, () => AnswerModel());
 
-    _model.textController ??= TextEditingController(
-        text: '@${valueOrDefault<String>(
-      textFieldUsersRecord.displayName != null &&
-              textFieldUsersRecord.displayName != ''
-          ? textFieldUsersRecord.displayName
-          : textFieldUsersRecord.email,
-      'user123',
-    )},  ');
     _model.textFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -59,8 +50,6 @@ class _AnswerWidgetState extends State<AnswerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Container(
       width: double.infinity,
       height: 70.0,
@@ -97,13 +86,28 @@ class _AnswerWidgetState extends State<AnswerWidget> {
                       }
                       final textFieldUsersRecord = snapshot.data!;
                       return TextFormField(
-                        controller: _model.textController,
+                        controller: _model.textController ??=
+                            TextEditingController(
+                          text: '@${valueOrDefault<String>(
+                            textFieldUsersRecord.displayName != null &&
+                                    textFieldUsersRecord.displayName != ''
+                                ? textFieldUsersRecord.displayName
+                                : textFieldUsersRecord.email,
+                            'user123',
+                          )},  ',
+                        ),
                         focusNode: _model.textFieldFocusNode,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
-                          hintText: 'Answer',
-                          hintStyle: FlutterFlowTheme.of(context).bodySmall,
+                          hintText: FFLocalizations.of(context).getText(
+                            'aqzl7z3j' /* Answer */,
+                          ),
+                          hintStyle:
+                              FlutterFlowTheme.of(context).bodySmall.override(
+                                    fontFamily: 'Urbanist',
+                                    letterSpacing: 0.0,
+                                  ),
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                               color: FlutterFlowTheme.of(context).alternate,
@@ -139,6 +143,7 @@ class _AnswerWidgetState extends State<AnswerWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Urbanist',
                               color: FlutterFlowTheme.of(context).primaryText,
+                              letterSpacing: 0.0,
                             ),
                         validator:
                             _model.textControllerValidator.asValidator(context),

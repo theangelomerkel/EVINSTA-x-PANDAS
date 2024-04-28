@@ -15,14 +15,14 @@ export 'article_page_model.dart';
 
 class ArticlePageWidget extends StatefulWidget {
   const ArticlePageWidget({
-    Key? key,
+    super.key,
     required this.article,
-  }) : super(key: key);
+  });
 
   final ArticlesRecord? article;
 
   @override
-  _ArticlePageWidgetState createState() => _ArticlePageWidgetState();
+  State<ArticlePageWidget> createState() => _ArticlePageWidgetState();
 }
 
 class _ArticlePageWidgetState extends State<ArticlePageWidget> {
@@ -47,17 +47,6 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -87,7 +76,10 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
               widget.article?.title,
               'Title',
             ),
-            style: FlutterFlowTheme.of(context).headlineMedium,
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Urbanist',
+                  letterSpacing: 0.0,
+                ),
           ),
           actions: [],
           centerTitle: false,
@@ -171,7 +163,7 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
                           enlargeCenterPage: true,
                           enlargeFactor: 0.25,
                           enableInfiniteScroll: true,
-                          scrollDirection: Axis.horizontal,
+                          scrollDirection: Axis.vertical,
                           autoPlay: true,
                           autoPlayAnimationDuration:
                               Duration(milliseconds: 1000),
@@ -207,6 +199,7 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
                                   fontFamily: 'Urbanist',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
+                                  letterSpacing: 0.0,
                                 ),
                           ),
                         ],
@@ -219,7 +212,9 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
 
                     context.pushNamed('S2_HomePage');
                   },
-                  text: 'Go to events page',
+                  text: FFLocalizations.of(context).getText(
+                    'lnw4j5mf' /* Go to events page */,
+                  ),
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 42.0,
@@ -231,6 +226,7 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Urbanist',
                           color: Colors.white,
+                          letterSpacing: 0.0,
                         ),
                     elevation: 3.0,
                     borderSide: BorderSide(
@@ -262,7 +258,9 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
                             },
                           );
                         },
-                        text: 'Edit article',
+                        text: FFLocalizations.of(context).getText(
+                          '2xbe14y0' /* Edit article */,
+                        ),
                         options: FFButtonOptions(
                           width: double.infinity,
                           height: 42.0,
@@ -275,6 +273,7 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Urbanist',
                                     color: Colors.white,
+                                    letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,
                           borderSide: BorderSide(

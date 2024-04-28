@@ -2,17 +2,16 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'apbar_model.dart';
 export 'apbar_model.dart';
 
 class ApbarWidget extends StatefulWidget {
-  const ApbarWidget({Key? key}) : super(key: key);
+  const ApbarWidget({super.key});
 
   @override
-  _ApbarWidgetState createState() => _ApbarWidgetState();
+  State<ApbarWidget> createState() => _ApbarWidgetState();
 }
 
 class _ApbarWidgetState extends State<ApbarWidget> {
@@ -41,8 +40,6 @@ class _ApbarWidgetState extends State<ApbarWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Container(
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -54,9 +51,12 @@ class _ApbarWidgetState extends State<ApbarWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Text(
-                'Welcome',
+                FFLocalizations.of(context).getText(
+                  'rswsmc2b' /* Welcome */,
+                ),
                 style: FlutterFlowTheme.of(context).displaySmall.override(
                       fontFamily: 'Urbanist',
+                      letterSpacing: 0.0,
                       fontWeight: FontWeight.bold,
                     ),
               ),
@@ -68,6 +68,7 @@ class _ApbarWidgetState extends State<ApbarWidget> {
                     style: FlutterFlowTheme.of(context).displaySmall.override(
                           fontFamily: 'Urbanist',
                           color: Color(0xFFF35C29),
+                          letterSpacing: 0.0,
                           fontWeight: FontWeight.w500,
                         ),
                   ),
@@ -80,10 +81,13 @@ class _ApbarWidgetState extends State<ApbarWidget> {
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
               child: Text(
-                'Checkout news and highlights below.',
+                FFLocalizations.of(context).getText(
+                  'kblv9vr3' /* Checkout news and highlights b... */,
+                ),
                 style: FlutterFlowTheme.of(context).bodySmall.override(
                       fontFamily: 'Urbanist',
                       color: Color(0xFF8B97A2),
+                      letterSpacing: 0.0,
                       fontWeight: FontWeight.w500,
                     ),
               ),

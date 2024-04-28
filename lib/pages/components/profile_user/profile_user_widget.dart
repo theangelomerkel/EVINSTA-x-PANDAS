@@ -18,14 +18,14 @@ export 'profile_user_model.dart';
 
 class ProfileUserWidget extends StatefulWidget {
   const ProfileUserWidget({
-    Key? key,
+    super.key,
     required this.user,
-  }) : super(key: key);
+  });
 
   final DocumentReference? user;
 
   @override
-  _ProfileUserWidgetState createState() => _ProfileUserWidgetState();
+  State<ProfileUserWidget> createState() => _ProfileUserWidgetState();
 }
 
 class _ProfileUserWidgetState extends State<ProfileUserWidget>
@@ -55,8 +55,6 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Align(
       alignment: AlignmentDirectional(0.0, 0.0),
       child: InkWell(
@@ -177,6 +175,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                               fontFamily: 'Lexend Deca',
                                               color: Colors.white,
                                               fontSize: 16.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                             ),
                                       ),
@@ -199,6 +198,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                           context)
                                                       .secondaryText,
                                                   fontSize: 14.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
                                           ),
@@ -299,6 +299,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                           context)
                                                       .primary,
                                                   fontSize: 14.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                             elevation: 0.0,
@@ -355,6 +356,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                           fontFamily: 'Urbanist',
                                           color: Colors.white,
                                           fontSize: 14.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
                                         ),
                                     elevation: 1.0,
@@ -419,7 +421,9 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 12.0, 0.0, 8.0),
                                           child: Text(
-                                            'Events',
+                                            FFLocalizations.of(context).getText(
+                                              '1t0zm57s' /* Events */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -427,6 +431,7 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                         ),
@@ -494,7 +499,9 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                                 color: Color(
                                                                     0x230F1113),
                                                                 offset: Offset(
-                                                                    0.0, 4.0),
+                                                                  0.0,
+                                                                  4.0,
+                                                                ),
                                                               )
                                                             ],
                                                             borderRadius:
@@ -560,6 +567,8 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                                       'Urbanist',
                                                                   fontSize:
                                                                       12.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                 ),
                                                           ),
                                                         ),

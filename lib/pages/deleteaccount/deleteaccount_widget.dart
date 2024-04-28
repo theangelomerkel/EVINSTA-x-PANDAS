@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -13,10 +12,10 @@ import 'deleteaccount_model.dart';
 export 'deleteaccount_model.dart';
 
 class DeleteaccountWidget extends StatefulWidget {
-  const DeleteaccountWidget({Key? key}) : super(key: key);
+  const DeleteaccountWidget({super.key});
 
   @override
-  _DeleteaccountWidgetState createState() => _DeleteaccountWidgetState();
+  State<DeleteaccountWidget> createState() => _DeleteaccountWidgetState();
 }
 
 class _DeleteaccountWidgetState extends State<DeleteaccountWidget> {
@@ -41,17 +40,6 @@ class _DeleteaccountWidgetState extends State<DeleteaccountWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -143,13 +131,20 @@ class _DeleteaccountWidgetState extends State<DeleteaccountWidget> {
                         child: Padding(
                           padding: EdgeInsets.all(12.0),
                           child: AutoSizeText(
-                            '\nAccount Deletion\n\nPlease note, deleting your account is irreversible:\nDeletion will permanently remove all data and may take up to 30 days. For queries, contact evinsta@gmail.com.',
+                            FFLocalizations.of(context).getText(
+                              'gwwn6gkg' /* 
+Account Deletion
+
+Please note... */
+                              ,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Lexend Deca',
                                   color: Color(0xFF090F13),
                                   fontSize: 14.0,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                 ),
                           ),
@@ -220,13 +215,16 @@ class _DeleteaccountWidgetState extends State<DeleteaccountWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Delete Account',
+                                    FFLocalizations.of(context).getText(
+                                      '1hhjn6se' /* Delete Account */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Lexend Deca',
                                           color: Color(0xFF090F13),
                                           fontSize: 14.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
                                         ),
                                   ),

@@ -18,7 +18,6 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -29,14 +28,14 @@ export 's9_n_r1_edit_event_model.dart';
 
 class S9NR1EditEventWidget extends StatefulWidget {
   const S9NR1EditEventWidget({
-    Key? key,
+    super.key,
     required this.event,
-  }) : super(key: key);
+  });
 
   final PropertiesRecord? event;
 
   @override
-  _S9NR1EditEventWidgetState createState() => _S9NR1EditEventWidgetState();
+  State<S9NR1EditEventWidget> createState() => _S9NR1EditEventWidgetState();
 }
 
 class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
@@ -53,7 +52,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
 
     _model.addressFocusNode ??= FocusNode();
 
-    _model.descController ??= TextEditingController();
+    _model.descTextController ??= TextEditingController();
     _model.descFocusNode ??= FocusNode();
 
     _model.neighbFocusNode ??= FocusNode();
@@ -62,7 +61,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
 
     _model.personsFocusNode ??= FocusNode();
 
-    _model.wishlistController ??= TextEditingController();
+    _model.wishlistTextController ??= TextEditingController();
     _model.wishlistFocusNode ??= FocusNode();
 
     _model.spotifyFocusNode ??= FocusNode();
@@ -71,8 +70,9 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
 
     _model.paypalFocusNode ??= FocusNode();
 
-    _model.expandableController = ExpandableController(initialExpanded: false);
-    _model.searchController ??= TextEditingController();
+    _model.expandableExpandableController =
+        ExpandableController(initialExpanded: false);
+    _model.searchTextController ??= TextEditingController();
     _model.searchFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -87,15 +87,6 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     context.watch<FFAppState>();
 
     return Scaffold(
@@ -119,8 +110,13 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
           },
         ),
         title: Text(
-          'Edit Event',
-          style: FlutterFlowTheme.of(context).headlineMedium,
+          FFLocalizations.of(context).getText(
+            'fld07s9u' /* Edit Event */,
+          ),
+          style: FlutterFlowTheme.of(context).headlineMedium.override(
+                fontFamily: 'Urbanist',
+                letterSpacing: 0.0,
+              ),
         ),
         actions: [],
         centerTitle: false,
@@ -180,7 +176,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 12.0),
                                             child: Text(
-                                              'Main image*',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'dwn6irw4' /* Main image* */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodySmall
@@ -189,6 +188,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
@@ -389,7 +389,11 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       }
                                                     }
                                                   },
-                                                  text: 'upload',
+                                                  text: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    '9zszih0g' /* upload */,
+                                                  ),
                                                   options: FFButtonOptions(
                                                     height: 40.0,
                                                     padding:
@@ -408,6 +412,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                           fontFamily:
                                                               'Urbanist',
                                                           color: Colors.white,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
                                                     borderSide: BorderSide(
@@ -431,7 +436,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 12.0, 0.0, 12.0),
                                             child: Text(
-                                              'Background image*',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'n8n9nf03' /* Background image* */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodySmall
@@ -440,6 +448,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
@@ -641,7 +650,11 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       }
                                                     }
                                                   },
-                                                  text: 'upload',
+                                                  text: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    '1zbb7zjm' /* upload */,
+                                                  ),
                                                   options: FFButtonOptions(
                                                     height: 40.0,
                                                     padding:
@@ -660,6 +673,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                           fontFamily:
                                                               'Urbanist',
                                                           color: Colors.white,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
                                                     borderSide: BorderSide(
@@ -683,7 +697,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 12.0, 0.0, 0.0),
                                             child: Text(
-                                              'Event NAME*',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'ioznypg2' /* Event NAME* */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodySmall
@@ -692,6 +709,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
@@ -703,7 +721,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller: _model
-                                                    .propertyNameController ??=
+                                                    .propertyNameTextController ??=
                                                 TextEditingController(
                                               text: formPropertiesRecord
                                                   .propertyName,
@@ -712,7 +730,11 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                 _model.propertyNameFocusNode,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              hintText: 'New event name',
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'tq2o2bzo' /* New event name */,
+                                              ),
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .headlineSmall
@@ -722,6 +744,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                             context)
                                                         .grayIcon,
                                                     fontSize: 16.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w300,
                                                   ),
                                               enabledBorder: OutlineInputBorder(
@@ -773,10 +796,11 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                 .override(
                                                   fontFamily: 'Urbanist',
                                                   fontSize: 16.0,
+                                                  letterSpacing: 0.0,
                                                 ),
                                             maxLines: 2,
                                             validator: _model
-                                                .propertyNameControllerValidator
+                                                .propertyNameTextControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -788,7 +812,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 12.0, 0.0, 0.0),
                                             child: Text(
-                                              'Event DATE*',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'x8xumltz' /* Event DATE* */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodySmall
@@ -797,6 +824,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
@@ -872,15 +900,23 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                             ? valueOrDefault<
                                                                 String>(
                                                                 dateTimeFormat(
-                                                                    'MMMMEEEEd',
-                                                                    _model
-                                                                        .datePicked),
+                                                                  'MMMMEEEEd',
+                                                                  _model
+                                                                      .datePicked,
+                                                                  locale: FFLocalizations.of(
+                                                                          context)
+                                                                      .languageCode,
+                                                                ),
                                                                 'Tuesday, June 27',
                                                               )
                                                             : dateTimeFormat(
                                                                 'MMMMEEEEd',
                                                                 formPropertiesRecord
-                                                                    .date),
+                                                                    .date,
+                                                                locale: FFLocalizations.of(
+                                                                        context)
+                                                                    .languageCode,
+                                                              ),
                                                         'Tuesday, June 27',
                                                       ),
                                                       style: FlutterFlowTheme
@@ -890,6 +926,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                             fontFamily:
                                                                 'Urbanist',
                                                             fontSize: 16.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w300,
                                                           ),
@@ -914,15 +951,23 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                               ? valueOrDefault<
                                                                   String>(
                                                                   dateTimeFormat(
-                                                                      'jm',
-                                                                      _model
-                                                                          .datePicked),
+                                                                    'jm',
+                                                                    _model
+                                                                        .datePicked,
+                                                                    locale: FFLocalizations.of(
+                                                                            context)
+                                                                        .languageCode,
+                                                                  ),
                                                                   '4:38 PM',
                                                                 )
                                                               : dateTimeFormat(
                                                                   'jm',
                                                                   formPropertiesRecord
-                                                                      .date),
+                                                                      .date,
+                                                                  locale: FFLocalizations.of(
+                                                                          context)
+                                                                      .languageCode,
+                                                                ),
                                                           '4:38 PM',
                                                         ),
                                                         style: FlutterFlowTheme
@@ -932,6 +977,8 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                               fontFamily:
                                                                   'Urbanist',
                                                               fontSize: 16.0,
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w300,
@@ -952,7 +999,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 12.0, 0.0, 0.0),
                                             child: Text(
-                                              'PROPERTY ADDRESS*',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'lrp6uvvn' /* PROPERTY ADDRESS* */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodySmall
@@ -961,6 +1011,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
@@ -972,7 +1023,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller:
-                                                _model.addressController ??=
+                                                _model.addressTextController ??=
                                                     TextEditingController(
                                               text:
                                                   _model.placePickerValue !=
@@ -985,13 +1036,18 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                             focusNode: _model.addressFocusNode,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              hintText: '123 Disney way here…',
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'xkyt5is7' /* 123 Disney way here… */,
+                                              ),
                                               hintStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Urbanist',
                                                         fontSize: 16.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w300,
                                                       ),
@@ -1044,11 +1100,12 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                 .override(
                                                   fontFamily: 'Urbanist',
                                                   fontSize: 16.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                             maxLines: 2,
                                             validator: _model
-                                                .addressControllerValidator
+                                                .addressTextControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -1063,7 +1120,11 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                             setState(() => _model
                                                 .placePickerValue = place);
                                           },
-                                          defaultText: 'or select Location',
+                                          defaultText:
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                            'm21w96zk' /* or select Location */,
+                                          ),
                                           icon: Icon(
                                             Icons.place,
                                             color: FlutterFlowTheme.of(context)
@@ -1085,6 +1146,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                                   context)
                                                               .secondaryText,
                                                       fontSize: 14.0,
+                                                      letterSpacing: 0.0,
                                                     ),
                                             elevation: 0.0,
                                             borderSide: BorderSide(
@@ -1102,7 +1164,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 12.0, 0.0, 0.0),
                                             child: Text(
-                                              'Description*',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'd6ltggcb' /* Description* */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodySmall
@@ -1111,6 +1176,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
@@ -1121,7 +1187,8 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: TextFormField(
-                                            controller: _model.descController,
+                                            controller:
+                                                _model.descTextController,
                                             focusNode: _model.descFocusNode,
                                             obscureText: false,
                                             decoration: InputDecoration(
@@ -1136,6 +1203,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                             context)
                                                         .grayIcon,
                                                     fontSize: 16.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w300,
                                                   ),
                                               enabledBorder: OutlineInputBorder(
@@ -1160,9 +1228,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                               ),
                                               errorBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .redApple,
+                                                  color: Color(0xFFFC4253),
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
@@ -1171,9 +1237,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .redApple,
+                                                  color: Color(0xFFFC4253),
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
@@ -1187,10 +1251,11 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                 .override(
                                                   fontFamily: 'Urbanist',
                                                   fontSize: 16.0,
+                                                  letterSpacing: 0.0,
                                                 ),
                                             maxLines: 4,
                                             validator: _model
-                                                .descControllerValidator
+                                                .descTextControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -1202,7 +1267,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Text(
-                                                'Property neighborhood',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'ypom6n2u' /* Property neighborhood */,
+                                                ),
                                                 style: FlutterFlowTheme.of(
                                                         context)
                                                     .bodySmall
@@ -1212,6 +1280,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryText,
+                                                      letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.w500,
                                                     ),
@@ -1225,7 +1294,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller:
-                                                _model.neighbController ??=
+                                                _model.neighbTextController ??=
                                                     TextEditingController(
                                               text: formPropertiesRecord
                                                   .propertyNeighborhood,
@@ -1233,13 +1302,18 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                             focusNode: _model.neighbFocusNode,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              hintText: '123 Disney way here…',
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                '9vqpmbip' /* 123 Disney way here… */,
+                                              ),
                                               hintStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Urbanist',
                                                         fontSize: 16.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w300,
                                                       ),
@@ -1292,11 +1366,12 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                 .override(
                                                   fontFamily: 'Urbanist',
                                                   fontSize: 16.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                             maxLines: 2,
                                             validator: _model
-                                                .neighbControllerValidator
+                                                .neighbTextControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -1308,7 +1383,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 12.0, 0.0, 0.0),
                                             child: Text(
-                                              'Phone Number',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'qxtco68a' /* Phone Number */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodySmall
@@ -1317,20 +1395,26 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
                                           ),
                                         ),
                                         TextFormField(
-                                          controller: _model.phoneController ??=
-                                              TextEditingController(
+                                          controller:
+                                              _model.phoneTextController ??=
+                                                  TextEditingController(
                                             text: formPropertiesRecord.phone,
                                           ),
                                           focusNode: _model.phoneFocusNode,
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            hintText: 'phone number',
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'gcomwi0j' /* phone number */,
+                                            ),
                                             hintStyle: FlutterFlowTheme.of(
                                                     context)
                                                 .headlineMedium
@@ -1340,6 +1424,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                           context)
                                                       .grayIcon,
                                                   fontSize: 16.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w300,
                                                 ),
                                             enabledBorder: OutlineInputBorder(
@@ -1391,13 +1476,14 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                               .override(
                                                 fontFamily: 'Urbanist',
                                                 fontSize: 16.0,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                           keyboardType: const TextInputType
                                               .numberWithOptions(
                                               signed: true, decimal: true),
                                           validator: _model
-                                              .phoneControllerValidator
+                                              .phoneTextControllerValidator
                                               .asValidator(context),
                                         ),
                                         Align(
@@ -1408,7 +1494,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 12.0, 0.0, 0.0),
                                             child: Text(
-                                              'Amount persons',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'va6krh5q' /* Amount persons */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodySmall
@@ -1417,6 +1506,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
@@ -1424,7 +1514,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                         ),
                                         TextFormField(
                                           controller:
-                                              _model.personsController ??=
+                                              _model.personsTextController ??=
                                                   TextEditingController(
                                             text: formPropertiesRecord
                                                 .amountPersons
@@ -1433,7 +1523,11 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                           focusNode: _model.personsFocusNode,
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            hintText: '20',
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'eluj8qjy' /* 20 */,
+                                            ),
                                             hintStyle: FlutterFlowTheme.of(
                                                     context)
                                                 .headlineMedium
@@ -1443,6 +1537,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                           context)
                                                       .grayIcon,
                                                   fontSize: 16.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w300,
                                                 ),
                                             enabledBorder: OutlineInputBorder(
@@ -1494,11 +1589,12 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                               .override(
                                                 fontFamily: 'Urbanist',
                                                 fontSize: 16.0,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                           keyboardType: TextInputType.number,
                                           validator: _model
-                                              .personsControllerValidator
+                                              .personsTextControllerValidator
                                               .asValidator(context),
                                         ),
                                       ],
@@ -1519,14 +1615,26 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'STEP',
+                                          FFLocalizations.of(context).getText(
+                                            'e7aenfe1' /* STEP */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Urbanist',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                         Text(
-                                          '1/3',
+                                          FFLocalizations.of(context).getText(
+                                            'mkhkaxt4' /* 1/3 */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
-                                              .headlineMedium,
+                                              .headlineMedium
+                                              .override(
+                                                fontFamily: 'Urbanist',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ],
                                     ),
@@ -1541,21 +1649,21 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                         await formPropertiesRecord.reference
                                             .update(createPropertiesRecordData(
                                           propertyName: _model
-                                              .propertyNameController.text,
+                                              .propertyNameTextController.text,
                                           propertyDescription:
-                                              _model.descController.text,
+                                              _model.descTextController.text,
                                           mainImage: _model.uploadedFileUrl1 !=
                                                       null &&
                                                   _model.uploadedFileUrl1 != ''
                                               ? _model.uploadedFileUrl1
                                               : formPropertiesRecord.mainImage,
                                           propertyAddress:
-                                              _model.addressController.text,
+                                              _model.addressTextController.text,
                                           propertyNeighborhood:
-                                              _model.addressController.text,
+                                              _model.addressTextController.text,
                                           lastUpdated: getCurrentTimestamp,
-                                          amountPersons: int.tryParse(
-                                              _model.personsController.text),
+                                          amountPersons: int.tryParse(_model
+                                              .personsTextController.text),
                                           date: _model.datePicked != null
                                               ? _model.datePicked
                                               : formPropertiesRecord.date,
@@ -1568,10 +1676,13 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       .backgroundIMG,
                                           propertyLocation:
                                               _model.placePickerValue.latLng,
-                                          phone: _model.phoneController.text,
+                                          phone:
+                                              _model.phoneTextController.text,
                                         ));
                                       },
-                                      text: 'NEXT',
+                                      text: FFLocalizations.of(context).getText(
+                                        'o252rcym' /* NEXT */,
+                                      ),
                                       options: FFButtonOptions(
                                         width: 120.0,
                                         height: 50.0,
@@ -1586,6 +1697,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                             .override(
                                               fontFamily: 'Urbanist',
                                               color: Colors.white,
+                                              letterSpacing: 0.0,
                                             ),
                                         elevation: 2.0,
                                         borderSide: BorderSide(
@@ -1619,7 +1731,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 12.0),
                                             child: Text(
-                                              'EDIT YOUR WISHLIST',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'rph6ijc8' /* EDIT YOUR WISHLIST */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodySmall
@@ -1628,6 +1743,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
@@ -1645,12 +1761,17 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                   width: 200.0,
                                                   child: TextFormField(
                                                     controller: _model
-                                                        .wishlistController,
+                                                        .wishlistTextController,
                                                     focusNode: _model
                                                         .wishlistFocusNode,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
-                                                      hintText: 'add item',
+                                                      hintText:
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        'gkptb197' /* add item */,
+                                                      ),
                                                       hintStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1662,6 +1783,8 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                                         context)
                                                                     .grayIcon,
                                                                 fontSize: 16.0,
+                                                                letterSpacing:
+                                                                    0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w300,
@@ -1724,10 +1847,11 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                           fontFamily:
                                                               'Urbanist',
                                                           fontSize: 16.0,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                     maxLines: 2,
                                                     validator: _model
-                                                        .wishlistControllerValidator
+                                                        .wishlistTextControllerValidator
                                                         .asValidator(context),
                                                   ),
                                                 ),
@@ -1761,14 +1885,15 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       .set(
                                                           createWishlistRecordData(
                                                         title: _model
-                                                            .wishlistController
+                                                            .wishlistTextController
                                                             .text,
                                                         event:
                                                             formPropertiesRecord
                                                                 .reference,
                                                       ));
                                                   setState(() {
-                                                    _model.wishlistController
+                                                    _model
+                                                        .wishlistTextController
                                                         ?.clear();
                                                   });
                                                 },
@@ -1840,7 +1965,13 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                                   .title,
                                                               style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .bodyMedium,
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Urbanist',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
                                                           ),
                                                           FlutterFlowIconButton(
@@ -1899,14 +2030,26 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'STEP',
+                                          FFLocalizations.of(context).getText(
+                                            'ol2pxwf9' /* STEP */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Urbanist',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                         Text(
-                                          '2/3',
+                                          FFLocalizations.of(context).getText(
+                                            'sq6yupq7' /* 2/3 */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
-                                              .headlineMedium,
+                                              .headlineMedium
+                                              .override(
+                                                fontFamily: 'Urbanist',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ],
                                     ),
@@ -1918,7 +2061,9 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                           curve: Curves.ease,
                                         );
                                       },
-                                      text: 'BACK',
+                                      text: FFLocalizations.of(context).getText(
+                                        'tdakq9ah' /* BACK */,
+                                      ),
                                       options: FFButtonOptions(
                                         width: 120.0,
                                         height: 50.0,
@@ -1933,6 +2078,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                             .override(
                                               fontFamily: 'Urbanist',
                                               color: Colors.white,
+                                              letterSpacing: 0.0,
                                             ),
                                         elevation: 2.0,
                                         borderSide: BorderSide(
@@ -1951,7 +2097,9 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                           curve: Curves.ease,
                                         );
                                       },
-                                      text: 'NEXT',
+                                      text: FFLocalizations.of(context).getText(
+                                        'jp1ugzul' /* NEXT */,
+                                      ),
                                       options: FFButtonOptions(
                                         width: 120.0,
                                         height: 50.0,
@@ -1966,6 +2114,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                             .override(
                                               fontFamily: 'Urbanist',
                                               color: Colors.white,
+                                              letterSpacing: 0.0,
                                             ),
                                         elevation: 2.0,
                                         borderSide: BorderSide(
@@ -1995,7 +2144,9 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                           alignment:
                                               AlignmentDirectional(-1.0, 0.0),
                                           child: Text(
-                                            'Spotify URL',
+                                            FFLocalizations.of(context).getText(
+                                              'ztnkf63o' /* Spotify URL */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -2003,6 +2154,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                           ),
@@ -2013,7 +2165,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller:
-                                                _model.spotifyController ??=
+                                                _model.spotifyTextController ??=
                                                     TextEditingController(
                                               text: formPropertiesRecord
                                                   .spotifyURL,
@@ -2021,7 +2173,11 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                             focusNode: _model.spotifyFocusNode,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              hintText: 'add url',
+                                              hintText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'sjycvlhl' /* add url */,
+                                              ),
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .headlineSmall
@@ -2031,6 +2187,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                             context)
                                                         .grayIcon,
                                                     fontSize: 16.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w300,
                                                   ),
                                               enabledBorder: OutlineInputBorder(
@@ -2082,10 +2239,11 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                 .override(
                                                   fontFamily: 'Urbanist',
                                                   fontSize: 16.0,
+                                                  letterSpacing: 0.0,
                                                 ),
                                             maxLines: 2,
                                             validator: _model
-                                                .spotifyControllerValidator
+                                                .spotifyTextControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -2100,7 +2258,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                 alignment: AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Text(
-                                                  'Public event',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '0uoloer6' /* Public event */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -2110,6 +2271,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
                                                       ),
@@ -2160,7 +2322,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                 alignment: AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Text(
-                                                  'Free event',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '4pqgbzjt' /* Free event */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -2170,6 +2335,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
                                                       ),
@@ -2223,7 +2389,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       .fromSTEB(
                                                           0.0, 16.0, 0.0, 12.0),
                                                   child: Text(
-                                                    'PRICE/Ticket Sale',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '46obx59m' /* PRICE/Ticket Sale */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodySmall
@@ -2233,6 +2402,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -2241,7 +2411,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                               ),
                                               TextFormField(
                                                 controller: _model
-                                                        .pricePerNightController ??=
+                                                        .pricePerNightTextController ??=
                                                     TextEditingController(
                                                   text: formPropertiesRecord
                                                       .price
@@ -2251,7 +2421,11 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                     .pricePerNightFocusNode,
                                                 obscureText: false,
                                                 decoration: InputDecoration(
-                                                  hintText: '\$ Price',
+                                                  hintText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'zyhzfm7i' /* $ Price */,
+                                                  ),
                                                   hintStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .headlineMedium
@@ -2262,6 +2436,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                                     context)
                                                                 .grayIcon,
                                                         fontSize: 16.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w300,
                                                       ),
@@ -2327,6 +2502,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                           fontFamily:
                                                               'Urbanist',
                                                           fontSize: 16.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
@@ -2336,7 +2512,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                         signed: true,
                                                         decimal: true),
                                                 validator: _model
-                                                    .pricePerNightControllerValidator
+                                                    .pricePerNightTextControllerValidator
                                                     .asValidator(context),
                                               ),
                                               Align(
@@ -2347,7 +2523,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       .fromSTEB(
                                                           0.0, 16.0, 0.0, 12.0),
                                                   child: Text(
-                                                    'PayPal URL',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'awqqm6y6' /* PayPal URL */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodySmall
@@ -2357,6 +2536,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
                                                         ),
@@ -2369,7 +2549,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                         0.0, 4.0, 0.0, 0.0),
                                                 child: TextFormField(
                                                   controller: _model
-                                                          .paypalController ??=
+                                                          .paypalTextController ??=
                                                       TextEditingController(
                                                     text: formPropertiesRecord
                                                         .paypalURL,
@@ -2378,7 +2558,12 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       _model.paypalFocusNode,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
-                                                    hintText: 'add url',
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      '4wb7oevj' /* add url */,
+                                                    ),
                                                     hintStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .headlineSmall
@@ -2389,6 +2574,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                                   .of(context)
                                                               .grayIcon,
                                                           fontSize: 16.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w300,
                                                         ),
@@ -2453,10 +2639,11 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       .override(
                                                         fontFamily: 'Urbanist',
                                                         fontSize: 16.0,
+                                                        letterSpacing: 0.0,
                                                       ),
                                                   maxLines: 2,
                                                   validator: _model
-                                                      .paypalControllerValidator
+                                                      .paypalTextControllerValidator
                                                       .asValidator(context),
                                                 ),
                                               ),
@@ -2470,7 +2657,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 12.0, 0.0, 0.0),
                                             child: Text(
-                                              'Add friends',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'qtzjpq9t' /* Add friends */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -2479,6 +2669,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
@@ -2497,8 +2688,8 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
                                             child: ExpandableNotifier(
-                                              controller:
-                                                  _model.expandableController,
+                                              controller: _model
+                                                  .expandableExpandableController,
                                               child: ExpandablePanel(
                                                 header: Text(
                                                   'Added friends (${FFAppState().guestList.length.toString()})',
@@ -2512,6 +2703,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                                     context)
                                                                 .primaryText,
                                                         fontSize: 16.0,
+                                                        letterSpacing: 0.0,
                                                       ),
                                                 ),
                                                 collapsed: Container(),
@@ -2537,13 +2729,13 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                                     12.0),
                                                         child: TextFormField(
                                                           controller: _model
-                                                              .searchController,
+                                                              .searchTextController,
                                                           focusNode: _model
                                                               .searchFocusNode,
                                                           onChanged: (_) =>
                                                               EasyDebounce
                                                                   .debounce(
-                                                            '_model.searchController',
+                                                            '_model.searchTextController',
                                                             Duration(
                                                                 milliseconds:
                                                                     200),
@@ -2564,7 +2756,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                                           .toList(),
                                                                     )
                                                                             .search(_model
-                                                                                .searchController.text)
+                                                                                .searchTextController.text)
                                                                             .map((r) =>
                                                                                 r.object)
                                                                             .toList(),
@@ -2581,7 +2773,12 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                           obscureText: false,
                                                           decoration:
                                                               InputDecoration(
-                                                            hintText: 'search',
+                                                            hintText:
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                              'q76yxu5m' /* search */,
+                                                            ),
                                                             hintStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -2594,6 +2791,8 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                                           .grayIcon,
                                                                       fontSize:
                                                                           16.0,
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w300,
@@ -2665,12 +2864,14 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                                 fontFamily:
                                                                     'Urbanist',
                                                                 fontSize: 16.0,
+                                                                letterSpacing:
+                                                                    0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .bold,
                                                               ),
                                                           validator: _model
-                                                              .searchControllerValidator
+                                                              .searchTextControllerValidator
                                                               .asValidator(
                                                                   context),
                                                         ),
@@ -2678,10 +2879,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       Expanded(
                                                         child: Builder(
                                                           builder: (context) {
-                                                            if (_model.searchController
+                                                            if (_model.searchTextController
                                                                         .text ==
                                                                     null ||
-                                                                _model.searchController
+                                                                _model.searchTextController
                                                                         .text ==
                                                                     '') {
                                                               return FutureBuilder<
@@ -2813,7 +3014,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                 alignment: AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Text(
-                                                  'Dradt',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'zq4x9qve' /* Dradt */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -2823,6 +3027,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
                                                       ),
@@ -2928,7 +3133,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                   Navigator.pop(context);
                                                 }
                                               },
-                                              text: 'Delete event',
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                'v202ic1b' /* Delete event */,
+                                              ),
                                               options: FFButtonOptions(
                                                 height: 40.0,
                                                 padding: EdgeInsetsDirectional
@@ -2948,6 +3156,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                           fontFamily:
                                                               'Urbanist',
                                                           color: Colors.white,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                 elevation: 2.0,
                                                 borderSide: BorderSide(
@@ -2978,14 +3187,26 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'STEP',
+                                          FFLocalizations.of(context).getText(
+                                            '526art1g' /* STEP */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Urbanist',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                         Text(
-                                          '3/3',
+                                          FFLocalizations.of(context).getText(
+                                            'ck241orx' /* 3/3 */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
-                                              .headlineMedium,
+                                              .headlineMedium
+                                              .override(
+                                                fontFamily: 'Urbanist',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ],
                                     ),
@@ -2997,7 +3218,9 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                           curve: Curves.ease,
                                         );
                                       },
-                                      text: 'BACK',
+                                      text: FFLocalizations.of(context).getText(
+                                        '081ehwt9' /* BACK */,
+                                      ),
                                       options: FFButtonOptions(
                                         width: 120.0,
                                         height: 50.0,
@@ -3012,6 +3235,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                             .override(
                                               fontFamily: 'Urbanist',
                                               color: Colors.white,
+                                              letterSpacing: 0.0,
                                             ),
                                         elevation: 2.0,
                                         borderSide: BorderSide(
@@ -3028,12 +3252,13 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                             .update({
                                           ...createPropertiesRecordData(
                                             price: int.tryParse(_model
-                                                .pricePerNightController.text),
+                                                .pricePerNightTextController
+                                                .text),
                                             lastUpdated: getCurrentTimestamp,
-                                            paypalURL:
-                                                _model.paypalController.text,
-                                            spotifyURL:
-                                                _model.spotifyController.text,
+                                            paypalURL: _model
+                                                .paypalTextController.text,
+                                            spotifyURL: _model
+                                                .spotifyTextController.text,
                                             publicEvent: _model.publicValue,
                                             isDraft: _model.draftValue,
                                           ),
@@ -3069,7 +3294,9 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                           FFAppState().guestList = [];
                                         });
                                       },
-                                      text: 'FINISH',
+                                      text: FFLocalizations.of(context).getText(
+                                        'ewq3negg' /* FINISH */,
+                                      ),
                                       options: FFButtonOptions(
                                         width: 120.0,
                                         height: 50.0,
@@ -3084,6 +3311,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                             .override(
                                               fontFamily: 'Urbanist',
                                               color: Colors.white,
+                                              letterSpacing: 0.0,
                                             ),
                                         elevation: 2.0,
                                         borderSide: BorderSide(

@@ -10,7 +10,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/components/registration/registration_widget.dart';
 import '/pages/components/review_copy/review_copy_widget.dart';
-import '/pages/components/wishlist/wishlist_widget.dart';
+import '/pages/wishlist/wishlist_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 's3_event_data_public_widget.dart' show S3EventDataPublicWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -32,17 +32,13 @@ class S3EventDataPublicModel extends FlutterFlowModel<S3EventDataPublicWidget> {
   // Model for reviewCopy component.
   late ReviewCopyModel reviewCopyModel;
 
-  /// Initialization and disposal methods.
-
+  @override
   void initState(BuildContext context) {
     reviewCopyModel = createModel(context, () => ReviewCopyModel());
   }
 
+  @override
   void dispose() {
     reviewCopyModel.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

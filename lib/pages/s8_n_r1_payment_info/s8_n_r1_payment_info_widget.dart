@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -12,10 +11,10 @@ import 's8_n_r1_payment_info_model.dart';
 export 's8_n_r1_payment_info_model.dart';
 
 class S8NR1PaymentInfoWidget extends StatefulWidget {
-  const S8NR1PaymentInfoWidget({Key? key}) : super(key: key);
+  const S8NR1PaymentInfoWidget({super.key});
 
   @override
-  _S8NR1PaymentInfoWidgetState createState() => _S8NR1PaymentInfoWidgetState();
+  State<S8NR1PaymentInfoWidget> createState() => _S8NR1PaymentInfoWidgetState();
 }
 
 class _S8NR1PaymentInfoWidgetState extends State<S8NR1PaymentInfoWidget> {
@@ -40,17 +39,6 @@ class _S8NR1PaymentInfoWidgetState extends State<S8NR1PaymentInfoWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -72,8 +60,13 @@ class _S8NR1PaymentInfoWidgetState extends State<S8NR1PaymentInfoWidget> {
           },
         ),
         title: Text(
-          'Payment Information',
-          style: FlutterFlowTheme.of(context).headlineMedium,
+          FFLocalizations.of(context).getText(
+            'yxslh3rr' /* Payment Information */,
+          ),
+          style: FlutterFlowTheme.of(context).headlineMedium.override(
+                fontFamily: 'Urbanist',
+                letterSpacing: 0.0,
+              ),
         ),
         actions: [],
         centerTitle: false,
@@ -93,7 +86,10 @@ class _S8NR1PaymentInfoWidgetState extends State<S8NR1PaymentInfoWidget> {
                   BoxShadow(
                     blurRadius: 5.0,
                     color: Color(0x411D2429),
-                    offset: Offset(0.0, 2.0),
+                    offset: Offset(
+                      0.0,
+                      2.0,
+                    ),
                   )
                 ],
               ),
@@ -114,7 +110,8 @@ class _S8NR1PaymentInfoWidgetState extends State<S8NR1PaymentInfoWidget> {
                         textStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
                                   fontFamily: 'Urbanist',
-                                  color: FlutterFlowTheme.of(context).darkText,
+                                  color: FlutterFlowTheme.of(context).grayIcon,
+                                  letterSpacing: 0.0,
                                 ),
                         inputDecoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
@@ -141,7 +138,9 @@ class _S8NR1PaymentInfoWidgetState extends State<S8NR1PaymentInfoWidget> {
                         onPressed: () async {
                           context.pop();
                         },
-                        text: 'Save Changes',
+                        text: FFLocalizations.of(context).getText(
+                          'eckgl4cd' /* Save Changes */,
+                        ),
                         options: FFButtonOptions(
                           width: 200.0,
                           height: 50.0,
@@ -149,12 +148,13 @@ class _S8NR1PaymentInfoWidgetState extends State<S8NR1PaymentInfoWidget> {
                               0.0, 0.0, 0.0, 0.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).turquoise,
+                          color: FlutterFlowTheme.of(context).secondary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Lexend Deca',
                                     color: Colors.white,
                                     fontSize: 16.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                   ),
                           elevation: 3.0,

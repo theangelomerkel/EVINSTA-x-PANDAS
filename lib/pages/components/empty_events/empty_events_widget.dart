@@ -4,17 +4,16 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'empty_events_model.dart';
 export 'empty_events_model.dart';
 
 class EmptyEventsWidget extends StatefulWidget {
-  const EmptyEventsWidget({Key? key}) : super(key: key);
+  const EmptyEventsWidget({super.key});
 
   @override
-  _EmptyEventsWidgetState createState() => _EmptyEventsWidgetState();
+  State<EmptyEventsWidget> createState() => _EmptyEventsWidgetState();
 }
 
 class _EmptyEventsWidgetState extends State<EmptyEventsWidget> {
@@ -43,8 +42,6 @@ class _EmptyEventsWidgetState extends State<EmptyEventsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Align(
       alignment: AlignmentDirectional(0.0, 0.0),
       child: Column(
@@ -53,11 +50,14 @@ class _EmptyEventsWidgetState extends State<EmptyEventsWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
             child: Text(
-              'No events in this date',
+              FFLocalizations.of(context).getText(
+                '8zxon5w9' /* No events in this date */,
+              ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Urbanist',
                     color: FlutterFlowTheme.of(context).primaryText,
                     fontSize: 20.0,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w600,
                   ),
             ),
@@ -76,7 +76,9 @@ class _EmptyEventsWidgetState extends State<EmptyEventsWidget> {
                 context.pushNamed('S1_Login_andSignUp');
               }
             },
-            text: 'Add event',
+            text: FFLocalizations.of(context).getText(
+              'q97hfxdk' /* Add event */,
+            ),
             options: FFButtonOptions(
               width: double.infinity,
               height: 42.0,
@@ -86,6 +88,7 @@ class _EmptyEventsWidgetState extends State<EmptyEventsWidget> {
               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                     fontFamily: 'Urbanist',
                     color: Colors.white,
+                    letterSpacing: 0.0,
                   ),
               elevation: 1.0,
               borderSide: BorderSide(

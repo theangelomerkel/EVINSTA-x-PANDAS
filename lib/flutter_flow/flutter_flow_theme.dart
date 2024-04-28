@@ -55,24 +55,12 @@ abstract class FlutterFlowTheme {
   late Color info;
 
   late Color cultured;
-  late Color redApple;
-  late Color celadon;
-  late Color turquoise;
-  late Color gunmetal;
   late Color grayIcon;
-  late Color darkText;
-  late Color dark600;
-  late Color gray600;
   late Color lineGray;
   late Color gray200;
-  late Color black600;
-  late Color tertiary400;
-  late Color textColor;
-  late Color maximumBlueGreen;
   late Color plumpPurple;
   late Color platinum;
   late Color ashGray;
-  late Color darkSeaGreen;
   late Color primaryBtnText;
   late Color lineColor;
 
@@ -152,11 +140,11 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color tertiary = const Color(0xFFFFFFFF);
   late Color alternate = const Color(0xFFE1EDF9);
   late Color primaryText = const Color(0xFFFFFFFF);
-  late Color secondaryText = const Color(0xFF95A1AC);
-  late Color primaryBackground = const Color(0xFF0F1214);
-  late Color secondaryBackground = const Color(0xFF171C1F);
-  late Color accent1 = const Color(0xFF616161);
-  late Color accent2 = const Color(0xFF757575);
+  late Color secondaryText = const Color(0x001F1717);
+  late Color primaryBackground = const Color(0xFFF3F1F1);
+  late Color secondaryBackground = const Color(0xFFD1B9B9);
+  late Color accent1 = const Color(0xFFD1B9B9);
+  late Color accent2 = const Color(0xFFD1B9B9);
   late Color accent3 = const Color(0xFFE0E0E0);
   late Color accent4 = const Color(0xFFEEEEEE);
   late Color success = const Color(0xFF04A24C);
@@ -165,24 +153,12 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color info = const Color(0xFF1C4494);
 
   late Color cultured = Color(0xFFF1F4F8);
-  late Color redApple = Color(0xFFFC4253);
-  late Color celadon = Color(0xFF96E6B3);
-  late Color turquoise = Color(0xFF39D2C0);
-  late Color gunmetal = Color(0xFF262D34);
   late Color grayIcon = Color(0xFF95A1AC);
-  late Color darkText = Color(0xFF1E2429);
-  late Color dark600 = Color(0xFF14181B);
-  late Color gray600 = Color(0xFF57636C);
   late Color lineGray = Color(0xFFE1EDF9);
   late Color gray200 = Color(0xFFDBE2E7);
-  late Color black600 = Color(0xFF090F13);
-  late Color tertiary400 = Color(0xFF39D2C0);
-  late Color textColor = Color(0xFF1E2429);
-  late Color maximumBlueGreen = Color(0xFF59C3C3);
   late Color plumpPurple = Color(0xFF52489C);
   late Color platinum = Color(0xFFEBEBEB);
   late Color ashGray = Color(0xFFCAD2C5);
-  late Color darkSeaGreen = Color(0xFF84A98C);
   late Color primaryBtnText = Color(0xFFFFFFFF);
   late Color lineColor = Color(0xFFE0E3E7);
 }
@@ -347,7 +323,7 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color primaryText = const Color(0xFFFFFFFF);
   late Color secondaryText = const Color(0xFF95A1AC);
   late Color primaryBackground = const Color(0xFF0F1214);
-  late Color secondaryBackground = const Color(0xFF171C1F);
+  late Color secondaryBackground = const Color(0x001F1717);
   late Color accent1 = const Color(0xFFEEEEEE);
   late Color accent2 = const Color(0xFFE0E0E0);
   late Color accent3 = const Color(0xFF757575);
@@ -358,24 +334,12 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color info = const Color(0xFF1C4494);
 
   late Color cultured = Color(0xFFF1F4F8);
-  late Color redApple = Color(0xFFFC4253);
-  late Color celadon = Color(0xFF96E6B3);
-  late Color turquoise = Color(0xFF39D2C0);
-  late Color gunmetal = Color(0xFF262D34);
   late Color grayIcon = Color(0xFF95A1AC);
-  late Color darkText = Color(0xFFFFFFFF);
-  late Color dark600 = Color(0xFF14181B);
-  late Color gray600 = Color(0xFF57636C);
   late Color lineGray = Color(0xFF262D34);
   late Color gray200 = Color(0xFFDBE2E7);
-  late Color black600 = Color(0xFF090F13);
-  late Color tertiary400 = Color(0xFF39D2C0);
-  late Color textColor = Color(0xFF1E2429);
-  late Color maximumBlueGreen = Color(0xFF59C3C3);
   late Color plumpPurple = Color(0xFF52489C);
   late Color platinum = Color(0xFFEBEBEB);
   late Color ashGray = Color(0xFFCAD2C5);
-  late Color darkSeaGreen = Color(0xFF84A98C);
   late Color primaryBtnText = Color(0xFFFFFFFF);
   late Color lineColor = Color(0xFF22282F);
 }

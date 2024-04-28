@@ -9,7 +9,6 @@ import '/pages/components/profile_user/profile_user_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
@@ -18,14 +17,14 @@ export 'review_copy_model.dart';
 
 class ReviewCopyWidget extends StatefulWidget {
   const ReviewCopyWidget({
-    Key? key,
+    super.key,
     required this.property,
-  }) : super(key: key);
+  });
 
   final PropertiesRecord? property;
 
   @override
-  _ReviewCopyWidgetState createState() => _ReviewCopyWidgetState();
+  State<ReviewCopyWidget> createState() => _ReviewCopyWidgetState();
 }
 
 class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
@@ -57,8 +56,6 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Material(
       color: Colors.transparent,
       elevation: 0.0,
@@ -112,6 +109,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                               fontFamily: 'Urbanist',
                               color: FlutterFlowTheme.of(context).primaryText,
                               fontSize: 16.0,
+                              letterSpacing: 0.0,
                             ),
                       );
                     },
@@ -302,7 +300,9 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                           alignment:
                                               AlignmentDirectional(0.0, 0.0),
                                           child: Text(
-                                            '...',
+                                            FFLocalizations.of(context).getText(
+                                              '7w34g5qa' /* ... */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -505,6 +505,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                                     context)
                                                                 .primaryText,
                                                         fontSize: 12.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
                                                       ),
@@ -525,6 +526,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                                   context)
                                                               .primaryText,
                                                       fontSize: 12.0,
+                                                      letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
@@ -787,6 +789,8 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                                           .primaryText,
                                                                       fontSize:
                                                                           12.0,
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
@@ -810,6 +814,8 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                                         .primaryText,
                                                                     fontSize:
                                                                         12.0,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .normal,
@@ -985,15 +991,20 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                     Duration(milliseconds: 200),
                                     () => setState(() {}),
                                   ),
+                                  autofocus: false,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    hintText: 'Write your comment',
+                                    hintText:
+                                        FFLocalizations.of(context).getText(
+                                      'epexv9lm' /* Write your comment */,
+                                    ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
                                           fontFamily: 'Urbanist',
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -1054,6 +1065,7 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                         fontFamily: 'Urbanist',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.normal,
                                       ),
                                   maxLines: 4,

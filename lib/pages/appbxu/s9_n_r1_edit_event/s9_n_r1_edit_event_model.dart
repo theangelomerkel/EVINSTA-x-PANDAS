@@ -19,7 +19,6 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -50,103 +49,99 @@ class S9NR1EditEventModel extends FlutterFlowModel<S9NR1EditEventWidget> {
 
   // State field(s) for propertyName widget.
   FocusNode? propertyNameFocusNode;
-  TextEditingController? propertyNameController;
-  String? Function(BuildContext, String?)? propertyNameControllerValidator;
+  TextEditingController? propertyNameTextController;
+  String? Function(BuildContext, String?)? propertyNameTextControllerValidator;
   DateTime? datePicked;
   // State field(s) for address widget.
   FocusNode? addressFocusNode;
-  TextEditingController? addressController;
-  String? Function(BuildContext, String?)? addressControllerValidator;
+  TextEditingController? addressTextController;
+  String? Function(BuildContext, String?)? addressTextControllerValidator;
   // State field(s) for PlacePicker widget.
   var placePickerValue = FFPlace();
   // State field(s) for desc widget.
   FocusNode? descFocusNode;
-  TextEditingController? descController;
-  String? Function(BuildContext, String?)? descControllerValidator;
+  TextEditingController? descTextController;
+  String? Function(BuildContext, String?)? descTextControllerValidator;
   // State field(s) for neighb widget.
   FocusNode? neighbFocusNode;
-  TextEditingController? neighbController;
-  String? Function(BuildContext, String?)? neighbControllerValidator;
+  TextEditingController? neighbTextController;
+  String? Function(BuildContext, String?)? neighbTextControllerValidator;
   // State field(s) for phone widget.
   FocusNode? phoneFocusNode;
-  TextEditingController? phoneController;
-  String? Function(BuildContext, String?)? phoneControllerValidator;
+  TextEditingController? phoneTextController;
+  String? Function(BuildContext, String?)? phoneTextControllerValidator;
   // State field(s) for persons widget.
   FocusNode? personsFocusNode;
-  TextEditingController? personsController;
-  String? Function(BuildContext, String?)? personsControllerValidator;
+  TextEditingController? personsTextController;
+  String? Function(BuildContext, String?)? personsTextControllerValidator;
   // State field(s) for wishlist widget.
   FocusNode? wishlistFocusNode;
-  TextEditingController? wishlistController;
-  String? Function(BuildContext, String?)? wishlistControllerValidator;
+  TextEditingController? wishlistTextController;
+  String? Function(BuildContext, String?)? wishlistTextControllerValidator;
   // State field(s) for spotify widget.
   FocusNode? spotifyFocusNode;
-  TextEditingController? spotifyController;
-  String? Function(BuildContext, String?)? spotifyControllerValidator;
+  TextEditingController? spotifyTextController;
+  String? Function(BuildContext, String?)? spotifyTextControllerValidator;
   // State field(s) for public widget.
   bool? publicValue;
   // State field(s) for free widget.
   bool? freeValue;
   // State field(s) for pricePerNight widget.
   FocusNode? pricePerNightFocusNode;
-  TextEditingController? pricePerNightController;
-  String? Function(BuildContext, String?)? pricePerNightControllerValidator;
+  TextEditingController? pricePerNightTextController;
+  String? Function(BuildContext, String?)? pricePerNightTextControllerValidator;
   // State field(s) for paypal widget.
   FocusNode? paypalFocusNode;
-  TextEditingController? paypalController;
-  String? Function(BuildContext, String?)? paypalControllerValidator;
+  TextEditingController? paypalTextController;
+  String? Function(BuildContext, String?)? paypalTextControllerValidator;
   // State field(s) for Expandable widget.
-  late ExpandableController expandableController;
+  late ExpandableController expandableExpandableController;
 
   // State field(s) for search widget.
   FocusNode? searchFocusNode;
-  TextEditingController? searchController;
-  String? Function(BuildContext, String?)? searchControllerValidator;
+  TextEditingController? searchTextController;
+  String? Function(BuildContext, String?)? searchTextControllerValidator;
   List<UsersRecord> simpleSearchResults = [];
   // State field(s) for draft widget.
   bool? draftValue;
 
-  /// Initialization and disposal methods.
-
+  @override
   void initState(BuildContext context) {}
 
+  @override
   void dispose() {
     propertyNameFocusNode?.dispose();
-    propertyNameController?.dispose();
+    propertyNameTextController?.dispose();
 
     addressFocusNode?.dispose();
-    addressController?.dispose();
+    addressTextController?.dispose();
 
     descFocusNode?.dispose();
-    descController?.dispose();
+    descTextController?.dispose();
 
     neighbFocusNode?.dispose();
-    neighbController?.dispose();
+    neighbTextController?.dispose();
 
     phoneFocusNode?.dispose();
-    phoneController?.dispose();
+    phoneTextController?.dispose();
 
     personsFocusNode?.dispose();
-    personsController?.dispose();
+    personsTextController?.dispose();
 
     wishlistFocusNode?.dispose();
-    wishlistController?.dispose();
+    wishlistTextController?.dispose();
 
     spotifyFocusNode?.dispose();
-    spotifyController?.dispose();
+    spotifyTextController?.dispose();
 
     pricePerNightFocusNode?.dispose();
-    pricePerNightController?.dispose();
+    pricePerNightTextController?.dispose();
 
     paypalFocusNode?.dispose();
-    paypalController?.dispose();
+    paypalTextController?.dispose();
 
-    expandableController.dispose();
+    expandableExpandableController.dispose();
     searchFocusNode?.dispose();
-    searchController?.dispose();
+    searchTextController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

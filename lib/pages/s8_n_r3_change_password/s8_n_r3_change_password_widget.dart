@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -14,14 +13,14 @@ export 's8_n_r3_change_password_model.dart';
 
 class S8NR3ChangePasswordWidget extends StatefulWidget {
   const S8NR3ChangePasswordWidget({
-    Key? key,
+    super.key,
     this.email,
-  }) : super(key: key);
+  });
 
   final String? email;
 
   @override
-  _S8NR3ChangePasswordWidgetState createState() =>
+  State<S8NR3ChangePasswordWidget> createState() =>
       _S8NR3ChangePasswordWidgetState();
 }
 
@@ -35,7 +34,8 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
     super.initState();
     _model = createModel(context, () => S8NR3ChangePasswordModel());
 
-    _model.emailAddressController ??= TextEditingController(text: widget.email);
+    _model.emailAddressTextController ??=
+        TextEditingController(text: widget.email);
     _model.emailAddressFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -50,17 +50,6 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
-    context.watch<FFAppState>();
-
     return StreamBuilder<UsersRecord>(
       stream: UsersRecord.getDocument(currentUserReference!),
       builder: (context, snapshot) {
@@ -103,8 +92,13 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
               },
             ),
             title: Text(
-              'Change Password',
-              style: FlutterFlowTheme.of(context).headlineMedium,
+              FFLocalizations.of(context).getText(
+                'irjlom3v' /* Change Password */,
+              ),
+              style: FlutterFlowTheme.of(context).headlineMedium.override(
+                    fontFamily: 'Urbanist',
+                    letterSpacing: 0.0,
+                  ),
             ),
             actions: [],
             centerTitle: false,
@@ -119,14 +113,26 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
                   padding:
                       EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 20.0, 12.0),
                   child: TextFormField(
-                    controller: _model.emailAddressController,
+                    controller: _model.emailAddressTextController,
                     focusNode: _model.emailAddressFocusNode,
                     obscureText: false,
                     decoration: InputDecoration(
-                      labelText: 'Email Address',
-                      labelStyle: FlutterFlowTheme.of(context).bodyMedium,
-                      hintText: 'Your email..',
-                      hintStyle: FlutterFlowTheme.of(context).bodyMedium,
+                      labelText: FFLocalizations.of(context).getText(
+                        'uwg7chwk' /* Email Address */,
+                      ),
+                      labelStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.override(
+                                fontFamily: 'Urbanist',
+                                letterSpacing: 0.0,
+                              ),
+                      hintText: FFLocalizations.of(context).getText(
+                        'rx2nr0b9' /* Your email.. */,
+                      ),
+                      hintStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.override(
+                                fontFamily: 'Urbanist',
+                                letterSpacing: 0.0,
+                              ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           color: FlutterFlowTheme.of(context).lineGray,
@@ -161,8 +167,11 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
                       contentPadding:
                           EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                     ),
-                    style: FlutterFlowTheme.of(context).titleSmall,
-                    validator: _model.emailAddressControllerValidator
+                    style: FlutterFlowTheme.of(context).titleSmall.override(
+                          fontFamily: 'Urbanist',
+                          letterSpacing: 0.0,
+                        ),
+                    validator: _model.emailAddressTextControllerValidator
                         .asValidator(context),
                   ),
                 ),
@@ -173,8 +182,14 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
                     children: [
                       Expanded(
                         child: Text(
-                          'We will send you an email with a link to reset your password, please enter the email associated with your account above.',
-                          style: FlutterFlowTheme.of(context).bodyMedium,
+                          FFLocalizations.of(context).getText(
+                            '9k6awa7d' /* We will send you an email with... */,
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Urbanist',
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ),
                     ],
@@ -187,7 +202,7 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        if (_model.emailAddressController.text.isEmpty) {
+                        if (_model.emailAddressTextController.text.isEmpty) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: Text(
@@ -198,7 +213,7 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
                           return;
                         }
                         await authManager.resetPassword(
-                          email: _model.emailAddressController.text,
+                          email: _model.emailAddressTextController.text,
                           context: context,
                         );
                         GoRouter.of(context).prepareAuthEvent();
@@ -208,7 +223,9 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
                         context.goNamedAuth(
                             'S1_Login_andSignUp', context.mounted);
                       },
-                      text: 'Send Reset Link',
+                      text: FFLocalizations.of(context).getText(
+                        'r4ulzvtb' /* Send Reset Link */,
+                      ),
                       options: FFButtonOptions(
                         width: 340.0,
                         height: 60.0,
@@ -222,6 +239,7 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
                                   fontFamily: 'Lexend Deca',
                                   color: Colors.white,
                                   fontSize: 16.0,
+                                  letterSpacing: 0.0,
                                   fontWeight: FontWeight.normal,
                                 ),
                         elevation: 2.0,

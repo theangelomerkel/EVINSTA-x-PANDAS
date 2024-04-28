@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'user_list_model.dart';
@@ -13,14 +12,14 @@ export 'user_list_model.dart';
 
 class UserListWidget extends StatefulWidget {
   const UserListWidget({
-    Key? key,
+    super.key,
     this.parameter6,
     this.parameter1,
     this.parameter2,
     this.parameter3,
     this.parameter4,
     this.parameter5,
-  }) : super(key: key);
+  });
 
   final DocumentReference? parameter6;
   final String? parameter1;
@@ -30,7 +29,7 @@ class UserListWidget extends StatefulWidget {
   final DocumentReference? parameter5;
 
   @override
-  _UserListWidgetState createState() => _UserListWidgetState();
+  State<UserListWidget> createState() => _UserListWidgetState();
 }
 
 class _UserListWidgetState extends State<UserListWidget> {
@@ -59,8 +58,6 @@ class _UserListWidgetState extends State<UserListWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Align(
       alignment: AlignmentDirectional(-1.0, 0.0),
       child: FutureBuilder<UsersRecord>(

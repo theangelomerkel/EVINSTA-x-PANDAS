@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'cancel_trip_h_o_s_t_model.dart';
@@ -13,14 +12,14 @@ export 'cancel_trip_h_o_s_t_model.dart';
 
 class CancelTripHOSTWidget extends StatefulWidget {
   const CancelTripHOSTWidget({
-    Key? key,
+    super.key,
     this.tripDetails,
-  }) : super(key: key);
+  });
 
   final TripsRecord? tripDetails;
 
   @override
-  _CancelTripHOSTWidgetState createState() => _CancelTripHOSTWidgetState();
+  State<CancelTripHOSTWidget> createState() => _CancelTripHOSTWidgetState();
 }
 
 class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
@@ -37,7 +36,7 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
     super.initState();
     _model = createModel(context, () => CancelTripHOSTModel());
 
-    _model.emailAddressController ??= TextEditingController();
+    _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -52,8 +51,6 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 36.0),
       child: Container(
@@ -65,7 +62,10 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
             BoxShadow(
               blurRadius: 7.0,
               color: Color(0x4D000000),
-              offset: Offset(0.0, 3.0),
+              offset: Offset(
+                0.0,
+                3.0,
+              ),
             )
           ],
           borderRadius: BorderRadius.circular(16.0),
@@ -87,27 +87,46 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: Text(
-                  'Cancel Trip',
-                  style: FlutterFlowTheme.of(context).headlineMedium,
+                  FFLocalizations.of(context).getText(
+                    'dru3qdny' /* Cancel Trip */,
+                  ),
+                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+                        fontFamily: 'Urbanist',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                 child: Text(
-                  'If you want to cancel your tripl please leave a note below to send to the host.',
-                  style: FlutterFlowTheme.of(context).bodyMedium,
+                  FFLocalizations.of(context).getText(
+                    'wmuc7f15' /* If you want to cancel your tri... */,
+                  ),
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Urbanist',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: TextFormField(
-                  controller: _model.emailAddressController,
+                  controller: _model.emailAddressTextController,
                   focusNode: _model.emailAddressFocusNode,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelStyle: FlutterFlowTheme.of(context).bodyMedium,
-                    hintText: 'Your reason for cancelling...',
-                    hintStyle: FlutterFlowTheme.of(context).bodyMedium,
+                    labelStyle:
+                        FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Urbanist',
+                              letterSpacing: 0.0,
+                            ),
+                    hintText: FFLocalizations.of(context).getText(
+                      '4czbackw' /* Your reason for cancelling... */,
+                    ),
+                    hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Urbanist',
+                          letterSpacing: 0.0,
+                        ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).lineGray,
@@ -141,9 +160,12 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
                     contentPadding:
                         EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 0.0, 24.0),
                   ),
-                  style: FlutterFlowTheme.of(context).titleSmall,
+                  style: FlutterFlowTheme.of(context).titleSmall.override(
+                        fontFamily: 'Urbanist',
+                        letterSpacing: 0.0,
+                      ),
                   maxLines: 4,
-                  validator: _model.emailAddressControllerValidator
+                  validator: _model.emailAddressTextControllerValidator
                       .asValidator(context),
                 ),
               ),
@@ -153,7 +175,7 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
                   onPressed: () async {
                     await widget.tripDetails!.reference
                         .update(createTripsRecordData(
-                      cancelReason: _model.emailAddressController.text,
+                      cancelReason: _model.emailAddressTextController.text,
                       cancelTrip: true,
                     ));
                     ScaffoldMessenger.of(context).showSnackBar(
@@ -165,14 +187,17 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
                               .override(
                                 fontFamily: 'Urbanist',
                                 color: FlutterFlowTheme.of(context).tertiary,
+                                letterSpacing: 0.0,
                               ),
                         ),
                         duration: Duration(milliseconds: 4000),
-                        backgroundColor: FlutterFlowTheme.of(context).redApple,
+                        backgroundColor: Color(0xFFFC4253),
                       ),
                     );
                   },
-                  text: 'Yes, Cancel Trip',
+                  text: FFLocalizations.of(context).getText(
+                    '18p4dxhe' /* Yes, Cancel Trip */,
+                  ),
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 50.0,
@@ -183,6 +208,7 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Urbanist',
                           color: FlutterFlowTheme.of(context).tertiary,
+                          letterSpacing: 0.0,
                         ),
                     elevation: 2.0,
                     borderSide: BorderSide(
@@ -205,7 +231,9 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
                       onPressed: () async {
                         context.pop();
                       },
-                      text: 'Never Mind',
+                      text: FFLocalizations.of(context).getText(
+                        'fo7ird6b' /* Never Mind */,
+                      ),
                       options: FFButtonOptions(
                         width: 170.0,
                         height: 50.0,
@@ -217,7 +245,8 @@ class _CancelTripHOSTWidgetState extends State<CancelTripHOSTWidget> {
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Urbanist',
-                                  color: FlutterFlowTheme.of(context).dark600,
+                                  color: Color(0xFF14181B),
+                                  letterSpacing: 0.0,
                                 ),
                         elevation: 0.0,
                         borderSide: BorderSide(
