@@ -103,11 +103,16 @@ class _AnswerWidgetState extends State<AnswerWidget> {
                           hintText: FFLocalizations.of(context).getText(
                             'aqzl7z3j' /* Answer */,
                           ),
-                          hintStyle:
-                              FlutterFlowTheme.of(context).bodySmall.override(
-                                    fontFamily: 'Urbanist',
-                                    letterSpacing: 0.0,
-                                  ),
+                          hintStyle: FlutterFlowTheme.of(context)
+                              .bodySmall
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodySmallFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodySmallFamily),
+                              ),
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                               color: FlutterFlowTheme.of(context).alternate,
@@ -141,9 +146,13 @@ class _AnswerWidgetState extends State<AnswerWidget> {
                               FlutterFlowTheme.of(context).primaryBackground,
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Urbanist',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
                               color: FlutterFlowTheme.of(context).primaryText,
                               letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily),
                             ),
                         validator:
                             _model.textControllerValidator.asValidator(context),

@@ -71,10 +71,13 @@ class _RefusedlistWidgetState extends State<RefusedlistWidget> {
                   '0',
                 )})',
                 style: FlutterFlowTheme.of(context).displaySmall.override(
-                      fontFamily: 'Urbanist',
+                      fontFamily:
+                          FlutterFlowTheme.of(context).displaySmallFamily,
                       color: FlutterFlowTheme.of(context).primaryText,
                       fontSize: 16.0,
                       letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).displaySmallFamily),
                     ),
               ),
               collapsed: Container(),

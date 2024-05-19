@@ -83,9 +83,12 @@ class _TotalWidgetState extends State<TotalWidget> {
                     'hk3ma3in' /* Order Total */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        fontFamily: 'Urbanist',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).headlineMediumFamily,
                         color: Color(0xFF14181B),
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).headlineMediumFamily),
                       ),
                 ),
               ),
@@ -96,10 +99,13 @@ class _TotalWidgetState extends State<TotalWidget> {
                     '1rt229cd' /* Your order total is a summary ... */,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Urbanist',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
                         fontSize: 16.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w300,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodyMediumFamily),
                       ),
                 ),
               ),
@@ -120,9 +126,12 @@ class _TotalWidgetState extends State<TotalWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).cultured,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Urbanist',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).titleSmallFamily,
                           color: FlutterFlowTheme.of(context).primary,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).titleSmallFamily),
                         ),
                     elevation: 2.0,
                     borderSide: BorderSide(

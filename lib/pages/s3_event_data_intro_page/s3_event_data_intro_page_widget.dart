@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -162,11 +163,15 @@ class _S3EventDataIntroPageWidgetState extends State<S3EventDataIntroPageWidget>
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(
-                                fontFamily: 'Urbanist',
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .displaySmallFamily,
                                 color: Colors.white,
                                 fontSize: 32.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w500,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .displaySmallFamily),
                               ),
                         ),
                         if (widget.doc?.propertyDescription != null &&
@@ -179,9 +184,14 @@ class _S3EventDataIntroPageWidgetState extends State<S3EventDataIntroPageWidget>
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodySmallFamily,
                                     color: Colors.white,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .bodySmallFamily),
                                   ),
                             ),
                           ),
@@ -219,12 +229,20 @@ class _S3EventDataIntroPageWidgetState extends State<S3EventDataIntroPageWidget>
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmallFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
                                                 fontSize: 12.0,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily),
                                               ),
                                         ),
                                       ],
@@ -243,10 +261,15 @@ class _S3EventDataIntroPageWidgetState extends State<S3EventDataIntroPageWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        fontFamily: 'Urbanist',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodySmallFamily,
                                         color: Colors.white,
                                         fontSize: 12.0,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodySmallFamily),
                                       ),
                                 ),
                               ),

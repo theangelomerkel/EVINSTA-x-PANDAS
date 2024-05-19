@@ -79,6 +79,7 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Urbanist',
                   letterSpacing: 0.0,
+                  useGoogleFonts: GoogleFonts.asMap().containsKey('Urbanist'),
                 ),
           ),
           actions: [],
@@ -157,7 +158,7 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
                         carouselController: _model.carouselController ??=
                             CarouselController(),
                         options: CarouselOptions(
-                          initialPage: min(1, imgs.length - 1),
+                          initialPage: max(0, min(1, imgs.length - 1)),
                           viewportFraction: 1.0,
                           disableCenter: true,
                           enlargeCenterPage: true,
@@ -196,10 +197,14 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Urbanist',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily,
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily),
                                 ),
                           ),
                         ],
@@ -224,9 +229,12 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Urbanist',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).titleSmallFamily,
                           color: Colors.white,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).titleSmallFamily),
                         ),
                     elevation: 3.0,
                     borderSide: BorderSide(
@@ -269,12 +277,17 @@ class _ArticlePageWidgetState extends State<ArticlePageWidget> {
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).secondary,
-                          textStyle:
-                              FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Urbanist',
-                                    color: Colors.white,
-                                    letterSpacing: 0.0,
-                                  ),
+                          textStyle: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleSmallFamily,
+                                color: Colors.white,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleSmallFamily),
+                              ),
                           elevation: 3.0,
                           borderSide: BorderSide(
                             color: Colors.transparent,

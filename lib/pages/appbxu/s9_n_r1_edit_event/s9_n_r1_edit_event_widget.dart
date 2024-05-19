@@ -23,6 +23,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 's9_n_r1_edit_event_model.dart';
 export 's9_n_r1_edit_event_model.dart';
 
@@ -114,8 +115,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
             'fld07s9u' /* Edit Event */,
           ),
           style: FlutterFlowTheme.of(context).headlineMedium.override(
-                fontFamily: 'Urbanist',
+                fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                 letterSpacing: 0.0,
+                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                    FlutterFlowTheme.of(context).headlineMediumFamily),
               ),
         ),
         actions: [],
@@ -184,12 +187,21 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       context)
                                                   .bodySmall
                                                   .override(
-                                                    fontFamily: 'Urbanist',
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: GoogleFonts
+                                                            .asMap()
+                                                        .containsKey(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodySmallFamily),
                                                   ),
                                             ),
                                           ),
@@ -404,15 +416,25 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0xFFF35C29),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
                                                         .override(
                                                           fontFamily:
-                                                              'Urbanist',
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: Colors.white,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                     elevation: 3.0,
                                                     borderSide: BorderSide(
@@ -444,12 +466,21 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       context)
                                                   .bodySmall
                                                   .override(
-                                                    fontFamily: 'Urbanist',
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: GoogleFonts
+                                                            .asMap()
+                                                        .containsKey(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodySmallFamily),
                                                   ),
                                             ),
                                           ),
@@ -665,15 +696,25 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: Color(0xFFF35C29),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
                                                         .override(
                                                           fontFamily:
-                                                              'Urbanist',
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: Colors.white,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                     elevation: 3.0,
                                                     borderSide: BorderSide(
@@ -705,12 +746,21 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       context)
                                                   .bodySmall
                                                   .override(
-                                                    fontFamily: 'Urbanist',
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: GoogleFonts
+                                                            .asMap()
+                                                        .containsKey(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodySmallFamily),
                                                   ),
                                             ),
                                           ),
@@ -735,18 +785,29 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       .getText(
                                                 'tq2o2bzo' /* New event name */,
                                               ),
-                                              hintStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .headlineSmall
-                                                  .override(
-                                                    fontFamily: 'Urbanist',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .grayIcon,
-                                                    fontSize: 16.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w300,
-                                                  ),
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmallFamily,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .grayIcon,
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w300,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmallFamily),
+                                                      ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: FlutterFlowTheme.of(
@@ -794,9 +855,17 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
-                                                  fontFamily: 'Urbanist',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallFamily,
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmallFamily),
                                                 ),
                                             maxLines: 2,
                                             validator: _model
@@ -820,12 +889,21 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       context)
                                                   .bodySmall
                                                   .override(
-                                                    fontFamily: 'Urbanist',
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: GoogleFonts
+                                                            .asMap()
+                                                        .containsKey(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodySmallFamily),
                                                   ),
                                             ),
                                           ),
@@ -919,17 +997,26 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                               ),
                                                         'Tuesday, June 27',
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Urbanist',
-                                                            fontSize: 16.0,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w300,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                fontSize: 16.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w300,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
                                                     ),
                                                   ),
                                                   Align(
@@ -970,19 +1057,27 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                                 ),
                                                           '4:38 PM',
                                                         ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Urbanist',
-                                                              fontSize: 16.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w300,
-                                                            ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w300,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
                                                       ),
                                                     ),
                                                   ),
@@ -1007,12 +1102,21 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       context)
                                                   .bodySmall
                                                   .override(
-                                                    fontFamily: 'Urbanist',
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: GoogleFonts
+                                                            .asMap()
+                                                        .containsKey(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodySmallFamily),
                                                   ),
                                             ),
                                           ),
@@ -1045,11 +1149,20 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Urbanist',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w300,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -1098,10 +1211,19 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
-                                                  fontFamily: 'Urbanist',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodySmallFamily,
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodySmallFamily),
                                                 ),
                                             maxLines: 2,
                                             validator: _model
@@ -1140,13 +1262,22 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Urbanist',
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
                                                       fontSize: 14.0,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily),
                                                     ),
                                             elevation: 0.0,
                                             borderSide: BorderSide(
@@ -1172,12 +1303,21 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       context)
                                                   .bodySmall
                                                   .override(
-                                                    fontFamily: 'Urbanist',
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: GoogleFonts
+                                                            .asMap()
+                                                        .containsKey(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodySmallFamily),
                                                   ),
                                             ),
                                           ),
@@ -1194,18 +1334,29 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                             decoration: InputDecoration(
                                               hintText: formPropertiesRecord
                                                   .propertyDescription,
-                                              hintStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .headlineSmall
-                                                  .override(
-                                                    fontFamily: 'Urbanist',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .grayIcon,
-                                                    fontSize: 16.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w300,
-                                                  ),
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmallFamily,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .grayIcon,
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w300,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmallFamily),
+                                                      ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: FlutterFlowTheme.of(
@@ -1249,9 +1400,17 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
-                                                  fontFamily: 'Urbanist',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallFamily,
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmallFamily),
                                                 ),
                                             maxLines: 4,
                                             validator: _model
@@ -1271,19 +1430,27 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                     .getText(
                                                   'ypom6n2u' /* Property neighborhood */,
                                                 ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodySmall
-                                                    .override(
-                                                      fontFamily: 'Urbanist',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodySmallFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .primaryText,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                    ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodySmallFamily),
+                                                        ),
                                               ),
                                             ],
                                           ),
@@ -1311,11 +1478,20 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Urbanist',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w300,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -1364,10 +1540,19 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
-                                                  fontFamily: 'Urbanist',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodySmallFamily,
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodySmallFamily),
                                                 ),
                                             maxLines: 2,
                                             validator: _model
@@ -1391,12 +1576,21 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       context)
                                                   .bodySmall
                                                   .override(
-                                                    fontFamily: 'Urbanist',
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: GoogleFonts
+                                                            .asMap()
+                                                        .containsKey(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodySmallFamily),
                                                   ),
                                             ),
                                           ),
@@ -1419,13 +1613,21 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                     context)
                                                 .headlineMedium
                                                 .override(
-                                                  fontFamily: 'Urbanist',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .grayIcon,
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w300,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineMediumFamily),
                                                 ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -1474,10 +1676,17 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineMediumFamily,
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(FlutterFlowTheme
+                                                            .of(context)
+                                                        .headlineMediumFamily),
                                               ),
                                           keyboardType: const TextInputType
                                               .numberWithOptions(
@@ -1502,12 +1711,21 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       context)
                                                   .bodySmall
                                                   .override(
-                                                    fontFamily: 'Urbanist',
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: GoogleFonts
+                                                            .asMap()
+                                                        .containsKey(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodySmallFamily),
                                                   ),
                                             ),
                                           ),
@@ -1532,13 +1750,21 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                     context)
                                                 .headlineMedium
                                                 .override(
-                                                  fontFamily: 'Urbanist',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .grayIcon,
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w300,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineMediumFamily),
                                                 ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -1587,10 +1813,17 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineMediumFamily,
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(FlutterFlowTheme
+                                                            .of(context)
+                                                        .headlineMediumFamily),
                                               ),
                                           keyboardType: TextInputType.number,
                                           validator: _model
@@ -1621,8 +1854,16 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
                                               ),
                                         ),
                                         Text(
@@ -1632,8 +1873,15 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineMediumFamily,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(FlutterFlowTheme
+                                                            .of(context)
+                                                        .headlineMediumFamily),
                                               ),
                                         ),
                                       ],
@@ -1691,13 +1939,22 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                         iconPadding:
                                             EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: Color(0xFFF35C29),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
                                               color: Colors.white,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily),
                                             ),
                                         elevation: 2.0,
                                         borderSide: BorderSide(
@@ -1739,12 +1996,21 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       context)
                                                   .bodySmall
                                                   .override(
-                                                    fontFamily: 'Urbanist',
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: GoogleFonts
+                                                            .asMap()
+                                                        .containsKey(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodySmallFamily),
                                                   ),
                                             ),
                                           ),
@@ -1777,8 +2043,9 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                                   context)
                                                               .headlineSmall
                                                               .override(
-                                                                fontFamily:
-                                                                    'Urbanist',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmallFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .grayIcon,
@@ -1788,6 +2055,11 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w300,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineSmallFamily),
                                                               ),
                                                       enabledBorder:
                                                           OutlineInputBorder(
@@ -1845,9 +2117,17 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                         .headlineSmall
                                                         .override(
                                                           fontFamily:
-                                                              'Urbanist',
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmallFamily,
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmallFamily),
                                                         ),
                                                     maxLines: 2,
                                                     validator: _model
@@ -1968,9 +2248,14 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Urbanist',
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                   ),
                                                             ),
                                                           ),
@@ -2036,8 +2321,16 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
                                               ),
                                         ),
                                         Text(
@@ -2047,8 +2340,15 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineMediumFamily,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(FlutterFlowTheme
+                                                            .of(context)
+                                                        .headlineMediumFamily),
                                               ),
                                         ),
                                       ],
@@ -2076,9 +2376,17 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
                                               color: Colors.white,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily),
                                             ),
                                         elevation: 2.0,
                                         borderSide: BorderSide(
@@ -2112,9 +2420,17 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
                                               color: Colors.white,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily),
                                             ),
                                         elevation: 2.0,
                                         borderSide: BorderSide(
@@ -2150,12 +2466,21 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
-                                                  fontFamily: 'Urbanist',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodySmallFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodySmallFamily),
                                                 ),
                                           ),
                                         ),
@@ -2178,18 +2503,29 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       .getText(
                                                 'sjycvlhl' /* add url */,
                                               ),
-                                              hintStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .headlineSmall
-                                                  .override(
-                                                    fontFamily: 'Urbanist',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .grayIcon,
-                                                    fontSize: 16.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w300,
-                                                  ),
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmallFamily,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .grayIcon,
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w300,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmallFamily),
+                                                      ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: FlutterFlowTheme.of(
@@ -2237,9 +2573,17 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
-                                                  fontFamily: 'Urbanist',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallFamily,
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmallFamily),
                                                 ),
                                             maxLines: 2,
                                             validator: _model
@@ -2266,7 +2610,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Urbanist',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -2274,6 +2621,12 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                                 ),
                                               ),
@@ -2330,7 +2683,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Urbanist',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -2338,6 +2694,12 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                                 ),
                                               ),
@@ -2398,13 +2760,21 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                         .bodySmall
                                                         .override(
                                                           fontFamily:
-                                                              'Urbanist',
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodySmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodySmallFamily),
                                                         ),
                                                   ),
                                                 ),
@@ -2430,7 +2800,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                           .of(context)
                                                       .headlineMedium
                                                       .override(
-                                                        fontFamily: 'Urbanist',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineMediumFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -2439,6 +2812,12 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w300,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineMediumFamily),
                                                       ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
@@ -2500,11 +2879,19 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                         .headlineMedium
                                                         .override(
                                                           fontFamily:
-                                                              'Urbanist',
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineMediumFamily,
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineMediumFamily),
                                                         ),
                                                 keyboardType:
                                                     const TextInputType
@@ -2532,13 +2919,21 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                         .bodySmall
                                                         .override(
                                                           fontFamily:
-                                                              'Urbanist',
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodySmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodySmallFamily),
                                                         ),
                                                   ),
                                                 ),
@@ -2569,7 +2964,9 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                         .headlineSmall
                                                         .override(
                                                           fontFamily:
-                                                              'Urbanist',
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .grayIcon,
@@ -2577,6 +2974,12 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w300,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmallFamily),
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
@@ -2637,9 +3040,18 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                           context)
                                                       .headlineSmall
                                                       .override(
-                                                        fontFamily: 'Urbanist',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmallFamily,
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmallFamily),
                                                       ),
                                                   maxLines: 2,
                                                   validator: _model
@@ -2665,12 +3077,21 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                       context)
                                                   .bodyMedium
                                                   .override(
-                                                    fontFamily: 'Urbanist',
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: GoogleFonts
+                                                            .asMap()
+                                                        .containsKey(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily),
                                                   ),
                                             ),
                                           ),
@@ -2697,13 +3118,22 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                           context)
                                                       .displaySmall
                                                       .override(
-                                                        fontFamily: 'Urbanist',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .displaySmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .displaySmallFamily),
                                                       ),
                                                 ),
                                                 collapsed: Container(),
@@ -2785,7 +3215,8 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                                     .headlineMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Urbanist',
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .grayIcon,
@@ -2796,6 +3227,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w300,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).headlineMediumFamily),
                                                                     ),
                                                             enabledBorder:
                                                                 OutlineInputBorder(
@@ -2861,14 +3296,20 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                                   .of(context)
                                                               .headlineMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Urbanist',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineMediumFamily,
                                                                 fontSize: 16.0,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .bold,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineMediumFamily),
                                                               ),
                                                           validator: _model
                                                               .searchTextControllerValidator
@@ -3022,7 +3463,10 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Urbanist',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -3030,6 +3474,12 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                                 ),
                                               ),
@@ -3081,27 +3531,30 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                           context: context,
                                                           builder:
                                                               (alertDialogContext) {
-                                                            return AlertDialog(
-                                                              title: Text(
-                                                                  'Do you want delete the event?'),
-                                                              actions: [
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext,
-                                                                          false),
-                                                                  child: Text(
-                                                                      'Cancel'),
-                                                                ),
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext,
-                                                                          true),
-                                                                  child: Text(
-                                                                      'Confirm'),
-                                                                ),
-                                                              ],
+                                                            return WebViewAware(
+                                                              child:
+                                                                  AlertDialog(
+                                                                title: Text(
+                                                                    'Do you want delete the event?'),
+                                                                actions: [
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext,
+                                                                            false),
+                                                                    child: Text(
+                                                                        'Cancel'),
+                                                                  ),
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext,
+                                                                            true),
+                                                                    child: Text(
+                                                                        'Confirm'),
+                                                                  ),
+                                                                ],
+                                                              ),
                                                             );
                                                           },
                                                         ) ??
@@ -3154,9 +3607,17 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                                         .titleSmall
                                                         .override(
                                                           fontFamily:
-                                                              'Urbanist',
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: Colors.white,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                 elevation: 2.0,
                                                 borderSide: BorderSide(
@@ -3193,8 +3654,16 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
                                               ),
                                         ),
                                         Text(
@@ -3204,8 +3673,15 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineMediumFamily,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(FlutterFlowTheme
+                                                            .of(context)
+                                                        .headlineMediumFamily),
                                               ),
                                         ),
                                       ],
@@ -3233,9 +3709,17 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
                                               color: Colors.white,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily),
                                             ),
                                         elevation: 2.0,
                                         borderSide: BorderSide(
@@ -3309,9 +3793,17 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
                                               color: Colors.white,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily),
                                             ),
                                         elevation: 2.0,
                                         borderSide: BorderSide(
@@ -3346,6 +3838,7 @@ class _S9NR1EditEventWidgetState extends State<S9NR1EditEventWidget> {
                               duration: Duration(milliseconds: 500),
                               curve: Curves.ease,
                             );
+                            setState(() {});
                           },
                           effect: smooth_page_indicator.ExpandingDotsEffect(
                             expansionFactor: 3.0,

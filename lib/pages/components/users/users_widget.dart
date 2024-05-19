@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'users_model.dart';
 export 'users_model.dart';
 
@@ -129,10 +130,12 @@ class _UsersWidgetState extends State<UsersWidget> {
                       useSafeArea: true,
                       context: context,
                       builder: (context) {
-                        return Padding(
-                          padding: MediaQuery.viewInsetsOf(context),
-                          child: ProfileUserWidget(
-                            user: widget.user!.reference,
+                        return WebViewAware(
+                          child: Padding(
+                            padding: MediaQuery.viewInsetsOf(context),
+                            child: ProfileUserWidget(
+                              user: widget.user!.reference,
+                            ),
                           ),
                         );
                       },
@@ -213,10 +216,13 @@ class _UsersWidgetState extends State<UsersWidget> {
                       'user123',
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Urbanist',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
                           color: FlutterFlowTheme.of(context).primaryText,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.normal,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodyMediumFamily),
                         ),
                   ),
                 ),

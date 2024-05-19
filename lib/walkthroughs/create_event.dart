@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
-import '/pages/components/empty_events/empty_events_widget.dart';
+import '/pages/empty_events/empty_events_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 

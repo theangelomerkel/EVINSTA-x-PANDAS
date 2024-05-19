@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 's1_login_and_sign_up_model.dart';
 export 's1_login_and_sign_up_model.dart';
 
@@ -106,8 +107,12 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                         labelColor: FlutterFlowTheme.of(context).primaryText,
                         labelStyle:
                             FlutterFlowTheme.of(context).titleMedium.override(
-                                  fontFamily: 'Urbanist',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleMediumFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleMediumFamily),
                                 ),
                         unselectedLabelStyle: TextStyle(),
                         indicatorColor:
@@ -162,10 +167,14 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                               fontFamily: 'Lexend Deca',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .grayIcon,
+                                                      .tertiary,
                                               fontSize: 14.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          'Lexend Deca'),
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -177,6 +186,10 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                               fontSize: 14.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          'Lexend Deca'),
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -216,16 +229,19 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                         filled: true,
                                         fillColor: FlutterFlowTheme.of(context)
                                             .alternate,
-                                        contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                20.0, 24.0, 20.0, 24.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Urbanist',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
                                             color: Color(0xFF0F1113),
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmallFamily),
                                           ),
                                       maxLines: null,
                                       keyboardType: TextInputType.emailAddress,
@@ -254,10 +270,14 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                               fontFamily: 'Lexend Deca',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .grayIcon,
+                                                      .tertiary,
                                               fontSize: 14.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          'Lexend Deca'),
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -269,6 +289,10 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                               fontSize: 14.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          'Lexend Deca'),
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -308,9 +332,6 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                         filled: true,
                                         fillColor: FlutterFlowTheme.of(context)
                                             .alternate,
-                                        contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                20.0, 24.0, 20.0, 24.0),
                                         suffixIcon: InkWell(
                                           onTap: () => setState(
                                             () => _model
@@ -331,9 +352,15 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Urbanist',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
                                             color: Color(0xFF0F1113),
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmallFamily),
                                           ),
                                       keyboardType:
                                           TextInputType.visiblePassword,
@@ -373,17 +400,19 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                           await showDialog(
                                             context: context,
                                             builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: Text(
-                                                    'You need to accept the terms of use to continue'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: Text('Ok'),
-                                                  ),
-                                                ],
+                                              return WebViewAware(
+                                                child: AlertDialog(
+                                                  title: Text(
+                                                      'You need to accept the terms of use to continue'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: Text('Ok'),
+                                                    ),
+                                                  ],
+                                                ),
                                               );
                                             },
                                           );
@@ -414,6 +443,10 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                               fontSize: 16.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          'Lexend Deca'),
                                             ),
                                         elevation: 1.0,
                                         borderSide: BorderSide(
@@ -461,11 +494,19 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMediumFamily),
                                             ),
                                         elevation: 0.0,
                                         borderSide: BorderSide(
@@ -502,11 +543,19 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .grayIcon,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily),
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -518,6 +567,10 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                               fontSize: 14.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          'Lexend Deca'),
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -557,9 +610,6 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                         filled: true,
                                         fillColor: FlutterFlowTheme.of(context)
                                             .alternate,
-                                        contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                20.0, 24.0, 20.0, 24.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -569,6 +619,8 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                             fontSize: 14.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.normal,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey('Lexend Deca'),
                                           ),
                                       maxLines: null,
                                       keyboardType: TextInputType.emailAddress,
@@ -592,11 +644,19 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .grayIcon,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily),
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -608,6 +668,10 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                               fontSize: 14.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          'Lexend Deca'),
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -647,9 +711,6 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                         filled: true,
                                         fillColor: FlutterFlowTheme.of(context)
                                             .alternate,
-                                        contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                20.0, 24.0, 20.0, 24.0),
                                         suffixIcon: InkWell(
                                           onTap: () => setState(
                                             () => _model.passwordVisibility =
@@ -674,6 +735,8 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                             fontSize: 14.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.normal,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey('Lexend Deca'),
                                           ),
                                       keyboardType:
                                           TextInputType.visiblePassword,
@@ -700,11 +763,19 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .grayIcon,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily),
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -716,6 +787,10 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                               fontSize: 14.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          'Lexend Deca'),
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -755,9 +830,6 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                         filled: true,
                                         fillColor: FlutterFlowTheme.of(context)
                                             .alternate,
-                                        contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                20.0, 24.0, 20.0, 24.0),
                                         suffixIcon: InkWell(
                                           onTap: () => setState(
                                             () => _model
@@ -784,6 +856,8 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                             fontSize: 14.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.normal,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey('Lexend Deca'),
                                           ),
                                       keyboardType:
                                           TextInputType.visiblePassword,
@@ -797,7 +871,6 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                         0.0, 24.0, 0.0, 0.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
-                                        Function() _navigate = () {};
                                         HapticFeedback.selectionClick();
                                         if (_model.terms) {
                                           GoRouter.of(context)
@@ -836,34 +909,35 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                                 createdTime:
                                                     getCurrentTimestamp,
                                               ));
-
-                                          _navigate = () => context.goNamedAuth(
-                                              'S2_HomePage', context.mounted);
                                         } else {
                                           HapticFeedback.vibrate();
                                           await showDialog(
                                             context: context,
                                             builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: Text(
-                                                    'You need to accept the terms of use to continue'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: Text('Ok'),
-                                                  ),
-                                                ],
+                                              return WebViewAware(
+                                                child: AlertDialog(
+                                                  title: Text(
+                                                      'You need to accept the terms of use to continue'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: Text('Ok'),
+                                                    ),
+                                                  ],
+                                                ),
                                               );
                                             },
                                           );
                                         }
 
-                                        _navigate();
+                                        context.pushNamedAuth(
+                                            'eventorganisersignup',
+                                            context.mounted);
                                       },
                                       text: FFLocalizations.of(context).getText(
-                                        'hjjyohu6' /* Create Account */,
+                                        'hjjyohu6' /* ORGANISER SIGN UP */,
                                       ),
                                       options: FFButtonOptions(
                                         width: 230.0,
@@ -885,6 +959,224 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                               fontSize: 16.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          'Lexend Deca'),
+                                            ),
+                                        elevation: 1.0,
+                                        borderSide: BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 24.0, 0.0, 0.0),
+                                    child: FFButtonWidget(
+                                      onPressed: () async {
+                                        HapticFeedback.selectionClick();
+                                        if (_model.terms) {
+                                          GoRouter.of(context)
+                                              .prepareAuthEvent();
+                                          if (_model.passwordTextController
+                                                  .text !=
+                                              _model
+                                                  .passwordConfirmTextController
+                                                  .text) {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  'Passwords don\'t match!',
+                                                ),
+                                              ),
+                                            );
+                                            return;
+                                          }
+
+                                          final user = await authManager
+                                              .createAccountWithEmail(
+                                            context,
+                                            _model.emailAddressTextController
+                                                .text,
+                                            _model.passwordTextController.text,
+                                          );
+                                          if (user == null) {
+                                            return;
+                                          }
+
+                                          await UsersRecord.collection
+                                              .doc(user.uid)
+                                              .update(createUsersRecordData(
+                                                email: FFAppState().email,
+                                                createdTime:
+                                                    getCurrentTimestamp,
+                                              ));
+                                        } else {
+                                          HapticFeedback.vibrate();
+                                          await showDialog(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return WebViewAware(
+                                                child: AlertDialog(
+                                                  title: Text(
+                                                      'You need to accept the terms of use to continue'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: Text('Ok'),
+                                                    ),
+                                                  ],
+                                                ),
+                                              );
+                                            },
+                                          );
+                                        }
+
+                                        context.pushNamedAuth(
+                                            'djsignup', context.mounted);
+                                      },
+                                      text: FFLocalizations.of(context).getText(
+                                        'meac14tc' /* DJ SIGN UP */,
+                                      ),
+                                      options: FFButtonOptions(
+                                        width: 230.0,
+                                        height: 42.0,
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 0.0),
+                                        iconPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondary,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Lexend Deca',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBtnText,
+                                              fontSize: 16.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.normal,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          'Lexend Deca'),
+                                            ),
+                                        elevation: 1.0,
+                                        borderSide: BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 24.0, 0.0, 0.0),
+                                    child: FFButtonWidget(
+                                      onPressed: () async {
+                                        HapticFeedback.selectionClick();
+                                        if (_model.terms) {
+                                          GoRouter.of(context)
+                                              .prepareAuthEvent();
+                                          if (_model.passwordTextController
+                                                  .text !=
+                                              _model
+                                                  .passwordConfirmTextController
+                                                  .text) {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  'Passwords don\'t match!',
+                                                ),
+                                              ),
+                                            );
+                                            return;
+                                          }
+
+                                          final user = await authManager
+                                              .createAccountWithEmail(
+                                            context,
+                                            _model.emailAddressTextController
+                                                .text,
+                                            _model.passwordTextController.text,
+                                          );
+                                          if (user == null) {
+                                            return;
+                                          }
+
+                                          await UsersRecord.collection
+                                              .doc(user.uid)
+                                              .update(createUsersRecordData(
+                                                email: FFAppState().email,
+                                                createdTime:
+                                                    getCurrentTimestamp,
+                                              ));
+                                        } else {
+                                          HapticFeedback.vibrate();
+                                          await showDialog(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return WebViewAware(
+                                                child: AlertDialog(
+                                                  title: Text(
+                                                      'You need to accept the terms of use to continue'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: Text('Ok'),
+                                                    ),
+                                                  ],
+                                                ),
+                                              );
+                                            },
+                                          );
+                                        }
+
+                                        context.pushNamedAuth(
+                                            'usersignuo', context.mounted);
+                                      },
+                                      text: FFLocalizations.of(context).getText(
+                                        '8s21huhp' /* Create Account */,
+                                      ),
+                                      options: FFButtonOptions(
+                                        width: 230.0,
+                                        height: 42.0,
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 0.0),
+                                        iconPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondary,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Lexend Deca',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBtnText,
+                                              fontSize: 16.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.normal,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          'Lexend Deca'),
                                             ),
                                         elevation: 1.0,
                                         borderSide: BorderSide(
@@ -921,11 +1213,16 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                             '6pcbm2s8' /* Or use a social account to log... */,
                           ),
                           textAlign: TextAlign.center,
-                          style:
-                              FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Urbanist',
-                                    letterSpacing: 0.0,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleSmallFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleSmallFamily),
+                              ),
                         ),
                       ),
                     ),
@@ -956,16 +1253,18 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                           await showDialog(
                             context: context,
                             builder: (alertDialogContext) {
-                              return AlertDialog(
-                                title: Text(
-                                    'You need to accept the terms of use to continue'),
-                                actions: [
-                                  TextButton(
-                                    onPressed: () =>
-                                        Navigator.pop(alertDialogContext),
-                                    child: Text('Ok'),
-                                  ),
-                                ],
+                              return WebViewAware(
+                                child: AlertDialog(
+                                  title: Text(
+                                      'You need to accept the terms of use to continue'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                ),
                               );
                             },
                           );
@@ -988,9 +1287,13 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                         textStyle: FlutterFlowTheme.of(context)
                             .titleSmall
                             .override(
-                              fontFamily: 'Urbanist',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).titleSmallFamily,
                               color: FlutterFlowTheme.of(context).primaryText,
                               letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .titleSmallFamily),
                             ),
                         borderSide: BorderSide(
                           color: Colors.transparent,
@@ -1019,16 +1322,18 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                                 await showDialog(
                                   context: context,
                                   builder: (alertDialogContext) {
-                                    return AlertDialog(
-                                      title: Text(
-                                          'You need to accept the terms of use to continue'),
-                                      actions: [
-                                        TextButton(
-                                          onPressed: () =>
-                                              Navigator.pop(alertDialogContext),
-                                          child: Text('Ok'),
-                                        ),
-                                      ],
+                                    return WebViewAware(
+                                      child: AlertDialog(
+                                        title: Text(
+                                            'You need to accept the terms of use to continue'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
+                                      ),
                                     );
                                   },
                                 );
@@ -1052,10 +1357,15 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleSmallFamily,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleSmallFamily),
                                   ),
                               borderSide: BorderSide(
                                 color: Colors.transparent,
@@ -1082,16 +1392,18 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                           await showDialog(
                             context: context,
                             builder: (alertDialogContext) {
-                              return AlertDialog(
-                                title: Text(
-                                    'You need to accept the terms of use to continue'),
-                                actions: [
-                                  TextButton(
-                                    onPressed: () =>
-                                        Navigator.pop(alertDialogContext),
-                                    child: Text('Ok'),
-                                  ),
-                                ],
+                              return WebViewAware(
+                                child: AlertDialog(
+                                  title: Text(
+                                      'You need to accept the terms of use to continue'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.pop(alertDialogContext),
+                                      child: Text('Ok'),
+                                    ),
+                                  ],
+                                ),
                               );
                             },
                           );
@@ -1114,9 +1426,13 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                         textStyle: FlutterFlowTheme.of(context)
                             .titleSmall
                             .override(
-                              fontFamily: 'Urbanist',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).titleSmallFamily,
                               color: FlutterFlowTheme.of(context).primaryText,
                               letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .titleSmallFamily),
                             ),
                         borderSide: BorderSide(
                           color: Colors.transparent,
@@ -1186,11 +1502,14 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                         'j0h1yw8t' /* I agree with  */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Urbanist',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
                             color: FlutterFlowTheme.of(context).primaryText,
                             fontSize: 12.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
                           ),
                     ),
                   ),
@@ -1212,11 +1531,15 @@ class _S1LoginAndSignUpWidgetState extends State<S1LoginAndSignUpWidget>
                         textStyle: FlutterFlowTheme.of(context)
                             .titleSmall
                             .override(
-                              fontFamily: 'Urbanist',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).titleSmallFamily,
                               color: FlutterFlowTheme.of(context).primaryText,
                               fontSize: 12.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .titleSmallFamily),
                             ),
                         elevation: 0.0,
                         borderSide: BorderSide(

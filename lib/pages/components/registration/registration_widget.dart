@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'registration_model.dart';
 export 'registration_model.dart';
 
@@ -120,8 +121,13 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleMediumFamily,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMediumFamily),
                                     ),
                                 unselectedLabelStyle: TextStyle(),
                                 indicatorColor:
@@ -182,6 +188,10 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                     letterSpacing: 0.0,
                                                     fontWeight:
                                                         FontWeight.normal,
+                                                    useGoogleFonts:
+                                                        GoogleFonts.asMap()
+                                                            .containsKey(
+                                                                'Lexend Deca'),
                                                   ),
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
@@ -195,6 +205,10 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                     letterSpacing: 0.0,
                                                     fontWeight:
                                                         FontWeight.normal,
+                                                    useGoogleFonts:
+                                                        GoogleFonts.asMap()
+                                                            .containsKey(
+                                                                'Lexend Deca'),
                                                   ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -247,9 +261,18 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
                                                 .override(
-                                                  fontFamily: 'Urbanist',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily,
                                                   color: Color(0xFF0F1113),
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily),
                                                 ),
                                             maxLines: null,
                                             keyboardType:
@@ -288,6 +311,10 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                     letterSpacing: 0.0,
                                                     fontWeight:
                                                         FontWeight.normal,
+                                                    useGoogleFonts:
+                                                        GoogleFonts.asMap()
+                                                            .containsKey(
+                                                                'Lexend Deca'),
                                                   ),
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
@@ -301,6 +328,10 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                     letterSpacing: 0.0,
                                                     fontWeight:
                                                         FontWeight.normal,
+                                                    useGoogleFonts:
+                                                        GoogleFonts.asMap()
+                                                            .containsKey(
+                                                                'Lexend Deca'),
                                                   ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -372,9 +403,18 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
                                                 .override(
-                                                  fontFamily: 'Urbanist',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily,
                                                   color: Color(0xFF0F1113),
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily),
                                                 ),
                                             keyboardType:
                                                 TextInputType.visiblePassword,
@@ -419,17 +459,19 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   context: context,
                                                   builder:
                                                       (alertDialogContext) {
-                                                    return AlertDialog(
-                                                      title: Text(
-                                                          'You need to accept the terms of use to continue'),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext),
-                                                          child: Text('Ok'),
-                                                        ),
-                                                      ],
+                                                    return WebViewAware(
+                                                      child: AlertDialog(
+                                                        title: Text(
+                                                            'You need to accept the terms of use to continue'),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext),
+                                                            child: Text('Ok'),
+                                                          ),
+                                                        ],
+                                                      ),
                                                     );
                                                   },
                                                 );
@@ -463,6 +505,10 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                     letterSpacing: 0.0,
                                                     fontWeight:
                                                         FontWeight.normal,
+                                                    useGoogleFonts:
+                                                        GoogleFonts.asMap()
+                                                            .containsKey(
+                                                                'Lexend Deca'),
                                                   ),
                                               elevation: 1.0,
                                               borderSide: BorderSide(
@@ -515,12 +561,21 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .titleMedium
                                                       .override(
-                                                        fontFamily: 'Urbanist',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMediumFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumFamily),
                                                       ),
                                               elevation: 0.0,
                                               borderSide: BorderSide(
@@ -557,12 +612,21 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Urbanist',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily),
                                                       ),
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
@@ -576,6 +640,10 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                     letterSpacing: 0.0,
                                                     fontWeight:
                                                         FontWeight.normal,
+                                                    useGoogleFonts:
+                                                        GoogleFonts.asMap()
+                                                            .containsKey(
+                                                                'Lexend Deca'),
                                                   ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -633,6 +701,10 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
+                                                  useGoogleFonts:
+                                                      GoogleFonts.asMap()
+                                                          .containsKey(
+                                                              'Lexend Deca'),
                                                 ),
                                             maxLines: null,
                                             keyboardType:
@@ -662,12 +734,21 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Urbanist',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily),
                                                       ),
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
@@ -681,6 +762,10 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                     letterSpacing: 0.0,
                                                     fontWeight:
                                                         FontWeight.normal,
+                                                    useGoogleFonts:
+                                                        GoogleFonts.asMap()
+                                                            .containsKey(
+                                                                'Lexend Deca'),
                                                   ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -757,6 +842,10 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
+                                                  useGoogleFonts:
+                                                      GoogleFonts.asMap()
+                                                          .containsKey(
+                                                              'Lexend Deca'),
                                                 ),
                                             keyboardType:
                                                 TextInputType.visiblePassword,
@@ -786,12 +875,21 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Urbanist',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .secondaryText,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily),
                                                       ),
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
@@ -805,6 +903,10 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                     letterSpacing: 0.0,
                                                     fontWeight:
                                                         FontWeight.normal,
+                                                    useGoogleFonts:
+                                                        GoogleFonts.asMap()
+                                                            .containsKey(
+                                                                'Lexend Deca'),
                                                   ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -881,6 +983,10 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
+                                                  useGoogleFonts:
+                                                      GoogleFonts.asMap()
+                                                          .containsKey(
+                                                              'Lexend Deca'),
                                                 ),
                                             keyboardType:
                                                 TextInputType.visiblePassword,
@@ -949,17 +1055,19 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                   context: context,
                                                   builder:
                                                       (alertDialogContext) {
-                                                    return AlertDialog(
-                                                      title: Text(
-                                                          'You need to accept the terms of use to continue'),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext),
-                                                          child: Text('Ok'),
-                                                        ),
-                                                      ],
+                                                    return WebViewAware(
+                                                      child: AlertDialog(
+                                                        title: Text(
+                                                            'You need to accept the terms of use to continue'),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext),
+                                                            child: Text('Ok'),
+                                                          ),
+                                                        ],
+                                                      ),
                                                     );
                                                   },
                                                 );
@@ -993,6 +1101,10 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                     letterSpacing: 0.0,
                                                     fontWeight:
                                                         FontWeight.normal,
+                                                    useGoogleFonts:
+                                                        GoogleFonts.asMap()
+                                                            .containsKey(
+                                                                'Lexend Deca'),
                                                   ),
                                               elevation: 1.0,
                                               borderSide: BorderSide(
@@ -1033,8 +1145,13 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleSmallFamily,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily),
                                     ),
                               ),
                             ),
@@ -1067,16 +1184,18 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                 await showDialog(
                                   context: context,
                                   builder: (alertDialogContext) {
-                                    return AlertDialog(
-                                      title: Text(
-                                          'You need to accept the terms of use to continue'),
-                                      actions: [
-                                        TextButton(
-                                          onPressed: () =>
-                                              Navigator.pop(alertDialogContext),
-                                          child: Text('Ok'),
-                                        ),
-                                      ],
+                                    return WebViewAware(
+                                      child: AlertDialog(
+                                        title: Text(
+                                            'You need to accept the terms of use to continue'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
+                                      ),
                                     );
                                   },
                                 );
@@ -1100,10 +1219,15 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleSmallFamily,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleSmallFamily),
                                   ),
                               borderSide: BorderSide(
                                 color: Colors.transparent,
@@ -1132,16 +1256,19 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                       await showDialog(
                                         context: context,
                                         builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            title: Text(
-                                                'You need to accept the terms of use to continue'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext),
-                                                child: Text('Ok'),
-                                              ),
-                                            ],
+                                          return WebViewAware(
+                                            child: AlertDialog(
+                                              title: Text(
+                                                  'You need to accept the terms of use to continue'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: Text('Ok'),
+                                                ),
+                                              ],
+                                            ),
                                           );
                                         },
                                       );
@@ -1166,10 +1293,16 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily),
                                         ),
                                     borderSide: BorderSide(
                                       color: Colors.transparent,
@@ -1196,16 +1329,18 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                 await showDialog(
                                   context: context,
                                   builder: (alertDialogContext) {
-                                    return AlertDialog(
-                                      title: Text(
-                                          'You need to accept the terms of use to continue'),
-                                      actions: [
-                                        TextButton(
-                                          onPressed: () =>
-                                              Navigator.pop(alertDialogContext),
-                                          child: Text('Ok'),
-                                        ),
-                                      ],
+                                    return WebViewAware(
+                                      child: AlertDialog(
+                                        title: Text(
+                                            'You need to accept the terms of use to continue'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
+                                      ),
                                     );
                                   },
                                 );
@@ -1229,10 +1364,15 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleSmallFamily,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleSmallFamily),
                                   ),
                               borderSide: BorderSide(
                                 color: Colors.transparent,
@@ -1306,10 +1446,14 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Urbanist',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily,
                                   fontSize: 12.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily),
                                 ),
                           ),
                         ),
@@ -1333,12 +1477,17 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleSmallFamily,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleSmallFamily),
                                   ),
                               elevation: 0.0,
                               borderSide: BorderSide(

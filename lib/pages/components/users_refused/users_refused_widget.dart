@@ -145,10 +145,14 @@ class _UsersRefusedWidgetState extends State<UsersRefusedWidget> {
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                fontFamily: 'Urbanist',
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.normal,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily),
                               ),
                         ),
                       ),

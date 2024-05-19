@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -90,7 +91,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
             width: MediaQuery.sizeOf(context).width * 1.0,
             height: 160.0,
             decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).primaryBackground,
+              color: FlutterFlowTheme.of(context).secondaryBackground,
             ),
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(20.0, 40.0, 20.0, 0.0),
@@ -147,13 +148,15 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                                 'User123',
                               ),
                               style: FlutterFlowTheme.of(context)
-                                  .headlineSmall
+                                  .titleLarge
                                   .override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Colors.white,
-                                    fontSize: 20.0,
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleLargeFamily,
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleLargeFamily),
                                   ),
                             ),
                           ),
@@ -166,10 +169,13 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Lexend Deca',
-                                    color: Color(0xFFF35C29),
+                                    color:
+                                        FlutterFlowTheme.of(context).tertiary,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey('Lexend Deca'),
                                   ),
                             ),
                           ),
@@ -236,6 +242,8 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
+                                  useGoogleFonts:
+                                      GoogleFonts.asMap().containsKey('Outfit'),
                                 ),
                           ),
                           Container(
@@ -345,6 +353,8 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
+                                  useGoogleFonts:
+                                      GoogleFonts.asMap().containsKey('Outfit'),
                                 ),
                           ),
                           Container(
@@ -425,7 +435,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                     boxShadow: [
                       BoxShadow(
                         blurRadius: 0.0,
-                        color: Color(0xFFE3E5E7),
+                        color: FlutterFlowTheme.of(context).tertiary,
                         offset: Offset(
                           0.0,
                           2.0,
@@ -434,7 +444,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                     ],
                     borderRadius: BorderRadius.circular(0.0),
                     border: Border.all(
-                      color: FlutterFlowTheme.of(context).lineGray,
+                      color: FlutterFlowTheme.of(context).tertiary,
                       width: 0.0,
                     ),
                   ),
@@ -449,11 +459,17 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                           FFLocalizations.of(context).getText(
                             '1uvmbwsk' /* Account Details */,
                           ),
-                          style:
-                              FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Urbanist',
-                                    letterSpacing: 0.0,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleSmallFamily,
+                                fontSize: 40.0,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleSmallFamily),
+                              ),
                         ),
                       ],
                     ),
@@ -478,29 +494,23 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                   color: Colors.transparent,
                   elevation: 0.0,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(0.0),
+                    borderRadius: BorderRadius.circular(24.0),
                   ),
-                  child: Container(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
+                  child: AnimatedContainer(
+                    duration: Duration(milliseconds: 280),
+                    curve: Curves.bounceOut,
+                    width: MediaQuery.sizeOf(context).width * 0.898,
                     height: 50.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                      boxShadow: [
-                        BoxShadow(
-                          blurRadius: 0.0,
-                          color: FlutterFlowTheme.of(context).lineGray,
-                          offset: Offset(
-                            0.0,
-                            2.0,
-                          ),
-                        )
-                      ],
-                      borderRadius: BorderRadius.circular(0.0),
+                      borderRadius: BorderRadius.circular(24.0),
+                      shape: BoxShape.rectangle,
                       border: Border.all(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                        width: 0.0,
+                        color: FlutterFlowTheme.of(context).tertiary,
+                        width: 4.0,
                       ),
                     ),
+                    alignment: AlignmentDirectional(3.0, 0.0),
                     child: Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 4.0, 0.0),
@@ -515,8 +525,12 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Urbanist',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleSmallFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleSmallFamily),
                                 ),
                           ),
                           FlutterFlowIconButton(
@@ -525,7 +539,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                             buttonSize: 46.0,
                             icon: Icon(
                               Icons.chevron_right_rounded,
-                              color: Color(0xFF95A1AC),
+                              color: FlutterFlowTheme.of(context).tertiary,
                               size: 25.0,
                             ),
                             onPressed: () {
@@ -551,28 +565,19 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                     color: Colors.transparent,
                     elevation: 0.0,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0.0),
+                      borderRadius: BorderRadius.circular(24.0),
                     ),
-                    child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
+                    child: AnimatedContainer(
+                      duration: Duration(milliseconds: 270),
+                      curve: Curves.bounceOut,
+                      width: MediaQuery.sizeOf(context).width * 0.898,
                       height: 50.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 0.0,
-                            color: FlutterFlowTheme.of(context).lineGray,
-                            offset: Offset(
-                              0.0,
-                              2.0,
-                            ),
-                          )
-                        ],
-                        borderRadius: BorderRadius.circular(0.0),
+                        borderRadius: BorderRadius.circular(24.0),
                         border: Border.all(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          width: 0.0,
+                          color: FlutterFlowTheme.of(context).tertiary,
+                          width: 4.0,
                         ),
                       ),
                       child: Padding(
@@ -589,8 +594,13 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleSmallFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleSmallFamily),
                                   ),
                             ),
                             FlutterFlowIconButton(
@@ -599,7 +609,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                               buttonSize: 46.0,
                               icon: Icon(
                                 Icons.chevron_right_rounded,
-                                color: Color(0xFF95A1AC),
+                                color: FlutterFlowTheme.of(context).tertiary,
                                 size: 25.0,
                               ),
                               onPressed: () {
@@ -640,28 +650,19 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                     color: Colors.transparent,
                     elevation: 0.0,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0.0),
+                      borderRadius: BorderRadius.circular(24.0),
                     ),
-                    child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
+                    child: AnimatedContainer(
+                      duration: Duration(milliseconds: 320),
+                      curve: Curves.bounceOut,
+                      width: MediaQuery.sizeOf(context).width * 0.898,
                       height: 50.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 0.0,
-                            color: FlutterFlowTheme.of(context).lineGray,
-                            offset: Offset(
-                              0.0,
-                              2.0,
-                            ),
-                          )
-                        ],
-                        borderRadius: BorderRadius.circular(0.0),
+                        borderRadius: BorderRadius.circular(24.0),
                         border: Border.all(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          width: 0.0,
+                          color: FlutterFlowTheme.of(context).tertiary,
+                          width: 4.0,
                         ),
                       ),
                       child: Padding(
@@ -678,8 +679,13 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleSmallFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleSmallFamily),
                                   ),
                             ),
                             FlutterFlowIconButton(
@@ -688,7 +694,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                               buttonSize: 46.0,
                               icon: Icon(
                                 Icons.chevron_right_rounded,
-                                color: Color(0xFF95A1AC),
+                                color: FlutterFlowTheme.of(context).tertiary,
                                 size: 25.0,
                               ),
                               onPressed: () {
@@ -722,28 +728,19 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                     color: Colors.transparent,
                     elevation: 0.0,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0.0),
+                      borderRadius: BorderRadius.circular(24.0),
                     ),
-                    child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
+                    child: AnimatedContainer(
+                      duration: Duration(milliseconds: 580),
+                      curve: Curves.bounceOut,
+                      width: MediaQuery.sizeOf(context).width * 0.898,
                       height: 50.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 0.0,
-                            color: FlutterFlowTheme.of(context).lineGray,
-                            offset: Offset(
-                              0.0,
-                              2.0,
-                            ),
-                          )
-                        ],
-                        borderRadius: BorderRadius.circular(0.0),
+                        borderRadius: BorderRadius.circular(24.0),
                         border: Border.all(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          width: 0.0,
+                          color: FlutterFlowTheme.of(context).tertiary,
+                          width: 4.0,
                         ),
                       ),
                       child: Padding(
@@ -761,8 +758,13 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleSmallFamily,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily),
                                     ),
                               ),
                             ),
@@ -772,7 +774,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                               buttonSize: 46.0,
                               icon: Icon(
                                 Icons.chevron_right_rounded,
-                                color: Color(0xFF95A1AC),
+                                color: FlutterFlowTheme.of(context).tertiary,
                                 size: 25.0,
                               ),
                               onPressed: () async {
@@ -806,28 +808,19 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                     color: Colors.transparent,
                     elevation: 0.0,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0.0),
+                      borderRadius: BorderRadius.circular(24.0),
                     ),
-                    child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
+                    child: AnimatedContainer(
+                      duration: Duration(milliseconds: 100),
+                      curve: Curves.elasticOut,
+                      width: MediaQuery.sizeOf(context).width * 0.898,
                       height: 50.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 0.0,
-                            color: FlutterFlowTheme.of(context).lineGray,
-                            offset: Offset(
-                              0.0,
-                              2.0,
-                            ),
-                          )
-                        ],
-                        borderRadius: BorderRadius.circular(0.0),
+                        borderRadius: BorderRadius.circular(24.0),
                         border: Border.all(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          width: 0.0,
+                          color: FlutterFlowTheme.of(context).tertiary,
+                          width: 4.0,
                         ),
                       ),
                       child: Padding(
@@ -853,8 +846,13 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Urbanist',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .titleSmallFamily,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily),
                                       ),
                                 ),
                               ),
@@ -864,7 +862,7 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                                 buttonSize: 46.0,
                                 icon: Icon(
                                   Icons.chevron_right_rounded,
-                                  color: Color(0xFF95A1AC),
+                                  color: FlutterFlowTheme.of(context).tertiary,
                                   size: 25.0,
                                 ),
                                 onPressed: () {
@@ -906,11 +904,13 @@ class _S8ProfilePageWidgetState extends State<S8ProfilePageWidget>
                       fontSize: 16.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w500,
+                      useGoogleFonts:
+                          GoogleFonts.asMap().containsKey('Lexend Deca'),
                     ),
                 elevation: 0.0,
                 borderSide: BorderSide(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  width: 1.0,
+                  color: FlutterFlowTheme.of(context).tertiary,
+                  width: 4.0,
                 ),
                 borderRadius: BorderRadius.circular(40.0),
               ),

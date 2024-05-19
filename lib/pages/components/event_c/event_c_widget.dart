@@ -2,6 +2,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -119,8 +120,10 @@ class _EventCWidgetState extends State<EventCWidget>
             child: Text(
               widget.event!.propertyName,
               style: FlutterFlowTheme.of(context).titleMedium.override(
-                    fontFamily: 'Urbanist',
+                    fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                     letterSpacing: 0.0,
+                    useGoogleFonts: GoogleFonts.asMap().containsKey(
+                        FlutterFlowTheme.of(context).titleMediumFamily),
                   ),
             ),
           ),

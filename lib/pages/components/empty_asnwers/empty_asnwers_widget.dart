@@ -57,11 +57,13 @@ class _EmptyAsnwersWidgetState extends State<EmptyAsnwersWidget> {
                 'ockomfom' /* No answers */,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Urbanist',
+                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                     color: FlutterFlowTheme.of(context).primaryText,
                     fontSize: 20.0,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w600,
+                    useGoogleFonts: GoogleFonts.asMap().containsKey(
+                        FlutterFlowTheme.of(context).bodyMediumFamily),
                   ),
             ),
           ),

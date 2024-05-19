@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/components/event_c/event_c_widget.dart';
 import '/walkthroughs/create_event.dart';
+import 'dart:math';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart'
     show TutorialCoachMark;
 import 'package:flutter/material.dart';
@@ -192,8 +193,13 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .headlineMediumFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .headlineMediumFamily),
                                   ),
                             ),
                             Padding(
@@ -238,8 +244,14 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodySmallFamily,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodySmallFamily),
                                         ),
                                   );
                                 },
@@ -335,14 +347,14 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                       elevation: 1.0,
                                       shape: RoundedRectangleBorder(
                                         borderRadius:
-                                            BorderRadius.circular(16.0),
+                                            BorderRadius.circular(24.0),
                                       ),
                                       child: Container(
                                         width: 140.0,
                                         height: 100.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
+                                              .primary,
                                           boxShadow: [
                                             BoxShadow(
                                               blurRadius: 4.0,
@@ -357,10 +369,10 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                             )
                                           ],
                                           borderRadius:
-                                              BorderRadius.circular(16.0),
+                                              BorderRadius.circular(24.0),
                                           border: Border.all(
                                             color: FlutterFlowTheme.of(context)
-                                                .secondary,
+                                                .tertiary,
                                             width: 3.0,
                                           ),
                                         ),
@@ -373,12 +385,21 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Urbanist',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
                                                   fontSize: 18.0,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily),
                                                 ),
                                           ),
                                         ),
@@ -408,7 +429,7 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                           elevation: 1.0,
                                           shape: RoundedRectangleBorder(
                                             borderRadius:
-                                                BorderRadius.circular(16.0),
+                                                BorderRadius.circular(24.0),
                                           ),
                                           child: Container(
                                             width: 140.0,
@@ -416,7 +437,7 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                                      .primary,
                                               boxShadow: [
                                                 BoxShadow(
                                                   blurRadius: 4.0,
@@ -431,11 +452,11 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                                 )
                                               ],
                                               borderRadius:
-                                                  BorderRadius.circular(16.0),
+                                                  BorderRadius.circular(24.0),
                                               border: Border.all(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .secondary,
+                                                        .tertiary,
                                                 width: 3.0,
                                               ),
                                             ),
@@ -455,13 +476,22 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Urbanist',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
                                                         fontSize: 18.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                                 ),
                                               ),
@@ -470,89 +500,90 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                         ),
                                       ),
                                     ),
-                                  Builder(
-                                    builder: (context) => InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        await Share.share(
-                                          'https://docs.google.com/forms/d/e/1FAIpQLSewtXcrbHI-OqeQAZohVlk9a20SVdg5eEZnZmVYPUKQKe16wQ/viewform?usp=sf_link',
-                                          sharePositionOrigin:
-                                              getWidgetBoundingBox(context),
-                                        );
-                                      },
-                                      child: Material(
-                                        color: Colors.transparent,
-                                        elevation: 1.0,
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(16.0),
-                                        ),
-                                        child: Container(
-                                          width: 140.0,
-                                          height: 100.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 4.0,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondary,
-                                                offset: Offset(
-                                                  0.0,
-                                                  0.0,
-                                                ),
-                                                spreadRadius: 0.0,
-                                              )
-                                            ],
-                                            borderRadius:
-                                                BorderRadius.circular(16.0),
-                                            border: Border.all(
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed('test');
+                                    },
+                                    child: Material(
+                                      color: Colors.transparent,
+                                      elevation: 1.0,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(24.0),
+                                      ),
+                                      child: Container(
+                                        width: 140.0,
+                                        height: 100.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          boxShadow: [
+                                            BoxShadow(
+                                              blurRadius: 4.0,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondary,
-                                              width: 3.0,
-                                            ),
+                                              offset: Offset(
+                                                0.0,
+                                                0.0,
+                                              ),
+                                              spreadRadius: 0.0,
+                                            )
+                                          ],
+                                          borderRadius:
+                                              BorderRadius.circular(24.0),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context)
+                                                .tertiary,
+                                            width: 3.0,
                                           ),
-                                          child: Builder(
-                                            builder: (context) => Padding(
-                                              padding: EdgeInsets.all(12.0),
-                                              child: InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  await Share.share(
-                                                    'https://docs.google.com/forms/d/e/1FAIpQLSewtXcrbHI-OqeQAZohVlk9a20SVdg5eEZnZmVYPUKQKe16wQ/viewform?usp=sf_link',
-                                                    sharePositionOrigin:
-                                                        getWidgetBoundingBox(
-                                                            context),
-                                                  );
-                                                },
-                                                child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'daip9flv' /* Feedback */,
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Urbanist',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        fontSize: 18.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                        ),
+                                        child: Builder(
+                                          builder: (context) => Padding(
+                                            padding: EdgeInsets.all(12.0),
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await Share.share(
+                                                  'https://docs.google.com/forms/d/e/1FAIpQLSewtXcrbHI-OqeQAZohVlk9a20SVdg5eEZnZmVYPUKQKe16wQ/viewform?usp=sf_link',
+                                                  sharePositionOrigin:
+                                                      getWidgetBoundingBox(
+                                                          context),
+                                                );
+                                              },
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'daip9flv' /* Feedback */,
                                                 ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          fontSize: 18.0,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -615,8 +646,13 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .headlineMedium
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .headlineMediumFamily,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineMediumFamily),
                                     ),
                               ),
                             ),

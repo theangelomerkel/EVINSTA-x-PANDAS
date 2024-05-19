@@ -1,5 +1,4 @@
 import '/auth/base_auth_user_provider.dart';
-import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -54,24 +53,19 @@ class _EmptyEventsWidgetState extends State<EmptyEventsWidget> {
                 '8zxon5w9' /* No events in this date */,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Urbanist',
+                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                     color: FlutterFlowTheme.of(context).primaryText,
                     fontSize: 20.0,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w600,
+                    useGoogleFonts: GoogleFonts.asMap().containsKey(
+                        FlutterFlowTheme.of(context).bodyMediumFamily),
                   ),
             ),
           ),
           FFButtonWidget(
             onPressed: () async {
               if (loggedIn) {
-                if ((currentUserDisplayName != null &&
-                        currentUserDisplayName != '') &&
-                    (currentUserEmail != null && currentUserEmail != '')) {
-                  context.pushNamed('S9_NR1_createEvent');
-                } else {
-                  context.pushNamed('S8_NR2_editProfile');
-                }
               } else {
                 context.pushNamed('S1_Login_andSignUp');
               }
@@ -86,9 +80,11 @@ class _EmptyEventsWidgetState extends State<EmptyEventsWidget> {
               iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
               color: FlutterFlowTheme.of(context).secondary,
               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                    fontFamily: 'Urbanist',
+                    fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                     color: Colors.white,
                     letterSpacing: 0.0,
+                    useGoogleFonts: GoogleFonts.asMap().containsKey(
+                        FlutterFlowTheme.of(context).titleSmallFamily),
                   ),
               elevation: 1.0,
               borderSide: BorderSide(

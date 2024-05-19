@@ -41,7 +41,7 @@ class _S8NR1PaymentInfoWidgetState extends State<S8NR1PaymentInfoWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      backgroundColor: FlutterFlowTheme.of(context).alternate,
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: false,
@@ -64,8 +64,10 @@ class _S8NR1PaymentInfoWidgetState extends State<S8NR1PaymentInfoWidget> {
             'yxslh3rr' /* Payment Information */,
           ),
           style: FlutterFlowTheme.of(context).headlineMedium.override(
-                fontFamily: 'Urbanist',
+                fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                 letterSpacing: 0.0,
+                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                    FlutterFlowTheme.of(context).headlineMediumFamily),
               ),
         ),
         actions: [],
@@ -107,24 +109,29 @@ class _S8NR1PaymentInfoWidgetState extends State<S8NR1PaymentInfoWidget> {
                         obscureNumber: true,
                         obscureCvv: false,
                         spacing: 10.0,
-                        textStyle:
-                            FlutterFlowTheme.of(context).bodyMedium.override(
-                                  fontFamily: 'Urbanist',
-                                  color: FlutterFlowTheme.of(context).grayIcon,
-                                  letterSpacing: 0.0,
-                                ),
+                        textStyle: FlutterFlowTheme.of(context)
+                            .bodyMedium
+                            .override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
+                              color: FlutterFlowTheme.of(context).tertiary,
+                              letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily),
+                            ),
                         inputDecoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).lineGray,
-                              width: 2.0,
+                              color: FlutterFlowTheme.of(context).tertiary,
+                              width: 3.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).lineGray,
-                              width: 2.0,
+                              color: FlutterFlowTheme.of(context).tertiary,
+                              width: 3.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
@@ -156,6 +163,8 @@ class _S8NR1PaymentInfoWidgetState extends State<S8NR1PaymentInfoWidget> {
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey('Lexend Deca'),
                                   ),
                           elevation: 3.0,
                           borderSide: BorderSide(

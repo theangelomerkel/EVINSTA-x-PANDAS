@@ -96,10 +96,13 @@ class _PropertyWidgetState extends State<PropertyWidget> {
                   replacement: '…',
                 ),
                 style: FlutterFlowTheme.of(context).headlineSmall.override(
-                      fontFamily: 'Urbanist',
+                      fontFamily:
+                          FlutterFlowTheme.of(context).headlineSmallFamily,
                       color: Color(0xFF1E2429),
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.bold,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).headlineSmallFamily),
                     ),
               ),
             ),
@@ -114,6 +117,8 @@ class _PropertyWidgetState extends State<PropertyWidget> {
                       fontFamily: 'Lexend Deca',
                       color: FlutterFlowTheme.of(context).grayIcon,
                       letterSpacing: 0.0,
+                      useGoogleFonts:
+                          GoogleFonts.asMap().containsKey('Lexend Deca'),
                     ),
               ),
             ),

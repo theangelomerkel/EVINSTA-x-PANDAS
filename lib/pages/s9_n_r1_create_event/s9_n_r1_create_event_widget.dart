@@ -123,8 +123,10 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
             'h0wkwhgc' /* Create Event */,
           ),
           style: FlutterFlowTheme.of(context).headlineMedium.override(
-                fontFamily: 'Urbanist',
+                fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                 letterSpacing: 0.0,
+                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                    FlutterFlowTheme.of(context).headlineMediumFamily),
               ),
         ),
         actions: [],
@@ -170,12 +172,20 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmallFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily),
                                               ),
                                         ),
                                       ),
@@ -185,77 +195,93 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       height: 160.0,
                                       child: Stack(
                                         children: [
-                                          Container(
-                                            width: 200.0,
-                                            height: 150.0,
-                                            decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                fit: BoxFit.contain,
-                                                image: Image.asset(
-                                                  'assets/images/EVI_Logo.png',
-                                                ).image,
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
+                                            child: Container(
+                                              width: 200.0,
+                                              height: 150.0,
+                                              decoration: BoxDecoration(
+                                                image: DecorationImage(
+                                                  fit: BoxFit.contain,
+                                                  image: Image.asset(
+                                                    'assets/images/EVI_Logo.png',
+                                                  ).image,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                                border: Border.all(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .tertiary,
+                                                ),
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(12.0),
-                                              border: Border.all(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                              ),
-                                            ),
-                                            child: Visibility(
-                                              visible: _model
-                                                          .uploadedFileUrl1 !=
-                                                      null &&
-                                                  _model.uploadedFileUrl1 != '',
-                                              child: Align(
-                                                alignment: AlignmentDirectional(
-                                                    -1.0, 0.0),
-                                                child: InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await Navigator.push(
-                                                      context,
-                                                      PageTransition(
-                                                        type: PageTransitionType
-                                                            .fade,
-                                                        child:
-                                                            FlutterFlowExpandedImageView(
-                                                          image: Image.network(
-                                                            _model
+                                              child: Visibility(
+                                                visible: _model
+                                                            .uploadedFileUrl1 !=
+                                                        null &&
+                                                    _model.uploadedFileUrl1 !=
+                                                        '',
+                                                child: Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          -1.0, 0.0),
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      await Navigator.push(
+                                                        context,
+                                                        PageTransition(
+                                                          type:
+                                                              PageTransitionType
+                                                                  .fade,
+                                                          child:
+                                                              FlutterFlowExpandedImageView(
+                                                            image:
+                                                                Image.network(
+                                                              _model
+                                                                  .uploadedFileUrl1,
+                                                              fit: BoxFit
+                                                                  .contain,
+                                                              alignment:
+                                                                  Alignment(
+                                                                      0.0, 0.0),
+                                                            ),
+                                                            allowRotation:
+                                                                false,
+                                                            tag: _model
                                                                 .uploadedFileUrl1,
-                                                            fit: BoxFit.contain,
+                                                            useHeroAnimation:
+                                                                true,
                                                           ),
-                                                          allowRotation: false,
-                                                          tag: _model
-                                                              .uploadedFileUrl1,
-                                                          useHeroAnimation:
-                                                              true,
                                                         ),
-                                                      ),
-                                                    );
-                                                  },
-                                                  child: Hero(
-                                                    tag:
-                                                        _model.uploadedFileUrl1,
-                                                    transitionOnUserGestures:
-                                                        true,
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              12.0),
-                                                      child: Image.network(
-                                                        _model.uploadedFileUrl1,
-                                                        width: 200.0,
-                                                        height: 150.0,
-                                                        fit: BoxFit.cover,
+                                                      );
+                                                    },
+                                                    child: Hero(
+                                                      tag: _model
+                                                          .uploadedFileUrl1,
+                                                      transitionOnUserGestures:
+                                                          true,
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(12.0),
+                                                        child: Image.network(
+                                                          _model
+                                                              .uploadedFileUrl1,
+                                                          width: 200.0,
+                                                          height: 150.0,
+                                                          fit: BoxFit.cover,
+                                                          alignment: Alignment(
+                                                              0.0, 0.0),
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
@@ -359,15 +385,25 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                     EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
-                                                color: Color(0xFFF35C29),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
                                                           fontFamily:
-                                                              'Urbanist',
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: Colors.white,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                 elevation: 3.0,
                                                 borderSide: BorderSide(
@@ -395,12 +431,20 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmallFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily),
                                               ),
                                         ),
                                       ),
@@ -410,77 +454,93 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       height: 210.0,
                                       child: Stack(
                                         children: [
-                                          Container(
-                                            width: 270.0,
-                                            height: 200.0,
-                                            decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                fit: BoxFit.contain,
-                                                image: Image.asset(
-                                                  'assets/images/GRID_02.jpg',
-                                                ).image,
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
+                                            child: Container(
+                                              width: 270.0,
+                                              height: 200.0,
+                                              decoration: BoxDecoration(
+                                                image: DecorationImage(
+                                                  fit: BoxFit.contain,
+                                                  image: Image.asset(
+                                                    'assets/images/GRID_02.jpg',
+                                                  ).image,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                                border: Border.all(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .tertiary,
+                                                ),
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(12.0),
-                                              border: Border.all(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                              ),
-                                            ),
-                                            child: Visibility(
-                                              visible: _model
-                                                          .uploadedFileUrl2 !=
-                                                      null &&
-                                                  _model.uploadedFileUrl2 != '',
-                                              child: Align(
-                                                alignment: AlignmentDirectional(
-                                                    -1.0, 0.0),
-                                                child: InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await Navigator.push(
-                                                      context,
-                                                      PageTransition(
-                                                        type: PageTransitionType
-                                                            .fade,
-                                                        child:
-                                                            FlutterFlowExpandedImageView(
-                                                          image: Image.network(
-                                                            _model
+                                              child: Visibility(
+                                                visible: _model
+                                                            .uploadedFileUrl2 !=
+                                                        null &&
+                                                    _model.uploadedFileUrl2 !=
+                                                        '',
+                                                child: Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          -1.0, 0.0),
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      await Navigator.push(
+                                                        context,
+                                                        PageTransition(
+                                                          type:
+                                                              PageTransitionType
+                                                                  .fade,
+                                                          child:
+                                                              FlutterFlowExpandedImageView(
+                                                            image:
+                                                                Image.network(
+                                                              _model
+                                                                  .uploadedFileUrl2,
+                                                              fit: BoxFit
+                                                                  .contain,
+                                                              alignment:
+                                                                  Alignment(
+                                                                      0.0, 0.0),
+                                                            ),
+                                                            allowRotation:
+                                                                false,
+                                                            tag: _model
                                                                 .uploadedFileUrl2,
-                                                            fit: BoxFit.contain,
+                                                            useHeroAnimation:
+                                                                true,
                                                           ),
-                                                          allowRotation: false,
-                                                          tag: _model
-                                                              .uploadedFileUrl2,
-                                                          useHeroAnimation:
-                                                              true,
                                                         ),
-                                                      ),
-                                                    );
-                                                  },
-                                                  child: Hero(
-                                                    tag:
-                                                        _model.uploadedFileUrl2,
-                                                    transitionOnUserGestures:
-                                                        true,
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              12.0),
-                                                      child: Image.network(
-                                                        _model.uploadedFileUrl2,
-                                                        width: 270.0,
-                                                        height: 200.0,
-                                                        fit: BoxFit.cover,
+                                                      );
+                                                    },
+                                                    child: Hero(
+                                                      tag: _model
+                                                          .uploadedFileUrl2,
+                                                      transitionOnUserGestures:
+                                                          true,
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(12.0),
+                                                        child: Image.network(
+                                                          _model
+                                                              .uploadedFileUrl2,
+                                                          width: 270.0,
+                                                          height: 200.0,
+                                                          fit: BoxFit.cover,
+                                                          alignment: Alignment(
+                                                              0.0, 0.0),
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
@@ -585,15 +645,25 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                     EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
-                                                color: Color(0xFFF35C29),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
                                                         .override(
                                                           fontFamily:
-                                                              'Urbanist',
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: Colors.white,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                 elevation: 3.0,
                                                 borderSide: BorderSide(
@@ -621,12 +691,20 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmallFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily),
                                               ),
                                         ),
                                       ),
@@ -648,19 +726,26 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                   context)
                                               .headlineSmall
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmallFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .grayIcon,
+                                                        .tertiary,
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w300,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(FlutterFlowTheme
+                                                            .of(context)
+                                                        .headlineSmallFamily),
                                               ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .alternate,
+                                                      .tertiary,
                                               width: 1.0,
                                             ),
                                             borderRadius:
@@ -702,9 +787,17 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmallFamily,
                                               fontSize: 16.0,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallFamily),
                                             ),
                                         maxLines: 2,
                                         validator: _model
@@ -725,12 +818,20 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmallFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily),
                                               ),
                                         ),
                                       ),
@@ -782,7 +883,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                               BorderRadius.circular(12.0),
                                           border: Border.all(
                                             color: FlutterFlowTheme.of(context)
-                                                .alternate,
+                                                .tertiary,
                                             width: 1.0,
                                           ),
                                         ),
@@ -815,11 +916,20 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Urbanist',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w300,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                                 ),
                                               ),
@@ -853,11 +963,19 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily:
-                                                              'Urbanist',
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w300,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
                                                         ),
                                                   ),
                                                 ),
@@ -880,12 +998,20 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmallFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily),
                                               ),
                                         ),
                                       ),
@@ -908,19 +1034,26 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                   context)
                                               .headlineSmall
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmallFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .grayIcon,
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w300,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(FlutterFlowTheme
+                                                            .of(context)
+                                                        .headlineSmallFamily),
                                               ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .alternate,
+                                                      .tertiary,
                                               width: 1.0,
                                             ),
                                             borderRadius:
@@ -962,9 +1095,17 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmallFamily,
                                               fontSize: 16.0,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallFamily),
                                             ),
                                         maxLines: 2,
                                         validator: _model
@@ -1001,12 +1142,20 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
                                               fontSize: 14.0,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily),
                                             ),
                                         elevation: 0.0,
                                         borderSide: BorderSide(
@@ -1029,12 +1178,20 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmallFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily),
                                               ),
                                         ),
                                       ),
@@ -1055,19 +1212,26 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                   context)
                                               .headlineSmall
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmallFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .grayIcon,
+                                                        .tertiary,
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w300,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(FlutterFlowTheme
+                                                            .of(context)
+                                                        .headlineSmallFamily),
                                               ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .alternate,
+                                                      .tertiary,
                                               width: 1.0,
                                             ),
                                             borderRadius:
@@ -1105,9 +1269,17 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmallFamily,
                                               fontSize: 16.0,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallFamily),
                                             ),
                                         maxLines: 4,
                                         validator: _model
@@ -1128,12 +1300,21 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
-                                                  fontFamily: 'Urbanist',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodySmallFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodySmallFamily),
                                                 ),
                                           ),
                                         ],
@@ -1151,20 +1332,28 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                               .getText(
                                             'jqhwbbpl' /* 123 Disney way here… */,
                                           ),
-                                          hintStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Urbanist',
-                                                    fontSize: 16.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w300,
-                                                  ),
+                                          hintStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
+                                                fontSize: 16.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w300,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
+                                              ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .alternate,
+                                                      .tertiary,
                                               width: 1.0,
                                             ),
                                             borderRadius:
@@ -1206,10 +1395,18 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodySmallFamily,
                                               fontSize: 16.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.bold,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodySmallFamily),
                                             ),
                                         maxLines: 2,
                                         validator: _model
@@ -1230,12 +1427,20 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmallFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily),
                                               ),
                                         ),
                                       ),
@@ -1252,18 +1457,25 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .headlineMedium
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .grayIcon,
+                                                      .tertiary,
                                               fontSize: 16.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w300,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(FlutterFlowTheme
+                                                          .of(context)
+                                                      .headlineMediumFamily),
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
-                                                .alternate,
+                                                .tertiary,
                                             width: 1.0,
                                           ),
                                           borderRadius:
@@ -1301,10 +1513,16 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .headlineMedium
                                           .override(
-                                            fontFamily: 'Urbanist',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineMediumFamily,
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineMediumFamily),
                                           ),
                                       keyboardType:
                                           const TextInputType.numberWithOptions(
@@ -1326,12 +1544,20 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmallFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily),
                                               ),
                                         ),
                                       ),
@@ -1348,18 +1574,25 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .headlineMedium
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .grayIcon,
+                                                      .tertiary,
                                               fontSize: 16.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w300,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(FlutterFlowTheme
+                                                          .of(context)
+                                                      .headlineMediumFamily),
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
-                                                .alternate,
+                                                .tertiary,
                                             width: 1.0,
                                           ),
                                           borderRadius:
@@ -1397,10 +1630,16 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .headlineMedium
                                           .override(
-                                            fontFamily: 'Urbanist',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineMediumFamily,
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineMediumFamily),
                                           ),
                                       keyboardType: TextInputType.number,
                                       validator: _model
@@ -1429,8 +1668,14 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Urbanist',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily),
                                           ),
                                     ),
                                     Text(
@@ -1440,8 +1685,14 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .headlineMedium
                                           .override(
-                                            fontFamily: 'Urbanist',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineMediumFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineMediumFamily),
                                           ),
                                     ),
                                   ],
@@ -1463,13 +1714,20 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                         0.0, 0.0, 0.0, 0.0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: Color(0xFFF35C29),
+                                    color:
+                                        FlutterFlowTheme.of(context).secondary,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
                                           color: Colors.white,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily),
                                         ),
                                     elevation: 2.0,
                                     borderSide: BorderSide(
@@ -1504,12 +1762,20 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodySmallFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodySmallFamily),
                                             ),
                                       ),
                                     ),
@@ -1530,13 +1796,20 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                   context)
                                               .headlineSmall
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmallFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .grayIcon,
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w300,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(FlutterFlowTheme
+                                                            .of(context)
+                                                        .headlineSmallFamily),
                                               ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
@@ -1584,9 +1857,17 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmallFamily,
                                               fontSize: 16.0,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallFamily),
                                             ),
                                         maxLines: 2,
                                         validator: _model
@@ -1612,12 +1893,21 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                       context)
                                                   .bodyMedium
                                                   .override(
-                                                    fontFamily: 'Urbanist',
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: GoogleFonts
+                                                            .asMap()
+                                                        .containsKey(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily),
                                                   ),
                                             ),
                                           ),
@@ -1667,12 +1957,21 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                       context)
                                                   .bodyMedium
                                                   .override(
-                                                    fontFamily: 'Urbanist',
+                                                    fontFamily:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: GoogleFonts
+                                                            .asMap()
+                                                        .containsKey(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily),
                                                   ),
                                             ),
                                           ),
@@ -1719,19 +2018,27 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                     .getText(
                                                   'w7l5zdyd' /* PRICE/Ticket Sale */,
                                                 ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodySmall
-                                                    .override(
-                                                      fontFamily: 'Urbanist',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodySmallFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .primaryText,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                    ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodySmallFamily),
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -1747,18 +2054,29 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                       .getText(
                                                 'tc2ilp05' /* $ Price */,
                                               ),
-                                              hintStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .headlineMedium
-                                                  .override(
-                                                    fontFamily: 'Urbanist',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .grayIcon,
-                                                    fontSize: 16.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w300,
-                                                  ),
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineMediumFamily,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .grayIcon,
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w300,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineMediumFamily),
+                                                      ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: FlutterFlowTheme.of(
@@ -1806,10 +2124,18 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineMedium
                                                 .override(
-                                                  fontFamily: 'Urbanist',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineMediumFamily,
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineMediumFamily),
                                                 ),
                                             keyboardType: const TextInputType
                                                 .numberWithOptions(
@@ -1830,19 +2156,27 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                     .getText(
                                                   '1bqj90wb' /* PayPal URL */,
                                                 ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodySmall
-                                                    .override(
-                                                      fontFamily: 'Urbanist',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodySmallFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .primaryText,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                    ),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodySmallFamily),
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -1861,20 +2195,28 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                         .getText(
                                                   'i5h0jczd' /* add url */,
                                                 ),
-                                                hintStyle: FlutterFlowTheme.of(
-                                                        context)
-                                                    .headlineSmall
-                                                    .override(
-                                                      fontFamily: 'Urbanist',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                hintStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmallFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .grayIcon,
-                                                      fontSize: 16.0,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FontWeight.w300,
-                                                    ),
+                                                          fontSize: 16.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w300,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmallFamily),
+                                                        ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
                                                   borderSide: BorderSide(
@@ -1929,9 +2271,18 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .headlineSmall
                                                       .override(
-                                                        fontFamily: 'Urbanist',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmallFamily,
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmallFamily),
                                                       ),
                                               maxLines: 2,
                                               validator: _model
@@ -1954,12 +2305,20 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
                                               ),
                                         ),
                                       ),
@@ -1986,13 +2345,22 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .displaySmall
                                                       .override(
-                                                        fontFamily: 'Urbanist',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .displaySmallFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .displaySmallFamily),
                                                       ),
                                             ),
                                             collapsed: Container(),
@@ -2069,8 +2437,9 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                                     context)
                                                                 .headlineMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Urbanist',
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineMediumFamily,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .grayIcon,
@@ -2081,6 +2450,11 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w300,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineMediumFamily),
                                                                 ),
                                                         enabledBorder:
                                                             OutlineInputBorder(
@@ -2142,17 +2516,26 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                             EdgeInsets.all(
                                                                 12.0),
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .headlineMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Urbanist',
-                                                            fontSize: 16.0,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineMediumFamily,
+                                                                fontSize: 16.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineMediumFamily),
+                                                              ),
                                                       validator: _model
                                                           .searchTextControllerValidator
                                                           .asValidator(context),
@@ -2306,8 +2689,14 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Urbanist',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily),
                                           ),
                                     ),
                                     Text(
@@ -2317,8 +2706,14 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .headlineMedium
                                           .override(
-                                            fontFamily: 'Urbanist',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineMediumFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineMediumFamily),
                                           ),
                                     ),
                                   ],
@@ -2449,9 +2844,15 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
                                           color: Colors.white,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily),
                                         ),
                                     elevation: 2.0,
                                     borderSide: BorderSide(
@@ -2487,12 +2888,20 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodySmallFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodySmallFamily),
                                             ),
                                       ),
                                     ),
@@ -2519,20 +2928,28 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                         .getText(
                                                   'msx7uomf' /* add Artist or soundcloud link */,
                                                 ),
-                                                hintStyle: FlutterFlowTheme.of(
-                                                        context)
-                                                    .headlineSmall
-                                                    .override(
-                                                      fontFamily: 'Urbanist',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                hintStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmallFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .grayIcon,
-                                                      fontSize: 16.0,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FontWeight.w300,
-                                                    ),
+                                                          fontSize: 16.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w300,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmallFamily),
+                                                        ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
                                                   borderSide: BorderSide(
@@ -2587,9 +3004,18 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .headlineSmall
                                                       .override(
-                                                        fontFamily: 'Urbanist',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmallFamily,
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmallFamily),
                                                       ),
                                               maxLines: 2,
                                               validator: _model
@@ -2698,10 +3124,16 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                                     context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Urbanist',
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
                                                                 ),
                                                       ),
                                                     ),
@@ -2762,8 +3194,14 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Urbanist',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily),
                                           ),
                                     ),
                                     Text(
@@ -2773,8 +3211,14 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .headlineMedium
                                           .override(
-                                            fontFamily: 'Urbanist',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineMediumFamily,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineMediumFamily),
                                           ),
                                     ),
                                   ],
@@ -2818,9 +3262,15 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
                                           color: Colors.white,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily),
                                         ),
                                     elevation: 2.0,
                                     borderSide: BorderSide(
@@ -2854,6 +3304,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                           duration: Duration(milliseconds: 500),
                           curve: Curves.ease,
                         );
+                        setState(() {});
                       },
                       effect: smooth_page_indicator.ExpandingDotsEffect(
                         expansionFactor: 3.0,

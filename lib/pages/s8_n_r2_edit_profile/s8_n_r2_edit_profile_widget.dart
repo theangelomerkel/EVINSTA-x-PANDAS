@@ -86,10 +86,12 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
             '3yjdjuhi' /* Edit Profile */,
           ),
           style: FlutterFlowTheme.of(context).titleSmall.override(
-                fontFamily: 'Urbanist',
+                fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                 fontSize: 22.0,
                 letterSpacing: 0.0,
                 fontWeight: FontWeight.w500,
+                useGoogleFonts: GoogleFonts.asMap()
+                    .containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
               ),
         ),
         actions: [],
@@ -107,7 +109,7 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                 width: 100.0,
                 height: 100.0,
                 decoration: BoxDecoration(
-                  color: Color(0xFFDBE2E7),
+                  color: FlutterFlowTheme.of(context).alternate,
                   shape: BoxShape.circle,
                 ),
                 child: Visibility(
@@ -181,6 +183,7 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                     maxHeight: 300.00,
                     imageQuality: 50,
                     allowPhoto: true,
+                    backgroundColor: FlutterFlowTheme.of(context).alternate,
                   );
                   if (selectedMedia != null &&
                       selectedMedia.every(
@@ -232,13 +235,15 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: Color(0xFFF35C29),
+                  color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Lexend Deca',
                         color: FlutterFlowTheme.of(context).cultured,
                         fontSize: 14.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.normal,
+                        useGoogleFonts:
+                            GoogleFonts.asMap().containsKey('Lexend Deca'),
                       ),
                   elevation: 2.0,
                   borderSide: BorderSide(
@@ -259,22 +264,30 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                       labelText: FFLocalizations.of(context).getText(
                         '4hoiv8bt' /* Full Name */,
                       ),
-                      labelStyle:
-                          FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Urbanist',
-                                letterSpacing: 0.0,
-                              ),
+                      labelStyle: FlutterFlowTheme.of(context)
+                          .bodyMedium
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                          ),
                       hintText: FFLocalizations.of(context).getText(
                         'xsrhbgs7' /* Your full name... */,
                       ),
-                      hintStyle:
-                          FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Urbanist',
-                                letterSpacing: 0.0,
-                              ),
+                      hintStyle: FlutterFlowTheme.of(context)
+                          .bodyMedium
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                          ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).lineGray,
+                          color: FlutterFlowTheme.of(context).tertiary,
                           width: 2.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
@@ -307,8 +320,11 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                           EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                     ),
                     style: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Urbanist',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).titleSmallFamily,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).titleSmallFamily),
                         ),
                     validator:
                         _model.nameTextControllerValidator.asValidator(context),
@@ -325,21 +341,28 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                     labelText: FFLocalizations.of(context).getText(
                       'wsd3xip0' /* Email Address */,
                     ),
-                    labelStyle:
-                        FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Urbanist',
-                              letterSpacing: 0.0,
-                            ),
+                    labelStyle: FlutterFlowTheme.of(context)
+                        .bodyMedium
+                        .override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
+                          letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodyMediumFamily),
+                        ),
                     hintText: FFLocalizations.of(context).getText(
                       'n9mcckvq' /* Your email.. */,
                     ),
                     hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Urbanist',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodyMediumFamily),
                         ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).lineGray,
+                        color: FlutterFlowTheme.of(context).tertiary,
                         width: 2.0,
                       ),
                       borderRadius: BorderRadius.circular(8.0),
@@ -371,8 +394,11 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                         EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                   ),
                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Urbanist',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).titleSmallFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).titleSmallFamily),
                       ),
                   validator: _model.emailAddressTextControllerValidator
                       .asValidator(context),
@@ -389,22 +415,30 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                       labelText: FFLocalizations.of(context).getText(
                         'iuyx0as4' /* Phone Number */,
                       ),
-                      labelStyle:
-                          FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Urbanist',
-                                letterSpacing: 0.0,
-                              ),
+                      labelStyle: FlutterFlowTheme.of(context)
+                          .bodyMedium
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                          ),
                       hintText: FFLocalizations.of(context).getText(
                         '9uk7rapl' /* Your full name... */,
                       ),
-                      hintStyle:
-                          FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Urbanist',
-                                letterSpacing: 0.0,
-                              ),
+                      hintStyle: FlutterFlowTheme.of(context)
+                          .bodyMedium
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                          ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).lineGray,
+                          color: FlutterFlowTheme.of(context).tertiary,
                           width: 2.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
@@ -437,8 +471,11 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                           EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                     ),
                     style: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Urbanist',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).titleSmallFamily,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).titleSmallFamily),
                         ),
                     validator: _model.phoneTextControllerValidator
                         .asValidator(context),
@@ -454,21 +491,28 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                     labelText: FFLocalizations.of(context).getText(
                       'db4jnorx' /* Bio */,
                     ),
-                    labelStyle:
-                        FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Urbanist',
-                              letterSpacing: 0.0,
-                            ),
+                    labelStyle: FlutterFlowTheme.of(context)
+                        .bodyMedium
+                        .override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
+                          letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodyMediumFamily),
+                        ),
                     hintText: FFLocalizations.of(context).getText(
                       'uccd7dsx' /* A little about you... */,
                     ),
                     hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Urbanist',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodyMediumFamily),
                         ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).lineGray,
+                        color: FlutterFlowTheme.of(context).tertiary,
                         width: 2.0,
                       ),
                       borderRadius: BorderRadius.circular(8.0),
@@ -500,8 +544,11 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                         EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                   ),
                   style: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Urbanist',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).titleSmallFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).titleSmallFamily),
                       ),
                   textAlign: TextAlign.start,
                   maxLines: 3,
@@ -537,15 +584,18 @@ class _S8NR2EditProfileWidgetState extends State<S8NR2EditProfileWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: Color(0xFFF35C29),
-                      textStyle:
-                          FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Colors.white,
-                                fontSize: 16.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.normal,
-                              ),
+                      color: FlutterFlowTheme.of(context).primary,
+                      textStyle: FlutterFlowTheme.of(context)
+                          .titleSmall
+                          .override(
+                            fontFamily: 'Lexend Deca',
+                            color: Colors.white,
+                            fontSize: 16.0,
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.normal,
+                            useGoogleFonts:
+                                GoogleFonts.asMap().containsKey('Lexend Deca'),
+                          ),
                       elevation: 2.0,
                       borderSide: BorderSide(
                         color: Colors.transparent,

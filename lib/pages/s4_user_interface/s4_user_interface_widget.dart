@@ -5,8 +5,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/components/apbar/apbar_widget.dart';
-import '/pages/components/empty_events/empty_events_widget.dart';
 import '/pages/components/event_c/event_c_widget.dart';
+import '/pages/empty_events/empty_events_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -105,38 +105,55 @@ class _S4UserInterfaceWidgetState extends State<S4UserInterfaceWidget> {
                       setState(
                           () => _model.calendarSelectedDay = newSelectedDate);
                     },
-                    titleStyle:
-                        FlutterFlowTheme.of(context).titleMedium.override(
-                              fontFamily: 'Urbanist',
-                              color: FlutterFlowTheme.of(context).secondary,
-                              fontSize: 16.0,
-                              letterSpacing: 0.0,
-                            ),
+                    titleStyle: FlutterFlowTheme.of(context)
+                        .titleMedium
+                        .override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).titleMediumFamily,
+                          color: FlutterFlowTheme.of(context).secondary,
+                          fontSize: 16.0,
+                          letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).titleMediumFamily),
+                        ),
                     dayOfWeekStyle:
                         FlutterFlowTheme.of(context).bodySmall.override(
-                              fontFamily: 'Urbanist',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodySmallFamily,
                               fontSize: 12.0,
                               letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context).bodySmallFamily),
                             ),
                     dateStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Urbanist',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
                           color: FlutterFlowTheme.of(context).secondary,
                           fontSize: 12.0,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodyMediumFamily),
                         ),
-                    selectedDateStyle:
-                        FlutterFlowTheme.of(context).titleSmall.override(
-                              fontFamily: 'Urbanist',
-                              color: Colors.white,
-                              fontSize: 14.0,
-                              letterSpacing: 0.0,
-                            ),
+                    selectedDateStyle: FlutterFlowTheme.of(context)
+                        .titleSmall
+                        .override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).titleSmallFamily,
+                          color: Colors.white,
+                          fontSize: 14.0,
+                          letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).titleSmallFamily),
+                        ),
                     inactiveDateStyle:
                         FlutterFlowTheme.of(context).bodySmall.override(
-                              fontFamily: 'Urbanist',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodySmallFamily,
                               color: Color(0x6B57636C),
                               fontSize: 12.0,
                               letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context).bodySmallFamily),
                             ),
                     locale: FFLocalizations.of(context).languageCode,
                   ),

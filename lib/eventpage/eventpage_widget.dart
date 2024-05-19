@@ -44,7 +44,7 @@ class _EventpageWidgetState extends State<EventpageWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).alternate,
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
@@ -79,9 +79,12 @@ class _EventpageWidgetState extends State<EventpageWidget> {
                       'qkfmcll8' /* Popular Events */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineLarge.override(
-                          fontFamily: 'Poppins',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).headlineLargeFamily,
                           color: FlutterFlowTheme.of(context).primaryText,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).headlineLargeFamily),
                         ),
                   ),
                 ),
@@ -102,10 +105,14 @@ class _EventpageWidgetState extends State<EventpageWidget> {
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                fontFamily: 'Urbanist',
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily),
                               ),
                         ),
                       ),
@@ -150,11 +157,19 @@ class _EventpageWidgetState extends State<EventpageWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMediumFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMediumFamily),
                                               ),
                                         ),
                                       ),
@@ -169,11 +184,19 @@ class _EventpageWidgetState extends State<EventpageWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodySmallFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodySmallFamily),
                                             ),
                                       ),
                                     ),
@@ -192,11 +215,20 @@ class _EventpageWidgetState extends State<EventpageWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondary,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumFamily),
                                                 ),
                                           ),
                                           FFButtonWidget(
@@ -220,9 +252,18 @@ class _EventpageWidgetState extends State<EventpageWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMediumFamily,
                                                         color: Colors.white,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily),
                                                       ),
                                               elevation: 0.0,
                                               borderRadius:
@@ -276,10 +317,14 @@ class _EventpageWidgetState extends State<EventpageWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelLarge
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .labelLargeFamily,
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .labelLargeFamily),
                                 ),
                           ),
                           Row(
@@ -302,10 +347,15 @@ class _EventpageWidgetState extends State<EventpageWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Urbanist',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily),
                                       ),
                                 ),
                               ),

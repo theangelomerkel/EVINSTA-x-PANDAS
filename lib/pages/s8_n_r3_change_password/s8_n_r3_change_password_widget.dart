@@ -96,8 +96,11 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
                 'irjlom3v' /* Change Password */,
               ),
               style: FlutterFlowTheme.of(context).headlineMedium.override(
-                    fontFamily: 'Urbanist',
+                    fontFamily:
+                        FlutterFlowTheme.of(context).headlineMediumFamily,
                     letterSpacing: 0.0,
+                    useGoogleFonts: GoogleFonts.asMap().containsKey(
+                        FlutterFlowTheme.of(context).headlineMediumFamily),
                   ),
             ),
             actions: [],
@@ -120,22 +123,30 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
                       labelText: FFLocalizations.of(context).getText(
                         'uwg7chwk' /* Email Address */,
                       ),
-                      labelStyle:
-                          FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Urbanist',
-                                letterSpacing: 0.0,
-                              ),
+                      labelStyle: FlutterFlowTheme.of(context)
+                          .bodyMedium
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                          ),
                       hintText: FFLocalizations.of(context).getText(
                         'rx2nr0b9' /* Your email.. */,
                       ),
-                      hintStyle:
-                          FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Urbanist',
-                                letterSpacing: 0.0,
-                              ),
+                      hintStyle: FlutterFlowTheme.of(context)
+                          .bodyMedium
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                          ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).lineGray,
+                          color: FlutterFlowTheme.of(context).tertiary,
                           width: 2.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
@@ -168,8 +179,11 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
                           EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                     ),
                     style: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Urbanist',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).titleSmallFamily,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).titleSmallFamily),
                         ),
                     validator: _model.emailAddressTextControllerValidator
                         .asValidator(context),
@@ -185,11 +199,16 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
                           FFLocalizations.of(context).getText(
                             '9k6awa7d' /* We will send you an email with... */,
                           ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Urbanist',
-                                    letterSpacing: 0.0,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
+                                letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily),
+                              ),
                         ),
                       ),
                     ],
@@ -233,7 +252,7 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: Color(0xFFF35C29),
+                        color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Lexend Deca',
@@ -241,6 +260,8 @@ class _S8NR3ChangePasswordWidgetState extends State<S8NR3ChangePasswordWidget> {
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.normal,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey('Lexend Deca'),
                                 ),
                         elevation: 2.0,
                         borderSide: BorderSide(

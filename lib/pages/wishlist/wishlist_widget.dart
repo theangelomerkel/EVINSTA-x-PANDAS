@@ -11,6 +11,7 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'wishlist_model.dart';
 export 'wishlist_model.dart';
 
@@ -89,10 +90,13 @@ class _WishlistWidgetState extends State<WishlistWidget> {
                       'p2cabu8h' /*  Wishlist */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Urbanist',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
                           color: FlutterFlowTheme.of(context).primaryText,
                           fontSize: 22.0,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodyMediumFamily),
                         ),
                   ),
                 ),
@@ -105,9 +109,11 @@ class _WishlistWidgetState extends State<WishlistWidget> {
                   'lpr8nfym' /* Check the boxes for the items ... */,
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Urbanist',
+                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                       color: FlutterFlowTheme.of(context).primaryText,
                       letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).bodyMediumFamily),
                     ),
               ),
             ),
@@ -289,11 +295,20 @@ class _WishlistWidgetState extends State<WishlistWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Urbanist',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily),
                                                 ),
                                           ),
                                         ),
@@ -372,14 +387,16 @@ class _WishlistWidgetState extends State<WishlistWidget> {
                                                           useSafeArea: true,
                                                           context: context,
                                                           builder: (context) {
-                                                            return Padding(
-                                                              padding: MediaQuery
-                                                                  .viewInsetsOf(
-                                                                      context),
-                                                              child:
-                                                                  ProfileUserWidget(
-                                                                user: stackUsersRecord
-                                                                    .reference,
+                                                            return WebViewAware(
+                                                              child: Padding(
+                                                                padding: MediaQuery
+                                                                    .viewInsetsOf(
+                                                                        context),
+                                                                child:
+                                                                    ProfileUserWidget(
+                                                                  user: stackUsersRecord
+                                                                      .reference,
+                                                                ),
                                                               ),
                                                             );
                                                           },
@@ -535,9 +552,11 @@ class _WishlistWidgetState extends State<WishlistWidget> {
                   '8iwbppk0' /* You can untick the checkboxes ... */,
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Urbanist',
+                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                       color: FlutterFlowTheme.of(context).secondaryText,
                       letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).bodyMediumFamily),
                     ),
               ),
             ),
@@ -554,11 +573,13 @@ class _WishlistWidgetState extends State<WishlistWidget> {
                 height: 42.0,
                 padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                color: FlutterFlowTheme.of(context).primary,
+                color: FlutterFlowTheme.of(context).secondary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Urbanist',
+                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                       color: Colors.white,
                       letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).titleSmallFamily),
                     ),
                 elevation: 3.0,
                 borderSide: BorderSide(

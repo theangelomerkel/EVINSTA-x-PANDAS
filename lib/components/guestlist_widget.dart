@@ -10,6 +10,7 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'guestlist_model.dart';
 export 'guestlist_model.dart';
 
@@ -107,10 +108,14 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                           '0tqp3odg' /* Guest List */,
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Urbanist',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
                               color: FlutterFlowTheme.of(context).primaryText,
                               fontSize: 22.0,
                               letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily),
                             ),
                       ),
                     ),
@@ -123,9 +128,12 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                       '58omfz6l' /* Here you can see a list of peo... */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Urbanist',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
                           color: FlutterFlowTheme.of(context).primaryText,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodyMediumFamily),
                         ),
                   ),
                 ),
@@ -144,11 +152,15 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                fontFamily: 'Urbanist',
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 fontSize: 16.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily),
                               ),
                         ),
                       ),
@@ -206,13 +218,15 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                                               useSafeArea: true,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: ProfileUserWidget(
-                                                    user: rowUsersRecord
-                                                        .reference,
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: ProfileUserWidget(
+                                                      user: rowUsersRecord
+                                                          .reference,
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -335,13 +349,21 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               fontSize: 12.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily),
                                             ),
                                       ),
                                     ].divide(SizedBox(width: 8.0)),
@@ -364,11 +386,15 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                fontFamily: 'Urbanist',
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 fontSize: 16.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily),
                               ),
                         ),
                       ),
@@ -427,13 +453,15 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                                               useSafeArea: true,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: ProfileUserWidget(
-                                                    user: rowUsersRecord
-                                                        .reference,
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: ProfileUserWidget(
+                                                      user: rowUsersRecord
+                                                          .reference,
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -557,13 +585,21 @@ class _GuestlistWidgetState extends State<GuestlistWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               fontSize: 12.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily),
                                             ),
                                       ),
                                     ].divide(SizedBox(width: 8.0)),
