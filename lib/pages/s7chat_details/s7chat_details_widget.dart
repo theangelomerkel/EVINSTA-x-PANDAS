@@ -92,9 +92,11 @@ class _S7chatDetailsWidgetState extends State<S7chatDetailsWidget> {
         title: Text(
           widget.chatUser!.displayName,
           style: FlutterFlowTheme.of(context).titleMedium.override(
-                fontFamily: 'Urbanist',
+                fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                 color: FlutterFlowTheme.of(context).tertiary,
                 letterSpacing: 0.0,
+                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                    FlutterFlowTheme.of(context).titleMediumFamily),
               ),
         ),
         actions: [],

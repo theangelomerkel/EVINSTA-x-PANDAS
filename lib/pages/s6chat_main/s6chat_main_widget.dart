@@ -41,7 +41,7 @@ class _S6chatMainWidgetState extends State<S6chatMainWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      backgroundColor: FlutterFlowTheme.of(context).alternate,
       appBar: AppBar(
         backgroundColor: Color(0xFF14181B),
         automaticallyImplyLeading: false,
@@ -50,10 +50,12 @@ class _S6chatMainWidgetState extends State<S6chatMainWidget> {
             'jlpk1vzn' /* All Chats */,
           ),
           style: FlutterFlowTheme.of(context).headlineMedium.override(
-                fontFamily: 'Urbanist',
+                fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                 color: FlutterFlowTheme.of(context).tertiary,
                 letterSpacing: 0.0,
                 fontWeight: FontWeight.bold,
+                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                    FlutterFlowTheme.of(context).headlineMediumFamily),
               ),
         ),
         actions: [],

@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'review_copy_model.dart';
 export 'review_copy_model.dart';
 
@@ -106,10 +107,14 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                         style: FlutterFlowTheme.of(context)
                             .displaySmall
                             .override(
-                              fontFamily: 'Urbanist',
+                              fontFamily: FlutterFlowTheme.of(context)
+                                  .displaySmallFamily,
                               color: FlutterFlowTheme.of(context).primaryText,
                               fontSize: 16.0,
                               letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .displaySmallFamily),
                             ),
                       );
                     },
@@ -196,24 +201,28 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                     context: context,
                                                     builder:
                                                         (alertDialogContext) {
-                                                      return AlertDialog(
-                                                        title: Text('Delete?'),
-                                                        actions: [
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext,
-                                                                    false),
-                                                            child: Text('No'),
-                                                          ),
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext,
-                                                                    true),
-                                                            child: Text('Yes'),
-                                                          ),
-                                                        ],
+                                                      return WebViewAware(
+                                                        child: AlertDialog(
+                                                          title:
+                                                              Text('Delete?'),
+                                                          actions: [
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext,
+                                                                      false),
+                                                              child: Text('No'),
+                                                            ),
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext,
+                                                                      true),
+                                                              child:
+                                                                  Text('Yes'),
+                                                            ),
+                                                          ],
+                                                        ),
                                                       );
                                                     },
                                                   ) ??
@@ -228,27 +237,29 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                     context: context,
                                                     builder:
                                                         (alertDialogContext) {
-                                                      return AlertDialog(
-                                                        title: Text(
-                                                            'Choose an action'),
-                                                        actions: [
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext,
-                                                                    false),
-                                                            child:
-                                                                Text('Profile'),
-                                                          ),
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext,
-                                                                    true),
-                                                            child:
-                                                                Text('Answer'),
-                                                          ),
-                                                        ],
+                                                      return WebViewAware(
+                                                        child: AlertDialog(
+                                                          title: Text(
+                                                              'Choose an action'),
+                                                          actions: [
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext,
+                                                                      false),
+                                                              child: Text(
+                                                                  'Profile'),
+                                                            ),
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext,
+                                                                      true),
+                                                              child: Text(
+                                                                  'Answer'),
+                                                            ),
+                                                          ],
+                                                        ),
                                                       );
                                                     },
                                                   ) ??
@@ -275,13 +286,15 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                               useSafeArea: true,
                                               context: context,
                                               builder: (context) {
-                                                return Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: ProfileUserWidget(
-                                                    user: reviewsReviewsRecord
-                                                        .userRef!,
+                                                return WebViewAware(
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: ProfileUserWidget(
+                                                      user: reviewsReviewsRecord
+                                                          .userRef!,
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -306,13 +319,22 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Urbanist',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .accent3,
                                                   fontSize: 25.0,
                                                   letterSpacing: 2.0,
                                                   fontWeight: FontWeight.bold,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily),
                                                   lineHeight: 0.5,
                                                 ),
                                           ),
@@ -330,25 +352,28 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                           await showDialog<bool>(
                                                 context: context,
                                                 builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title: Text(
-                                                        'Choose an action'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext,
-                                                                false),
-                                                        child: Text('Profile'),
-                                                      ),
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext,
-                                                                true),
-                                                        child: Text('Answer'),
-                                                      ),
-                                                    ],
+                                                  return WebViewAware(
+                                                    child: AlertDialog(
+                                                      title: Text(
+                                                          'Choose an action'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext,
+                                                                  false),
+                                                          child:
+                                                              Text('Profile'),
+                                                        ),
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext,
+                                                                  true),
+                                                          child: Text('Answer'),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   );
                                                 },
                                               ) ??
@@ -372,12 +397,15 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                           useSafeArea: true,
                                           context: context,
                                           builder: (context) {
-                                            return Padding(
-                                              padding: MediaQuery.viewInsetsOf(
-                                                  context),
-                                              child: ProfileUserWidget(
-                                                user: reviewsReviewsRecord
-                                                    .userRef!,
+                                            return WebViewAware(
+                                              child: Padding(
+                                                padding:
+                                                    MediaQuery.viewInsetsOf(
+                                                        context),
+                                                child: ProfileUserWidget(
+                                                  user: reviewsReviewsRecord
+                                                      .userRef!,
+                                                ),
                                               ),
                                             );
                                           },
@@ -499,7 +527,10 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Urbanist',
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -508,6 +539,12 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                                 ),
                                               ),
@@ -516,20 +553,28 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                     .ratingDescription
                                                     .maybeHandleOverflow(
                                                         maxChars: 500),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Urbanist',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .primaryText,
-                                                      fontSize: 12.0,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                    ),
+                                                          fontSize: 12.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
+                                                        ),
                                               ),
                                             ],
                                           ),
@@ -639,25 +684,28 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                                     context,
                                                                 builder:
                                                                     (alertDialogContext) {
-                                                                  return AlertDialog(
-                                                                    title: Text(
-                                                                        'Delete?'),
-                                                                    actions: [
-                                                                      TextButton(
-                                                                        onPressed: () => Navigator.pop(
-                                                                            alertDialogContext,
-                                                                            false),
-                                                                        child: Text(
-                                                                            'No'),
-                                                                      ),
-                                                                      TextButton(
-                                                                        onPressed: () => Navigator.pop(
-                                                                            alertDialogContext,
-                                                                            true),
-                                                                        child: Text(
-                                                                            'Yes'),
-                                                                      ),
-                                                                    ],
+                                                                  return WebViewAware(
+                                                                    child:
+                                                                        AlertDialog(
+                                                                      title: Text(
+                                                                          'Delete?'),
+                                                                      actions: [
+                                                                        TextButton(
+                                                                          onPressed: () => Navigator.pop(
+                                                                              alertDialogContext,
+                                                                              false),
+                                                                          child:
+                                                                              Text('No'),
+                                                                        ),
+                                                                        TextButton(
+                                                                          onPressed: () => Navigator.pop(
+                                                                              alertDialogContext,
+                                                                              true),
+                                                                          child:
+                                                                              Text('Yes'),
+                                                                        ),
+                                                                      ],
+                                                                    ),
                                                                   );
                                                                 },
                                                               ) ??
@@ -675,25 +723,28 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                                     context,
                                                                 builder:
                                                                     (alertDialogContext) {
-                                                                  return AlertDialog(
-                                                                    title: Text(
-                                                                        'Choose an action'),
-                                                                    actions: [
-                                                                      TextButton(
-                                                                        onPressed: () => Navigator.pop(
-                                                                            alertDialogContext,
-                                                                            false),
-                                                                        child: Text(
-                                                                            'Profile'),
-                                                                      ),
-                                                                      TextButton(
-                                                                        onPressed: () => Navigator.pop(
-                                                                            alertDialogContext,
-                                                                            true),
-                                                                        child: Text(
-                                                                            'Answer'),
-                                                                      ),
-                                                                    ],
+                                                                  return WebViewAware(
+                                                                    child:
+                                                                        AlertDialog(
+                                                                      title: Text(
+                                                                          'Choose an action'),
+                                                                      actions: [
+                                                                        TextButton(
+                                                                          onPressed: () => Navigator.pop(
+                                                                              alertDialogContext,
+                                                                              false),
+                                                                          child:
+                                                                              Text('Profile'),
+                                                                        ),
+                                                                        TextButton(
+                                                                          onPressed: () => Navigator.pop(
+                                                                              alertDialogContext,
+                                                                              true),
+                                                                          child:
+                                                                              Text('Answer'),
+                                                                        ),
+                                                                      ],
+                                                                    ),
                                                                   );
                                                                 },
                                                               ) ??
@@ -724,14 +775,16 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                           useSafeArea: true,
                                                           context: context,
                                                           builder: (context) {
-                                                            return Padding(
-                                                              padding: MediaQuery
-                                                                  .viewInsetsOf(
-                                                                      context),
-                                                              child:
-                                                                  ProfileUserWidget(
-                                                                user: answersItem
-                                                                    .createUser!,
+                                                            return WebViewAware(
+                                                              child: Padding(
+                                                                padding: MediaQuery
+                                                                    .viewInsetsOf(
+                                                                        context),
+                                                                child:
+                                                                    ProfileUserWidget(
+                                                                  user: answersItem
+                                                                      .createUser!,
+                                                                ),
                                                               ),
                                                             );
                                                           },
@@ -783,7 +836,8 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Urbanist',
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryText,
@@ -794,6 +848,10 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                     ),
                                                               ),
                                                             ),
@@ -808,7 +866,8 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Urbanist',
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
@@ -819,6 +878,10 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .normal,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                   ),
                                                             ),
                                                           ],
@@ -1001,11 +1064,17 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodySmallFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodySmallFamily),
                                         ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
@@ -1062,11 +1131,16 @@ class _ReviewCopyWidgetState extends State<ReviewCopyWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Urbanist',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.normal,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily),
                                       ),
                                   maxLines: 4,
                                   minLines: 1,

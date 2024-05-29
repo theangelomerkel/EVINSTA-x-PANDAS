@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/components/review/review_widget.dart';
+import 'dart:math';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -289,8 +290,11 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                 child: Text(
                   columnPropertiesRecord.propertyName,
                   style: FlutterFlowTheme.of(context).displaySmall.override(
-                        fontFamily: 'Urbanist',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).displaySmallFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).displaySmallFamily),
                       ),
                 ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation']!),
               ),
@@ -304,6 +308,8 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                         fontSize: 12.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.bold,
+                        useGoogleFonts:
+                            GoogleFonts.asMap().containsKey('Lexend Deca'),
                       ),
                 ),
               ),
@@ -363,12 +369,16 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
-                      textStyle:
-                          FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Urbanist',
-                                color: Colors.white,
-                                letterSpacing: 0.0,
-                              ),
+                      textStyle: FlutterFlowTheme.of(context)
+                          .titleSmall
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).titleSmallFamily,
+                            color: Colors.white,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).titleSmallFamily),
+                          ),
                       elevation: 3.0,
                       borderSide: BorderSide(
                         color: Colors.transparent,
@@ -391,12 +401,16 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).secondary,
-                      textStyle:
-                          FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Urbanist',
-                                color: Colors.white,
-                                letterSpacing: 0.0,
-                              ),
+                      textStyle: FlutterFlowTheme.of(context)
+                          .titleSmall
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).titleSmallFamily,
+                            color: Colors.white,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).titleSmallFamily),
+                          ),
                       elevation: 3.0,
                       borderSide: BorderSide(
                         color: Colors.transparent,
@@ -482,9 +496,13 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Urbanist',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .titleSmallFamily,
                                   color: Colors.white,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .titleSmallFamily),
                                 ),
                             elevation: 3.0,
                             borderSide: BorderSide(
@@ -524,9 +542,14 @@ class _EventApBarWidgetState extends State<EventApBarWidget>
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleSmallFamily,
                                       color: Colors.white,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily),
                                     ),
                                 elevation: 3.0,
                                 borderSide: BorderSide(

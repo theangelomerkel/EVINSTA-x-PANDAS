@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -175,8 +176,12 @@ class _ChangeMainPhotoWidgetState extends State<ChangeMainPhotoWidget>
                         textAlign: TextAlign.start,
                         style:
                             FlutterFlowTheme.of(context).headlineSmall.override(
-                                  fontFamily: 'Urbanist',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .headlineSmallFamily,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .headlineSmallFamily),
                                 ),
                       ),
                     ),
@@ -273,9 +278,12 @@ class _ChangeMainPhotoWidgetState extends State<ChangeMainPhotoWidget>
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primaryBackground,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Urbanist',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).titleSmallFamily,
                           color: FlutterFlowTheme.of(context).primaryText,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).titleSmallFamily),
                         ),
                     elevation: 3.0,
                     borderSide: BorderSide(
@@ -306,12 +314,16 @@ class _ChangeMainPhotoWidgetState extends State<ChangeMainPhotoWidget>
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
-                    textStyle:
-                        FlutterFlowTheme.of(context).headlineSmall.override(
-                              fontFamily: 'Urbanist',
-                              color: FlutterFlowTheme.of(context).tertiary,
-                              letterSpacing: 0.0,
-                            ),
+                    textStyle: FlutterFlowTheme.of(context)
+                        .headlineSmall
+                        .override(
+                          fontFamily:
+                              FlutterFlowTheme.of(context).headlineSmallFamily,
+                          color: FlutterFlowTheme.of(context).tertiary,
+                          letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).headlineSmallFamily),
+                        ),
                     elevation: 3.0,
                     borderSide: BorderSide(
                       color: Colors.transparent,

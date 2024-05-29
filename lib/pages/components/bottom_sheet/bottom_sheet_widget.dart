@@ -82,9 +82,12 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
                     'hnnykqmw' /* Session Booked! */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        fontFamily: 'Urbanist',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).headlineMediumFamily,
                         color: Color(0xFF14181B),
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).headlineMediumFamily),
                       ),
                 ),
               ),
@@ -95,8 +98,11 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
                     '4w8l2tvj' /* You have successfully booked a... */,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Urbanist',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyMediumFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).bodyMediumFamily),
                       ),
                 ),
               ),
@@ -107,11 +113,14 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
                     'ux2zgkgl' /* Mon, Dec 11 - 2021 */,
                   ),
                   style: FlutterFlowTheme.of(context).displaySmall.override(
-                        fontFamily: 'Urbanist',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).displaySmallFamily,
                         color: FlutterFlowTheme.of(context).secondary,
                         fontSize: 32.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).displaySmallFamily),
                       ),
                 ),
               ),

@@ -13,6 +13,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 
 class S9NR3EditArticleModel extends FlutterFlowModel<S9NR3EditArticleWidget> {
   ///  Local state fields for this page.

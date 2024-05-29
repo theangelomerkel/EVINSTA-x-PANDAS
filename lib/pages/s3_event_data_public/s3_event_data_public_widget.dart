@@ -11,6 +11,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/components/registration/registration_widget.dart';
 import '/pages/components/review_copy/review_copy_widget.dart';
 import '/pages/wishlist/wishlist_widget.dart';
+import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +24,7 @@ import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 's3_event_data_public_model.dart';
 export 's3_event_data_public_model.dart';
 
@@ -142,7 +144,7 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
 
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      backgroundColor: FlutterFlowTheme.of(context).alternate,
       body: SafeArea(
         top: true,
         child: SingleChildScrollView(
@@ -483,25 +485,27 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                         await showDialog<bool>(
                                               context: context,
                                               builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  title: Text(
-                                                      'Do you want to add this event to your calendar?'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext,
-                                                              false),
-                                                      child: Text('Cancel'),
-                                                    ),
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext,
-                                                              true),
-                                                      child: Text('Confirm'),
-                                                    ),
-                                                  ],
+                                                return WebViewAware(
+                                                  child: AlertDialog(
+                                                    title: Text(
+                                                        'Do you want to add this event to your calendar?'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext,
+                                                                false),
+                                                        child: Text('Cancel'),
+                                                      ),
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext,
+                                                                true),
+                                                        child: Text('Confirm'),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 );
                                               },
                                             ) ??
@@ -565,9 +569,13 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                             style: FlutterFlowTheme.of(context)
                                 .displaySmall
                                 .override(
-                                  fontFamily: 'Urbanist',
-                                  color: FlutterFlowTheme.of(context).grayIcon,
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .displaySmallFamily,
+                                  color: FlutterFlowTheme.of(context).secondary,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .displaySmallFamily),
                                 ),
                           ).animateOnPageLoad(
                               animationsMap['textOnPageLoadAnimation1']!),
@@ -595,6 +603,8 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey('Lexend Deca'),
                                   ),
                             ),
                           ),
@@ -620,10 +630,16 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .displaySmall
                                           .override(
-                                            fontFamily: 'Urbanist',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .displaySmallFamily,
                                             color: FlutterFlowTheme.of(context)
-                                                .grayIcon,
+                                                .tertiary,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .displaySmallFamily),
                                           ),
                                     ).animateOnPageLoad(animationsMap[
                                         'textOnPageLoadAnimation2']!),
@@ -636,12 +652,18 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .displaySmallFamily,
                                           color: FlutterFlowTheme.of(context)
-                                              .grayIcon,
+                                              .tertiary,
                                           fontSize: 14.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmallFamily),
                                         ),
                                   ).animateOnPageLoad(animationsMap[
                                       'textOnPageLoadAnimation3']!),
@@ -670,10 +692,14 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Urbanist',
-                                          color: FlutterFlowTheme.of(context)
-                                              .grayIcon,
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily),
                                         ),
                                   ),
                                 ),
@@ -690,24 +716,26 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                     await showDialog<bool>(
                                           context: context,
                                           builder: (alertDialogContext) {
-                                            return AlertDialog(
-                                              title: Text('Choose an action'),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(
-                                                          alertDialogContext,
-                                                          false),
-                                                  child: Text('Copy'),
-                                                ),
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(
-                                                          alertDialogContext,
-                                                          true),
-                                                  child: Text('Phone'),
-                                                ),
-                                              ],
+                                            return WebViewAware(
+                                              child: AlertDialog(
+                                                title: Text('Choose an action'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext,
+                                                            false),
+                                                    child: Text('Copy'),
+                                                  ),
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext,
+                                                            true),
+                                                    child: Text('Phone'),
+                                                  ),
+                                                ],
+                                              ),
                                             );
                                           },
                                         ) ??
@@ -748,17 +776,21 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                     4.0, 0.0, 24.0, 0.0),
                                 iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
+                                color: FlutterFlowTheme.of(context).alternate,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleSmallFamily,
                                       color:
-                                          FlutterFlowTheme.of(context).grayIcon,
+                                          FlutterFlowTheme.of(context).tertiary,
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily),
                                     ),
                                 elevation: 0.0,
                                 borderSide: BorderSide(
@@ -786,10 +818,12 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                 useSafeArea: true,
                                 context: context,
                                 builder: (context) {
-                                  return Padding(
-                                    padding: MediaQuery.viewInsetsOf(context),
-                                    child: WishlistWidget(
-                                      parameter4: columnPropertiesRecord,
+                                  return WebViewAware(
+                                    child: Padding(
+                                      padding: MediaQuery.viewInsetsOf(context),
+                                      child: WishlistWidget(
+                                        parameter4: columnPropertiesRecord,
+                                      ),
                                     ),
                                   );
                                 },
@@ -822,12 +856,18 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Urbanist',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily),
                                           ),
                                     ),
                                     FaIcon(
@@ -856,10 +896,12 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                               useSafeArea: true,
                               context: context,
                               builder: (context) {
-                                return Padding(
-                                  padding: MediaQuery.viewInsetsOf(context),
-                                  child: GuestlistWidget(
-                                    parameter2: columnPropertiesRecord,
+                                return WebViewAware(
+                                  child: Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: GuestlistWidget(
+                                      parameter2: columnPropertiesRecord,
+                                    ),
                                   ),
                                 );
                               },
@@ -890,12 +932,18 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily),
                                         ),
                                   ),
                                   FaIcon(
@@ -946,10 +994,12 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                     backgroundColor: Colors.transparent,
                                     context: context,
                                     builder: (context) {
-                                      return Padding(
-                                        padding:
-                                            MediaQuery.viewInsetsOf(context),
-                                        child: RegistrationWidget(),
+                                      return WebViewAware(
+                                        child: Padding(
+                                          padding:
+                                              MediaQuery.viewInsetsOf(context),
+                                          child: RegistrationWidget(),
+                                        ),
                                       );
                                     },
                                   ).then((value) => safeSetState(() {}));
@@ -969,9 +1019,14 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleSmallFamily,
                                       color: Colors.white,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily),
                                     ),
                                 elevation: 1.0,
                                 borderSide: BorderSide(
@@ -1019,10 +1074,12 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                     backgroundColor: Colors.transparent,
                                     context: context,
                                     builder: (context) {
-                                      return Padding(
-                                        padding:
-                                            MediaQuery.viewInsetsOf(context),
-                                        child: RegistrationWidget(),
+                                      return WebViewAware(
+                                        child: Padding(
+                                          padding:
+                                              MediaQuery.viewInsetsOf(context),
+                                          child: RegistrationWidget(),
+                                        ),
                                       );
                                     },
                                   ).then((value) => safeSetState(() {}));
@@ -1042,9 +1099,14 @@ class _S3EventDataPublicWidgetState extends State<S3EventDataPublicWidget>
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleSmallFamily,
                                       color: Colors.white,
                                       letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily),
                                     ),
                                 elevation: 1.0,
                                 borderSide: BorderSide(

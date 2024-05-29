@@ -46,7 +46,7 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).alternate,
         body: SafeArea(
           top: true,
           child: Padding(
@@ -60,8 +60,11 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget> {
                     'peseuhg5' /* Forgot Password */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        fontFamily: 'Urbanist',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).headlineMediumFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).headlineMediumFamily),
                       ),
                 ),
                 Padding(
@@ -78,11 +81,15 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget> {
                       hintText: FFLocalizations.of(context).getText(
                         'yw8asg8v' /* Enter your email */,
                       ),
-                      hintStyle:
-                          FlutterFlowTheme.of(context).bodyLarge.override(
-                                fontFamily: 'Poppins',
-                                letterSpacing: 0.0,
-                              ),
+                      hintStyle: FlutterFlowTheme.of(context)
+                          .bodyLarge
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyLargeFamily,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyLargeFamily),
+                          ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           color: FlutterFlowTheme.of(context).primaryText,
@@ -115,8 +122,11 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget> {
                           20.0, 32.0, 20.0, 12.0),
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Urbanist',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodyMediumFamily),
                         ),
                     validator: _model.emailTextControllerValidator
                         .asValidator(context),
@@ -154,14 +164,18 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget> {
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).secondary,
-                      textStyle:
-                          FlutterFlowTheme.of(context).titleMedium.override(
-                                fontFamily: 'Urbanist',
-                                color: Colors.white,
-                                fontSize: 20.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.w500,
-                              ),
+                      textStyle: FlutterFlowTheme.of(context)
+                          .titleMedium
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).titleMediumFamily,
+                            color: Colors.white,
+                            fontSize: 20.0,
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.w500,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).titleMediumFamily),
+                          ),
                       elevation: 2.0,
                     ),
                   ),

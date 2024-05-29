@@ -102,8 +102,12 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
-                                fontFamily: 'Urbanist',
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .headlineSmallFamily,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .headlineSmallFamily),
                               ),
                         ),
                         Container(
@@ -140,6 +144,8 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                             fontSize: 14.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.normal,
+                            useGoogleFonts:
+                                GoogleFonts.asMap().containsKey('Lexend Deca'),
                           ),
                     ),
                   ),
@@ -161,8 +167,13 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodySmallFamily,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .bodySmallFamily),
                                   ),
                             ),
                           ),
@@ -179,8 +190,12 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                           locale: FFLocalizations.of(context).languageCode,
                         )}',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Urbanist',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
                               letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily),
                             ),
                       ),
                     ],

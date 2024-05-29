@@ -83,9 +83,11 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
             '4lqlixud' /* Create Article */,
           ),
           style: FlutterFlowTheme.of(context).headlineSmall.override(
-                fontFamily: 'Urbanist',
+                fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                 letterSpacing: 0.0,
                 fontWeight: FontWeight.w600,
+                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                    FlutterFlowTheme.of(context).headlineSmallFamily),
               ),
         ),
         actions: [],
@@ -119,11 +121,16 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodySmallFamily,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .bodySmallFamily),
                                   ),
                             ),
                           ),
@@ -310,11 +317,16 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodySmallFamily,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .bodySmallFamily),
                                   ),
                             ),
                           ),
@@ -333,16 +345,21 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .headlineSmallFamily,
                                     color:
-                                        FlutterFlowTheme.of(context).grayIcon,
+                                        FlutterFlowTheme.of(context).tertiary,
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w300,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .headlineSmallFamily),
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).alternate,
+                                  color: FlutterFlowTheme.of(context).tertiary,
                                   width: 1.0,
                                 ),
                                 borderRadius: BorderRadius.circular(12.0),
@@ -373,10 +390,14 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineSmall
                                 .override(
-                                  fontFamily: 'Urbanist',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .headlineSmallFamily,
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.normal,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .headlineSmallFamily),
                                 ),
                             maxLines: 2,
                             validator: _model
@@ -396,11 +417,16 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodySmallFamily,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .bodySmallFamily),
                                   ),
                             ),
                           ),
@@ -419,16 +445,21 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .headlineSmallFamily,
                                     color:
-                                        FlutterFlowTheme.of(context).grayIcon,
-                                    fontSize: 16.0,
+                                        FlutterFlowTheme.of(context).tertiary,
+                                    fontSize: 24.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w300,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .headlineSmallFamily),
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).alternate,
+                                  color: FlutterFlowTheme.of(context).tertiary,
                                   width: 1.0,
                                 ),
                                 borderRadius: BorderRadius.circular(12.0),
@@ -459,10 +490,14 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineSmall
                                 .override(
-                                  fontFamily: 'Urbanist',
+                                  fontFamily: FlutterFlowTheme.of(context)
+                                      .headlineSmallFamily,
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.normal,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey(FlutterFlowTheme.of(context)
+                                          .headlineSmallFamily),
                                 ),
                             maxLines: null,
                             minLines: 15,
@@ -516,13 +551,16 @@ class _S9NR3CreateArticleWidgetState extends State<S9NR3CreateArticleWidget> {
                   color: valueOrDefault<Color>(
                     _model.isDataUploading
                         ? FlutterFlowTheme.of(context).accent3
-                        : FlutterFlowTheme.of(context).primary,
-                    FlutterFlowTheme.of(context).primary,
+                        : FlutterFlowTheme.of(context).secondary,
+                    FlutterFlowTheme.of(context).secondary,
                   ),
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Urbanist',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).titleSmallFamily,
                         color: Colors.white,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).titleSmallFamily),
                       ),
                   elevation: 3.0,
                   borderSide: BorderSide(

@@ -55,9 +55,12 @@ class _ApbarWidgetState extends State<ApbarWidget> {
                   'rswsmc2b' /* Welcome */,
                 ),
                 style: FlutterFlowTheme.of(context).displaySmall.override(
-                      fontFamily: 'Urbanist',
+                      fontFamily:
+                          FlutterFlowTheme.of(context).displaySmallFamily,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.bold,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).displaySmallFamily),
                     ),
               ),
               Padding(
@@ -66,10 +69,13 @@ class _ApbarWidgetState extends State<ApbarWidget> {
                   builder: (context) => Text(
                     currentUserDisplayName,
                     style: FlutterFlowTheme.of(context).displaySmall.override(
-                          fontFamily: 'Urbanist',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).displaySmallFamily,
                           color: Color(0xFFF35C29),
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w500,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).displaySmallFamily),
                         ),
                   ),
                 ),
@@ -85,10 +91,12 @@ class _ApbarWidgetState extends State<ApbarWidget> {
                   'kblv9vr3' /* Checkout news and highlights b... */,
                 ),
                 style: FlutterFlowTheme.of(context).bodySmall.override(
-                      fontFamily: 'Urbanist',
+                      fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                       color: Color(0xFF8B97A2),
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w500,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).bodySmallFamily),
                     ),
               ),
             ),

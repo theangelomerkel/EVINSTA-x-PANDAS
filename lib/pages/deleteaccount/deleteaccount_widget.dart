@@ -72,7 +72,7 @@ class _DeleteaccountWidgetState extends State<DeleteaccountWidget> {
               Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 decoration: BoxDecoration(
-                  color: Color(0xFFF35C29),
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
                 child: Padding(
                   padding: EdgeInsets.all(20.0),
@@ -146,6 +146,8 @@ Please note... */
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey('Lexend Deca'),
                                 ),
                           ),
                         ),
@@ -226,6 +228,8 @@ Please note... */
                                           fontSize: 14.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey('Lexend Deca'),
                                         ),
                                   ),
                                 ],

@@ -117,6 +117,8 @@ Welcome to E... */
                                     fontSize: 6.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey('Lexend Deca'),
                                   ),
                         ),
                       ),
@@ -160,6 +162,8 @@ Welcome to E... */
                                   fontSize: 14.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.normal,
+                                  useGoogleFonts: GoogleFonts.asMap()
+                                      .containsKey('Lexend Deca'),
                                 ),
                           ),
                           FlutterFlowIconButton(

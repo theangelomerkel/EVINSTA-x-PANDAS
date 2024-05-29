@@ -333,10 +333,66 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'raguideCopy4',
               path: 'raguideCopy4',
               builder: (context, params) => RaguideCopy4Widget(),
+            ),
+            FFRoute(
+              name: 'eventorganisersignup',
+              path: 'eventorganisersignup',
+              builder: (context, params) => EventorganisersignupWidget(),
+            ),
+            FFRoute(
+              name: 'usersignuo',
+              path: 'usersignuo',
+              builder: (context, params) => UsersignuoWidget(
+                genre: params.getParam(
+                  'genre',
+                  ParamType.String,
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'test',
+              path: 'test',
+              builder: (context, params) => TestWidget(),
+            ),
+            FFRoute(
+              name: 'djprofile',
+              path: 'djprofile',
+              builder: (context, params) => DjprofileWidget(),
+            ),
+            FFRoute(
+              name: 'membercard',
+              path: 'membercard',
+              builder: (context, params) => MembercardWidget(),
+            ),
+            FFRoute(
+              name: 'youtube',
+              path: 'youtube',
+              builder: (context, params) => YoutubeWidget(
+                videoLOAD: params.getParam(
+                  'videoLOAD',
+                  ParamType.String,
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'map',
+              path: 'map',
+              builder: (context, params) => MapWidget(),
+            ),
+            FFRoute(
+              name: 'calendarshifts',
+              path: 'calendarshifts',
+              builder: (context, params) => CalendarshiftsWidget(),
+            ),
+            FFRoute(
+              name: 'calendarshift12',
+              path: 'calendarshift12',
+              builder: (context, params) => Calendarshift12Widget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {
@@ -623,4 +679,14 @@ class RootPageContext {
         value: RootPageContext(true, errorRoute),
         child: child,
       );
+}
+
+extension GoRouterLocationExtension on GoRouter {
+  String getCurrentLocation() {
+    final RouteMatch lastMatch = routerDelegate.currentConfiguration.last;
+    final RouteMatchList matchList = lastMatch is ImperativeRouteMatch
+        ? lastMatch.matches
+        : routerDelegate.currentConfiguration;
+    return matchList.uri.toString();
+  }
 }

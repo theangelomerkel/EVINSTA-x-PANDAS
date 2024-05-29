@@ -71,13 +71,13 @@ class _ArticleWidgetState extends State<ArticleWidget> {
         color: Colors.transparent,
         elevation: 1.0,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.0),
+          borderRadius: BorderRadius.circular(24.0),
         ),
         child: Container(
           width: 140.0,
           height: 100.0,
           decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).secondaryBackground,
+            color: FlutterFlowTheme.of(context).secondary,
             boxShadow: [
               BoxShadow(
                 blurRadius: 4.0,
@@ -89,9 +89,9 @@ class _ArticleWidgetState extends State<ArticleWidget> {
                 spreadRadius: 0.0,
               )
             ],
-            borderRadius: BorderRadius.circular(16.0),
+            borderRadius: BorderRadius.circular(24.0),
             border: Border.all(
-              color: FlutterFlowTheme.of(context).secondary,
+              color: FlutterFlowTheme.of(context).primary,
               width: 3.0,
             ),
           ),
@@ -103,10 +103,12 @@ class _ArticleWidgetState extends State<ArticleWidget> {
                 'Title',
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Urbanist',
+                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                     color: FlutterFlowTheme.of(context).primaryText,
                     fontSize: 18.0,
                     letterSpacing: 0.0,
+                    useGoogleFonts: GoogleFonts.asMap().containsKey(
+                        FlutterFlowTheme.of(context).bodyMediumFamily),
                   ),
             ),
           ),

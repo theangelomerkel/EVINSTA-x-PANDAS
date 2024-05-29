@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -139,8 +140,11 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                 'bzvuksri' /* Reviews */,
               ),
               style: FlutterFlowTheme.of(context).headlineSmall.override(
-                    fontFamily: 'Urbanist',
+                    fontFamily:
+                        FlutterFlowTheme.of(context).headlineSmallFamily,
                     letterSpacing: 0.0,
+                    useGoogleFonts: GoogleFonts.asMap().containsKey(
+                        FlutterFlowTheme.of(context).headlineSmallFamily),
                   ),
             ),
             actions: [],
@@ -197,6 +201,8 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                         fontSize: 28.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.bold,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey('Lexend Deca'),
                                       ),
                                 ),
                               ),
@@ -212,6 +218,8 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey('Lexend Deca'),
                                     ),
                               ),
                             ],
@@ -239,6 +247,8 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                             fontSize: 28.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey('Lexend Deca'),
                                           ),
                                     ),
                                   ),
@@ -265,6 +275,8 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey('Lexend Deca'),
                                     ),
                               ),
                             ],
@@ -381,10 +393,16 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Urbanist',
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmallFamily,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily),
                                                                 ),
                                                       ),
                                                       Padding(
@@ -477,8 +495,16 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily:
-                                                              'Urbanist',
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
                                                         ),
                                                   ),
                                                 ),

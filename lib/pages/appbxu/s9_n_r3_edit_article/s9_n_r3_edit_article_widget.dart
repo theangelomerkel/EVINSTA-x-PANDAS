@@ -12,6 +12,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 's9_n_r3_edit_article_model.dart';
 export 's9_n_r3_edit_article_model.dart';
 
@@ -85,9 +86,11 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
             'ryrpfl1a' /* Edit Article */,
           ),
           style: FlutterFlowTheme.of(context).headlineSmall.override(
-                fontFamily: 'Urbanist',
+                fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                 letterSpacing: 0.0,
                 fontWeight: FontWeight.w600,
+                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                    FlutterFlowTheme.of(context).headlineSmallFamily),
               ),
         ),
         actions: [],
@@ -139,11 +142,16 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        fontFamily: 'Urbanist',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodySmallFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodySmallFamily),
                                       ),
                                 ),
                               ),
@@ -337,11 +345,16 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        fontFamily: 'Urbanist',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodySmallFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodySmallFamily),
                                       ),
                                 ),
                               ),
@@ -364,12 +377,17 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Urbanist',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .headlineSmallFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .grayIcon,
                                         fontSize: 16.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w300,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily),
                                       ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
@@ -406,10 +424,15 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .headlineSmallFamily,
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmallFamily),
                                     ),
                                 maxLines: 2,
                                 validator: _model
@@ -429,11 +452,16 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        fontFamily: 'Urbanist',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodySmallFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodySmallFamily),
                                       ),
                                 ),
                               ),
@@ -455,12 +483,17 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Urbanist',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .headlineSmallFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .grayIcon,
                                         fontSize: 16.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w300,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmallFamily),
                                       ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
@@ -497,10 +530,15 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .headlineSmallFamily,
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineSmallFamily),
                                     ),
                                 maxLines: null,
                                 minLines: 15,
@@ -553,12 +591,16 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                             : FlutterFlowTheme.of(context).primary,
                         FlutterFlowTheme.of(context).primary,
                       ),
-                      textStyle:
-                          FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Urbanist',
-                                color: Colors.white,
-                                letterSpacing: 0.0,
-                              ),
+                      textStyle: FlutterFlowTheme.of(context)
+                          .titleSmall
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).titleSmallFamily,
+                            color: Colors.white,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).titleSmallFamily),
+                          ),
                       elevation: 3.0,
                       borderSide: BorderSide(
                         color: Colors.transparent,
@@ -575,21 +617,23 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                         var confirmDialogResponse = await showDialog<bool>(
                               context: context,
                               builder: (alertDialogContext) {
-                                return AlertDialog(
-                                  title: Text(
-                                      'Do you want to delete the article?'),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () => Navigator.pop(
-                                          alertDialogContext, false),
-                                      child: Text('Cancel'),
-                                    ),
-                                    TextButton(
-                                      onPressed: () => Navigator.pop(
-                                          alertDialogContext, true),
-                                      child: Text('Confirm'),
-                                    ),
-                                  ],
+                                return WebViewAware(
+                                  child: AlertDialog(
+                                    title: Text(
+                                        'Do you want to delete the article?'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(
+                                            alertDialogContext, false),
+                                        child: Text('Cancel'),
+                                      ),
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(
+                                            alertDialogContext, true),
+                                        child: Text('Confirm'),
+                                      ),
+                                    ],
+                                  ),
                                 );
                               },
                             ) ??
@@ -613,12 +657,17 @@ class _S9NR3EditArticleWidgetState extends State<S9NR3EditArticleWidget> {
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).secondary,
-                        textStyle:
-                            FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Urbanist',
-                                  color: Colors.white,
-                                  letterSpacing: 0.0,
-                                ),
+                        textStyle: FlutterFlowTheme.of(context)
+                            .titleSmall
+                            .override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).titleSmallFamily,
+                              color: Colors.white,
+                              letterSpacing: 0.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .titleSmallFamily),
+                            ),
                         elevation: 3.0,
                         borderSide: BorderSide(
                           color: Colors.transparent,

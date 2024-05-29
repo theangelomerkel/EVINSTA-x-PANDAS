@@ -97,9 +97,12 @@ class _ReviewNewWidgetState extends State<ReviewNewWidget> {
                       'jajk2a3k' /* Rate event */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Urbanist',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
                           color: FlutterFlowTheme.of(context).primaryText,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodyMediumFamily),
                         ),
                   ),
                 ),
@@ -113,9 +116,12 @@ class _ReviewNewWidgetState extends State<ReviewNewWidget> {
                       '8ytt5r75' /* Message */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Urbanist',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
                           color: FlutterFlowTheme.of(context).primaryText,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodyMediumFamily),
                         ),
                   ),
                 ),
@@ -127,16 +133,22 @@ class _ReviewNewWidgetState extends State<ReviewNewWidget> {
                 obscureText: false,
                 decoration: InputDecoration(
                   labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Poppins',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).labelMediumFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).labelMediumFamily),
                       ),
                   hintText: FFLocalizations.of(context).getText(
                     'o5agmakt' /* Write your review */,
                   ),
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Poppins',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).labelMediumFamily,
                         color: FlutterFlowTheme.of(context).secondaryText,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).labelMediumFamily),
                       ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
@@ -168,8 +180,10 @@ class _ReviewNewWidgetState extends State<ReviewNewWidget> {
                   ),
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Urbanist',
+                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                       letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).bodyMediumFamily),
                     ),
                 maxLines: 3,
                 validator: _model.textControllerValidator.asValidator(context),
@@ -205,9 +219,12 @@ class _ReviewNewWidgetState extends State<ReviewNewWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Urbanist',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).titleSmallFamily,
                           color: Colors.white,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).titleSmallFamily),
                         ),
                     elevation: 3.0,
                     borderSide: BorderSide(

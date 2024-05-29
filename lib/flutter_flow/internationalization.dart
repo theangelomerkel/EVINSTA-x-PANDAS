@@ -127,6 +127,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Forgot Password?',
       'en': '',
     },
+    '6pcbm2s8': {
+      'de': 'Or use a social account to login',
+      'en': '',
+    },
+    '68cimz59': {
+      'de': 'I agree with ',
+      'en': '',
+    },
+    'ocutpyvm': {
+      'de': 'terms of use',
+      'en': '',
+    },
     'yo8z7hh6': {
       'de': 'Sign Up',
       'en': '',
@@ -143,19 +155,115 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Confirm Password',
       'en': '',
     },
+    '8s21huhp': {
+      'de': 'Create Account',
+      'en': '',
+    },
+    'lnpd52k8': {
+      'de': 'Or use a social account to signup',
+      'en': '',
+    },
+    'j9vu5j7h': {
+      'de': 'I agree with ',
+      'en': '',
+    },
+    'uh5qkmls': {
+      'de': 'terms of use',
+      'en': '',
+    },
+    '1u0067cq': {
+      'de': 'DJ Sign Up',
+      'en': '',
+    },
+    'tud65exi': {
+      'de': 'Email Address',
+      'en': '',
+    },
+    'wmyzcwhh': {
+      'de': 'Full Name',
+      'en': '',
+    },
+    'awlkk1ld': {
+      'de': 'DJ Name',
+      'en': '',
+    },
+    'wotcxnpz': {
+      'de': 'Password',
+      'en': '',
+    },
+    'oqrha48b': {
+      'de': 'Confirm Password',
+      'en': '',
+    },
+    'qsx79e3u': {
+      'de': 'Genre Spezification',
+      'en': '',
+    },
+    'qwwzicrg': {
+      'de': 'years of experience',
+      'en': '',
+    },
+    '2pjrxebg': {
+      'de': 'connect social account',
+      'en': '',
+    },
     'hjjyohu6': {
       'de': 'Create Account',
       'en': '',
     },
-    '6pcbm2s8': {
-      'de': 'Or use a social account to login',
-      'en': '',
-    },
-    'j0h1yw8t': {
+    'xw6cmcv0': {
       'de': 'I agree with ',
       'en': '',
     },
-    'ocutpyvm': {
+    '2ypi47ig': {
+      'de': 'terms of use',
+      'en': '',
+    },
+    'vl8uae9e': {
+      'de': 'Orga Sign Up',
+      'en': '',
+    },
+    'iv0glmry': {
+      'de': 'Email Address',
+      'en': '',
+    },
+    '0l3unonf': {
+      'de': 'Full Name',
+      'en': '',
+    },
+    'e1id003r': {
+      'de': 'company name',
+      'en': '',
+    },
+    '4t0vcgbx': {
+      'de': 'Password',
+      'en': '',
+    },
+    'ahar9vxs': {
+      'de': 'Confirm Password',
+      'en': '',
+    },
+    '7vx8wczt': {
+      'de': 'event type preferences',
+      'en': '',
+    },
+    'xagg0wil': {
+      'de': 'business type',
+      'en': '',
+    },
+    'f32ky3g0': {
+      'de': 'connect social account',
+      'en': '',
+    },
+    '1xzx14ii': {
+      'de': 'Create Account',
+      'en': '',
+    },
+    'goae8kf9': {
+      'de': 'I agree with ',
+      'en': '',
+    },
+    'ia29qr54': {
       'de': 'terms of use',
       'en': '',
     },
@@ -193,7 +301,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // S2_HomePage
   {
     '2e8i9atd': {
-      'de': 'Your Events',
+      'de': 'Homepage',
       'en': '',
     },
     'gokt7fb5': {
@@ -213,7 +321,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'j19xfw2k': {
-      'de': 'Invited Events',
+      'de': 'Recommended Events',
       'en': '',
     },
   },
@@ -1254,73 +1362,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // locationselect
-  {
-    'uxywpj9h': {
-      'de': 'Select City',
-      'en': '',
-    },
-    '90gek3ed': {
-      'de': 'Hamburg',
-      'en': '',
-    },
-    '7306jlgs': {
-      'de': 'Munich',
-      'en': '',
-    },
-    '39m000o6': {
-      'de': 'Cologne',
-      'en': '',
-    },
-    'bsyrnbct': {
-      'de': 'Berlin',
-      'en': '',
-    },
-    '2np5xlmt': {
-      'de': 'Frankfurt',
-      'en': '',
-    },
-    'icoljp30': {
-      'de': 'Stuttgart',
-      'en': '',
-    },
-    '6q0pabix': {
-      'de': 'Düsseldorf',
-      'en': '',
-    },
-    'koceu1w7': {
-      'de': 'Dortmund',
-      'en': '',
-    },
-    'rq6wm7u1': {
-      'de': 'Essen',
-      'en': '',
-    },
-    'rh3cyye8': {
-      'de': 'Leipzig',
-      'en': '',
-    },
-    '9ddmxelv': {
-      'de': 'Bremen',
-      'en': '',
-    },
-    'xwiuudix': {
-      'de': 'Dresden',
-      'en': '',
-    },
-    'fr1z9kq3': {
-      'de': 'Hannover',
-      'en': '',
-    },
-    'mveqqjmx': {
-      'de': 'Nuremberg',
-      'en': '',
-    },
-    '7plxb185': {
-      'de': 'Dashboard',
-      'en': '',
-    },
-  },
   // adminpanel
   {
     'ecqi9uth': {
@@ -1363,6 +1404,465 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // raguideCopy4
   {
     'fv06335s': {
+      'de': 'Home',
+      'en': '',
+    },
+  },
+  // eventorganisersignup
+  {
+    'ele5fezt': {
+      'de': 'Event Organizer Signup',
+      'en': '',
+    },
+    'f343ki5f': {
+      'de': 'First Name',
+      'en': '',
+    },
+    '2bcifpui': {
+      'de': 'Enter your first name',
+      'en': '',
+    },
+    '32rvwykq': {
+      'de': 'Last Name',
+      'en': '',
+    },
+    '3da9mgfi': {
+      'de': 'Enter your last name',
+      'en': '',
+    },
+    '5fhgyura': {
+      'de': 'Email',
+      'en': '',
+    },
+    '5cl6klye': {
+      'de': 'Enter your email',
+      'en': '',
+    },
+    'uyasw4yk': {
+      'de': 'Password',
+      'en': '',
+    },
+    '3jpjgwui': {
+      'de': 'Enter your password',
+      'en': '',
+    },
+    '6zq62w1f': {
+      'de': 'Company/Organization Name',
+      'en': '',
+    },
+    'g0dolbbv': {
+      'de': 'Enter your company name',
+      'en': '',
+    },
+    'l1uypjcq': {
+      'de': 'Event Type Preferences',
+      'en': '',
+    },
+    'ofpj3408': {
+      'de': 'Enter event types',
+      'en': '',
+    },
+    'o3uqdz9b': {
+      'de': 'Sign Up',
+      'en': '',
+    },
+    'vzs6av7n': {
+      'de': 'Already have an account? ',
+      'en': '',
+    },
+    'qbb92n98': {
+      'de': 'Sign In',
+      'en': '',
+    },
+  },
+  // usersignuo
+  {
+    'rl61gw1d': {
+      'de': 'Event Preferences',
+      'en': '',
+    },
+    '49rf4gao': {
+      'de': 'What genres of music do you enjoy?',
+      'en': '',
+    },
+    'b4usc8br': {
+      'de': 'Select genre',
+      'en': '',
+    },
+    'tyh7mzl7': {
+      'de': 'Do you prefer indoor or outdoor events?',
+      'en': '',
+    },
+    'y9titpsg': {
+      'de': 'Select preference',
+      'en': '',
+    },
+    'g688nk9q': {
+      'de': 'Favourite artists or DJs',
+      'en': '',
+    },
+    'h681rcjf': {
+      'de': 'Enter artists/DJs',
+      'en': '',
+    },
+    'ezl8m3v1': {
+      'de': 'Home Location',
+      'en': '',
+    },
+    'd8mwjs24': {
+      'de': 'Enter your home location',
+      'en': '',
+    },
+    'yx4al369': {
+      'de': 'Preferred Cities',
+      'en': '',
+    },
+    'jayc7ve3': {
+      'de': 'Enter preferred cities',
+      'en': '',
+    },
+    'ahc1h1vx': {
+      'de': 'Sign Up',
+      'en': '',
+    },
+  },
+  // test
+  {
+    'zghfee0y': {
+      'de': 'Step 1: Event Details',
+      'en': '',
+    },
+    'a5b421jo': {
+      'de': 'Event Name',
+      'en': '',
+    },
+    'bbfs9va9': {
+      'de': 'Enter the event name...',
+      'en': '',
+    },
+    'l06ndfig': {
+      'de': 'Date',
+      'en': '',
+    },
+    'pgk3mfi1': {
+      'de': 'Select date...',
+      'en': '',
+    },
+    '4kp6kqxd': {
+      'de': 'Address',
+      'en': '',
+    },
+    'x8euep1z': {
+      'de': 'Enter the address...',
+      'en': '',
+    },
+    'cxqtouhx': {
+      'de': 'Outdoor',
+      'en': '',
+    },
+    'i207l15v': {
+      'de': 'Indoor',
+      'en': '',
+    },
+    '2mny7qyh': {
+      'de': 'Event Start',
+      'en': '',
+    },
+    '5fbr5b44': {
+      'de': 'Select start time...',
+      'en': '',
+    },
+    'gy4w9zgq': {
+      'de': 'Event End',
+      'en': '',
+    },
+    'agav28l5': {
+      'de': 'Select end time...',
+      'en': '',
+    },
+    'veis151t': {
+      'de': 'Step 2: Service Providers',
+      'en': '',
+    },
+    '2g6bed8f': {
+      'de': 'Book a DJ',
+      'en': '',
+    },
+    'rhn4yo0v': {
+      'de': 'Book a Food Truck',
+      'en': '',
+    },
+    '3ztbis4t': {
+      'de': 'Step 3: Event Rules',
+      'en': '',
+    },
+    '1vdol080': {
+      'de': 'Rule 1',
+      'en': '',
+    },
+    'tbr0bm07': {
+      'de': 'Enter rule...',
+      'en': '',
+    },
+    'iavany95': {
+      'de': 'Rule 2',
+      'en': '',
+    },
+    '1pie9nv2': {
+      'de': 'Enter rule...',
+      'en': '',
+    },
+    'r3zt27t4': {
+      'de': 'Rule 3',
+      'en': '',
+    },
+    'cia9m2bb': {
+      'de': 'Enter rule...',
+      'en': '',
+    },
+    'qlg45plw': {
+      'de': 'Rule 4',
+      'en': '',
+    },
+    'pyho47xf': {
+      'de': 'Enter rule...',
+      'en': '',
+    },
+    'umtr7601': {
+      'de': 'Preview',
+      'en': '',
+    },
+  },
+  // djprofile
+  {
+    '6us7ay7o': {
+      'de': 'DJ Name',
+      'en': '',
+    },
+    'doto8li9': {
+      'de': 'Electronic / House',
+      'en': '',
+    },
+    'h7h51mpx': {
+      'de': '4.8',
+      'en': '',
+    },
+    'ew70nxod': {
+      'de': '(320 reviews)',
+      'en': '',
+    },
+    'jpt4y3e0': {
+      'de': 'Upcoming Events',
+      'en': '',
+    },
+    '9qxgxomb': {
+      'de': 'Event Name',
+      'en': '',
+    },
+    'y0n123sd': {
+      'de': 'Location',
+      'en': '',
+    },
+    'rzv1v056': {
+      'de': 'Date & Time',
+      'en': '',
+    },
+    'm2ai2wbr': {
+      'de': 'Details',
+      'en': '',
+    },
+    'tvfunmim': {
+      'de': 'Event Name',
+      'en': '',
+    },
+    'jp75lqz9': {
+      'de': 'Location',
+      'en': '',
+    },
+    '80pwel1m': {
+      'de': 'Date & Time',
+      'en': '',
+    },
+    'i5d7hrpk': {
+      'de': 'Details',
+      'en': '',
+    },
+    '263v4ymb': {
+      'de': 'Event Name',
+      'en': '',
+    },
+    'j1qwvy1y': {
+      'de': 'Location',
+      'en': '',
+    },
+    'v33r9cd0': {
+      'de': 'Date & Time',
+      'en': '',
+    },
+    '0seqybb3': {
+      'de': 'Details',
+      'en': '',
+    },
+    'tm4sza63': {
+      'de': 'eddd',
+      'en': '',
+    },
+    'u5dhwy4s': {
+      'de': 'Location',
+      'en': '',
+    },
+    'kkbshhce': {
+      'de': 'Date & Time',
+      'en': '',
+    },
+    'ybpts5nx': {
+      'de': 'Profile',
+      'en': '',
+    },
+  },
+  // membercard
+  {
+    '5e4tu167': {
+      'de': 'Front',
+      'en': '',
+    },
+    'jpdiys98': {
+      'de': 'Back',
+      'en': '',
+    },
+    'du7rujrp': {
+      'de': 'Button',
+      'en': '',
+    },
+    '62olf300': {
+      'de': 'Home',
+      'en': '',
+    },
+  },
+  // youtube
+  {
+    'bgl7e9q5': {
+      'de': 'Page Title',
+      'en': '',
+    },
+    'peepopl6': {
+      'de': 'Home',
+      'en': '',
+    },
+  },
+  // map
+  {
+    '3lysudtf': {
+      'de': 'Page Title',
+      'en': '',
+    },
+    'dmz1lnc8': {
+      'de': 'Home',
+      'en': '',
+    },
+  },
+  // calendarshifts
+  {
+    'p15yllt9': {
+      'de': 'Shift Calendar',
+      'en': '',
+    },
+    'hvgeu34r': {
+      'de': 'Select Date',
+      'en': '',
+    },
+    '5hl9pg71': {
+      'de': 'Choose shift date...',
+      'en': '',
+    },
+    'v6vi1u0o': {
+      'de': 'Shift Title',
+      'en': '',
+    },
+    'hsmxlgec': {
+      'de': 'Enter shift title...',
+      'en': '',
+    },
+    'qb6204p0': {
+      'de': 'Shift Description',
+      'en': '',
+    },
+    'm9tvqxac': {
+      'de': 'Enter shift details...',
+      'en': '',
+    },
+    'qkx0k0hg': {
+      'de': 'Submit Shift',
+      'en': '',
+    },
+    'ysdhswiq': {
+      'de': 'Available Shifts',
+      'en': '',
+    },
+    'g1iza6dy': {
+      'de': 'Monday',
+      'en': '',
+    },
+    '4ss182j3': {
+      'de': '9 AM - 5 PM',
+      'en': '',
+    },
+    'eywoo0zz': {
+      'de': 'Tuesday',
+      'en': '',
+    },
+    '5pquax71': {
+      'de': '10 AM - 6 PM',
+      'en': '',
+    },
+    'ioxsumw0': {
+      'de': 'Wednesday',
+      'en': '',
+    },
+    'pv56xbdt': {
+      'de': '12 PM - 8 PM',
+      'en': '',
+    },
+    '8t303li0': {
+      'de': 'Thursday',
+      'en': '',
+    },
+    '0jptpxdk': {
+      'de': '9 AM - 5 PM',
+      'en': '',
+    },
+    'yfnxhxup': {
+      'de': 'Friday',
+      'en': '',
+    },
+    'fii5m3nc': {
+      'de': '10 AM - 6 PM',
+      'en': '',
+    },
+    '9rycd8ff': {
+      'de': 'Saturday',
+      'en': '',
+    },
+    'h5ckpz2u': {
+      'de': 'Off',
+      'en': '',
+    },
+    '562atrxt': {
+      'de': 'Sunday',
+      'en': '',
+    },
+    '2uzr0xkc': {
+      'de': 'Off',
+      'en': '',
+    },
+  },
+  // calendarshift12
+  {
+    'vkg5fyn3': {
+      'de': 'Page Title',
+      'en': '',
+    },
+    '9n9rcsut': {
       'de': 'Home',
       'en': '',
     },
@@ -1682,6 +2182,76 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // profileUser
   {
     '1t0zm57s': {
+      'de': 'Events',
+      'en': '',
+    },
+  },
+  // searchcities
+  {
+    'uxywpj9h': {
+      'de': 'Select City',
+      'en': '',
+    },
+    '90gek3ed': {
+      'de': 'Hamburg',
+      'en': '',
+    },
+    '7306jlgs': {
+      'de': 'Munich',
+      'en': '',
+    },
+    '39m000o6': {
+      'de': 'Cologne',
+      'en': '',
+    },
+    'bsyrnbct': {
+      'de': 'Berlin',
+      'en': '',
+    },
+    '2np5xlmt': {
+      'de': 'Frankfurt',
+      'en': '',
+    },
+    'icoljp30': {
+      'de': 'Stuttgart',
+      'en': '',
+    },
+    '6q0pabix': {
+      'de': 'Düsseldorf',
+      'en': '',
+    },
+    'koceu1w7': {
+      'de': 'Dortmund',
+      'en': '',
+    },
+    'rq6wm7u1': {
+      'de': 'Essen',
+      'en': '',
+    },
+    'rh3cyye8': {
+      'de': 'Leipzig',
+      'en': '',
+    },
+    '9ddmxelv': {
+      'de': 'Bremen',
+      'en': '',
+    },
+    'xwiuudix': {
+      'de': 'Dresden',
+      'en': '',
+    },
+    'fr1z9kq3': {
+      'de': 'Hannover',
+      'en': '',
+    },
+    'mveqqjmx': {
+      'de': 'Nuremberg',
+      'en': '',
+    },
+  },
+  // calendarCopy
+  {
+    'k13v3ce7': {
       'de': 'Events',
       'en': '',
     },

@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -13,6 +14,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'profile_user_model.dart';
 export 'profile_user_model.dart';
 
@@ -177,6 +179,10 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                               fontSize: 16.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          'Lexend Deca'),
                                             ),
                                       ),
                                       if (containerUsersRecord.email != null &&
@@ -200,6 +206,10 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
+                                                  useGoogleFonts:
+                                                      GoogleFonts.asMap()
+                                                          .containsKey(
+                                                              'Lexend Deca'),
                                                 ),
                                           ),
                                         ),
@@ -214,27 +224,29 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                       context: context,
                                                       builder:
                                                           (alertDialogContext) {
-                                                        return AlertDialog(
-                                                          title: Text(
-                                                              'Choose an action'),
-                                                          actions: [
-                                                            TextButton(
-                                                              onPressed: () =>
-                                                                  Navigator.pop(
-                                                                      alertDialogContext,
-                                                                      false),
-                                                              child:
-                                                                  Text('Copy'),
-                                                            ),
-                                                            TextButton(
-                                                              onPressed: () =>
-                                                                  Navigator.pop(
-                                                                      alertDialogContext,
-                                                                      true),
-                                                              child:
-                                                                  Text('Phone'),
-                                                            ),
-                                                          ],
+                                                        return WebViewAware(
+                                                          child: AlertDialog(
+                                                            title: Text(
+                                                                'Choose an action'),
+                                                            actions: [
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext,
+                                                                        false),
+                                                                child: Text(
+                                                                    'Copy'),
+                                                              ),
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext,
+                                                                        true),
+                                                                child: Text(
+                                                                    'Phone'),
+                                                              ),
+                                                            ],
+                                                          ),
                                                         );
                                                       },
                                                     ) ??
@@ -294,13 +306,22 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                     context)
                                                 .titleSmall
                                                 .override(
-                                                  fontFamily: 'Urbanist',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily),
                                                 ),
                                             elevation: 0.0,
                                             borderSide: BorderSide(
@@ -353,11 +374,17 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
                                           color: Colors.white,
                                           fontSize: 14.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily),
                                         ),
                                     elevation: 1.0,
                                     borderSide: BorderSide(
@@ -427,11 +454,20 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Urbanist',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily),
                                                 ),
                                           ),
                                         ),
@@ -563,12 +599,18 @@ class _ProfileUserWidgetState extends State<ProfileUserWidget>
                                                                     .of(context)
                                                                 .titleMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Urbanist',
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMediumFamily,
                                                                   fontSize:
                                                                       12.0,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleMediumFamily),
                                                                 ),
                                                           ),
                                                         ),

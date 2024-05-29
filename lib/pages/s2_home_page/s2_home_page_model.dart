@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/components/event_c/event_c_widget.dart';
 import '/walkthroughs/create_event.dart';
+import 'dart:math';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart'
     show TutorialCoachMark;
 import 's2_home_page_widget.dart' show S2HomePageWidget;

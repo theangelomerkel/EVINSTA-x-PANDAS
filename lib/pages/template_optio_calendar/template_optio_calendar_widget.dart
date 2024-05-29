@@ -46,7 +46,7 @@ class _TemplateOptioCalendarWidgetState
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).alternate,
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
@@ -55,8 +55,10 @@ class _TemplateOptioCalendarWidgetState
               'i920tls2' /* Daily */,
             ),
             style: FlutterFlowTheme.of(context).displaySmall.override(
-                  fontFamily: 'Urbanist',
+                  fontFamily: FlutterFlowTheme.of(context).displaySmallFamily,
                   letterSpacing: 0.0,
+                  useGoogleFonts: GoogleFonts.asMap().containsKey(
+                      FlutterFlowTheme.of(context).displaySmallFamily),
                 ),
           ),
           actions: [
@@ -94,29 +96,42 @@ class _TemplateOptioCalendarWidgetState
                   setState(() => _model.calendarSelectedDay = newSelectedDate);
                 },
                 titleStyle: FlutterFlowTheme.of(context).titleMedium.override(
-                      fontFamily: 'Urbanist',
+                      fontFamily:
+                          FlutterFlowTheme.of(context).titleMediumFamily,
                       letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).titleMediumFamily),
                     ),
                 dayOfWeekStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                      fontFamily: 'Urbanist',
+                      fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                       letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).bodySmallFamily),
                     ),
                 dateStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Urbanist',
+                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                       letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).bodyMediumFamily),
                     ),
-                selectedDateStyle:
-                    FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Urbanist',
-                          color: Colors.white,
-                          letterSpacing: 0.0,
-                        ),
-                inactiveDateStyle:
-                    FlutterFlowTheme.of(context).bodySmall.override(
-                          fontFamily: 'Urbanist',
-                          color: Color(0x6B57636C),
-                          letterSpacing: 0.0,
-                        ),
+                selectedDateStyle: FlutterFlowTheme.of(context)
+                    .titleSmall
+                    .override(
+                      fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                      color: Colors.white,
+                      letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).titleSmallFamily),
+                    ),
+                inactiveDateStyle: FlutterFlowTheme.of(context)
+                    .bodySmall
+                    .override(
+                      fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                      color: Color(0x6B57636C),
+                      letterSpacing: 0.0,
+                      useGoogleFonts: GoogleFonts.asMap().containsKey(
+                          FlutterFlowTheme.of(context).bodySmallFamily),
+                    ),
                 locale: FFLocalizations.of(context).languageCode,
               ),
               Padding(
@@ -126,8 +141,11 @@ class _TemplateOptioCalendarWidgetState
                     't4l940h0' /* Events */,
                   ),
                   style: FlutterFlowTheme.of(context).titleMedium.override(
-                        fontFamily: 'Urbanist',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).titleMediumFamily,
                         letterSpacing: 0.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).titleMediumFamily),
                       ),
                 ),
               ),

@@ -11,6 +11,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/components/registration/registration_widget.dart';
 import '/pages/components/review_copy/review_copy_widget.dart';
 import '/pages/wishlist/wishlist_widget.dart';
+import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
 import 's3_event_data_public_widget.dart' show S3EventDataPublicWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -24,6 +25,7 @@ import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 
 class S3EventDataPublicModel extends FlutterFlowModel<S3EventDataPublicWidget> {
   ///  State fields for stateful widgets in this page.

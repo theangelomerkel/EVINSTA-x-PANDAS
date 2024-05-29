@@ -47,7 +47,7 @@ class _S5searchEventsWidgetState extends State<S5searchEventsWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: false,
@@ -75,6 +75,7 @@ class _S5searchEventsWidgetState extends State<S5searchEventsWidget> {
                 fontSize: 18.0,
                 letterSpacing: 0.0,
                 fontWeight: FontWeight.w500,
+                useGoogleFonts: GoogleFonts.asMap().containsKey('Lexend Deca'),
               ),
         ),
         actions: [],
@@ -90,7 +91,7 @@ class _S5searchEventsWidgetState extends State<S5searchEventsWidget> {
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Color(0xFF14181B),
+                  color: FlutterFlowTheme.of(context).primaryBackground,
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 3.0,
@@ -141,12 +142,16 @@ class _S5searchEventsWidgetState extends State<S5searchEventsWidget> {
                       labelText: FFLocalizations.of(context).getText(
                         'zw30dijp' /* Search */,
                       ),
-                      labelStyle:
-                          FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Urbanist',
-                                color: FlutterFlowTheme.of(context).grayIcon,
-                                letterSpacing: 0.0,
-                              ),
+                      labelStyle: FlutterFlowTheme.of(context)
+                          .bodyMedium
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            color: FlutterFlowTheme.of(context).grayIcon,
+                            letterSpacing: 0.0,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                          ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           color: FlutterFlowTheme.of(context).tertiary,
@@ -181,9 +186,12 @@ class _S5searchEventsWidgetState extends State<S5searchEventsWidget> {
                       ),
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Urbanist',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
                           color: FlutterFlowTheme.of(context).tertiary,
                           letterSpacing: 0.0,
+                          useGoogleFonts: GoogleFonts.asMap().containsKey(
+                              FlutterFlowTheme.of(context).bodyMediumFamily),
                         ),
                     validator:
                         _model.textControllerValidator.asValidator(context),
