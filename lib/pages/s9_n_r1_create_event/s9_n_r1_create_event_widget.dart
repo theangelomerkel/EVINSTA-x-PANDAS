@@ -1801,7 +1801,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                         .headlineSmallFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .grayIcon,
+                                                        .tertiary,
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w300,
@@ -1815,7 +1815,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .alternate,
+                                                      .tertiary,
                                               width: 1.0,
                                             ),
                                             borderRadius:
@@ -1927,7 +1927,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                       .primary,
                                               activeTrackColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .accent1,
+                                                      .tertiary,
                                               inactiveTrackColor:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
@@ -1990,7 +1990,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                       .primary,
                                               activeTrackColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .accent1,
+                                                      .secondaryText,
                                               inactiveTrackColor:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
@@ -2065,7 +2065,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .grayIcon,
+                                                                .tertiary,
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -2081,7 +2081,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                 borderSide: BorderSide(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .alternate,
+                                                      .tertiary,
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
@@ -2205,7 +2205,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                                   .headlineSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .grayIcon,
+                                                              .tertiary,
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -2222,7 +2222,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                   borderSide: BorderSide(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .alternate,
+                                                        .tertiary,
                                                     width: 1.0,
                                                   ),
                                                   borderRadius:
@@ -2840,7 +2840,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                         0.0, 0.0, 0.0, 0.0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: Color(0xFFF35C29),
+                                    color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -2938,7 +2938,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                                   .headlineSmallFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .grayIcon,
+                                                              .tertiary,
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -2955,7 +2955,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                                   borderSide: BorderSide(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .alternate,
+                                                        .tertiary,
                                                     width: 1.0,
                                                   ),
                                                   borderRadius:
@@ -3258,7 +3258,7 @@ class _S9NR1CreateEventWidgetState extends State<S9NR1CreateEventWidget> {
                                         0.0, 0.0, 0.0, 0.0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: Color(0xFFF35C29),
+                                    color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(

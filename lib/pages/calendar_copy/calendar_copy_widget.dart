@@ -11,11 +11,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'calendar_model.dart';
-export 'calendar_model.dart';
+import 'calendar_copy_model.dart';
+export 'calendar_copy_model.dart';
 
-class CalendarWidget extends StatefulWidget {
-  const CalendarWidget({
+class CalendarCopyWidget extends StatefulWidget {
+  const CalendarCopyWidget({
     super.key,
     this.date,
     this.flag,
@@ -25,11 +25,11 @@ class CalendarWidget extends StatefulWidget {
   final String? flag;
 
   @override
-  State<CalendarWidget> createState() => _CalendarWidgetState();
+  State<CalendarCopyWidget> createState() => _CalendarCopyWidgetState();
 }
 
-class _CalendarWidgetState extends State<CalendarWidget> {
-  late CalendarModel _model;
+class _CalendarCopyWidgetState extends State<CalendarCopyWidget> {
+  late CalendarCopyModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -40,7 +40,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CalendarModel());
+    _model = createModel(context, () => CalendarCopyModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -182,7 +182,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'j3ncwud6' /* Events */,
+                    'k13v3ce7' /* Events */,
                   ),
                   style: FlutterFlowTheme.of(context).titleMedium.override(
                         fontFamily:
@@ -226,7 +226,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                                   decoration: BoxDecoration(),
                                   child: EventCWidget(
                                     key: Key(
-                                        'Keym9n_${myeventsIndex}_of_${myevents.length}'),
+                                        'Keyyz3_${myeventsIndex}_of_${myevents.length}'),
                                     event: myeventsItem,
                                   ),
                                 );
@@ -266,7 +266,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                                   decoration: BoxDecoration(),
                                   child: EventCWidget(
                                     key: Key(
-                                        'Keyk9u_${invitedeventsIndex}_of_${invitedevents.length}'),
+                                        'Keyeh3_${invitedeventsIndex}_of_${invitedevents.length}'),
                                     event: invitedeventsItem,
                                   ),
                                 );
@@ -320,7 +320,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                                       decoration: BoxDecoration(),
                                       child: EventCWidget(
                                         key: Key(
-                                            'Keyapx_${wishIndex}_of_${wish.length}'),
+                                            'Keykbt_${wishIndex}_of_${wish.length}'),
                                         event: containerPropertiesRecord,
                                       ),
                                     );
@@ -360,7 +360,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                                   decoration: BoxDecoration(),
                                   child: EventCWidget(
                                     key: Key(
-                                        'Keysz5_${alleventsIndex}_of_${allevents.length}'),
+                                        'Keyi7b_${alleventsIndex}_of_${allevents.length}'),
                                     event: alleventsItem,
                                   ),
                                 );

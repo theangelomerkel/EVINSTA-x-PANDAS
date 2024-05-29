@@ -128,6 +128,24 @@ class _EventCWidgetState extends State<EventCWidget>
             ),
           ),
         ),
+        Align(
+          alignment: AlignmentDirectional(-1.0, -1.0),
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(2.0, 12.0, 8.0, 8.0),
+            child: Text(
+              valueOrDefault<String>(
+                widget.event?.propertyAddress,
+                'Address',
+              ),
+              style: FlutterFlowTheme.of(context).titleMedium.override(
+                    fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                    letterSpacing: 0.0,
+                    useGoogleFonts: GoogleFonts.asMap().containsKey(
+                        FlutterFlowTheme.of(context).titleMediumFamily),
+                  ),
+            ),
+          ),
+        ),
       ],
     );
   }

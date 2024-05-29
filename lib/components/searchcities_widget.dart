@@ -76,7 +76,7 @@ class _SearchcitiesWidgetState extends State<SearchcitiesWidget> {
                 width: 350.0,
                 height: 60.0,
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).tertiary,
+                  color: FlutterFlowTheme.of(context).alternate,
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 40.0,
@@ -310,11 +310,10 @@ class _SearchcitiesWidgetState extends State<SearchcitiesWidget> {
                             child: FlutterFlowIconButton(
                               borderRadius: 20.0,
                               buttonSize: 40.0,
-                              fillColor: FlutterFlowTheme.of(context).tertiary,
+                              fillColor: FlutterFlowTheme.of(context).alternate,
                               icon: Icon(
                                 Icons.chevron_right_rounded,
-                                color: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
+                                color: FlutterFlowTheme.of(context).tertiary,
                                 size: 24.0,
                               ),
                               onPressed: () async {
@@ -399,7 +398,7 @@ class _SearchcitiesWidgetState extends State<SearchcitiesWidget> {
                             child: FlutterFlowIconButton(
                               borderRadius: 20.0,
                               buttonSize: 40.0,
-                              fillColor: FlutterFlowTheme.of(context).tertiary,
+                              fillColor: FlutterFlowTheme.of(context).alternate,
                               icon: Icon(
                                 Icons.chevron_right_rounded,
                                 color: Color(0xFF15161E),
@@ -487,7 +486,7 @@ class _SearchcitiesWidgetState extends State<SearchcitiesWidget> {
                             child: FlutterFlowIconButton(
                               borderRadius: 20.0,
                               buttonSize: 40.0,
-                              fillColor: FlutterFlowTheme.of(context).tertiary,
+                              fillColor: FlutterFlowTheme.of(context).alternate,
                               icon: Icon(
                                 Icons.chevron_right_rounded,
                                 color: Color(0xFF15161E),
@@ -565,7 +564,7 @@ class _SearchcitiesWidgetState extends State<SearchcitiesWidget> {
                           child: FlutterFlowIconButton(
                             borderRadius: 20.0,
                             buttonSize: 40.0,
-                            fillColor: FlutterFlowTheme.of(context).tertiary,
+                            fillColor: FlutterFlowTheme.of(context).alternate,
                             icon: Icon(
                               Icons.chevron_right_rounded,
                               color: Color(0xFF15161E),
@@ -642,7 +641,7 @@ class _SearchcitiesWidgetState extends State<SearchcitiesWidget> {
                           child: FlutterFlowIconButton(
                             borderRadius: 20.0,
                             buttonSize: 40.0,
-                            fillColor: FlutterFlowTheme.of(context).tertiary,
+                            fillColor: FlutterFlowTheme.of(context).alternate,
                             icon: Icon(
                               Icons.chevron_right_rounded,
                               color: Color(0xFF15161E),
@@ -719,7 +718,7 @@ class _SearchcitiesWidgetState extends State<SearchcitiesWidget> {
                           child: FlutterFlowIconButton(
                             borderRadius: 20.0,
                             buttonSize: 40.0,
-                            fillColor: FlutterFlowTheme.of(context).tertiary,
+                            fillColor: FlutterFlowTheme.of(context).alternate,
                             icon: Icon(
                               Icons.chevron_right_rounded,
                               color: Color(0xFF15161E),
@@ -796,7 +795,7 @@ class _SearchcitiesWidgetState extends State<SearchcitiesWidget> {
                           child: FlutterFlowIconButton(
                             borderRadius: 20.0,
                             buttonSize: 40.0,
-                            fillColor: FlutterFlowTheme.of(context).tertiary,
+                            fillColor: FlutterFlowTheme.of(context).alternate,
                             icon: Icon(
                               Icons.chevron_right_rounded,
                               color: Color(0xFF15161E),
@@ -873,7 +872,7 @@ class _SearchcitiesWidgetState extends State<SearchcitiesWidget> {
                           child: FlutterFlowIconButton(
                             borderRadius: 20.0,
                             buttonSize: 40.0,
-                            fillColor: FlutterFlowTheme.of(context).tertiary,
+                            fillColor: FlutterFlowTheme.of(context).alternate,
                             icon: Icon(
                               Icons.chevron_right_rounded,
                               color: Color(0xFF15161E),
@@ -950,7 +949,7 @@ class _SearchcitiesWidgetState extends State<SearchcitiesWidget> {
                           child: FlutterFlowIconButton(
                             borderRadius: 20.0,
                             buttonSize: 40.0,
-                            fillColor: FlutterFlowTheme.of(context).tertiary,
+                            fillColor: FlutterFlowTheme.of(context).alternate,
                             icon: Icon(
                               Icons.chevron_right_rounded,
                               color: Color(0xFF15161E),
@@ -1027,7 +1026,7 @@ class _SearchcitiesWidgetState extends State<SearchcitiesWidget> {
                           child: FlutterFlowIconButton(
                             borderRadius: 20.0,
                             buttonSize: 40.0,
-                            fillColor: FlutterFlowTheme.of(context).tertiary,
+                            fillColor: FlutterFlowTheme.of(context).alternate,
                             icon: Icon(
                               Icons.chevron_right_rounded,
                               color: Color(0xFF15161E),
@@ -1104,7 +1103,7 @@ class _SearchcitiesWidgetState extends State<SearchcitiesWidget> {
                           child: FlutterFlowIconButton(
                             borderRadius: 20.0,
                             buttonSize: 40.0,
-                            fillColor: FlutterFlowTheme.of(context).tertiary,
+                            fillColor: FlutterFlowTheme.of(context).alternate,
                             icon: Icon(
                               Icons.chevron_right_rounded,
                               color: Color(0xFF15161E),
@@ -1125,7 +1124,7 @@ class _SearchcitiesWidgetState extends State<SearchcitiesWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
             child: Container(
-              width: double.infinity,
+              width: 350.0,
               height: 60.0,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -1181,7 +1180,7 @@ class _SearchcitiesWidgetState extends State<SearchcitiesWidget> {
                           child: FlutterFlowIconButton(
                             borderRadius: 20.0,
                             buttonSize: 40.0,
-                            fillColor: FlutterFlowTheme.of(context).tertiary,
+                            fillColor: FlutterFlowTheme.of(context).alternate,
                             icon: Icon(
                               Icons.chevron_right_rounded,
                               color: Color(0xFF15161E),

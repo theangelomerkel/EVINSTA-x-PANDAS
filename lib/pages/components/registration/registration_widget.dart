@@ -1043,6 +1043,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget>
                                                       email: FFAppState().email,
                                                       createdTime:
                                                           getCurrentTimestamp,
+                                                      role: 'DJ',
                                                     ));
 
                                                 _navigate = () =>

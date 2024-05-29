@@ -514,6 +514,7 @@ class _EventorganisersignupWidgetState
                           .update(createUsersRecordData(
                             email: FFAppState().email,
                             createdTime: getCurrentTimestamp,
+                            role: 'DJ',
                           ));
 
                       context.goNamedAuth('S2_HomePage', context.mounted);

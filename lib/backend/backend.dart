@@ -18,6 +18,7 @@ import 'schema/answers_record.dart';
 import 'schema/wishlist_record.dart';
 import 'schema/articles_record.dart';
 import 'schema/areas_record.dart';
+import 'schema/userpreferences_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -39,6 +40,7 @@ export 'schema/answers_record.dart';
 export 'schema/wishlist_record.dart';
 export 'schema/articles_record.dart';
 export 'schema/areas_record.dart';
+export 'schema/userpreferences_record.dart';
 
 /// Functions to query PropertiesRecords (as a Stream and as a Future).
 Future<int> queryPropertiesRecordCount({
@@ -519,6 +521,43 @@ Future<List<AreasRecord>> queryAreasRecordOnce({
     queryCollectionOnce(
       AreasRecord.collection,
       AreasRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query UserpreferencesRecords (as a Stream and as a Future).
+Future<int> queryUserpreferencesRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      UserpreferencesRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<UserpreferencesRecord>> queryUserpreferencesRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      UserpreferencesRecord.collection,
+      UserpreferencesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<UserpreferencesRecord>> queryUserpreferencesRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      UserpreferencesRecord.collection,
+      UserpreferencesRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

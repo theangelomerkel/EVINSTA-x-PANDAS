@@ -52,9 +52,12 @@ export '/raguide_frankfurt/raguide_frankfurt_widget.dart'
 export '/raguide_copy4/raguide_copy4_widget.dart' show RaguideCopy4Widget;
 export '/eventorganisersignup/eventorganisersignup_widget.dart'
     show EventorganisersignupWidget;
-export '/djsignup/djsignup_widget.dart' show DjsignupWidget;
 export '/usersignuo/usersignuo_widget.dart' show UsersignuoWidget;
 export '/test/test_widget.dart' show TestWidget;
 export '/djprofile/djprofile_widget.dart' show DjprofileWidget;
 export '/membercard/membercard_widget.dart' show MembercardWidget;
 export '/youtube/youtube_widget.dart' show YoutubeWidget;
+export '/map/map_widget.dart' show MapWidget;
+export '/calendarshifts/calendarshifts_widget.dart' show CalendarshiftsWidget;
+export '/calendarshift12/calendarshift12_widget.dart'
+    show Calendarshift12Widget;

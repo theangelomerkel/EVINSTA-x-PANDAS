@@ -127,6 +127,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Forgot Password?',
       'en': '',
     },
+    '6pcbm2s8': {
+      'de': 'Or use a social account to login',
+      'en': '',
+    },
+    '68cimz59': {
+      'de': 'I agree with ',
+      'en': '',
+    },
+    'ocutpyvm': {
+      'de': 'terms of use',
+      'en': '',
+    },
     'yo8z7hh6': {
       'de': 'Sign Up',
       'en': '',
@@ -143,27 +155,115 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Confirm Password',
       'en': '',
     },
-    'hjjyohu6': {
-      'de': 'ORGANISER SIGN UP',
-      'en': '',
-    },
-    'meac14tc': {
-      'de': 'DJ SIGN UP',
-      'en': '',
-    },
     '8s21huhp': {
       'de': 'Create Account',
       'en': '',
     },
-    '6pcbm2s8': {
-      'de': 'Or use a social account to login',
+    'lnpd52k8': {
+      'de': 'Or use a social account to signup',
       'en': '',
     },
-    'j0h1yw8t': {
+    'j9vu5j7h': {
       'de': 'I agree with ',
       'en': '',
     },
-    'ocutpyvm': {
+    'uh5qkmls': {
+      'de': 'terms of use',
+      'en': '',
+    },
+    '1u0067cq': {
+      'de': 'DJ Sign Up',
+      'en': '',
+    },
+    'tud65exi': {
+      'de': 'Email Address',
+      'en': '',
+    },
+    'wmyzcwhh': {
+      'de': 'Full Name',
+      'en': '',
+    },
+    'awlkk1ld': {
+      'de': 'DJ Name',
+      'en': '',
+    },
+    'wotcxnpz': {
+      'de': 'Password',
+      'en': '',
+    },
+    'oqrha48b': {
+      'de': 'Confirm Password',
+      'en': '',
+    },
+    'qsx79e3u': {
+      'de': 'Genre Spezification',
+      'en': '',
+    },
+    'qwwzicrg': {
+      'de': 'years of experience',
+      'en': '',
+    },
+    '2pjrxebg': {
+      'de': 'connect social account',
+      'en': '',
+    },
+    'hjjyohu6': {
+      'de': 'Create Account',
+      'en': '',
+    },
+    'xw6cmcv0': {
+      'de': 'I agree with ',
+      'en': '',
+    },
+    '2ypi47ig': {
+      'de': 'terms of use',
+      'en': '',
+    },
+    'vl8uae9e': {
+      'de': 'Orga Sign Up',
+      'en': '',
+    },
+    'iv0glmry': {
+      'de': 'Email Address',
+      'en': '',
+    },
+    '0l3unonf': {
+      'de': 'Full Name',
+      'en': '',
+    },
+    'e1id003r': {
+      'de': 'company name',
+      'en': '',
+    },
+    '4t0vcgbx': {
+      'de': 'Password',
+      'en': '',
+    },
+    'ahar9vxs': {
+      'de': 'Confirm Password',
+      'en': '',
+    },
+    '7vx8wczt': {
+      'de': 'event type preferences',
+      'en': '',
+    },
+    'xagg0wil': {
+      'de': 'business type',
+      'en': '',
+    },
+    'f32ky3g0': {
+      'de': 'connect social account',
+      'en': '',
+    },
+    '1xzx14ii': {
+      'de': 'Create Account',
+      'en': '',
+    },
+    'goae8kf9': {
+      'de': 'I agree with ',
+      'en': '',
+    },
+    'ia29qr54': {
       'de': 'terms of use',
       'en': '',
     },
@@ -201,7 +301,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // S2_HomePage
   {
     '2e8i9atd': {
-      'de': 'Your Events',
+      'de': 'Homepage',
       'en': '',
     },
     'gokt7fb5': {
@@ -221,7 +321,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'j19xfw2k': {
-      'de': 'Invited Events',
+      'de': 'Recommended Events',
       'en': '',
     },
   },
@@ -1262,13 +1362,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // locationselect
-  {
-    '7plxb185': {
-      'de': 'Dashboard',
-      'en': '',
-    },
-  },
   // adminpanel
   {
     'ecqi9uth': {
@@ -1345,7 +1438,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Enter your email',
       'en': '',
     },
-    'wotcxnpz': {
+    'uyasw4yk': {
       'de': 'Password',
       'en': '',
     },
@@ -1382,91 +1475,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // djsignup
-  {
-    'pfd9jujt': {
-      'de': 'DJ Sign Up',
-      'en': '',
-    },
-    'awlkk1ld': {
-      'de': 'DJ Name',
-      'en': '',
-    },
-    'm4yefgp4': {
-      'de': 'Enter your DJ name...',
-      'en': '',
-    },
-    'sxrqog4b': {
-      'de': 'Email',
-      'en': '',
-    },
-    'f4f7qkj2': {
-      'de': 'Enter your email...',
-      'en': '',
-    },
-    'uyasw4yk': {
-      'de': 'Password',
-      'en': '',
-    },
-    'vd0welp7': {
-      'de': 'Create a password...',
-      'en': '',
-    },
-    'ai24ybzj': {
-      'de': 'Genre Specialization',
-      'en': '',
-    },
-    'caw5mzbp': {
-      'de': 'Your music genre...',
-      'en': '',
-    },
-    'vs2sytfc': {
-      'de': 'Equipment List',
-      'en': '',
-    },
-    'k9mvx5lj': {
-      'de': 'List your equipment...',
-      'en': '',
-    },
-    'o2po55ty': {
-      'de': 'Add Social Media Accounts',
-      'en': '',
-    },
-    'pkgsm76n': {
-      'de': 'Sign Up',
-      'en': '',
-    },
-  },
   // usersignuo
   {
-    'yqupzhwh': {
-      'de': 'Sign Up',
-      'en': '',
-    },
-    'tud65exi': {
-      'de': 'Email Address',
-      'en': '',
-    },
-    'x9fitak6': {
-      'de': 'Enter your email',
-      'en': '',
-    },
-    '4t0vcgbx': {
-      'de': 'Password',
-      'en': '',
-    },
-    'v1g2f37y': {
-      'de': 'Enter your password',
-      'en': '',
-    },
-    'oqrha48b': {
-      'de': 'Confirm Password',
-      'en': '',
-    },
-    '0q2yz0od': {
-      'de': 'Confirm your password',
-      'en': '',
-    },
     'rl61gw1d': {
       'de': 'Event Preferences',
       'en': '',
@@ -1522,7 +1532,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'de': 'Step 1: Event Details',
       'en': '',
     },
-    'om9wq8rq': {
+    'a5b421jo': {
       'de': 'Event Name',
       'en': '',
     },
@@ -1736,6 +1746,123 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'peepopl6': {
+      'de': 'Home',
+      'en': '',
+    },
+  },
+  // map
+  {
+    '3lysudtf': {
+      'de': 'Page Title',
+      'en': '',
+    },
+    'dmz1lnc8': {
+      'de': 'Home',
+      'en': '',
+    },
+  },
+  // calendarshifts
+  {
+    'p15yllt9': {
+      'de': 'Shift Calendar',
+      'en': '',
+    },
+    'hvgeu34r': {
+      'de': 'Select Date',
+      'en': '',
+    },
+    '5hl9pg71': {
+      'de': 'Choose shift date...',
+      'en': '',
+    },
+    'v6vi1u0o': {
+      'de': 'Shift Title',
+      'en': '',
+    },
+    'hsmxlgec': {
+      'de': 'Enter shift title...',
+      'en': '',
+    },
+    'qb6204p0': {
+      'de': 'Shift Description',
+      'en': '',
+    },
+    'm9tvqxac': {
+      'de': 'Enter shift details...',
+      'en': '',
+    },
+    'qkx0k0hg': {
+      'de': 'Submit Shift',
+      'en': '',
+    },
+    'ysdhswiq': {
+      'de': 'Available Shifts',
+      'en': '',
+    },
+    'g1iza6dy': {
+      'de': 'Monday',
+      'en': '',
+    },
+    '4ss182j3': {
+      'de': '9 AM - 5 PM',
+      'en': '',
+    },
+    'eywoo0zz': {
+      'de': 'Tuesday',
+      'en': '',
+    },
+    '5pquax71': {
+      'de': '10 AM - 6 PM',
+      'en': '',
+    },
+    'ioxsumw0': {
+      'de': 'Wednesday',
+      'en': '',
+    },
+    'pv56xbdt': {
+      'de': '12 PM - 8 PM',
+      'en': '',
+    },
+    '8t303li0': {
+      'de': 'Thursday',
+      'en': '',
+    },
+    '0jptpxdk': {
+      'de': '9 AM - 5 PM',
+      'en': '',
+    },
+    'yfnxhxup': {
+      'de': 'Friday',
+      'en': '',
+    },
+    'fii5m3nc': {
+      'de': '10 AM - 6 PM',
+      'en': '',
+    },
+    '9rycd8ff': {
+      'de': 'Saturday',
+      'en': '',
+    },
+    'h5ckpz2u': {
+      'de': 'Off',
+      'en': '',
+    },
+    '562atrxt': {
+      'de': 'Sunday',
+      'en': '',
+    },
+    '2uzr0xkc': {
+      'de': 'Off',
+      'en': '',
+    },
+  },
+  // calendarshift12
+  {
+    'vkg5fyn3': {
+      'de': 'Page Title',
+      'en': '',
+    },
+    '9n9rcsut': {
       'de': 'Home',
       'en': '',
     },
@@ -2119,6 +2246,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'mveqqjmx': {
       'de': 'Nuremberg',
+      'en': '',
+    },
+  },
+  // calendarCopy
+  {
+    'k13v3ce7': {
+      'de': 'Events',
       'en': '',
     },
   },

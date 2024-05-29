@@ -42,10 +42,91 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
+  final animationsMap = <String, AnimationInfo>{};
+
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => S2HomePageModel());
+
+    animationsMap.addAll({
+      'containerOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 50.0.ms,
+            duration: 300.0.ms,
+            begin: Offset(0.0, 50.0),
+            end: Offset(0.0, 0.0),
+          ),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 100.0.ms,
+            duration: 300.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+      'rowOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 100.0.ms,
+            duration: 300.0.ms,
+            begin: Offset(0.0, 50.0),
+            end: Offset(0.0, 0.0),
+          ),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 150.0.ms,
+            duration: 300.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+      'textOnPageLoadAnimation3': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 150.0.ms,
+            duration: 300.0.ms,
+            begin: Offset(0.0, 50.0),
+            end: Offset(0.0, 0.0),
+          ),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 200.0.ms,
+            duration: 300.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+      'listViewOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 200.0.ms,
+            duration: 300.0.ms,
+            begin: Offset(0.0, 50.0),
+            end: Offset(0.0, 0.0),
+          ),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 250.0.ms,
+            duration: 300.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -65,73 +146,10 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).alternate,
         body: Stack(
           alignment: AlignmentDirectional(0.0, 1.0),
           children: [
-            Align(
-              alignment: AlignmentDirectional(0.0, -1.0),
-              child: Container(
-                width: double.infinity,
-                height: MediaQuery.sizeOf(context).height * 0.271,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: Image.asset(
-                      'assets/images/Rectangle_7.png',
-                    ).image,
-                  ),
-                  shape: BoxShape.rectangle,
-                ),
-                child: Stack(
-                  children: [
-                    if (responsiveVisibility(
-                      context: context,
-                      phone: false,
-                    ))
-                      Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 48.0),
-                          child: Hero(
-                            tag: 'italyImage',
-                            transitionOnUserGestures: true,
-                            child: Image.asset(
-                              'assets/images/EVI_Logo.png',
-                              width: MediaQuery.sizeOf(context).width * 0.5,
-                              fit: BoxFit.none,
-                              alignment: Alignment(0.0, 0.0),
-                            ),
-                          ),
-                        ),
-                      ),
-                    if (responsiveVisibility(
-                      context: context,
-                      desktop: false,
-                    ))
-                      Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 48.0),
-                          child: Hero(
-                            tag: 'italyImage',
-                            transitionOnUserGestures: true,
-                            child: Image.asset(
-                              'assets/images/EVI_Logo.png',
-                              width: MediaQuery.sizeOf(context).width * 0.5,
-                              fit: BoxFit.scaleDown,
-                              alignment: Alignment(0.0, 0.0),
-                            ),
-                          ),
-                        ),
-                      ),
-                  ],
-                ),
-              ),
-            ),
             Align(
               alignment: AlignmentDirectional(0.0, 1.0),
               child: StreamBuilder<List<PropertiesRecord>>(
@@ -165,8 +183,7 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                   List<PropertiesRecord> contentCardPropertiesRecordList =
                       snapshot.data!;
                   return Container(
-                    width: double.infinity,
-                    height: MediaQuery.sizeOf(context).height * 0.65,
+                    width: 385.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       borderRadius: BorderRadius.only(
@@ -188,7 +205,7 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                           children: [
                             Text(
                               FFLocalizations.of(context).getText(
-                                '2e8i9atd' /* Your Events */,
+                                '2e8i9atd' /* Homepage */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
@@ -285,7 +302,8 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                     ),
                                   ),
                                 ),
-                              ),
+                              ).animateOnPageLoad(animationsMap[
+                                  'containerOnPageLoadAnimation']!),
                             if (responsiveVisibility(
                               context: context,
                               phone: false,
@@ -357,7 +375,6 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                               .primary,
                                           boxShadow: [
                                             BoxShadow(
-                                              blurRadius: 4.0,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondary,
@@ -372,7 +389,7 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                               BorderRadius.circular(24.0),
                                           border: Border.all(
                                             color: FlutterFlowTheme.of(context)
-                                                .tertiary,
+                                                .primary,
                                             width: 3.0,
                                           ),
                                         ),
@@ -440,7 +457,6 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                                       .primary,
                                               boxShadow: [
                                                 BoxShadow(
-                                                  blurRadius: 4.0,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondary,
@@ -456,7 +472,7 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                               border: Border.all(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .tertiary,
+                                                        .primary,
                                                 width: 3.0,
                                               ),
                                             ),
@@ -523,7 +539,6 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                               .primary,
                                           boxShadow: [
                                             BoxShadow(
-                                              blurRadius: 4.0,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondary,
@@ -538,7 +553,7 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                               BorderRadius.circular(24.0),
                                           border: Border.all(
                                             color: FlutterFlowTheme.of(context)
-                                                .tertiary,
+                                                .primary,
                                             width: 3.0,
                                           ),
                                         ),
@@ -635,13 +650,14 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                   ),
                                 ].divide(SizedBox(width: 12.0)),
                               ),
-                            ),
+                            ).animateOnPageLoad(
+                                animationsMap['rowOnPageLoadAnimation']!),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 12.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'j19xfw2k' /* Invited Events */,
+                                  'j19xfw2k' /* Recommended Events */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineMedium
@@ -654,7 +670,8 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                               FlutterFlowTheme.of(context)
                                                   .headlineMediumFamily),
                                     ),
-                              ),
+                              ).animateOnPageLoad(
+                                  animationsMap['textOnPageLoadAnimation3']!),
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -711,7 +728,8 @@ class _S2HomePageWidgetState extends State<S2HomePageWidget>
                                         ),
                                       );
                                     },
-                                  );
+                                  ).animateOnPageLoad(animationsMap[
+                                      'listViewOnPageLoadAnimation']!);
                                 },
                               ),
                             ),

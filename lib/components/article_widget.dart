@@ -91,7 +91,7 @@ class _ArticleWidgetState extends State<ArticleWidget> {
             ],
             borderRadius: BorderRadius.circular(24.0),
             border: Border.all(
-              color: FlutterFlowTheme.of(context).tertiary,
+              color: FlutterFlowTheme.of(context).primary,
               width: 3.0,
             ),
           ),

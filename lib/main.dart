@@ -169,8 +169,8 @@ class _NavBarPageState extends State<NavBarPage> {
           _currentPage = null;
           _currentPageName = tabs.keys.toList()[i];
         }),
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        selectedItemColor: FlutterFlowTheme.of(context).primary,
+        backgroundColor: FlutterFlowTheme.of(context).primary,
+        selectedItemColor: FlutterFlowTheme.of(context).tertiary,
         unselectedItemColor: FlutterFlowTheme.of(context).tertiary,
         selectedBackgroundColor: Color(0x00000000),
         borderRadius: 8.0,
@@ -187,7 +187,7 @@ class _NavBarPageState extends State<NavBarPage> {
                 Icon(
                   currentIndex == 0 ? Icons.event : Icons.event,
                   color: currentIndex == 0
-                      ? FlutterFlowTheme.of(context).primary
+                      ? FlutterFlowTheme.of(context).tertiary
                       : FlutterFlowTheme.of(context).tertiary,
                   size: currentIndex == 0 ? 26.0 : 24.0,
                 ),
@@ -201,7 +201,7 @@ class _NavBarPageState extends State<NavBarPage> {
                 Icon(
                   currentIndex == 1 ? Icons.home_sharp : Icons.home_sharp,
                   color: currentIndex == 1
-                      ? FlutterFlowTheme.of(context).primary
+                      ? FlutterFlowTheme.of(context).tertiary
                       : FlutterFlowTheme.of(context).tertiary,
                   size: currentIndex == 1 ? 26.0 : 24.0,
                 ),
@@ -215,7 +215,7 @@ class _NavBarPageState extends State<NavBarPage> {
                 Icon(
                   currentIndex == 2 ? Icons.person : Icons.person,
                   color: currentIndex == 2
-                      ? FlutterFlowTheme.of(context).primary
+                      ? FlutterFlowTheme.of(context).tertiary
                       : FlutterFlowTheme.of(context).tertiary,
                   size: currentIndex == 2 ? 26.0 : 24.0,
                 ),

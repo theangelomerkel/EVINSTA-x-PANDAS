@@ -1,27 +1,27 @@
-import '/components/searchcities_widget.dart';
+import '/flutter_flow/flutter_flow_google_map.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'locationselect_widget.dart' show LocationselectWidget;
+import 'map_widget.dart' show MapWidget;
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class LocationselectModel extends FlutterFlowModel<LocationselectWidget> {
+class MapModel extends FlutterFlowModel<MapWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // Model for searchcities component.
-  late SearchcitiesModel searchcitiesModel;
+  // State field(s) for GoogleMap widget.
+  LatLng? googleMapsCenter;
+  final googleMapsController = Completer<GoogleMapController>();
 
   @override
-  void initState(BuildContext context) {
-    searchcitiesModel = createModel(context, () => SearchcitiesModel());
-  }
+  void initState(BuildContext context) {}
 
   @override
   void dispose() {
     unfocusNode.dispose();
-    searchcitiesModel.dispose();
   }
 }

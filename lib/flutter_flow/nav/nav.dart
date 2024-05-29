@@ -340,14 +340,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => EventorganisersignupWidget(),
             ),
             FFRoute(
-              name: 'djsignup',
-              path: 'djsignup',
-              builder: (context, params) => DjsignupWidget(),
-            ),
-            FFRoute(
               name: 'usersignuo',
               path: 'usersignuo',
-              builder: (context, params) => UsersignuoWidget(),
+              builder: (context, params) => UsersignuoWidget(
+                genre: params.getParam(
+                  'genre',
+                  ParamType.String,
+                ),
+              ),
             ),
             FFRoute(
               name: 'test',
@@ -373,6 +373,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   ParamType.String,
                 ),
               ),
+            ),
+            FFRoute(
+              name: 'map',
+              path: 'map',
+              builder: (context, params) => MapWidget(),
+            ),
+            FFRoute(
+              name: 'calendarshifts',
+              path: 'calendarshifts',
+              builder: (context, params) => CalendarshiftsWidget(),
+            ),
+            FFRoute(
+              name: 'calendarshift12',
+              path: 'calendarshift12',
+              builder: (context, params) => Calendarshift12Widget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

@@ -115,7 +115,8 @@ class _DjprofileWidgetState extends State<DjprofileWidget> {
                                     color: Color(0x4C105DFB),
                                     shape: BoxShape.circle,
                                     border: Border.all(
-                                      color: Color(0xFF105DFB),
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                       width: 2.0,
                                     ),
                                   ),
@@ -191,7 +192,7 @@ class _DjprofileWidgetState extends State<DjprofileWidget> {
                                 children: [
                                   FaIcon(
                                     FontAwesomeIcons.star,
-                                    color: Color(0xFF105DFB),
+                                    color: FlutterFlowTheme.of(context).primary,
                                     size: 24.0,
                                   ),
                                   Padding(
@@ -367,7 +368,8 @@ class _DjprofileWidgetState extends State<DjprofileWidget> {
                                         iconPadding:
                                             EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: Color(0xFF105DFB),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
                                         textStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -492,7 +494,8 @@ class _DjprofileWidgetState extends State<DjprofileWidget> {
                                         iconPadding:
                                             EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: Color(0xFF105DFB),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
                                         textStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -617,7 +620,8 @@ class _DjprofileWidgetState extends State<DjprofileWidget> {
                                         iconPadding:
                                             EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: Color(0xFF105DFB),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
                                         textStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
